@@ -1,7 +1,5 @@
 package com.acorn.project;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -9,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 	
 	@RequestMapping("/home.do") 
-	public String home(HttpServletRequest request) {
+	public String home() {
 		return "home";
 	}
 	
