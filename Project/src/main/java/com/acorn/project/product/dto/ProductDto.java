@@ -1,6 +1,7 @@
 package com.acorn.project.product.dto;
 
 public class ProductDto {
+
    private String productId;
    private String productName;
    private int price;

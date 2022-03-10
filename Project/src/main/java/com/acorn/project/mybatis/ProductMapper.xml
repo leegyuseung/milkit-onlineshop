@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="product">
+	<insert id="insert" parameterType="productDto">
+		INSERT INTO product
+		(productId, productName, price, stock, productCate, regdate)
+		VALUES(#{productId }, #{productName }, #{price }, #{stock }, #{productCate }, SYSDATE)
+	</insert>
+	
+	<select id="getList" resultType="productDto">
+		SELECT productId, productName, price, stock, productCate, regdate
+		FROM product
+		ORDER BY regdate ASC
+	</select>
+	
+	<delete id="delete" parameterType="string">
+		DELETE FROM product
+		WHERE productId=#{productId}
+	</delete>
+	
+	
+	
+	
+	<select id="getData" parameterType="string" resultType="productDto">
+		SELECT productId, productName, price, stock, productCate
+		FROM product
+		WHERE productId=#{productId }
+	</select>
+	
+	<update id="update" parameterType="productDto">
+		UPDATE product
+		SET price=#{price }, stock=#{stock }
+		WHERE productId=#{productId }
+	</update>
+</mapper>
+
+
+
+
+
+
