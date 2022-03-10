@@ -5,6 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class GalleryController {
@@ -36,5 +39,45 @@ public class GalleryController {
 		service.saveImage(dto, request);
 		
 		return "gallery/upload";
+	}
+	
+	//gallery 사진 업로드 form - ajax form
+	@RequestMapping(value = "/gallery/private/ajax_form")
+	public String ajaxForm() {
+		return "gallery/ajax_form";
+	}
+	
+	//gallery 사진 업로드 - ajax
+	//json으로 return 할 것
+	@RequestMapping(value = "/gallery/private/ajax_upload")
+	@ResponseBody
+	public Map<String, Object> ajaxUpload(GalleryDto dto, HttpServletRequest request){
+		//form에서 dto로 데이터 받아옴
+		//dto : MultipartFile image를 가지고 있다.
+		//request : imagePath 만드는데 사용, session 영역의 id 가져오는데 사용
+		//return : { "imagePath" : "/upload/123456img_name.png" } 형식의 JSON 응답
+		return service.uploadAjaxImage(dto, request);
+	}
+	
+	//imagePath 구성 X -> Dto로 imagePath 를 받아서 DB에 저장하기
+	@RequestMapping(value = "/gallery/private/insert")
+	public String insert(GalleryDto dto, HttpServletRequest request) {
+		//dto : caption, imagePath 가지고 있다.
+		//request : dto 에 writed(id) 추가
+		service.insert(dto,request);
+		
+		return "gallery/upload";
+			
+	}
+	
+	//gallery 게시글의 num 이 parameter get 방식으로 넘어온다.
+	//detail 페이지
+	@RequestMapping(value = "/gallerydetail", method = RequestMethod.GET)
+	public ModelAndView detail(ModelAndView mView, @RequestParam int num) {
+		//갤러리 detail 페이지에 필요한 data를 num 으로 가져와, ModelAndView 에 저장
+		service.getDetail(mView, num);
+		mView.setViewName("gallery/detail");
+		
+		return mView;
 	}
 }

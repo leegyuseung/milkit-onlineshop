@@ -116,4 +116,10 @@ public class UsersServiceImpl implements UsersService{
 		mView.addObject("id", id);
 	}
 
+	@Override
+	public Map<String, Object> saveProfileImage(HttpServletRequest request, MultipartFile mFile) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
