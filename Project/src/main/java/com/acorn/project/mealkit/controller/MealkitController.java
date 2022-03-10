@@ -1,9 +1,9 @@
 package com.acorn.project.mealkit.controller;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Repository
+@Controller
 public class MealkitController {
 	//밀키트홈
 	@RequestMapping("/mealkit/mealkit_home")
