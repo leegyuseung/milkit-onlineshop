@@ -29,35 +29,8 @@
 		<button type="submit">수정반영</button>
 	</form>
 	
-
 </div>
-<script src="${pageContext.request.contextPath}/resources/js/gura_util.js"></script>
-<script>
-	//프로필 이미지 링크를 클릭하면 
-	document.querySelector("#profileLink").addEventListener("click", function(){
-		// input type="file" 을 강제 클릭 시킨다. 
-		document.querySelector("#image").click();
-	});
-	//이미지를 선택했을때 실행할 함수 등록 
-	document.querySelector("#image").addEventListener("change", function(){
-		
-		let form=document.querySelector("#imageForm");
-		
-		// gura_util.js 에 정의된 함수를 호출하면서 ajax 전송할 폼의 참조값을 전달하면 된다. 
-		ajaxFormPromise(form)
-		.then(function(response){
-			return response.json();
-		})
-		.then(function(data){
-			// data 는 {imagePath:"/upload/xxx.jpg"} 형식의 object 이다.
-			console.log(data);
-			let img=`<img id="profileImage" src="${pageContext.request.contextPath}\${data.imagePath}"/>`;
-			document.querySelector("#profileLink").innerHTML=img;
-			// input name="profile" 요소의 value 값으로 이미지 경로 넣어주기
-			document.querySelector("input[name=profile]").value=data.imagePath;
-		});
-	});
-</script>
+
 </body>
 </html>
 

@@ -18,8 +18,6 @@ public interface UsersService {
 	public void loginProcess(UsersDto dto,HttpSession session);
 	public void getInfo(HttpSession session, ModelAndView mView);
 	public void updateUserPwd(HttpSession session, UsersDto dto, ModelAndView mView);
-	public Map<String, Object> saveProfileImage(HttpServletRequest request, 
-			MultipartFile mFile);
 	public void updateUser(UsersDto dto, HttpSession session);
 	public void deleteUser(HttpSession session, ModelAndView mView);
 }
