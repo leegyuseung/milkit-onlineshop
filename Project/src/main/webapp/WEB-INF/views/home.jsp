@@ -25,6 +25,10 @@
 		</c:otherwise>
 	</c:choose>
 	<h1>밀키트 홈페이지</h1>
+		<li>마이페이지</li>
+		<li>밀키트 상품</li>
+		<li>고객센터</li>
+		<li>관리자페이지</li>	
 </div>
 </body>
 </html>
