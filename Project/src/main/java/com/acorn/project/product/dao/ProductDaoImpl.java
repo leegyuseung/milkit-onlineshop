@@ -29,6 +29,16 @@ public class ProductDaoImpl implements ProductDao{
 	public void delete(String productId) {
 		session.delete("product.delete", productId);
 	}
+
+	@Override
+	public ProductDto getData(String productId) {
+		return session.selectOne("product.getData", productId);
+	}
+
+	@Override
+	public void update(ProductDto dto) {
+		session.update("product.update", dto);
+	}
 	
 	
 

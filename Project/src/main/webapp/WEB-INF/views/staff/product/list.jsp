@@ -39,7 +39,7 @@
 					<td>${tmp.regDate }</td>
 					<td>${tmp.updateDate }</td>
 					<td>${tmp.buyCount }</td>
-					<td><a href="updateform.do?productId=${tmp.productId }">수정</a></td>
+					<td><a href="updateForm.do?productId=${tmp.productId }">수정</a></td>
 					<td><a href="delete.do?productId=${tmp.productId }">삭제</a></td>
 				</tr>
 			</c:forEach>
