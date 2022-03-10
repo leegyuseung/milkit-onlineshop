@@ -1,0 +1,10 @@
+CREATE TABLE users(
+   id VARCHAR2(100) PRIMARY KEY,
+   pwd VARCHAR2(100) NOT NULL,
+   email VARCHAR2(100)NOT NULL,
+   address VARCHAR2(100), 
+   regdate DATE,
+   usertype NUMBER DEFAULT 0
+);
+
+CREATE SEQUENCE users_seq;

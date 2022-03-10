@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+	<select id="isExist" parameterType="java.lang.String" resultType="string">
+		select id
+		from users
+		where id=#{id}
+	</select>
+	
+	<insert id="insert" parameterType="com.acorn.project.users.dto.UsersDto">
+		insert into users
+		(id, pwd, email, address, regdate)
+		VALUES(#{id }, #{pwd }, #{email },#{address}, SYSDATE)
+	</insert>
+	
+	<select id="getData" parameterType="string" resultType="com.acorn.project.users.dto.UsersDto">
+		
+		SELECT id, pwd, email, profile, regdate
+		FROM users
+		WHERE id=#{id }
+	</select>
+	
+	<update id="pwdUpdate" parameterType="com.acorn.project.users.dto.UsersDto">
+		UPDATE users
+		SET pwd=#{newPwd }
+		WHERE id=#{id }
+	</update>
+	
+	
+	<update id="update" parameterType="com.acorn.project.users.dto.UsersDto">
+		UPDATE users
+		SET email=#{email }, profile=#{profile }
+		WHERE id=#{id }
+	</update>
+	
+	<delete id="delete" parameterType="string">
+		DELETE FROM users
+		WHERE id=#{id}
+	</delete>
+</mapper>
