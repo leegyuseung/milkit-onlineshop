@@ -28,7 +28,7 @@
 		<li>마이페이지</li>
 		<li>밀키트 상품</li>
 		<li>고객센터</li>
-		<li>관리자페이지</li>	
+		<li><a href="${pageContext.request.contextPath}/staff/home.do">관리자페이지</a></li>	
 </div>
 </body>
 </html>
