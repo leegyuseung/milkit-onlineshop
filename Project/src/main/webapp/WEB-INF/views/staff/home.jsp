@@ -9,6 +9,7 @@
 </head>
 <body>
 <div class="container">
+	<a href="../home.do">홈페이지로 돌아가기</a>
 	<h1>관리자 페이지</h1>
 	<ul>
 		<li><a href="currentOrder.do">주문 현황</a></li>
