@@ -8,12 +8,37 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
 </head>
 <body>
+<div>
 	<h1>장바구니 목록입니다.</h1>
-	<ul>상세 내역
-		<li>상품명</li>
-		<li>상품 사진</li>
-		<li>수량</li>
-		<li>가격</li>
-	</ul>
+	<table class="table">
+		<thead>
+		  <tr>
+		    <th scope="col">#</th>
+		    <th scope="col">First</th>
+		    <th scope="col">Last</th>
+		    <th scope="col">Handle</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+		    <th scope="row">1</th>
+		    <td>Mark</td>
+		    <td>Otto</td>
+		    <td>@mdo</td>
+		  </tr>
+		  <tr>
+		    <th scope="row">2</th>
+		    <td>Jacob</td>
+		    <td>Thornton</td>
+		    <td>@fat</td>
+		  </tr>
+		  <tr>
+		    <th scope="row">3</th>
+		    <td colspan="2">Larry the Bird</td>
+		    <td>@twitter</td>
+		  </tr>
+		</tbody>
+	</table>
+</div>
 </body>
 </html>
