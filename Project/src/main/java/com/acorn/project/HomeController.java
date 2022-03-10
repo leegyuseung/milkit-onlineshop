@@ -13,7 +13,11 @@ public class HomeController {
 		return "home";
 	}
 	
-
+	@RequestMapping("/cartlist.do")
+	public String cartlist(HttpServletRequest request) {
+		return "cartlist";
+	}
+	
 }
 
 
