@@ -15,7 +15,7 @@
 	
 	<select id="getData" parameterType="string" resultType="com.acorn.project.users.dto.UsersDto">
 		
-		SELECT id, pwd, email, profile, regdate
+		SELECT id, pwd, email, address, regdate
 		FROM users
 		WHERE id=#{id }
 	</select>
@@ -29,7 +29,7 @@
 	
 	<update id="update" parameterType="com.acorn.project.users.dto.UsersDto">
 		UPDATE users
-		SET email=#{email }, profile=#{profile }
+		SET email=#{email }, address=#{address}
 		WHERE id=#{id }
 	</update>
 	
