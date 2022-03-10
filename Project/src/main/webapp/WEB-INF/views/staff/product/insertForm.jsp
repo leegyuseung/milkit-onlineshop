@@ -10,7 +10,7 @@
 <body>
 <div class="container">
 	<h1>상품 추가</h1>
-	<form action="insert.do">
+	<form action="insert.do" method="post">
 		<div>
 			<label for="productId">상품 아이디</label>
 			<input type="text" name="productId" id="productId" placeholder="상품 아이디..."/>
@@ -22,6 +22,10 @@
 		<div>
 			<label for="price">상품 가격</label>
 			<input type="text" name="price" id="price" placeholder="가격..."/>
+		</div>
+		<div>
+			<label for="stock">상품 재고</label>
+			<input type="text" name="price" id="stock" placeholder="재고..."/>
 		</div>
 		<div>
 			<label for="productCate">카테고리</label>

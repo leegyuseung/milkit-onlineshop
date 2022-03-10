@@ -1,8 +1,11 @@
 package com.acorn.project.product.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.product.dao.ProductDao;
@@ -34,6 +37,15 @@ public class ProductController {
 		//view page 의 정보를 ModelAndView 객체에 담는다.
 		mView.setViewName("staff/product/list");
 		//ModelAndView 객체를 리턴해 준다.
+		return mView;
+	}
+	
+	@RequestMapping("/staff/product/delete")
+	public ModelAndView delete(String productId, ModelAndView mView) {
+		
+		service.deleteProduct(productId);
+		
+		mView.setViewName("redirect:/staff/product/list.do");
 		return mView;
 	}
 }

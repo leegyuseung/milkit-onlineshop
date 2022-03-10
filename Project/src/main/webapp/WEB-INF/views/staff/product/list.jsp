@@ -15,6 +15,7 @@
 	<table>
 		<thead>
 			<tr>
+				<th>상품 ID</th>
 				<th>상품 이름</th>
 				<th>상품 가격</th>
 				<th>남은 수량</th>
@@ -28,6 +29,7 @@
 		<tbody>
 			<c:forEach var="tmp" items="${list }">
 				<tr>
+					<td>${tmp.productId }</td>
 					<td>${tmp.productName }</td>
 					<td>${tmp.price }</td>
 					<td>${tmp.stock }</td>

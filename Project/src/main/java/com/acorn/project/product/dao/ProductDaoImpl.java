@@ -24,6 +24,11 @@ public class ProductDaoImpl implements ProductDao{
 		List<ProductDto> list=session.selectList("product.getList");
 		return list;
 	}
+
+	@Override
+	public void delete(String productId) {
+		session.delete("product.delete", productId);
+	}
 	
 	
 

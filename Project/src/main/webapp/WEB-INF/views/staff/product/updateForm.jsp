@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>/staff/product/update.jsp</title>
+<title>/staff/product/updateForm</title>
 </head>
 <body>
 
