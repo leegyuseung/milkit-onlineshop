@@ -6,3 +6,5 @@ CREATE TABLE users(
    regdate DATE,
    usertype NUMBER DEFAULT 0
 );
+
+CREATE SEQUENCE users_seq;
