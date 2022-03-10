@@ -13,7 +13,7 @@
 	<a href="../home.do">관리자 페이지로 돌아가기</a><br />
 	<a href="insertForm.do">상품 추가</a>	
 	<h1>상품 리스트</h1>
-	<table>
+	<table class="table">
 		<thead>
 			<tr>
 				<th>상품 ID</th>
@@ -23,6 +23,7 @@
 				<th>카테고리</th>
 				<th>추가 날짜</th>
 				<th>수정 날짜</th>
+				<th>구매 횟수</th>
 				<th>수정</th>
 				<th>삭제</th>
 			</tr>
@@ -37,6 +38,7 @@
 					<td>${tmp.productCate }</td>
 					<td>${tmp.regDate }</td>
 					<td>${tmp.updateDate }</td>
+					<td>${tmp.buyCount }</td>
 					<td><a href="updateform.do?productId=${tmp.productId }">수정</a></td>
 					<td><a href="delete.do?productId=${tmp.productId }">삭제</a></td>
 				</tr>
