@@ -16,32 +16,12 @@ public class ProductDaoImpl implements ProductDao{
 
 	@Override
 	public void insert(ProductDto dto) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
 	public List<ProductDto> getList(ProductDto dto) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
-	public ProductDto getData(String id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void update(ProductDto dto) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(String id) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	
 }
