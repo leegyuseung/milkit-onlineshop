@@ -7,7 +7,7 @@ import com.acorn.project.product.dto.ProductDto;
 
 public interface ProductService {
 	public void addProduct(ProductDto dto);
-	public void getListMember(ModelAndView mView);
+	public void getListProduct(ModelAndView mView);
 
 
 }

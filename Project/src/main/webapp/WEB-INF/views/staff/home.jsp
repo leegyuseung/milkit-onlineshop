@@ -11,10 +11,9 @@
 <div class="container">
 	<h1>관리자 페이지</h1>
 	<ul>
-		<li><a href="staff/currentOrder">주문 현황</a></li>
-		<li><a href="staff/usersList">회원 관리</a></li>
-		<li><a href="staff/product/insert">상품 등록</a></li>
-		<li><a href="staff/product/update">상품 정보 수정</a></li>
+		<li><a href="currentOrder.do">주문 현황</a></li>
+		<li><a href="usersList.do">회원 관리</a></li>
+		<li><a href="product/list.do">상품 리스트</a></li>
 	</ul>
 </div>
 

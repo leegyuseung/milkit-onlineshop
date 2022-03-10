@@ -8,7 +8,7 @@
 	</insert>
 	
 	<select id="getList" resultType="productDto">
-		SELECT productId, productname, price, stock, productcate, regdate
+		SELECT productname, price, stock, productcate, regdate
 		FROM product
 		ORDER BY regdate ASC
 	</select>

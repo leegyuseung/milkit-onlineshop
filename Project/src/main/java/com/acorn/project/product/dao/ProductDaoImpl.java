@@ -16,12 +16,16 @@ public class ProductDaoImpl implements ProductDao{
 
 	@Override
 	public void insert(ProductDto dto) {
+		session.insert("product.insert", dto);
 	}
 
 	@Override
-	public List<ProductDto> getList(ProductDto dto) {
-		return null;
+	public List<ProductDto> getList() {
+		List<ProductDto> list=session.selectList("product.getList");
+		return list;
 	}
+	
+	
 
 	
 }

@@ -6,7 +6,7 @@ import com.acorn.project.product.dto.ProductDto;
 
 public interface ProductDao {
 		public void insert(ProductDto dto);
-		public List<ProductDto> getList(ProductDto dto);
+		public List<ProductDto> getList();
 		
 		//public ProductDto getData(String id);
 		//public void update(ProductDto dto);

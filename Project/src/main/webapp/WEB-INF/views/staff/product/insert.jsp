@@ -5,9 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>/staff/product/insert.jsp</title>
 </head>
 <body>
-
+<h1>추가 완료</h1>
+<a href="list.do">리스트 돌아가기</a>
 </body>
 </html>
