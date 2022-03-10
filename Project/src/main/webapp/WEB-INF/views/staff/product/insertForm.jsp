@@ -26,7 +26,7 @@
 		</div>
 		<div>
 			<label for="stock" class="form-label">상품 재고</label>
-			<input class="form-controll" type="text" name="price" id="stock" placeholder="재고..."/>
+			<input class="form-controll" type="text" name="stock" id="stock" placeholder="재고..."/>
 		</div>
 		<div>
 			<label for="productCate" class="form-label">카테고리</label>
