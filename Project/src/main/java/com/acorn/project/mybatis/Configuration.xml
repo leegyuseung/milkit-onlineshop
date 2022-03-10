@@ -10,5 +10,6 @@
    <!-- 필요한 Mapper xml 등록하기  -->
    <mappers>
    		<mapper resource="com/acorn/project/mybatis/ProductMapper.xml"/>
+		<mapper resource="com/acorn/project/mybatis/UsersMapper.xml"/>
    </mappers>
 </configuration>

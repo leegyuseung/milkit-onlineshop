@@ -7,6 +7,8 @@ CREATE TABLE users(
    usertype NUMBER DEFAULT 0
 );
 
+CREATE SEQUENCE users_seq;
+
 CREATE TABLE product(
 	productId VARCHAR2(100) PRIMARY KEY, /* 상품 아이디 */
 	productName VARCHAR2(200) NOT NULL, /* 상품 이름 */
