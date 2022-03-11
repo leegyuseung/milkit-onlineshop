@@ -52,7 +52,10 @@ public class UsersServiceImpl implements UsersService{
       }
       
       if(isVaild) {
-         session.setAttribute("id", dto.getId());
+          session.setAttribute("id", dto.getId());      
+          session.setAttribute("user", result);          
+
+
       }
       
    }
