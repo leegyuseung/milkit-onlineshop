@@ -1,46 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mealkit">
-<sql id="searchCondition">
-		<choose>
-			<when test="productName != null">
-				WHERE title LIKE '%'||#{productName}||'%'
-			</when>
-		</choose>
-	</sql>
-	
-	<select id="getCount" parameterType="mealkitDto" resultType="int">
-		SELECT NVL(MAX(ROWNUM), 0)
-		FROM board_cafe
-		<include refid="searchCondition"/>
-	</select>	
-
-	<select id="getList" parameterType="mealkitDto" resultType="mealkitDto">
+	<select id="allList" parameterType="mealkitDto" resultType="mealkitDto">
 		SELECT *
-		FROM 
-			(SELECT result.*, ROWNUM as rnum
+		FROM	
+			(SELECT result1.*, ROWNUM as rnum
 			FROM
-				(SELECT productId, productName, price, stock, productCate, regDate, updateDate
-				FROM product
+				(SELECT productId, productName, price, imagePath, productCate
+				FROM PRODUCT
 				ORDER BY productId DESC) result1)
 		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
-	</select>	
+	</select>
 	
-	<insert id="insert" parameterType="mealkitDto">
-		INSERT INTO product
-		(productId, productName, price, stock, productCate, regdate, updateDate)
-		VALUES(#{productId }, #{productName }, #{price }, #{stock }, #{productCate }, #{regDate }, #{update })
-	</insert>
-	
-	<select id="getData" parameterType="String" resultType="mealkitDto">
-		SELECT *
-		FROM
-			(SELECT productId, productName, price, stock, productCate, regdate, updateDate,
-				LAG(productId, 1, 0) OVER (ORDER BY productId DESC) AS prevNum,
-				LEAD(productId, 1, 0) OVER (ORDER BY productId DESC) AS nextNum
-			FROM product
-			ORDER BY productId DESC)
-		WHERE productId = #{productId}
-	
+	<select id="getCount" resultType="int">
+		SELECT NVL(MAX(ROWNUM), 0)
+		FROM PRODUCT
 	</select>
 </mapper>

@@ -1,27 +1,24 @@
 package com.acorn.project.mealkit.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.acorn.project.mealkit.service.MealkitService;
+
 @Controller
 public class MealkitController {
+	@Autowired MealkitService service;
+	
 	//밀키트홈
-	@RequestMapping("/mealkit/mealkit_home")
-	public String allList() {
+	@RequestMapping(value = "/mealkit/mealkit_home")
+	public String allList(HttpServletRequest request) {
+		
+		service.allList(request);
 		
 		return "mealkit/mealkit_home";
-	}
-	//밀키트뉴
-	@RequestMapping("/mealkit/mealkit_new")
-	public String newList() {
-		
-		return "mealkit/mealkit_new";
-	}
-	//밀키트베스트
-	@RequestMapping("/mealkit/mealkit_best")
-	public String bestList() {
-		
-		return "mealkit/mealkit_best";
 	}
 	//밀키트한국
 	@RequestMapping("/mealkit/mealkit_k")

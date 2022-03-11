@@ -1,7 +1,5 @@
 package com.acorn.project.mealkit.dao;
 
-
-
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -12,27 +10,19 @@ import com.acorn.project.mealkit.dto.MealkitDto;
 
 @Repository
 public class MealkitDaoImpl implements MealkitDao {
-
+	
 	@Autowired
 	private SqlSession session;
 	
 	@Override
-	public List<MealkitDto> getList(MealkitDto dto) {
+	public List<MealkitDto> allList(MealkitDto dto) {
 		
-		return session.selectList("Mealkit.getList", dto);
+		return session.selectList("mealkit.allList",dto);
 	}
 
 	@Override
 	public int getCount() {
-		
 		return session.selectOne("mealkit.getCount");
-	}
-
-	
-	@Override
-	public MealkitDto getData(int num) {
-		
-		return session.selectOne("mealkit.getData", num);
 	}
 
 }

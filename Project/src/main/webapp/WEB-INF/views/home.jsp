@@ -30,12 +30,14 @@
 			<ul>
 				<li>주문내역</li>
 				<li>고객센터</li>
-				<li><a href="${pageContext.request.contextPath }/cart/cartlist.do">장바구니</li>	
+				<li><a href="${pageContext.request.contextPath }/cart/cartlist.do">장바구니</a></li>	
 			</ul>
+<<<<<<< HEAD
 		<li><a href="mealkit/mealkit_home.do">밀키트 상품</a>
+=======
+		<li><a href="${pageContext.request.contextPath }/mealkit/mealkit_home.do">밀키트 상품</a>
+>>>>>>> stash
 			<ul>
-				<li><a href="${pageContext.request.contextPath}/mealkit/mealkit_new.do">New</a></li>
-				<li><a href="${pageContext.request.contextPath}/mealkit/mealkit_best.do">Best</a></li>
 				<li><a href="${pageContext.request.contextPath}/mealkit/mealkit_k.do">한식</a></li>
 				<li><a href="${pageContext.request.contextPath}/mealkit/mealkit_c.do">중식</a></li>
 				<li><a href="${pageContext.request.contextPath}/mealkit/mealkit_j.do">일식</a></li>
