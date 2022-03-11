@@ -14,6 +14,7 @@
 		<div class="mb-3">
 			<label class="control-label" for="name">이름</label>
 			<input class="form-control" type="text" name="name" id="name"/>
+			<div class="invalid-feedback">이름을 입력해주세요.</div>
 		</div>
 		<div class="mb-3">
 			<label class="control-label" for="id">아이디</label>
@@ -49,6 +50,7 @@
 	let isIdValid=false;
 	let isPwdValid=false;
 	let isEmailValid=false;
+	let isNameValid=false;
 	//아이디를 입력했을때(input) 실행할 함수 등록 
 	document.querySelector("#id").addEventListener("input", function(){
 		//일단 is-valid,  is-invalid 클래스를 제거한다.
@@ -136,6 +138,24 @@
 		}
 	});
 	
+	//이름을 입력했을때 실행할 함수 등록
+	document.querySelector("#name").addEventListener("input", function(){
+		document.querySelector("#name").classList.remove("is-valid");
+		document.querySelector("#name").classList.remove("is-invalid");
+		
+		
+		const inputName=this.value;
+		
+		
+		if(inputName != ""){
+			isNameValid=true;
+			document.querySelector("#name").classList.add("is-valid");
+		}else{
+			isNameValid=false;
+			document.querySelector("#name").classList.add("is-invalid");
+		}
+	});
+	
 	
 	//폼에 submit 이벤트가 발생했을때 실행할 함수 등록
 	document.querySelector("#myForm").addEventListener("submit", function(e){
@@ -146,7 +166,7 @@
 			가 수행 되도록 해서 폼의 제출을 막아야 한다. 
 		*/
 		//폼 전체의 유효성 여부 알아내기 
-		let isFormValid = isIdValid && isPwdValid && isEmailValid;
+		let isFormValid = isIdValid && isPwdValid && isEmailValid && isNameValid;
 		if(!isFormValid){//폼이 유효하지 않으면
 			//폼 전송 막기 
 			e.preventDefault();
