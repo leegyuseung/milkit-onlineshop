@@ -1,20 +1,11 @@
 package com.acorn.project.mealkit.service;
 
 import java.util.List;
-<<<<<<< HEAD
-import java.util.Map;
-=======
->>>>>>> stash
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
-
-import com.acorn.project.mealkit.dao.MealkitDao;
-import com.acorn.project.mealkit.dto.MealkitDto;
 
 import com.acorn.project.mealkit.dao.MealkitDao;
 import com.acorn.project.mealkit.dto.MealkitDto;
