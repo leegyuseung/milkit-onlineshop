@@ -7,7 +7,7 @@
    <typeAliases>
    	   	<typeAlias type="com.acorn.project.product.dto.ProductDto" alias="productDto"/>
    	   	<typeAlias type="com.acorn.project.users.dto.UsersDto" alias="usersDto"/>
-   	  	<typeAlias type="com.acorn.project.mealkit.dto.MealkitDto" alias="mealkitDto"/>
+   	   	<typeAlias type="com.acorn.project.mealkit.dto.MealkitDto" alias="mealkitDto"/>
    </typeAliases>
    <!-- 필요한 Mapper xml 등록하기  -->
    <mappers>
