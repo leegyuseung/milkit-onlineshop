@@ -16,45 +16,45 @@ public class InquiryDaoImpl implements InquiryDao{
 	@Override
 	public List<InquiryDto> getList(InquiryDto dto) {
 
-		return session.selectList("cafe.getList", dto);
+		return session.selectList("inquiry.getList", dto);
 	}
 
 	@Override
 	public int getCount(InquiryDto dto) {
 
-		return session.selectOne("cafe.getCount", dto);
+		return session.selectOne("inquiry.getCount", dto);
 	}
 
 	@Override
 	public void insert(InquiryDto dto) {
-		session.insert("cafe.insert", dto);
+		session.insert("inquiry.insert", dto);
 	}
 
 	@Override
 	public InquiryDto getData(int num) {
 
-		return session.selectOne("cafe.getData", num);
+		return session.selectOne("inquiry.getData", num);
 	}
 
 	@Override
 	public InquiryDto getData(InquiryDto dto) {
 
-		return session.selectOne("cafe.getData2", dto);
+		return session.selectOne("inquiry.getData2", dto);
 	}
 
 	@Override
 	public void addViewCount(int num) {
-		session.update("cafe.addViewCount", num);
+		session.update("inquiry.addViewCount", num);
 	}
 
 	@Override
 	public void delete(int num) {
-		session.delete("cafe.delete", num);
+		session.delete("inquiry.delete", num);
 	}
 
 	@Override
 	public void update(InquiryDto dto) {
-		session.update("cafe.update", dto);
+		session.update("inquiry.update", dto);
 	}
 
 }
