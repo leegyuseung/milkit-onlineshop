@@ -1,6 +1,7 @@
 package com.acorn.project.users.dto;
 
 public class UsersDto {
+	private String name;
 	private String id;
 	private String pwd;
 	private String email;
@@ -11,8 +12,10 @@ public class UsersDto {
 	
 	public UsersDto() {}
 
-	public UsersDto(String id, String pwd, String email, String address, String regdate, int usertype, String newPwd) {
+	public UsersDto(String name, String id, String pwd, String email, String address, String regdate, int usertype,
+			String newPwd) {
 		super();
+		this.name = name;
 		this.id = id;
 		this.pwd = pwd;
 		this.email = email;
@@ -20,6 +23,14 @@ public class UsersDto {
 		this.regdate = regdate;
 		this.usertype = usertype;
 		this.newPwd = newPwd;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getId() {
@@ -77,9 +88,4 @@ public class UsersDto {
 	public void setNewPwd(String newPwd) {
 		this.newPwd = newPwd;
 	}
-
-	
-
-	
-
 }

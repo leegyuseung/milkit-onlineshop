@@ -1,5 +1,7 @@
 package com.acorn.project.users.dao;
 
+import java.util.List;
+
 import com.acorn.project.users.dto.UsersDto;
 
 public interface UsersDao {
@@ -9,5 +11,6 @@ public interface UsersDao {
 	public void updatePwd(UsersDto dto);
 	public void update(UsersDto dto);
 	public void delete(String id);
+	public List<UsersDto> getList();
 
 }

@@ -14,12 +14,15 @@
 <body>
 <div class="container">
 	<h1>My Page</h1>
-	<table>
+	<table claa="table">
+		<tr>
+			<th>이름</th>
+			<td>${dto.name }</td>
+		</tr>
 		<tr>
 			<th>아이디</th>
 			<td>${id }</td>
 		</tr>
-		
 		<tr>
 			<th>비밀번호</th>
 			<td><a href="${pageContext.request.contextPath}/users/private/pwd_updateform.do">수정하기</a></td>

@@ -1,5 +1,7 @@
 package com.acorn.project.users.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -50,5 +52,11 @@ public class UsersDaoImpl implements UsersDao{
 	@Override
 	public void delete(String id) {
 		session.delete("users.delete", id);	
+	}
+
+	@Override
+	public List<UsersDto> getList() {
+		List<UsersDto> list=session.selectList("users.getList");
+		return list;
 	}
 }
