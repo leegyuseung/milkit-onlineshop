@@ -18,7 +18,7 @@
       <div class="container-fluid">
           <a class="navbar-brand" href="<%=request.getContextPath() %>/">
                <img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-               	Acorn
+               	홈페이지
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
              data-bs-target="#navbarNav">
@@ -26,24 +26,18 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
                <ul class="navbar-nav me-auto">
-                  <li class="nav-item">
-                      <a class="nav-link <%=thisPage.equals("file") ? "active" : "" %>" href="<%=request.getContextPath() %>/file/list.jsp">자료실</a>
-                 </li>
-                 <li class="nav-item">
-                      <a class="nav-link <%=thisPage.equals("cafe") ? "active" : "" %>" href="<%=request.getContextPath() %>/cafe/list.jsp">카페</a>
-                 </li>
-                 <li class="nav-item">
-                      <a class="nav-link <%=thisPage.equals("gallery") ? "active" : "" %>" href="<%=request.getContextPath() %>/gallery/list.jsp">겔러리</a>
+                  <li>
+                      <a class="nav-link <%=thisPage.equals("staff") ? "active" : "" %>" href="${pageContext.request.contextPath}/staff/home.do">관리자 페이지</a>
                  </li>
                </ul>
                <%if(id==null){ %>
-                  <a class="btn btn-outline-primary btn-sm me-2" href="${pageContext.request.contextPath}/users/signup_form.jsp">회원가입</a>
-                  <a class="btn btn-outline-success btn-sm me-2" href="${pageContext.request.contextPath}/users/loginform.jsp">로그인</a>
+                  <a class="btn btn-outline-primary btn-sm me-2" href="${pageContext.request.contextPath}/users/signup_form.do">회원가입</a>
+                  <a class="btn btn-outline-success btn-sm me-2" href="${pageContext.request.contextPath}/users/loginform.do">로그인</a>
                <%}else{ %>
                   <span class="navbar-text me-2">
-                     <a href="${pageContext.request.contextPath}/users/private/info.jsp"><%=id %></a> 로그인중...
+                     <a href="${pageContext.request.contextPath}/users/private/info.do"><%=id %></a> 로그인중...
                   </span>
-                  <a class="btn btn-outline-danger btn-sm me-2" href="${pageContext.request.contextPath}/users/logout.jsp">로그아웃</a>
+                  <a class="btn btn-outline-danger btn-sm me-2" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>
                <%} %>
           </div>
       </div>
