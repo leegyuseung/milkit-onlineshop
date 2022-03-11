@@ -9,11 +9,38 @@
 		</choose>
 	</sql>
 	
-	<select id="getCount" parameterType="com.acorn.project.mealkit.dto.MealkitDto" resultType="int">
+	<select id="getCount" parameterType="mealkitDto" resultType="int">
 		SELECT NVL(MAX(ROWNUM), 0)
 		FROM board_cafe
 		<include refid="searchCondition"/>
 	</select>	
 
-
+	<select id="getList" parameterType="mealkitDto" resultType="mealkitDto">
+		SELECT *
+		FROM 
+			(SELECT result.*, ROWNUM as rnum
+			FROM
+				(SELECT productId, productName, price, stock, productCate, regDate, updateDate
+				FROM product
+				ORDER BY productId DESC) result1)
+		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+	</select>	
+	
+	<insert id="insert" parameterType="mealkitDto">
+		INSERT INTO product
+		(productId, productName, price, stock, productCate, regdate, updateDate)
+		VALUES(#{productId }, #{productName }, #{price }, #{stock }, #{productCate }, #{regDate }, #{update })
+	</insert>
+	
+	<select id="getData" parameterType="String" resultType="mealkitDto">
+		SELECT *
+		FROM
+			(SELECT productId, productName, price, stock, productCate, regdate, updateDate,
+				LAG(productId, 1, 0) OVER (ORDER BY productId DESC) AS prevNum,
+				LEAD(productId, 1, 0) OVER (ORDER BY productId DESC) AS nextNum
+			FROM product
+			ORDER BY productId DESC)
+		WHERE productId = #{productId}
+	
+	</select>
 </mapper>
