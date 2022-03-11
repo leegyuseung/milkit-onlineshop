@@ -13,10 +13,11 @@
 	<table class="table">
 		<thead>
 		  <tr>
-		    <th scope="col">#</th>
-		    <th scope="col">First</th>
-		    <th scope="col">Last</th>
-		    <th scope="col">Handle</th>
+		    <th scope="col">.</th>
+		    <th scope="col">상품 사진</th>
+		    <th scope="col">상품명</th>
+		    <th scope="col">수량</th>
+		    <th scope="col">가격</th>
 		  </tr>
 		</thead>
 		<tbody>
