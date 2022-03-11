@@ -25,4 +25,31 @@ public class MealkitDaoImpl implements MealkitDao {
 		return session.selectOne("mealkit.getCount");
 	}
 
+	@Override
+	public List<MealkitDto> cList(MealkitDto dto) {
+		
+		return session.selectList("mealkit.cList",dto);
+	}
+
+	@Override
+	public List<MealkitDto> jList(MealkitDto dto) {
+		
+		return session.selectList("mealkit.jList",dto);
+
+	}
+
+	@Override
+	public List<MealkitDto> kList(MealkitDto dto) {
+		
+		return session.selectList("mealkit.kList",dto);
+
+	}
+
+	@Override
+	public List<MealkitDto> wList(MealkitDto dto) {
+		
+		return session.selectList("mealkit.wList",dto);
+
+	}
+
 }

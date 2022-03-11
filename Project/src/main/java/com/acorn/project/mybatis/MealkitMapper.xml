@@ -12,6 +12,54 @@
 		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
 	</select>
 	
+	<select id="cList" parameterType="mealkitDto" resultType="mealkitDto">
+		SELECT *
+		FROM	
+			(SELECT result1.*, ROWNUM as rnum
+			FROM
+				(SELECT productId, productName, price, imagePath, productCate
+				FROM PRODUCT
+				WHERE productCate = 'Chinese'
+				ORDER BY productId DESC) result1)
+		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+	</select>
+	
+	<select id="jList" parameterType="mealkitDto" resultType="mealkitDto">
+		SELECT *
+		FROM	
+			(SELECT result1.*, ROWNUM as rnum
+			FROM
+				(SELECT productId, productName, price, imagePath, productCate
+				FROM PRODUCT
+				WHERE productCate = 'Japanese'
+				ORDER BY productId DESC) result1)
+		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+	</select>
+	
+	<select id="kList" parameterType="mealkitDto" resultType="mealkitDto">
+		SELECT *
+		FROM	
+			(SELECT result1.*, ROWNUM as rnum
+			FROM
+				(SELECT productId, productName, price, imagePath, productCate
+				FROM PRODUCT
+				WHERE productCate = 'Korean'
+				ORDER BY productId DESC) result1)
+		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+	</select>
+	
+	<select id="wList" parameterType="mealkitDto" resultType="mealkitDto">
+		SELECT *
+		FROM	
+			(SELECT result1.*, ROWNUM as rnum
+			FROM
+				(SELECT productId, productName, price, imagePath, productCate
+				FROM PRODUCT
+				WHERE productCate IN('American','French','Italian')
+				ORDER BY productId DESC) result1)
+		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
+	</select>
+	
 	<select id="getCount" resultType="int">
 		SELECT NVL(MAX(ROWNUM), 0)
 		FROM PRODUCT

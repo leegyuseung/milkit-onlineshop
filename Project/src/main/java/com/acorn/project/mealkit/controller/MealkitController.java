@@ -27,21 +27,27 @@ public class MealkitController {
 		return "mealkit/mealkit_k";
 	}
 	//밀키트중국
-	@RequestMapping("/mealkit/mealkit_c")
-	public String cList() {
+	@RequestMapping(value = "/mealkit/mealkit_c")
+	public String cList(HttpServletRequest request) {
+		
+		service.cList(request);
 		
 		return "mealkit/mealkit_c";
 	}
 	//밀키트일본
 	@RequestMapping("/mealkit/mealkit_j")
-	public String jList() {
+	public String jList(HttpServletRequest request) {
 		
+		service.jList(request);
+
 		return "mealkit/mealkit_j";
 	}
 	//밀키트서양
 	@RequestMapping("/mealkit/mealkit_w")
-	public String wList() {
+	public String wList(HttpServletRequest request) {
 		
+		service.wList(request);
+
 		return "mealkit/mealkit_w";
 	}
 }
