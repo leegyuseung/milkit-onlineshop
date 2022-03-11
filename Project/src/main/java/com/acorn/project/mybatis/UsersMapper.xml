@@ -9,25 +9,25 @@
 	
 	<insert id="insert" parameterType="com.acorn.project.users.dto.UsersDto">
 		insert into users
-		(id, pwd, email, address, regdate)
-		VALUES(#{id }, #{pwd }, #{email },#{address}, SYSDATE)
+		(name, id, pwd, email, address, regdate)
+		VALUES(#{name}, #{id }, #{pwd }, #{email },#{address}, SYSDATE)
 	</insert>
 	
-	<select id="getData" parameterType="string" resultType="com.acorn.project.users.dto.UsersDto">
+	<select id="getData" parameterType="string" resultType="usersDto">
 		
-		SELECT id, pwd, email, address, regdate
+		SELECT name, id, pwd, email, address, regdate
 		FROM users
 		WHERE id=#{id }
 	</select>
 	
-	<update id="pwdUpdate" parameterType="com.acorn.project.users.dto.UsersDto">
+	<update id="pwdUpdate" parameterType="usersDto">
 		UPDATE users
 		SET pwd=#{newPwd }
 		WHERE id=#{id }
 	</update>
 	
 	
-	<update id="update" parameterType="com.acorn.project.users.dto.UsersDto">
+	<update id="update" parameterType="usersDto">
 		UPDATE users
 		SET email=#{email }, address=#{address}
 		WHERE id=#{id }
@@ -37,4 +37,10 @@
 		DELETE FROM users
 		WHERE id=#{id}
 	</delete>
+	
+	<select id="getList" resultType="usersDto">
+		SELECT name, id, email, address, regdate, usertype
+		FROM users
+		ORDER BY regdate ASC
+	</select>
 </mapper>
