@@ -5,7 +5,11 @@ import java.util.List;
 import com.acorn.project.mealkit.dto.MealkitDto;
 
 public interface MealkitDao {
-	public List<MealkitDto> getList(MealkitDto dto);
+	
+	public List<MealkitDto> allList(MealkitDto dto);
+	public List<MealkitDto> cList(MealkitDto dto);
+	public List<MealkitDto> jList(MealkitDto dto);
+	public List<MealkitDto> kList(MealkitDto dto);
+	public List<MealkitDto> wList(MealkitDto dto);
 	public int getCount();
-	public MealkitDto getData(int num);
 }
