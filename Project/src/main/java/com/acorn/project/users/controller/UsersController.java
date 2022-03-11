@@ -85,6 +85,7 @@ public class UsersController {
 	@RequestMapping("/users/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("id");
+		session.removeAttribute("user");
 		return "users/logout";
 	}
 	//아이디 중복 확인을 해서 json 문자열을 리턴해주는 메소드 
