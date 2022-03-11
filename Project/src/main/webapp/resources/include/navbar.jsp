@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+
     <%
        // thisPage 라는 파라미터명으로 전달되는 문자열을 얻어와 본다. 
        // null or "file" or "cafe"
@@ -24,21 +26,24 @@
              data-bs-target="#navbarNav">
                <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-               <ul class="navbar-nav me-auto">
-                  <li>
-                      <a class="nav-link <%=thisPage.equals("staff") ? "active" : "" %>" href="${pageContext.request.contextPath}/staff/home.do">관리자 페이지</a>
-                 </li>
-               </ul>
-               <%if(id==null){ %>
-                  <a class="btn btn-outline-primary btn-sm me-2" href="${pageContext.request.contextPath}/users/signup_form.do">회원가입</a>
-                  <a class="btn btn-outline-success btn-sm me-2" href="${pageContext.request.contextPath}/users/loginform.do">로그인</a>
-               <%}else{ %>
-                  <span class="navbar-text me-2">
-                     <a href="${pageContext.request.contextPath}/users/private/info.do"><%=id %></a> 로그인중...
-                  </span>
-                  <a class="btn btn-outline-danger btn-sm me-2" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>
-               <%} %>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav me-auto">
+                	<li>
+                    	<a class="nav-link <%=thisPage.equals("staff") ? "active" : "" %>" href="${pageContext.request.contextPath}/staff/home.do">관리자 페이지</a>
+                	</li>
+               	</ul>
+               	<c:choose>
+					<c:when test="${ empty id}">
+				 		<a class="btn btn-outline-primary btn-sm me-2" href="${pageContext.request.contextPath}/users/signup_form.do">회원가입</a>
+                  		<a class="btn btn-outline-success btn-sm me-2" href="${pageContext.request.contextPath}/users/loginform.do">로그인</a>
+					</c:when>
+				 	<c:otherwise>
+					  	<span class="navbar-text me-2">
+	                    	<a href="${pageContext.request.contextPath}/users/private/info.do">${id }</a> 로그인중...
+		                </span>
+		                <a class="btn btn-outline-danger btn-sm me-2" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>
+				 	</c:otherwise>
+				</c:choose>
           </div>
       </div>
    </nav>
