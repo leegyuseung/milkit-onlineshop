@@ -29,7 +29,9 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav me-auto">
                 	<li>
-                    	<a class="nav-link <%=thisPage.equals("staff") ? "active" : "" %>" href="${pageContext.request.contextPath}/staff/home.do">관리자 페이지</a>
+                		<c:if test="${user.usertype == 1 }">
+                			<a class="nav-link <%=thisPage.equals("staff") ? "active" : "" %>" href="${pageContext.request.contextPath}/staff/home.do">관리자 페이지</a>
+                		</c:if>
                 	</li>
                	</ul>
                	<c:choose>
