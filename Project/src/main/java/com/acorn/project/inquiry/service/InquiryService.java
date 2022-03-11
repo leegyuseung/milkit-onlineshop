@@ -17,4 +17,5 @@ public interface InquiryService {
 	public void deleteComment(HttpServletRequest request);//댓글 삭제
 	public void updateComment(InquiryCommentDto dto);//댓글 수정
 	public void moreCommentList(HttpServletRequest request);//댓글 추가 응답
+	public void getData(HttpServletRequest request); //글 수정하기 위해 정보 불러오는 기능
 }

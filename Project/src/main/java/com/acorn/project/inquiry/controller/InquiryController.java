@@ -97,4 +97,11 @@ public class InquiryController {
 
 		return "redirect:/inquiry/list.do";
 	}
+	@RequestMapping("/inquiry/private/updateform")
+	public String updateForm(HttpServletRequest request) {
+
+		service.getData(request);
+
+		return "inquiry/updateform";
+	}
 }

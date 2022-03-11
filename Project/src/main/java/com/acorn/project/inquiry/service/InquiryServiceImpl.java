@@ -309,4 +309,15 @@ public class InquiryServiceImpl implements InquiryService{
 		request.setAttribute("pageNum", pageNum); //댓글의 페이지 번호
 	}
 
+	@Override
+	public void getData(HttpServletRequest request) {
+		//수정할 글번호
+		int num=Integer.parseInt(request.getParameter("num"));
+		//수정할 글의 정보 얻어와서 
+		InquiryDto dto=inquiryDao.getData(num);
+		//request 에 담아준다.
+		request.setAttribute("dto", dto);
+		
+	}
+
 }
