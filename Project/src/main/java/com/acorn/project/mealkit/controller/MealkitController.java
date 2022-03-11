@@ -21,7 +21,7 @@ public class MealkitController {
 	@RequestMapping("/mealkit/mealkit_best")
 	public String bestList() {
 		
-		return "mealkit/mealkit_bests";
+		return "mealkit/mealkit_best";
 	}
 	//밀키트한국
 	@RequestMapping("/mealkit/mealkit_k")
