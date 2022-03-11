@@ -19,6 +19,10 @@
 			<input type="text" id="id" value="${id }" disabled/>
 		</div>
 		<div>
+			<label for="name">이름</label>
+			<input type="text" id="name" value="${dto.name }"/>
+		</div>
+		<div>
 			<label for="email">이메일</label>
 			<input type="text" name="email" id="email" value="${dto.email }"/>
 		</div>
