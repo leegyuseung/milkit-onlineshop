@@ -21,7 +21,7 @@ CREATE TABLE product(
 	buyCount NUMBER(10) /*인기 품목 선정을 위해*/
 );
 
--- 게시글을 저장할 테이블 
+-- Q&A를  저장할 테이블 
 CREATE TABLE board_inquiry(
 	num NUMBER PRIMARY KEY, --글번호
 	writer VARCHAR2(100) NOT NULL, --작성자 (로그인된 아이디)
