@@ -201,7 +201,7 @@ public class InquiryServiceImpl implements InquiryService{
 
 	@Override
 	public void updateContent(InquiryDto dto) {
-		// TODO Auto-generated method stub
+		inquiryDao.update(dto);
 
 	}
 
