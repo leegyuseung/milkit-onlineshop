@@ -32,5 +32,17 @@ public class ProductServiceImpl implements ProductService{
 	public void deleteProduct(String productId) {
 		dao.delete(productId);
 	}
+	
+	@Override
+	public void getProduct(String productId, ModelAndView mView) {
+		ProductDto dto=dao.getData(productId);
+		mView.addObject("dto", dto);
+	}
 
+	@Override
+	public void updateProduct(ProductDto dto) {
+		dao.update(dto);
+	}
+
+	
 }

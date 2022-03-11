@@ -11,6 +11,7 @@ public interface ProductService {
 	public void addProduct(ProductDto dto);
 	public void getListProduct(ModelAndView mView);
 	public void deleteProduct(String productId);
-
+	public void getProduct(String productId, ModelAndView mView);
+	public void updateProduct(ProductDto dto);
 
 }

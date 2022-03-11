@@ -42,10 +42,23 @@ public class ProductController {
 	
 	@RequestMapping("/staff/product/delete")
 	public ModelAndView delete(String productId, ModelAndView mView) {
-		
 		service.deleteProduct(productId);
-		
 		mView.setViewName("redirect:/staff/product/list.do");
 		return mView;
+	}
+	
+	//회원 수정 폼 요청 처리
+	@RequestMapping("/staff/product/updateForm")
+	public ModelAndView updateform(String productId, ModelAndView mView) {
+		service.getProduct(productId, mView);
+		mView.setViewName("staff/product/updateForm");
+		return mView;
+	}
+	
+	@RequestMapping("/staff/product/update")
+	public String update(ProductDto dto) {
+		service.updateProduct(dto);
+		return "staff/product/update";
+
 	}
 }

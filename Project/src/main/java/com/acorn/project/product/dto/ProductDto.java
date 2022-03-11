@@ -9,74 +9,104 @@ public class ProductDto {
    private String productCate; //상품 카테고리
    private String regDate;
    private String updateDate;
+   private int buyCount;
+
    
    public ProductDto() {}
 
-   public ProductDto(String productId, String productName, int price, int stock, String productCate, String regDate,
-         String updateDate) {
-      super();
-      this.productId = productId;
-      this.productName = productName;
-      this.price = price;
-      this.stock = stock;
-      this.productCate = productCate;
-      this.regDate = regDate;
-      this.updateDate = updateDate;
-   }
 
-   public String getProductId() {
-      return productId;
-   }
+public ProductDto(String productId, String productName, int price, int stock, String productCate, String regDate,
+		String updateDate, int buyCount) {
+	super();
+	this.productId = productId;
+	this.productName = productName;
+	this.price = price;
+	this.stock = stock;
+	this.productCate = productCate;
+	this.regDate = regDate;
+	this.updateDate = updateDate;
+	this.buyCount = buyCount;
+}
 
-   public void setProductId(String productId) {
-      this.productId = productId;
-   }
 
-   public String getProductName() {
-      return productName;
-   }
+public String getProductId() {
+	return productId;
+}
 
-   public void setProductName(String productName) {
-      this.productName = productName;
-   }
 
-   public int getPrice() {
-      return price;
-   }
+public void setProductId(String productId) {
+	this.productId = productId;
+}
 
-   public void setPrice(int price) {
-      this.price = price;
-   }
 
-   public int getStock() {
-      return stock;
-   }
+public String getProductName() {
+	return productName;
+}
 
-   public void setStock(int stock) {
-      this.stock = stock;
-   }
 
-   public String getProductCate() {
-      return productCate;
-   }
+public void setProductName(String productName) {
+	this.productName = productName;
+}
 
-   public void setProductCate(String productCate) {
-      this.productCate = productCate;
-   }
 
-   public String getRegDate() {
-      return regDate;
-   }
+public int getPrice() {
+	return price;
+}
 
-   public void setRegDate(String regDate) {
-      this.regDate = regDate;
-   }
 
-   public String getUpdateDate() {
-      return updateDate;
-   }
+public void setPrice(int price) {
+	this.price = price;
+}
 
-   public void setUpdateDate(String updateDate) {
-      this.updateDate = updateDate;
-   }
+
+public int getStock() {
+	return stock;
+}
+
+
+public void setStock(int stock) {
+	this.stock = stock;
+}
+
+
+public String getProductCate() {
+	return productCate;
+}
+
+
+public void setProductCate(String productCate) {
+	this.productCate = productCate;
+}
+
+
+public String getRegDate() {
+	return regDate;
+}
+
+
+public void setRegDate(String regDate) {
+	this.regDate = regDate;
+}
+
+
+public String getUpdateDate() {
+	return updateDate;
+}
+
+
+public void setUpdateDate(String updateDate) {
+	this.updateDate = updateDate;
+}
+
+
+public int getbuyCount() {
+	return buyCount;
+}
+
+
+public void setbuyCount(int buyCount) {
+	this.buyCount = buyCount;
+}
+
+   
 }

@@ -3,12 +3,12 @@
 <mapper namespace="product">
 	<insert id="insert" parameterType="productDto">
 		INSERT INTO product
-		(productId, productName, price, stock, productCate, regdate)
-		VALUES(#{productId }, #{productName }, #{price }, #{stock }, #{productCate }, SYSDATE)
+		(productId, productName, price, stock, productCate, regdate, updateDate, buyCount)
+		VALUES(#{productId }, #{productName }, #{price }, #{stock }, #{productCate }, SYSDATE, SYSDATE, #{buyCount })
 	</insert>
 	
 	<select id="getList" resultType="productDto">
-		SELECT productId, productName, price, stock, productCate, regdate
+		SELECT productId, productName, price, stock, productCate, regDate, updateDate, buyCount
 		FROM product
 		ORDER BY regdate ASC
 	</select>
@@ -18,18 +18,15 @@
 		WHERE productId=#{productId}
 	</delete>
 	
-	
-	
-	
 	<select id="getData" parameterType="string" resultType="productDto">
-		SELECT productId, productName, price, stock, productCate
+		SELECT productId, productName, price, stock, productCate, regDate, updateDate, buyCount
 		FROM product
 		WHERE productId=#{productId }
 	</select>
 	
 	<update id="update" parameterType="productDto">
 		UPDATE product
-		SET price=#{price }, stock=#{stock }
+		SET productName=#{productName }, price=#{price }, stock=#{stock }, updateDate=SYSDATE
 		WHERE productId=#{productId }
 	</update>
 </mapper>
