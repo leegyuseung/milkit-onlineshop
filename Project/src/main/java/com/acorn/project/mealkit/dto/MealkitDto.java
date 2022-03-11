@@ -12,6 +12,9 @@ public class MealkitDto {
 	private int endRowNum; 
 	private int prevNum;
 	private int nextNum;
+	
+	public MealkitDto() {}
+	
 	public MealkitDto(String productId, String productName, int price, int stock, String productCate, String regDate,
 			String updateDate, int startRowNum, int endRowNum, int prevNum, int nextNum) {
 		super();
