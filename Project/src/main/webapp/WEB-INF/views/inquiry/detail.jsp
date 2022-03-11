@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>/views/inquiry/detail.jsp</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 <style>
 	.content{
 		border: 1px dotted gray;
@@ -98,6 +98,9 @@
 </style>
 </head>
 <body>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="inquiry.detail" name="thisPage"/>
+</jsp:include>
 <div class="container">
 	<c:if test="${dto.prevNum ne 0 }">
 		<a href="detail.do?num=${dto.prevNum }&keyword=${encodedK }&condition=${condition }">이전글</a>
