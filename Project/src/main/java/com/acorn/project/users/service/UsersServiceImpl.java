@@ -1,17 +1,15 @@
 package com.acorn.project.users.service;
 
-import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.users.dao.UsersDao;
@@ -114,6 +112,12 @@ public class UsersServiceImpl implements UsersService{
 		dao.delete(id);
 		session.removeAttribute("id");
 		mView.addObject("id", id);
+	}
+
+	@Override
+	public void getList(ModelAndView mView) {
+		List<UsersDto> list=dao.getList();
+		mView.addObject("list", list);	
 	}
 
 }

@@ -1,10 +1,11 @@
 CREATE TABLE users(
-   id VARCHAR2(100) PRIMARY KEY,
-   pwd VARCHAR2(100) NOT NULL,
-   email VARCHAR2(100)NOT NULL,
-   address VARCHAR2(100), 
-   regdate DATE,
-   usertype NUMBER DEFAULT 0
+	name VARCHAR2(50) NOT NULL,
+   	id VARCHAR2(100) PRIMARY KEY,
+   	pwd VARCHAR2(100) NOT NULL,
+   	email VARCHAR2(100)NOT NULL,
+   	address VARCHAR2(100), 
+	regdate DATE,
+	usertype NUMBER(10) DEFAULT 0 NOT NULL
 );
 
 CREATE SEQUENCE users_seq;
