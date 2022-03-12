@@ -10,6 +10,7 @@
 <body>
 <div>
 	<h1>장바구니 목록입니다.</h1>
+	<a href="../home.do">홈페이지로 돌아가기</a>
 	<table class="table">
 		<thead>
 		  <tr>
