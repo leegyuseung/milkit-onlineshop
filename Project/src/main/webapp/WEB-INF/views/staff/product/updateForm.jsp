@@ -27,7 +27,7 @@
 		</div>
 		<div class="mb-3">
 			<label for="stock" class="form-label">상품 재고</label>
-			<input class="form-controll" type="text" name="price" id="stock" value="${dto.stock }"/>
+			<input class="form-controll" type="text" name="stock" id="stock" value="${dto.stock }"/>
 		</div>
 		<div class="mb-3">
 			<label for="productCate" class="form-label">카테고리</label>
@@ -36,7 +36,7 @@
 			</select>
 		</div>
 		<button class="btn btn-primary" type="submit">상품 수정</button>
-		<button class="btn btn-primary" type="reset">취소</button>
+		<button class="btn btn-primary" type="reset">리셋</button>
 		
 	</form>
 </div>

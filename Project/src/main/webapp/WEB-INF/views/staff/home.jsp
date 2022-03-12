@@ -6,24 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>/staff/home.jsp</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="staff" name="thisPage"/>
+</jsp:include>
 <div class="container">
-	<c:choose>
-		<c:when test="${ empty sessionScope.id}">
-			<a href="${pageContext.request.contextPath}/users/loginform.do">로그인</a>
-			<a href="${pageContext.request.contextPath}/users/signup_form.do">회원가입</a>
-		</c:when>
-		<c:otherwise>
-		
-			<p>
-				<a href="${pageContext.request.contextPath}/users/private/info.do">${sessionScope.id }</a> 로그인중... 
-				<a href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>
-			</p>
-		</c:otherwise>
-	</c:choose>
-	<a href="../home.do">홈페이지로 돌아가기</a>
 	<h1>관리자 페이지</h1>
 	<ul>
 		<li><a href="currentOrder.do">주문 현황</a></li>
