@@ -32,9 +32,6 @@
 			</ul>
 		</li>	
 	</ul>	
-	<c:if test="${user.usertype == 1 }">
-		<li><a href="${pageContext.request.contextPath}/staff/home.do">관리자페이지</a></li>	
-	</c:if>
 	
 	
 </div>

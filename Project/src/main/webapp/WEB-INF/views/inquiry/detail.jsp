@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>/views/inquiry/detail.jsp</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 <style>
 	.content{
 		border: 1px dotted gray;
@@ -98,6 +98,9 @@
 </style>
 </head>
 <body>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="inquiry.detail" name="thisPage"/>
+</jsp:include>
 <div class="container">
 	<c:if test="${dto.prevNum ne 0 }">
 		<a href="detail.do?num=${dto.prevNum }&keyword=${encodedK }&condition=${condition }">이전글</a>
@@ -209,15 +212,28 @@
 	</div>
 
 	<!-- 원글에 댓글을 작성할 폼 -->
-	<form class="comment-form insert-form" action="private/comment_insert.do" method="post">
-		<!-- 원글의 글번호가 댓글의 ref_group 번호가 된다. -->
-		<input type="hidden" name="ref_group" value="${dto.num }"/>
-		<!-- 원글의 작성자가 댓글의 대상자가 된다. -->
-		<input type="hidden" name="target_id" value="${dto.writer }"/>
-
-		<textarea name="content">${empty id ? '댓글 작성을 위해 로그인이 필요 합니다.' : '' }</textarea>
-		<button type="submit">등록</button>
-	</form>
+	<c:if test="${user.usertype == 1 }">	
+		<form class="comment-form insert-form" action="private/comment_insert.do" method="post">
+			<!-- 원글의 글번호가 댓글의 ref_group 번호가 된다. -->
+			<input type="hidden" name="ref_group" value="${dto.num }"/>
+			<!-- 원글의 작성자가 댓글의 대상자가 된다. -->
+			<input type="hidden" name="target_id" value="${dto.writer }"/>
+	
+			<textarea name="content">${empty id ? '댓글 작성을 위해 로그인이 필요 합니다.' : '' }</textarea>
+			<button type="submit">등록</button>
+		</form>
+	</c:if>
+	<c:if test="${dto.writer eq id }">	
+		<form class="comment-form insert-form" action="private/comment_insert.do" method="post">
+			<!-- 원글의 글번호가 댓글의 ref_group 번호가 된다. -->
+			<input type="hidden" name="ref_group" value="${dto.num }"/>
+			<!-- 원글의 작성자가 댓글의 대상자가 된다. -->
+			<input type="hidden" name="target_id" value="${dto.writer }"/>
+	
+			<textarea name="content">${empty id ? '댓글 작성을 위해 로그인이 필요 합니다.' : '' }</textarea>
+			<button type="submit">등록</button>
+		</form>
+	</c:if>
 </div>
 <script src="${pageContext.request.contextPath}/resources/js/gura_util.js"></script>
 <script>
