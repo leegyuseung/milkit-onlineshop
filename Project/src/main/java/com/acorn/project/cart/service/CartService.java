@@ -1,11 +1,10 @@
-package com.acorn.project.cart.dao;
-
+package com.acorn.project.cart.service;
 
 import java.util.List;
 
 import com.acorn.project.cart.dto.CartDto;
 
-public interface CartDao {
+public interface CartService {
 	public void insert(CartDto dto);
 	public List<CartDto> cartList(String id);
 	public void delete(int cart_id);
