@@ -8,9 +8,12 @@
 <meta charset="UTF-8">
 <title>/mealkit/detail.jsp</title>
 <%-- bootstrap --%>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" >
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="staff" name="thisPage"/>
+</jsp:include>
 <div class="container">
    <nav>
       <ul class="breadcrumb">

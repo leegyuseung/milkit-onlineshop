@@ -21,6 +21,7 @@ public class ProductController {
 	//상품 추가 요청 처리 
 	@RequestMapping("/staff/product/insert")
 	public String insert(ProductDto dto) {
+		//넘어가는 productId 설정
 		service.addProduct(dto);
 		return "staff/product/insert";
 	}
