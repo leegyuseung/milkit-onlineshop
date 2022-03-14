@@ -35,8 +35,8 @@
       <c:forEach var="tmp" items="${list }">
          <tr>
             <td>${status.index }</td>
-            <td><img class="card-img-top" src="${pageContext.request.contextPath }${tmp.imagePath}" /></td>
-            <td>${tmp.productId }</td>
+            <td><img src="${pageContext.request.contextPath }${tmp.imagePath}" /></td>
+            <td>${tmp.productName }</td>
             <td>${tmp.amount }</td>
             <td>${tmp.money }</td>
          </tr>
