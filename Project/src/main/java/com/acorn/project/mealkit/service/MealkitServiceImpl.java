@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.mealkit.dao.MealkitDao;
+import com.acorn.project.mealkit.dto.MealkitContentDto;
 import com.acorn.project.mealkit.dto.MealkitDto;
 
 @Service
@@ -284,10 +285,16 @@ public class MealkitServiceImpl implements MealkitService {
 
 	@Override
 	public void getDetail(ModelAndView mView, String productId) {
-		//dao 로 해당 게시글 num 에 해당하는 데이터(dto)를 가져온다.
+		//dao 로 해당 게시글 productId 에 해당하는 데이터(dto)를 가져온다.
 		MealkitDto dto = dao.getData(productId);
 		//ModelAndView 에 가져온 MealkitDto 를 담는다.
 		mView.addObject("dto", dto);		
+	}
+
+	@Override
+	public void saveContent(MealkitContentDto dto) {
+		dao.insert(dto);
+		
 	}
 
 }

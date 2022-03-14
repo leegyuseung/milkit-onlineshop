@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.acorn.project.mealkit.dto.MealkitContentDto;
 import com.acorn.project.mealkit.dto.MealkitDto;
 
 @Repository
@@ -56,6 +57,12 @@ public class MealkitDaoImpl implements MealkitDao {
 	public MealkitDto getData(String productId) {
 		return session.selectOne("mealkit.getData", productId);
 
+	}
+
+	@Override
+	public void insert(MealkitContentDto dto) {
+		session.insert("mealkit.insert", dto);
+		
 	}
 
 }
