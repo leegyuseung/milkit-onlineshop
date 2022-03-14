@@ -3,8 +3,8 @@
 <mapper namespace="product">
 	<insert id="insert" parameterType="productDto">
 		INSERT INTO product
-		(productId, productName, price, stock, productCate, regdate, updateDate, buyCount)
-		VALUES(#{productId }, #{productName }, #{price }, #{stock }, #{productCate }, SYSDATE, SYSDATE, #{buyCount })
+		(productId, productName, price, stock, productCate, regdate, updateDate, buyCount, imagePath)
+		VALUES(#{productId }, #{productName }, #{price }, #{stock }, #{productCate }, SYSDATE, SYSDATE, #{buyCount }, #{imagePath })
 	</insert>
 	
 	<select id="getList" resultType="productDto">

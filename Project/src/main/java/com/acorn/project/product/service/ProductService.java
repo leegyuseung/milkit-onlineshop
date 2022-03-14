@@ -8,7 +8,7 @@ import com.acorn.project.product.dto.ProductDto;
 
 
 public interface ProductService {
-	public void addProduct(ProductDto dto);
+	public void addProduct(ProductDto dto, ModelAndView mView, HttpServletRequest request);
 	public void getListProduct(ModelAndView mView);
 	public void deleteProduct(String productId);
 	public void getProduct(String productId, ModelAndView mView);

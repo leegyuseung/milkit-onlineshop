@@ -19,7 +19,7 @@
 </jsp:include>
 <div class="container">
 	<h1>상품 추가</h1>
-	<form action="insert.do" method="post">
+	<form action="insert.do" method="post" enctype="multipart/form-data">
 		<div id="produc">
 			<label for="productId" class="form-label">상품 아이디</label>
 			<input class="form-controll" type="text" name="productId" id="productId" placeholder="상품 아이디..."/>
@@ -47,6 +47,10 @@
 			 	<option value="French">French</option>
 			 	<option value="Italian">Italian</option>
 			</select>
+		</div>
+		<div>
+			<label for="myFile">이미지</label>
+			<input type="file" name="myFile" id="myFile" accept=".jpg, .jpeg, .png, .JPG, .JPEG"/>
 		</div>
 		<button class="btn btn-primary" type="submit">상품 추가</button>
 	</form>
