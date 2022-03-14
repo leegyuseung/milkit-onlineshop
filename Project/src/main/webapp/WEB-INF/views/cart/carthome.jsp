@@ -6,7 +6,9 @@
 <meta charset="UTF-8">
 <title>/cart/cartlist.jsp</title>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+<jsp:include page="../../../resources/include/cartresource.jsp"></jsp:include>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/carthome.css" />
 <script>
 $(function(){
 	// 아래쪽에서 btnlist를 호출해서 실행되는 function() 함수 구문.
@@ -28,119 +30,64 @@ $(function(){
 <jsp:include page="../../../resources/include/navbar.jsp">
 	<jsp:param value="cart" name="thisPage"/>
 </jsp:include>
-<div>
-	<h1>장바구니 목록입니다.</h1>
-	<a href="../home.do">홈페이지로 돌아가기</a>
-	<table class="table">
-		<thead>
-		  <tr>
-		    <th scope="col">번호</th>
-		    <th scope="col">상품 사진</th>
-		    <th scope="col">상품명</th>
-		    <th scope="col">수량</th>
-		    <th scope="col">가격</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-		    <th scope="row">1</th>
-		    <td>Mark</td>
-		    <td>Otto</td>
-		    <td>@mdo</td>
-		    <td></td>
-		  </tr>
-		  <tr>
-		    <th scope="row">2</th>
-		    <td>Jacob</td>
-		    <td>Thornton</td>
-		    <td>@fat</td>
-		    <td></td>
-		  </tr>
-		  <tr>
-		    <th scope="row">3</th>
-		    <td colspan="2">자장면</td>
-		    <td colspan="5">6,000원</td>
-		  </tr>
-		  <tr>
-		    <th scope="row">4</th>
-		    <td colspan="2">짬뽕</td>
-		    <td colspan="5">8,500원</td>
-		  </tr>
-		</tbody>
-	</table>
-</div>
 
-<c:choose>
-    <c:when test="${map.count == 0 }">
-    <!-- when은 ~~일때 라는 뜻 그러니까 map의 count가 0일때... -->
-    <!-- xml파일에서 hashmap에 list를 넣어놓았기 때문에 현재 map에 자료가 들어있다.  -->
-    <!-- map에 자료가 아무것도 없다면 -->
-        장바구니가 비었습니다.
-    </c:when>
-    
-    <c:otherwise>
-    <!-- map.count가 0이 아닐때, 즉 자료가 있을때 -->
-    <!-- form을 실행한다.  -->
-    <!-- form의 id를 form1로 하고, method 방식을 post로 한다. 그리고 update.do페이지로 이동시킨다. -->
-        <form id="form1" name="form1" method="post"
-        action="${path}/shop/cart/update.do">
-            <table border="1" width="400px">
-                <tr>
-                    <th>상품명</th>
-                    <th>단가</th>
-                    <th>수량</th>
-                    <th>금액</th>
-                    <th>&nbsp;</th>
-                </tr>
-                <!-- map에 있는 list출력하기 위해 forEach문을 사용해 row라는 변수에 넣는다. -->
-            <c:forEach var="row" items="${map.list}">
-                <tr align="center">
-                    <td>${row.product_name}</td>
-                    
-                    <td><fmt:formatNumber value="${row.price}"
-                            pattern="#,###,###" /></td>
-                            <!-- fmt:formatNumber 태그는 숫자를 양식에 맞춰서 문자열로 변환해주는 태그이다 -->
-                            <!-- 여기서는 금액을 표현할 때 사용 -->
-                            <!-- ex) 5,000 / 10,000 등등등-->
-                            
-                    <td><input type="number" name="amount" 
-                        style="width:30px;"
-                        value="<fmt:formatNumber value="${row.amount}"
-                            pattern="#,###,###" />">
-                    <!-- 물건의 개수 (amount)를 fmt태그를 사용해서 패턴의 형식에 맞춰서 문자열로 변환함 -->
-                    <!--1,000 / 5,000 등등~  -->
-                    
-                            <input type="hidden" name="cart_id"
-                            value="${row.cart_id}">
-                            
-                                
-                    </td>
-                    <td><fmt:formatNumber value="${row.money}"
-                            pattern="#,###,###" /></td>
-                    <td><a href=
-"${path}/shop/cart/delete.do?cart_id=${row.cart_id}">[삭제]</a>
-<!-- 삭제 버튼을 누르면 delete.do로 장바구니 개별 id (삭제하길원하는 장바구니 id)를 보내서 삭제한다. -->
-                    </td>
-                </tr>
-            </c:forEach>
-                <tr>
-                    <td colspan="5" align="right">
-                        장바구니 금액 합계 :
-                        <fmt:formatNumber value="${map.sumMoney}"
-                            pattern="#,###,###" /><br>
-                        배송료 : ${map.fee}<br>
-                        총합계 : <fmt:formatNumber value="${map.sum}"
-                            pattern="#,###,###" />
-                    </td>
-                </tr>
-            </table>
-            <button id="btnUpdate">수정</button>
-            <button type="button" id="btnDelete">장바구니 비우기</button>
-//btnUpdate와 btnDelete id는 위쪽에 있는 자바스크립트가 처리한다.
-        </form>
-    </c:otherwise>
-</c:choose>
-<button type="button" id="btnList">상품목록</button>
+<form name="orderform" id="orderform" method="post" class="orderform" action="/Order">
+    <div class="basket" id="basket">
+        <!-- "장바구니 헤더" -->
+        <div class="row head">
+            <div class="check">선택</div>
+            <div class="img">이미지</div>
+            <div class="pname">상품명</div>
+            <div class="basketprice">가격</div>
+            <div class="num">수량</div>
+            <div class="sum">합계</div>
+            <div class="basketcmd">삭제</div>
+
+        </div>
+
+        <!-- "장바구니 상품 목록" -->
+
+        <div class="row data">
+            <div class="check"><input type="checkbox" name="buy" value="260" checked="">&nbsp;</div>
+            <div class="img"><img src="./img/basket1.jpg" width="60"></div>
+            <div class="pname">
+                <span>찜마마(XJ-92214/3)</span>
+            </div>
+            
+            <div class="basketprice"><input type="hidden" name="p_price" id="p_price1" class="p_price" value="20000">20,000원</div>
+            
+            <div class="num">
+                <!-- "장바구니 수량 변경" -->
+                <div class="updown">
+                    <input type="text" name="p_num1" id="p_num1" size="2" maxlength="4" class="p_num" value="2">
+                    <span><i class="fas fa-arrow-alt-circle-up up"></i></span>
+                    <span><i class="fas fa-arrow-alt-circle-down down"></i></span>
+                </div>
+            </div>
+
+            <!-- "장바구니 상품 합계" -->
+            <div class="sum">40,000원</div>
+            <div class="basketcmd"><a href="#" class="abutton">삭제</a></div>
+        </div>
+    </div>
+
+    <!-- "장바구니 기능 버튼" -->
+    <div class="right-align basketrowcmd">
+        <a href="#" class="abutton">선택상품삭제</a>
+        <a href="#" class="abutton">장바구니비우기</a>
+    </div>
+
+    <!-- "장바구니 전체 합계 정보" -->
+    <div class="bigtext right-align sumcount" id="sum_p_num">상품갯수: 4개</div>
+    <div class="bigtext right-align box blue summoney" id="sum_p_price">합계금액: 74,200원</div>
+
+    <div id="goorder" class="">
+        <div class="clear"></div>
+        <div class="buttongroup center-align cmd">
+            <a href="#">선택한 상품 주문</a>
+        </div>
+    </div>
+</form>
 	
 </body>
 
