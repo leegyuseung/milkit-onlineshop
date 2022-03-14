@@ -39,7 +39,7 @@
 </jsp:include>
 <div class="container">
 	<a href="private/insertform.do">새글 작성</a>
-	<h1>Q&A</h1>
+	<h1 style="text-align: center">Q&A</h1>
 	<table class="table">
 		<thead>
 			<tr>
