@@ -33,6 +33,17 @@
          <p class="card-text">상품 카테고리 : ${dto.productCate}</p>
          <p class="card-text">상품명 : <strong>${dto.productName}</strong></p>
          <p>상품 가격 : <strong>${dto.price}</strong></p>
+         <form action="${pageContext.request.contextPath }/private/cart/carthome.do?${users.id}" method="post">
+         	<div>
+         		<label for="amount">수량</label>
+         		<input type="number" name="amount"  />
+         	</div>
+         		<input type="hidden" name="productName" value="${dto.productName}">
+         		<input type="hidden" name="price" value="${dto.price}">
+         		<input type="hidden" name="imagePath" value="${dto.imagePath}">
+         		
+         	<button type="submit" class="btn btn-primary">장바구니 담기</button>
+         </form>
       </div>
    </div>
    

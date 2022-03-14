@@ -20,7 +20,7 @@
 			<ul>
 				<li>주문내역</li>
 				<li>고객센터</li>
-				<li><a href="${pageContext.request.contextPath }/private/cart/carthome.do">장바구니</li>
+				<li><a href="${pageContext.request.contextPath }/private/cart/carthome.do?${users.id}">장바구니</li>
 				<li><a href="${pageContext.request.contextPath }/inquiry/list.do">Q&A</a></li>	
 			</ul>
 		<li><a href="${pageContext.request.contextPath }/mealkit/mealkit_home.do">밀키트 상품</a>
