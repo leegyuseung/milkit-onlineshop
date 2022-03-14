@@ -32,7 +32,7 @@
         </tr>
       </thead>
       <tbody>
-      <c:forEach var="tmp" items="${list }">
+      <c:forEach var="tmp" items="${list }" varStatus="status">
          <tr>
             <td>${status.index }</td>
             <td><img src="${pageContext.request.contextPath }${tmp.imagePath}" /></td>
