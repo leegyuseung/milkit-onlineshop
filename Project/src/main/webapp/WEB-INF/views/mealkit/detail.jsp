@@ -26,6 +26,7 @@
          <li class="breadcrumb-item active">상세보기</li>
       </ul>
    </nav>
+   
    <div class="card mb-3">
       <img class="card-img-top" src="${pageContext.request.contextPath}${dto.imagePath}"/>
       <div class="card-body">
@@ -34,6 +35,9 @@
          <p>상품 가격 : <strong>${dto.price}</strong></p>
       </div>
    </div>
+   
+   
+   <a href="private/insertform.do">상세 내용 작성</a>
 </div>
 </body>
 </html>

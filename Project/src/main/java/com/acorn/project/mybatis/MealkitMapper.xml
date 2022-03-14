@@ -71,4 +71,10 @@
 		WHERE productId = #{productId}			
 		ORDER BY productId DESC	
 	</select>
+	
+	<insert id="insert" parameterType="com.acorn.project.mealkit.dto.MealkitContentDto">
+		INSERT INTO content
+		(productId2, title, content, viewCount, regdate)
+		VALUES(#{productId2}, #{title}, #{content}, #{viewCount}, SYSDATE)
+	</insert>
 </mapper>
