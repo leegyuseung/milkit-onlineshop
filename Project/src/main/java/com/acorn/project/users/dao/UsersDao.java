@@ -11,6 +11,7 @@ public interface UsersDao {
 	public void updatePwd(UsersDto dto);
 	public void update(UsersDto dto);
 	public void delete(String id);
+	public void delete2(String id);
 	public List<UsersDto> getList();
 
 }

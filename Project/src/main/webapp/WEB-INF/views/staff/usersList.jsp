@@ -36,7 +36,7 @@
 					<td>${tmp.address }</td>
 					<td>${tmp.regdate }</td>
 					<td>${tmp.usertype }</td>
-					<td><a href="delete.do?id=${tmp.id }">강제 탈퇴</a></td>
+					<td><a href="delete2.do?id=${tmp.id }">강제 탈퇴</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

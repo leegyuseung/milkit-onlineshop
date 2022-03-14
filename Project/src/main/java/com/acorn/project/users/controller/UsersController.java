@@ -35,6 +35,14 @@ public class UsersController {
 		mView.setViewName("users/delete");
 		return mView;
 	}
+	
+	//회원 추방
+	@RequestMapping("/staff/delete2")
+	public ModelAndView delete2(String id, ModelAndView mView) {
+		service.deleteUser2(id);
+		mView.setViewName("redirect:/staff/usersList.do");
+		return mView;
+	}
 
 	//개인정보 수정 반영 요청 처리
 	@RequestMapping(value = "/users/private/update", method=RequestMethod.POST)
