@@ -9,7 +9,7 @@ public class ProductDto {
 	private String regDate;
 	private String updateDate;
 	private int buyCount;
-	private String ImagePath;
+	private String imagePath;
 	   
 	public ProductDto() {}
 
@@ -24,7 +24,7 @@ public class ProductDto {
 		this.regDate = regDate;
 		this.updateDate = updateDate;
 		this.buyCount = buyCount;
-		this.ImagePath = imagePath;
+		this.imagePath = imagePath;
 	}
 
 	public String getProductId() {
@@ -91,12 +91,12 @@ public class ProductDto {
 		this.buyCount = buyCount;
 	}
 
-	public String getImagePath() {
-		return ImagePath;
+	public String getimagePath() {
+		return imagePath;
 	}
 
-	public void setImagePath(String imagePath) {
-		ImagePath = imagePath;
+	public void setimagePath(String imagePath) {
+		this.imagePath = imagePath;
 	}
    
    
