@@ -24,7 +24,7 @@ public class ProductDto {
 		this.regDate = regDate;
 		this.updateDate = updateDate;
 		this.buyCount = buyCount;
-		ImagePath = imagePath;
+		this.ImagePath = imagePath;
 	}
 
 	public String getProductId() {
