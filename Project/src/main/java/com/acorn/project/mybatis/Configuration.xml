@@ -10,6 +10,8 @@
    	   	<typeAlias type="com.acorn.project.mealkit.dto.MealkitDto" alias="mealkitDto"/>
    	   	<typeAlias type="com.acorn.project.inquiry.dto.InquiryDto" alias="inquiryDto"/>
    	   	<typeAlias type="com.acorn.project.inquiry.dto.InquiryCommentDto" alias="inquiryCommentDto"/>
+   	   	<typeAlias type="com.acorn.project.cart.dto.CartDto" alias="cartDto"/>
+   	   	
 
    </typeAliases>
    <!-- 필요한 Mapper xml 등록하기  -->
@@ -19,5 +21,6 @@
 		<mapper resource="com/acorn/project/mybatis/MealkitMapper.xml"/>
 		<mapper resource="com/acorn/project/mybatis/InquiryMapper.xml"/>
 		<mapper resource="com/acorn/project/mybatis/InquiryCommentMapper.xml"/>
+		<mapper resource="com/acorn/project/mybatis/CartMapper.xml"/>
    </mappers>
 </configuration>

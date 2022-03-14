@@ -38,7 +38,7 @@
             <td><img src="${pageContext.request.contextPath }${tmp.imagePath}" /></td>
             <td>${tmp.productName }</td>
             <td>${tmp.amount }</td>
-            <td>${tmp.money }</td>
+            <td>${tmp.price }</td>
          </tr>
       </c:forEach>
    </table>
