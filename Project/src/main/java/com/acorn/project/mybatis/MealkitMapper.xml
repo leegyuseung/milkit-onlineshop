@@ -64,4 +64,11 @@
 		SELECT NVL(MAX(ROWNUM), 0)
 		FROM PRODUCT
 	</select>
+	
+	<select id="getData" parameterType="string" resultType="mealkitDto">
+		SELECT productId, productName, price, imagePath, productCate
+		FROM product
+		WHERE productId = #{productId}			
+		ORDER BY productId DESC	
+	</select>
 </mapper>

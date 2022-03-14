@@ -12,4 +12,6 @@ public interface MealkitDao {
 	public List<MealkitDto> kList(MealkitDto dto);
 	public List<MealkitDto> wList(MealkitDto dto);
 	public int getCount();
+	public MealkitDto getData(String productId);
+
 }
