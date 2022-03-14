@@ -11,5 +11,6 @@
 <body>
 <h1>추가 완료</h1>
 <a href="list.do">리스트 돌아가기</a>
+
 </body>
 </html>

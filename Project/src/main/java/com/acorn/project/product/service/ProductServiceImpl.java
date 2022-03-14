@@ -45,7 +45,7 @@ public class ProductServiceImpl implements ProductService{
 			e.printStackTrace();
 		}
 		//dto 에 업로드된 파일의 정보를 담는다.
-		dto.setImagePath(filePath+orgFileName);
+		dto.setImagePath("/upload/"+orgFileName);
 		//fileDao 를 이용해서 DB 에 저장하기
 		dao.insert(dto);
 		//view 페이지에서 사용할 모델 담기 
