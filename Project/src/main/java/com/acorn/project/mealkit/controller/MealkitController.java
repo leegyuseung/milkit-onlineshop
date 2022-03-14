@@ -5,6 +5,9 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.mealkit.service.MealkitService;
 
@@ -49,5 +52,15 @@ public class MealkitController {
 		service.wList(request);
 
 		return "mealkit/mealkit_w";
+	}
+	
+	//밀키트 디테일
+	@RequestMapping(value = "/mealkit/detail", method = RequestMethod.GET)
+	public ModelAndView detail(ModelAndView mView, @RequestParam String productId) {
+		// detail 페이지에 필요한 data를 num 으로 가져와, ModelAndView 에 저장
+		service.getDetail(mView, productId);
+		mView.setViewName("mealkit/detail");
+
+		return mView;
 	}
 }

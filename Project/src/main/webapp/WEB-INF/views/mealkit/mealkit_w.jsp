@@ -46,7 +46,7 @@
 		<c:forEach var="tmp" items="${list }">
 			<div class="col-6 col-md-4 col-lg-3">
          		<div class="card mb-3">
-            		<a href="${pageContext.request.contextPath}/mealkit/detail.do?num=${tmp.productId}">
+            		<a href="${pageContext.request.contextPath}/mealkit/detail.do?productId=${tmp.productId}">
 	               		<div class="img-wrapper">
 	                  		<img class="card-img-top" src="${pageContext.request.contextPath }${tmp.imagePath}" />
 	               		</div>
