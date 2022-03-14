@@ -21,7 +21,7 @@ CREATE TABLE product(
 	buyCount NUMBER(10) /*인기 품목 선정을 위해*/
 );
 
-<<<<<<< HEAD
+
 CREATE TABLE cart(
 	cart_id NUMBER(10) NOT NULL PRIMARY KEY, /* 카트 번호 */
 	id VARCHAR2(100) NOT NULL, /* 사용자 id */
@@ -35,7 +35,7 @@ ALTER TABLE cart ADD CONSTRAINT cart_fk_productId FOREIGN KEY (productId) REFERE
 CREATE SEQUENCE seq_cart
 INCREMENT BY 1
 START WITH 1
-=======
+
 -- Q&A를  저장할 테이블 
 CREATE TABLE board_inquiry(
 	num NUMBER PRIMARY KEY, --글번호
@@ -61,4 +61,4 @@ CREATE TABLE board_inquiry_comment(
 );
 
 CREATE SEQUENCE board_inquiry_comment_seq;
->>>>>>> refs/heads/main
+
