@@ -8,7 +8,7 @@
 		values
 		(seq_cart.nextval, #{id}, #{productId}, #{amount}, #{price})
 	</insert>
-	<select id="cartList" parameterType="cartDto" resultType="cartDto">
+	<select id="cartList" parameterType="string" resultType="cartDto">
      SELECT result1.* 
       from (select imagePath, P.productName, amount, C.price, id
       FROM product P, cart C
