@@ -1,5 +1,7 @@
 package com.acorn.project.product.dto;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class ProductDto {
 	private String productId;
 	private String productName;
@@ -10,11 +12,12 @@ public class ProductDto {
 	private String updateDate;
 	private int buyCount;
 	private String imagePath;
+	private MultipartFile myFile;
 	   
 	public ProductDto() {}
 
 	public ProductDto(String productId, String productName, int price, int stock, String productCate, String regDate,
-			String updateDate, int buyCount, String imagePath) {
+			String updateDate, int buyCount, String imagePath, MultipartFile myFile) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
@@ -25,6 +28,7 @@ public class ProductDto {
 		this.updateDate = updateDate;
 		this.buyCount = buyCount;
 		this.imagePath = imagePath;
+		this.myFile = myFile;
 	}
 
 	public String getProductId() {
@@ -91,13 +95,21 @@ public class ProductDto {
 		this.buyCount = buyCount;
 	}
 
-	public String getimagePath() {
+	public String getImagePath() {
 		return imagePath;
 	}
 
-	public void setimagePath(String imagePath) {
+	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
-   
-   
+
+	public MultipartFile getMyFile() {
+		return myFile;
+	}
+
+	public void setMyFile(MultipartFile myFile) {
+		this.myFile = myFile;
+	}
+
+	
 }

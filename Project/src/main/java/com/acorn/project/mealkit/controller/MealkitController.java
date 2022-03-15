@@ -28,8 +28,9 @@ public class MealkitController {
 	}
 	//밀키트한국
 	@RequestMapping("/mealkit/mealkit_k")
-	public String kList() {
+	public String kList(HttpServletRequest request) {
 		
+		service.kList(request);
 		return "mealkit/mealkit_k";
 	}
 	//밀키트중국
