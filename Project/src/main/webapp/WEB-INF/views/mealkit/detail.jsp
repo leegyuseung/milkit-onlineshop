@@ -43,7 +43,7 @@
          <p class="card-text">상품 카테고리 : ${dto.productCate}</p>
          <p class="card-text">상품명 : <strong>${dto.productName}</strong></p>
          <p>상품 가격 : <strong>${dto.price}</strong></p>
-         <form action="${pageContext.request.contextPath }/private/cart/insert.do?${users.id}" method="post">
+         <form action="${pageContext.request.contextPath }/cart/private/insert.do?${users.id}" method="post">
          	<div>
          		<label for="amount">수량</label>
          		<input type="number" name="amount"  />

@@ -37,7 +37,7 @@ public class CartController {
 		return "cart/carthome";
 	}*/
 	
-	@RequestMapping("/private/cart/carthome.do")
+	@RequestMapping("/cart/private/carthome.do")
 	public ModelAndView list(CartDto dto, ModelAndView mView, HttpSession session) {
 		service.cartList(dto, mView, session);
 		//view page 의 정보를 ModelAndView 객체에 담는다.
@@ -47,11 +47,11 @@ public class CartController {
 	}
 	
 	
-	@RequestMapping("/private/cart/insert.do")
+	@RequestMapping("/cart/private/insert.do")
 	public String insert(@ModelAttribute CartDto dto, HttpSession session) {
 		String id=(String)session.getAttribute("id");
 		dto.setId(id);
 		service.insert(dto);
-		return "redirect:/private/cart/carthome.do";
+		return "redirect:/cart/private/carthome.do";
 	}
 }

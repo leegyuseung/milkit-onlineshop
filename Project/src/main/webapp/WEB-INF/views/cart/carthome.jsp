@@ -25,7 +25,7 @@
 
 
 <h1>장바구니 목록입니다.</h1>
-   <a href="../home.do">홈페이지로 돌아가기</a>
+   <a href="${pageContext.request.contextPath }/home.do">홈페이지로 돌아가기</a>
    <table class="table">
       <thead>
         <tr>
@@ -40,7 +40,7 @@
       <c:forEach var="tmp" items="${list }" varStatus="status">
          <tr>
             <td>${status.index }</td>
-            <td><img src="${pageContext.request.contextPath }${tmp.imagePath}" /></td>
+            <td><img src="${pageContext.request.contextPath }" /></td>
             <td>${tmp.productId }</td>
             <td>${tmp.amount }</td>
             <td>${tmp.price }</td>
