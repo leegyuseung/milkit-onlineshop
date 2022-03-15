@@ -69,11 +69,7 @@ public class MealkitController {
 	}
 	// 상세 내용 작성
 	@RequestMapping("/mealkit/private/insertform")
-	public String insertForm(MealkitDto dto, MealkitContentDto dto2, HttpSession session) {
-		//productId를 세션에서 얻어낸다. 
-		String productId=(String)session.getAttribute("productId");
-		//MealkitContentDto 객체에 productId2도 담기
-		dto2.setProductId2(productId);
+	public String insertForm() {
 		
 		return "mealkit/insertform";
 	}
@@ -81,13 +77,9 @@ public class MealkitController {
 	
 	//상세 내용 저장 요청 처리 
 	@RequestMapping("/mealkit/private/insert")
-	public String insert(MealkitDto dto, MealkitContentDto dto2, HttpSession session) {
-		//세션에서 얻어낸다. 
-		String id=(String)session.getAttribute("productId");
-		//MealkitDto 객체에 productId2도 담기
-		dto2.setProductId2(id);
-		service.saveContent(dto2);
+	public String insert(MealkitContentDto dto2) {
 		
+		service.saveContent(dto2);
 		return "mealkit/insert";
 	}
 }

@@ -7,6 +7,16 @@
 <head>
 <meta charset="UTF-8">
 <title>/mealkit/detail.jsp</title>
+<style>
+	.card{
+		height: 250px;
+		width: 250px;
+	}
+	.card-img-top{
+		height: 250px;
+		width: 250px;
+	}
+</style>
 <%-- bootstrap --%>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
@@ -34,10 +44,11 @@
          <p class="card-text">상품명 : <strong>${dto.productName}</strong></p>
          <p>상품 가격 : <strong>${dto.price}</strong></p>
       </div>
+      <a href="private/insertform.do?productId=${param.productId}">상세 내용 작성</a>
+      
    </div>
    
    
-   <a href="private/insertform.do">상세 내용 작성</a>
 </div>
 </body>
 </html>
