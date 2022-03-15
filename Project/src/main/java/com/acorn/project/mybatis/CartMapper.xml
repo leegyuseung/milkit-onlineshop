@@ -9,7 +9,7 @@
 		(seq_cart.nextval, #{id}, #{productId}, #{amount}, #{price})
 	</insert>
 	<select id="cartList" parameterType="cartDto" resultType="cartDto">
-      SELECT imagePath, productName, amount, price
+      SELECT imagePath, P.productName, amount, price
       FROM product P, cart C
       WHERE id=#{id}
    	</select>

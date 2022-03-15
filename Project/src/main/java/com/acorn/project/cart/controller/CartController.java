@@ -28,11 +28,11 @@ public class CartController {
 		return "cart/carthome";
 	}
 	
-	@RequestMapping("/private/insert.do")
+	@RequestMapping("/private/cart/insert.do")
 	public String insert(@ModelAttribute CartDto dto, HttpSession session) {
-		
-		dto.setId(session.getId());
-		dao.insert(dto);
-		return "redirect:/cart/carthome.do";
+		String id=(String)session.getAttribute("id");
+		dto.setId(id);
+		service.insert(dto);
+		return "redirect:/private/cart/carthome.do";
 	}
 }
