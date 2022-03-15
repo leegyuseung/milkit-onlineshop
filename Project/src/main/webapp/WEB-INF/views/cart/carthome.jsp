@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,11 +37,12 @@
          <tr>
             <td>${status.index }</td>
             <td><img src="${pageContext.request.contextPath }${tmp.imagePath}" /></td>
-            <td>${tmp.productName }</td>
+            <td>${tmp.productId }</td>
             <td>${tmp.amount }</td>
             <td>${tmp.price }</td>
          </tr>
       </c:forEach>
+      </tbody>
    </table>
 </div>
 
