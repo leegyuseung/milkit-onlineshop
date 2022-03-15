@@ -24,9 +24,10 @@ CREATE TABLE product(
 
 CREATE TABLE cart(
 	cart_id NUMBER(10) NOT NULL PRIMARY KEY, /* 카트 번호 */
-	id VARCHAR2(100) NOT NULL, /* 사용자 id */
+	id VARCHAR2(100), /* 사용자 id */
 	productId VARCHAR2(100), /* 상품 id */
-	amout NUMBER default 0 /* 상품 수량 */
+	price NUMBER(10),
+	amount NUMBER default 0 /* 상품 수량 */
 )
 
 ALTER TABLE cart ADD CONSTRAINT cart_fk_id FOREIGN KEY (id) REFERENCES users(id)
@@ -62,3 +63,12 @@ CREATE TABLE board_inquiry_comment(
 
 CREATE SEQUENCE board_inquiry_comment_seq;
 
+create table orderHistory 
+	(id varchar2(100),
+	quantity NUMBER(10), 
+	productName varchar2(100), 
+	address varchar2(100), 
+	price NUMBER(10), 
+	orderDate DATE, 
+	status varchar2(100)
+);

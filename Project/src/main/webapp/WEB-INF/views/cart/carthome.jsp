@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,6 +22,7 @@
 <jsp:include page="../../../resources/include/navbar.jsp">
 	<jsp:param value="cart" name="thisPage"/>
 </jsp:include>
+
 
 <h1>장바구니 목록입니다.</h1>
    <a href="../home.do">홈페이지로 돌아가기</a>
@@ -44,6 +48,7 @@
       </c:forEach>
       </tbody>
    </table>
+
 </div>
 
 </body>
