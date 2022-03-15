@@ -77,4 +77,10 @@
 		(title, content, productId2)
 		VALUES(#{title}, #{content}, #{productId2})
 	</insert>
+	
+	<select id="getData2" parameterType="string" resultType="mealkitContentDto">
+		SELECT productId2, title, content
+		FROM content
+		where productId2 = #{productId2}
+	</select>
 </mapper>
