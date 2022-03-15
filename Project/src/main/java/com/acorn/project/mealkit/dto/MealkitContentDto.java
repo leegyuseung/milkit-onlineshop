@@ -1,37 +1,17 @@
 package com.acorn.project.mealkit.dto;
 
 public class MealkitContentDto {
-	private String productId2;
-	private String writer;
 	private String title;
 	private String content;
-	private int viewCount;
+	private String productId2;
 	
 	public MealkitContentDto() {}
 
-	public MealkitContentDto(String productId2, String writer, String title, String content, int viewCount) {
+	public MealkitContentDto(String title, String content, String productId2) {
 		super();
-		this.productId2 = productId2;
-		this.writer = writer;
 		this.title = title;
 		this.content = content;
-		this.viewCount = viewCount;
-	}
-
-	public String getProductId2() {
-		return productId2;
-	}
-
-	public void setProductId2(String productId2) {
 		this.productId2 = productId2;
-	}
-
-	public String getWriter() {
-		return writer;
-	}
-
-	public void setWriter(String writer) {
-		this.writer = writer;
 	}
 
 	public String getTitle() {
@@ -50,13 +30,13 @@ public class MealkitContentDto {
 		this.content = content;
 	}
 
-	public int getViewCount() {
-		return viewCount;
+	public String getProductId2() {
+		return productId2;
 	}
 
-	public void setViewCount(int viewCount) {
-		this.viewCount = viewCount;
+	public void setProductId2(String productId2) {
+		this.productId2 = productId2;
 	}
-	
+
 	
 }
