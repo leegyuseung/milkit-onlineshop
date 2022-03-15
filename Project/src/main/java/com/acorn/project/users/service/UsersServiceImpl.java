@@ -116,7 +116,13 @@ public class UsersServiceImpl implements UsersService{
       session.removeAttribute("id");
       mView.addObject("id", id);
    }
+   
+   @Override
+   public void deleteUser2(String id) {
+      dao.delete(id);
+   }
 
+   
    @Override
    public void getList(ModelAndView mView) {
       List<UsersDto> list=dao.getList();

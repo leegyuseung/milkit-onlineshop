@@ -20,5 +20,6 @@ public interface UsersService {
 	public void updateUserPwd(HttpSession session, UsersDto dto, ModelAndView mView);
 	public void updateUser(UsersDto dto, HttpSession session);
 	public void deleteUser(HttpSession session, ModelAndView mView);
+	public void deleteUser2(String id);
 	public void getList(ModelAndView mView);
 }
