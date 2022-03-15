@@ -9,9 +9,10 @@
 		(seq_cart.nextval, #{id}, #{productId}, #{amount}, #{price})
 	</insert>
 	<select id="cartList" parameterType="cartDto" resultType="cartDto">
-      SELECT imagePath, P.productName, amount, price
+     SELECT result1.* 
+      from (select imagePath, P.productName, amount, C.price, id
       FROM product P, cart C
-      WHERE id=#{id}
+      WHERE P.productId= C.productId) result1 where id=#{id}
    	</select>
    	 <!-- 장바구니 개별 상품 삭제 -->
    <delete id="delete" parameterType="cartDto">

@@ -17,12 +17,10 @@ public class CartController {
 	@Autowired
 	private CartService service;
 	
-	@Inject
-	CartDao dao;
 	
 	@RequestMapping("/private/cart/carthome")
 	public String cart(HttpSession session) {
-		String id=session.getId();
+		String id=(String)session.getAttribute("id");
 		service.cartList(id);
 		
 		return "cart/carthome";
