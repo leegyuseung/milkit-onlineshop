@@ -8,11 +8,11 @@
 		values
 		(seq_cart.nextval, #{id}, #{productId}, #{amount}, #{price})
 	</insert>
-	<select id="cartList" parameterType="string" resultType="cartDto">
-     SELECT result1.* 
-      from (select imagePath, P.productName, amount, C.price, id
-      FROM product P, cart C
-      WHERE P.productId= C.productId) result1 where id=#{id}
+	<select id="cartList" resultType="cartDto">
+     	SELECT cart_id, id, productId, amount, price
+		FROM cart
+		where id=#{id}
+		ORDER BY cart_id ASC
    	</select>
    	 <!-- 장바구니 개별 상품 삭제 -->
    <delete id="delete" parameterType="cartDto">

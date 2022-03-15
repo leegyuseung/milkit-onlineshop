@@ -2,9 +2,12 @@ package com.acorn.project.cart.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.cart.dao.CartDao;
 import com.acorn.project.cart.dto.CartDto;
@@ -22,8 +25,13 @@ public class CartServiceImpl implements CartService{
 	}
 	
 	@Override
-	public List<CartDto> cartList(String id){
-		return dao.cartList(id);
+	public void cartList(CartDto dto, ModelAndView mView, HttpSession session){
+	    String id=(String)session.getAttribute("id");
+	    dto.setId(id);
+	    String id2=dto.getId();
+		List<CartDto> list=dao.cartList(id2);
+		mView.addObject("list", list);
+
 	}
 	
 	@Override
