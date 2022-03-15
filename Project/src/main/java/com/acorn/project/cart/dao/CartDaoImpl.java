@@ -59,6 +59,12 @@ public class CartDaoImpl implements CartDao{
 	public void modifyCart(CartDto dto) {
 		session.update("cart.modify", dto);
 	}
+
+	@Override
+	public String getImage(String productId) {
+		return session.selectOne("cart.getImage", productId);
+		
+	}
 	
 }
 
