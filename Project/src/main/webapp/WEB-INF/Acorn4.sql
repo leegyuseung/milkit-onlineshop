@@ -62,3 +62,12 @@ CREATE TABLE board_inquiry_comment(
 
 CREATE SEQUENCE board_inquiry_comment_seq;
 
+create table orderHistory 
+	(id varchar2(100),
+	quantity NUMBER(10), 
+	productName varchar2(100), 
+	address varchar2(100), 
+	price NUMBER(10), 
+	orderDate DATE, 
+	status varchar2(100)
+);
