@@ -19,7 +19,11 @@
 <div class="container">
 	<h1>제품 상세 내용 작성하기</h1>
 	<form action="insert.do" method="post" id="insertForm">
-		<input type="hidden" id="productId2" value="${dto2.productId2 }" />
+		<input type="hidden" name="productId2" id="productId2" value="${param.productId }"  />
+		<div class="mb-3">
+			<label class="form-label" for="productId2">상품 코드</label>
+			<input class="form-control" type="text" name="productId2" id="productId2" value="${param.productId }" disabled/>
+		</div>
 		<div class="mb-3">
 			<label class="form-label" for="title">제목</label>
 			<input class="form-control" type="text" name="title" id="title"/>
