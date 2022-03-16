@@ -304,6 +304,10 @@ public class MealkitServiceImpl implements MealkitService {
 		dao.delete(productId);
 	}
 	
+	public void updateContent(MealkitContentDto dto) {
+		dao.update(dto);
+		
+	}
 	
 	
 }

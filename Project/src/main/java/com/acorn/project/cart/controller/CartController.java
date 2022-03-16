@@ -60,4 +60,13 @@ public class CartController {
 		return mView;
 	}
 
+	
+	@RequestMapping("/cart/update")
+	public ModelAndView updateForm(ModelAndView mView, int cart_id, CartDto dto) {
+		dto.setCart_id(cart_id);
+		service.updateCart(dto);
+		mView.setViewName("redirect:/cart/carthome.do");
+		return mView;
+	}
+
 }

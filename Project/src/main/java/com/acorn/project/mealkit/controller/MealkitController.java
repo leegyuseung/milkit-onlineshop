@@ -1,7 +1,6 @@
 package com.acorn.project.mealkit.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.mealkit.dto.MealkitContentDto;
-import com.acorn.project.mealkit.dto.MealkitDto;
 import com.acorn.project.mealkit.service.MealkitService;
 
 @Controller
@@ -64,9 +62,9 @@ public class MealkitController {
 		// detail 페이지에 필요한 data를 productId 으로 가져와, ModelAndView 에 저장
 		service.getDetail(mView, productId);
 		mView.setViewName("mealkit/detail");
-
 		return mView;
 	}
+	
 	// 상세 내용 작성
 	@RequestMapping("/mealkit/private/insertform")
 	public String insertForm() {
@@ -99,5 +97,22 @@ public class MealkitController {
 		return "/mealkit/delete2";
 	}
 	
+	//상세 내용 수정
+	@RequestMapping("/mealkit/private/updateform")
+	public String updateForm() {
+		
+		return "mealkit/updateform";
+	}
+	
+	//상세 내용 수정 요청 처리
+	@RequestMapping("/mealkit/private/update")
+	public ModelAndView update(MealkitContentDto dto2) {
+		ModelAndView mView = new ModelAndView();
+		mView.setViewName("mealkit/update");
+		mView.addObject("productId2", dto2.getProductId2());
+		service.updateContent(dto2);
+		return mView;
+	}
+
 }
 
