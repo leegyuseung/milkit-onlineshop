@@ -35,6 +35,7 @@ public class CartController {
 			String guestId=session.getId();
 			System.out.println(guestId);
 			dto.setId(guestId);
+			
 		}else {
 			dto.setId(id);
 		}
