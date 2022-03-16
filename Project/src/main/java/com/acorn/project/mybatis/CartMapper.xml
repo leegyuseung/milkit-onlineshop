@@ -27,5 +27,10 @@
       WHERE id=#{id }
    </delete>
    
+   <update id="updateCart" parameterType="cartDto">
+   		update cart
+   		set amount=#{amount}
+   		where cart_id=#{cart_id}
+   </update>
    
 </mapper>
