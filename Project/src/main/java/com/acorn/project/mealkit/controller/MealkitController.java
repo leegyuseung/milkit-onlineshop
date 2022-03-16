@@ -84,4 +84,20 @@ public class MealkitController {
 		service.saveContent(dto2);
 		return mView;
 	}
+	
+	//삭제 요청 
+	@RequestMapping("/mealkit/private/delete")
+	public String delete(@RequestParam String productId, HttpServletRequest request) {
+		request.setAttribute("productId", productId);
+		service.deleteContent(productId, request);
+		return "/mealkit/delete2";
+	}
+	
+	@RequestMapping("/mealkit/private/delete2")
+	public String delete2(@RequestParam String productId, HttpServletRequest request) {
+		request.getAttribute(productId);
+		return "/mealkit/delete2";
+	}
+	
 }
+
