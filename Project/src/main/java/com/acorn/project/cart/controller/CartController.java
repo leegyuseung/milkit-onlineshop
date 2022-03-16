@@ -29,9 +29,11 @@ public class CartController {
 	
 	
 	@RequestMapping("/cart/insert.do")
-	public String insert(@ModelAttribute CartDto dto, HttpSession session) {
+	public String insert(@ModelAttribute CartDto dto, HttpSession session ) {
 		String id=(String)session.getAttribute("id");
 		if(id==null) {
+			String guestId=session.getId();
+			System.out.println(guestId);
 			dto.setId("guest");
 		}else {
 			dto.setId(id);
