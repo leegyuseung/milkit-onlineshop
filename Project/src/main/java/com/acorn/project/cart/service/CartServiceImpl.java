@@ -27,7 +27,11 @@ public class CartServiceImpl implements CartService{
 	public void cartList(CartDto dto, ModelAndView mView, HttpSession session){
 		
 	    String id=(String)session.getAttribute("id");
-	    dto.setId(id);
+	    if(id==null) {
+	    	dto.setId("guest");
+	    }else {
+	    	dto.setId(id);
+	    }
 	    String id2=dto.getId();
 		List<CartDto> list=dao.cartList(id2);
 		mView.addObject("list", list);
