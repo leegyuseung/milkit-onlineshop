@@ -40,10 +40,10 @@ public class CartController {
 		return "redirect:/cart/carthome.do";
 	}
 	
-	@RequestMapping("/cart/private/delete.do")
+	@RequestMapping("/cart/delete.do")
 	public ModelAndView delete(int cart_id, ModelAndView mView) {
 		service.delete(cart_id);
-		mView.setViewName("redirect:/cart/private/carthome.do");
+		mView.setViewName("redirect:/cart/carthome.do");
 		return mView;
 	}
 }
