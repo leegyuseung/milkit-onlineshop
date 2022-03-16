@@ -63,4 +63,10 @@ public class ProductController {
 		return "staff/product/update";
 
 	}
+	 
+	@RequestMapping("/staff/orderHistory")
+	public String orderHistory() {	
+		return "staff/orderHistory";
+		
+	}
 }

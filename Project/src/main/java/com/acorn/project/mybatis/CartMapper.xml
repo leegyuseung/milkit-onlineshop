@@ -4,12 +4,12 @@
 	<!-- 장바구니에 담기 -->
 	<insert id="insert" parameterType="cartDto">
 		insert into cart
-		(cart_id, id, productId, amount, price, imagePath)
+		(cart_id, id, productId, amount, price, imagePath, totalPrice)
 		values
-		(seq_cart.nextval, #{id}, #{productId}, #{amount}, #{price}, #{imagePath})
+		(seq_cart.nextval, #{id}, #{productId}, #{amount}, #{price}, #{imagePath}, #{totalPrice})
 	</insert>
 	<select id="cartList" resultType="cartDto">
-     	SELECT cart_id, id, productId, amount, price, imagePath
+     	SELECT cart_id, id, productId, amount, price, imagePath, totalPrice
 		FROM cart
 		where id=#{id}
 		ORDER BY cart_id ASC
