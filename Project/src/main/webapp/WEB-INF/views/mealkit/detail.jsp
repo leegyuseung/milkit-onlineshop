@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,10 +54,13 @@
          	<button type="submit" class="btn btn-primary">장바구니 담기</button>
          </form>
       </div>
+      
+      <c:if test="${user.usertype eq 1 }">
       <a href="private/insertform.do?productId=${param.productId}">상세 내용 작성</a>
       <a href="private/delete.do?productId=${param.productId}">상세 내용 삭제</a>
-      <p class="card-text">${dto2.content }</p>
       <a href="private/updateform.do?productId=${param.productId}">상세 내용 수정</a>
+      </c:if>
+      <p class="card-text">${dto2.content }</p>
    </div>
    
    
