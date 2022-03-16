@@ -94,5 +94,5 @@
 		SET title=#{title}, content=#{content}
 		WHERE productId2 = #{productId2}
 	</update>
-
+	
 </mapper>

@@ -56,8 +56,9 @@
          </form>
       </div>
       <a href="private/insertform.do?productId=${param.productId}">상세 내용 작성</a>
-      <a href="private/delete.do?productId=${param.productId}">상세 내용 삭제</a>
       <p class="card-text">${dto2.content }</p>
+      
+      <a href="private/delete.do?productId=${param.productId}">상세 내용 삭제</a>
       <a href="private/updateform.do?productId=${param.productId}">상세 내용 수정</a>
    </div>
    
