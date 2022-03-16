@@ -27,5 +27,11 @@
       WHERE id=#{id }
    </delete>
    
+   <update>
+		DELETE *
+		FROM cart
+		WHERE cart_id=#{cart_id}
+   </update>
+   
    
 </mapper>

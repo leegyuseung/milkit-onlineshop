@@ -46,4 +46,10 @@ public class CartController {
 		mView.setViewName("redirect:/cart/carthome.do");
 		return mView;
 	}
+	
+	@RequestMapping("/cart/update")
+	public String updatePOST(CartDto dto) {
+		service.update(cart_id);
+		return "redirect:/cart/carthome.do";
+	}
 }
