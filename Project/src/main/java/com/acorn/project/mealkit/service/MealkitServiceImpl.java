@@ -287,8 +287,10 @@ public class MealkitServiceImpl implements MealkitService {
 	public void getDetail(ModelAndView mView, String productId) {
 		//dao 로 해당 게시글 productId 에 해당하는 데이터(dto)를 가져온다.
 		MealkitDto dto = dao.getData(productId);
+		MealkitContentDto dto2 = dao.getData2(productId);
 		//ModelAndView 에 가져온 MealkitDto 를 담는다.
 		mView.addObject("dto", dto);		
+		mView.addObject("dto2", dto2);
 	}
 
 	@Override
@@ -296,5 +298,7 @@ public class MealkitServiceImpl implements MealkitService {
 		dao.insert(dto);
 		
 	}
-
+	
+	
+	
 }
