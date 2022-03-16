@@ -84,7 +84,7 @@
 		where productId2 = #{productId2}
 	</select>
 	
-	<update id="update" prameterType="com.acorn.project.mealkit.dto.MealkitContentDto" resultType="mealkitContentDto">
+	<update id="update" parameterType="com.acorn.project.mealkit.dto.MealkitContentDto">
 		UPDATE content
 		SET title=#{title}, content=#{content}
 		WHERE productId2 = #{productId2}
