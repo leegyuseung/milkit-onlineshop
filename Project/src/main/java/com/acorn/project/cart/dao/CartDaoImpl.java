@@ -52,7 +52,7 @@ public class CartDaoImpl implements CartDao{
 	
 	@Override
 	public void updateCart(CartDto dto) {
-		
+		session.update("cart.updateCart", dto);
 	}
 	
 	@Override
