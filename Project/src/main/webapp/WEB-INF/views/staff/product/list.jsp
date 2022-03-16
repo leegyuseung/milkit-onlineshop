@@ -13,7 +13,6 @@
 	<jsp:param value="staff" name="thisPage"/>
 </jsp:include>
 <div class="container">
-	
 	<a href="../home.do">관리자 페이지로 돌아가기</a><br />
 	<a href="insertForm.do">상품 추가</a>	
 	<h1>상품 리스트</h1>

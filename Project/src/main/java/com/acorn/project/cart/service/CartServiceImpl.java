@@ -20,6 +20,9 @@ public class CartServiceImpl implements CartService{
 	
 	@Override
 	public void insert(CartDto dto) {
+
+		int totalPrice=(dto.getAmount()*dto.getPrice());		
+		dto.setTotalPrice(totalPrice);
 		dao.insert(dto);
 	}
 	
@@ -28,7 +31,7 @@ public class CartServiceImpl implements CartService{
 		
 	    String id=(String)session.getAttribute("id");
 	    if(id==null) {
-	    	dto.setId("guest");
+	    	dto.setId(session.getId());
 	    }else {
 	    	dto.setId(id);
 	    }

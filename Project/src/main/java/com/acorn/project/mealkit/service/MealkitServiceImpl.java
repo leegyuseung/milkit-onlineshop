@@ -298,7 +298,16 @@ public class MealkitServiceImpl implements MealkitService {
 		dao.insert(dto);
 		
 	}
+
+	@Override
+	public void deleteContent(String productId, HttpServletRequest request) {
+		dao.delete(productId);
+	}
 	
+	public void updateContent(MealkitContentDto dto) {
+		dao.update(dto);
+		
+	}
 	
 	
 }

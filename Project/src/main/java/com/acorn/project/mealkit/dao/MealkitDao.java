@@ -16,4 +16,7 @@ public interface MealkitDao {
 	public MealkitDto getData(String productId);
 	public void insert(MealkitContentDto dto);
 	public MealkitContentDto getData2(String productId);
+	public void delete(String productId);
+	public void update(MealkitContentDto dto);
+
 }

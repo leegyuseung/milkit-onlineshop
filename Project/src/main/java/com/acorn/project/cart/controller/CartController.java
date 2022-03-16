@@ -20,6 +20,7 @@ public class CartController {
 	
 	@RequestMapping("/cart/carthome.do")
 	public ModelAndView list(CartDto dto, ModelAndView mView, HttpSession session) {
+		
 		service.cartList(dto, mView, session);
 		//view page 의 정보를 ModelAndView 객체에 담는다.
 		mView.setViewName("cart/carthome");
@@ -27,12 +28,24 @@ public class CartController {
 		return mView;
 	}
 	
+	@RequestMapping("/staff/orderPage.do")
+	public ModelAndView Orderlist(CartDto dto, ModelAndView mView, HttpSession session) {
+		service.cartList(dto, mView, session);
+		//view page 의 정보를 ModelAndView 객체에 담는다.
+		mView.setViewName("staff/orderPage");
+		//ModelAndView 객체를 리턴해 준다.
+		return mView;
+	}
+	
 	
 	@RequestMapping("/cart/insert.do")
-	public String insert(@ModelAttribute CartDto dto, HttpSession session) {
+	public String insert(@ModelAttribute CartDto dto, HttpSession session ) {
 		String id=(String)session.getAttribute("id");
 		if(id==null) {
-			dto.setId("guest");
+			String guestId=session.getId();
+			System.out.println(guestId);
+			dto.setId(guestId);
+			
 		}else {
 			dto.setId(id);
 		}
@@ -46,10 +59,13 @@ public class CartController {
 		mView.setViewName("redirect:/cart/carthome.do");
 		return mView;
 	}
+
 	
 	@RequestMapping("/cart/update")
-	public String updatePOST(CartDto dto) {
+	public ModelAndView updateForm(ModelAndView mView, int cart_id) {
 		service.update(cart_id);
-		return "redirect:/cart/carthome.do";
+		mView.setViewName("redirect:/cart/carthome.do");
+		return mView;
 	}
+
 }

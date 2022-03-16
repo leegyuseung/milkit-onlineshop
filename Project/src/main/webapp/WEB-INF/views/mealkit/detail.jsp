@@ -43,10 +43,10 @@
          <p class="card-text">상품 카테고리 : ${dto.productCate}</p>
          <p class="card-text">상품명 : <strong>${dto.productName}</strong></p>
          <p>상품 가격 : <strong>${dto.price}</strong></p>
-         <form action="${pageContext.request.contextPath }/cart/insert.do" method="post">
+         <form action="${pageContext.request.contextPath }/cart/insert.do" method="post" >
          	<div>
-         		<label for="amount">수량</label>
-         		<input type="number" name="amount"  />
+         		<label for="amount" >수량</label>
+         		<input type="number" min="1" max="100" name="amount" />
          	</div>
          		<input type="hidden" name="productId" value="${dto.productId}">
          		<input type="hidden" name="price" value="${dto.price}">
@@ -56,10 +56,15 @@
          </form>
       </div>
       <a href="private/insertform.do?productId=${param.productId}">상세 내용 작성</a>
+      <a href="private/delete.do?productId=${param.productId}">상세 내용 삭제</a>
       <p class="card-text">${dto2.content }</p>
+      <a href="private/updateform.do?productId=${param.productId}">상세 내용 수정</a>
    </div>
    
    
 </div>
+<script>
+	
+</script>
 </body>
 </html>
