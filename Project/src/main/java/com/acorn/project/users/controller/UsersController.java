@@ -84,6 +84,7 @@ public class UsersController {
 		mView.setViewName("users/info");
 		return mView;
 	}
+	
 	@RequestMapping(value = "/users/signup_form", method = RequestMethod.GET)
 	public String signupForm() {
 		

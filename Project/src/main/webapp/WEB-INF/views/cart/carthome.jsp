@@ -13,7 +13,6 @@
 <!-- 
 	<jsp:include page="../../../resources/include/cartresource.jsp"></jsp:include>
  -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
 <!-- 
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/carthome.css" />
  -->
@@ -57,6 +56,9 @@
       </c:forEach>
       </tbody>
    </table>
+	<form action="../staff/orderPage.do">    
+   		<button class="btn btn-primary">구매하기</button>
+   	</form>
  </div>
 <script>
 	

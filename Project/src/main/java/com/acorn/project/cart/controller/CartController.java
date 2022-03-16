@@ -27,6 +27,15 @@ public class CartController {
 		return mView;
 	}
 	
+	@RequestMapping("/staff/orderPage.do")
+	public ModelAndView Orderlist(CartDto dto, ModelAndView mView, HttpSession session) {
+		service.cartList(dto, mView, session);
+		//view page 의 정보를 ModelAndView 객체에 담는다.
+		mView.setViewName("staff/orderPage");
+		//ModelAndView 객체를 리턴해 준다.
+		return mView;
+	}
+	
 	
 	@RequestMapping("/cart/insert.do")
 	public String insert(@ModelAttribute CartDto dto, HttpSession session) {
@@ -40,10 +49,11 @@ public class CartController {
 		return "redirect:/cart/carthome.do";
 	}
 	
-	@RequestMapping("/cart/private/delete.do")
+	@RequestMapping("/cart/delete.do")
 	public ModelAndView delete(int cart_id, ModelAndView mView) {
 		service.delete(cart_id);
-		mView.setViewName("redirect:/cart/private/carthome.do");
+		mView.setViewName("redirect:/cart/carthome.do");
 		return mView;
 	}
+
 }

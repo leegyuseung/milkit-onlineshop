@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>/staff/buyingPage.jsp</title>
+<title>Insert title here</title>
 </head>
 <body>
 

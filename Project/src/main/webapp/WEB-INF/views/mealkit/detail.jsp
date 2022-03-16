@@ -46,7 +46,7 @@
          <form action="${pageContext.request.contextPath }/cart/insert.do" method="post">
          	<div>
          		<label for="amount">수량</label>
-         		<input type="number" name="amount"  />
+         		<input type="number" name="amount"  value="1"/>
          	</div>
          		<input type="hidden" name="productId" value="${dto.productId}">
          		<input type="hidden" name="price" value="${dto.price}">
