@@ -67,13 +67,8 @@
 			<label for="userAddress" class="form-label">주소</label>
 			<input class="form-controll" type="text" name="userAddress" id="userAddress" value="${user.address }"/>
 		</div>
-		<div>
-			<label for="totalPrice" class="form-label">총 금액</label>
-			<input class="form-controll" type="text" name="totalPrice" id="totalPrice"/>
-		</div>
 		<button class="btn btn-primary" type="submit">주문 확정</button>
 	</form>
-
-	
+</div>
 </body>
 </html>

@@ -33,6 +33,7 @@
           <th scope="col">상품명</th>
           <th scope="col">수량</th>
           <th scope="col">가격</th>
+          <th scope="col">총 금액</th>          
           <th scope="col">삭제</th>
         </tr>
       </thead>
@@ -44,6 +45,7 @@
             <td>${tmp.productId }</td>
             <td>${tmp.amount }</td>
             <td>${tmp.price }</td>
+            <td>${tmp.totalPrice }</td>
             <td>
             	<a href="delete.do?cart_id=${tmp.cart_id }">
 	            	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">

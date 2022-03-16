@@ -6,15 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>/staff/orderComplete.jsp</title>
-<jsp:include page="../../../../resources/include/resource.jsp"></jsp:include>
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
 <body>
-<jsp:include page="../../../../resources/include/navbar.jsp">
+<jsp:include page="../../../resources/include/navbar.jsp">
 	<jsp:param value="staff" name="thisPage"/>
 </jsp:include>
 <div class="container">
 	<a href="home.do">관리자 페이지로 돌아가기</a><br />
-	<h1>상품 리스트</h1>
+	<h1>주문 내역</h1>
 	<table class="table">
 		<thead>
 			<tr>

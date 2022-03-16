@@ -20,6 +20,7 @@ public class CartController {
 	
 	@RequestMapping("/cart/carthome.do")
 	public ModelAndView list(CartDto dto, ModelAndView mView, HttpSession session) {
+		
 		service.cartList(dto, mView, session);
 		//view page 의 정보를 ModelAndView 객체에 담는다.
 		mView.setViewName("cart/carthome");
