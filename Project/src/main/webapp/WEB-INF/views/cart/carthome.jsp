@@ -23,9 +23,9 @@
 	<jsp:param value="cart" name="thisPage"/>
 </jsp:include>
 
-
+<div class="container">
 <h1>장바구니 목록입니다.</h1>
-   <a href="../home.do">홈페이지로 돌아가기</a>
+   <a href="${pageContext.request.contextPath }/home.do">홈페이지로 돌아가기</a>
    <table class="table">
       <thead>
         <tr>
@@ -52,10 +52,11 @@
       </c:forEach>
       </tbody>
    </table>
+ </div>
 <script>
 	
 </script>
-</div>
+
 
 </body>
 
