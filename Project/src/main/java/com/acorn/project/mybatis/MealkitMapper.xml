@@ -83,4 +83,10 @@
 		FROM content
 		where productId2 = #{productId2}
 	</select>
+	
+	<update id="update" prameterType="string" resultType="mealkitContentDto">
+		UPDATE content
+		SET title=#{title}, content=#{content}
+		WHERE productId2 = #{productId2}
+	</update>
 </mapper>

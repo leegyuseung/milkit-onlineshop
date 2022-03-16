@@ -298,6 +298,12 @@ public class MealkitServiceImpl implements MealkitService {
 		dao.insert(dto);
 		
 	}
+
+	@Override
+	public void updateContent(MealkitContentDto dto) {
+		dao.update(dto);
+		
+	}
 	
 	
 	
