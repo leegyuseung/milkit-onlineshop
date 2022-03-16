@@ -56,7 +56,7 @@
          </form>
       </div>
       <a href="private/insertform.do?productId=${param.productId}">상세 내용 작성</a>
-      
+      <p class="card-text">${dto2.content }</p>
    </div>
    
    
