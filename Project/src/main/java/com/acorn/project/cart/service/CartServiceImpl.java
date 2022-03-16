@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
@@ -17,7 +16,6 @@ public class CartServiceImpl implements CartService{
 	
 	@Autowired
 	private CartDao dao;
-	private SqlSession session;
 	
 	@Override
 	public void insert(CartDto dto) {
@@ -26,6 +24,7 @@ public class CartServiceImpl implements CartService{
 	
 	@Override
 	public void cartList(CartDto dto, ModelAndView mView, HttpSession session){
+		
 	    String id=(String)session.getAttribute("id");
 	    dto.setId(id);
 	    String id2=dto.getId();

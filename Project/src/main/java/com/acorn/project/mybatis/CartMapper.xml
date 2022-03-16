@@ -4,16 +4,24 @@
 	<!-- 장바구니에 담기 -->
 	<insert id="insert" parameterType="cartDto">
 		insert into cart
-		(cart_id, id, productId, amount, price)
+		(cart_id, id, productId, amount, price, imagePath)
 		values
-		(seq_cart.nextval, #{id}, #{productId}, #{amount}, #{price})
+		(seq_cart.nextval, #{id}, #{productId}, #{amount}, #{price}, #{imagePath})
 	</insert>
 	<select id="cartList" resultType="cartDto">
-     	SELECT cart_id, id, productId, amount, price
+     	SELECT cart_id, id, productId, amount, price, imagePath
 		FROM cart
 		where id=#{id}
 		ORDER BY cart_id ASC
    	</select>
+   	
+    <!-- 이미지 불러오기 -->
+   	<select id="getImage" parameterType="string"  resultType="string">
+     	SELECT imagePath
+		FROM product
+		where productId=#{productId}
+   	</select> 
+   	
    	 <!-- 장바구니 개별 상품 삭제 -->
    <delete id="delete" parameterType="cartDto">
       DELETE FROM cart
@@ -25,4 +33,6 @@
       DELETE FROM cart
       WHERE id=#{id }
    </delete>
+   
+   
 </mapper>
