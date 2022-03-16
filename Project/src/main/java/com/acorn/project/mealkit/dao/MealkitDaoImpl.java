@@ -65,4 +65,10 @@ public class MealkitDaoImpl implements MealkitDao {
 		
 	}
 
+	@Override
+	public MealkitContentDto getData2(String productId2) {
+		
+		return session.selectOne("mealkit.getData2", productId2);
+	}
+
 }
