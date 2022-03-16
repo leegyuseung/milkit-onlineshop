@@ -83,4 +83,9 @@
 		FROM content
 		where productId2 = #{productId2}
 	</select>
+	
+	<delete id="delete" parameterType="string">
+		DELETE FROM content
+		WHERE productId2 = #{productId2}
+	</delete>
 </mapper>
