@@ -12,7 +12,7 @@
    	   	<typeAlias type="com.acorn.project.inquiry.dto.InquiryCommentDto" alias="inquiryCommentDto"/>
    	   	<typeAlias type="com.acorn.project.cart.dto.CartDto" alias="cartDto"/>
    	   	<typeAlias type="com.acorn.project.order.dto.OrderDto" alias="orderDto"/>
-   	   	
+   	   	<typeAlias type="com.acorn.project.mealkit.dto.MealkitContentDto" alias="mealkitContentDto"/>   	   	
 
    </typeAliases>
    <!-- 필요한 Mapper xml 등록하기  -->

@@ -77,9 +77,11 @@ public class MealkitController {
 	
 	//상세 내용 저장 요청 처리 
 	@RequestMapping("/mealkit/private/insert")
-	public String insert(MealkitContentDto dto2) {
-		
+	public ModelAndView insert(MealkitContentDto dto2) {
+		ModelAndView mView = new ModelAndView();
+		mView.setViewName("mealkit/insert");
+		mView.addObject("productId2", dto2.getProductId2());
 		service.saveContent(dto2);
-		return "mealkit/insert";
+		return mView;
 	}
 }
