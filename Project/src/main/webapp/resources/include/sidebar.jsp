@@ -8,19 +8,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<ul class="nav flex-column">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Active</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled">Disabled</a>
-  </li>
-</ul>
+
+<div class="container">
+	<ul class="list-group">
+		<li class="list-group-item"><strong>관리자 페이지</strong></li>
+		<li class="list-group-item"><a href=orderHistory.do>주문 현황</a></li>
+	  	<li class="list-group-item"><a href="usersList.do">회원 관리</a></li>
+	  	<li class="list-group-item"><a href="product/list.do">상품 리스트</a></li>
+	</ul>
+</div>
+
 </body>
 </html>

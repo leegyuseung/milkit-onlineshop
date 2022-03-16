@@ -12,13 +12,25 @@
 <jsp:include page="../../../resources/include/navbar.jsp">
 	<jsp:param value="staff" name="thisPage"/>
 </jsp:include>
-<div class="container">
-	<h1>관리자 페이지</h1>
-	<ul>
-		<li><a href=orderHistory.do>주문 현황</a></li>
-		<li><a href="usersList.do">회원 관리</a></li>
-		<li><a href="product/list.do">상품 리스트</a></li>
-	</ul>
+
+<div class="container-fluid mt-3">
+	<div class="row">
+	    <!-- 3단길이의 첫번째 열 -->
+	    <div class="container col-md-3">
+		    <jsp:include page="../../../resources/include/sidebar.jsp"></jsp:include>
+	    </div>
+	    <!-- 9단길이의 첫번째 열 -->
+	    <div class="col-md-9">
+		    <div class="container">
+				<h1>관리자 페이지</h1>
+				<ul>
+					<li><a href=orderHistory.do>주문 현황</a></li>
+					<li><a href="usersList.do">회원 관리</a></li>
+					<li><a href="product/list.do">상품 리스트</a></li>
+				</ul>
+			</div>
+	    </div>
+	</div>
 </div>
 
 </body>
