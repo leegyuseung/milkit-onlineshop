@@ -17,4 +17,5 @@ public interface MealkitService {
 	public void wList(HttpServletRequest request);
 	public void getDetail(ModelAndView mView, String productId);
 	public void saveContent(MealkitContentDto dto);
+	public void deleteContent(String productId, HttpServletRequest request);
 }
