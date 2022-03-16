@@ -70,6 +70,10 @@ public class MealkitDaoImpl implements MealkitDao {
 		
 		return session.selectOne("mealkit.getData2", productId2);
 	}
+	
+	public void update(MealkitContentDto dto) {
+		session.update("mealkit.update", dto);
+	}
 
 	@Override
 	public void delete(String productId) {

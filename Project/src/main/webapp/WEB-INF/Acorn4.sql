@@ -72,3 +72,24 @@ create table orderHistory
 	orderDate DATE, 
 	status varchar2(100)
 );
+
+CREATE TABLE OrderResult(	
+	productId VARCHAR2(100),
+	productName VARCHAR2(300),
+	price NUMBER(30),
+	quantity NUMBER(30),
+	imagePath VARCHAR2(200),
+
+	userid VARCHAR2(50),
+	username VARCHAR2(30),
+	email VARCHAR2(100),
+	tel NUMBER(11),
+	useraddress VARCHAR2(100),
+	orderDate DATE,
+
+	orderNumber NUMBER(30),
+	totalPrice NUMBER(30),
+	billingDate DATE DEFAULT SYSDATE
+);
+
+CREATE sequence ordernumber_seq;

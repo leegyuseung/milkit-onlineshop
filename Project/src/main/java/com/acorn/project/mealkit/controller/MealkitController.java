@@ -97,5 +97,22 @@ public class MealkitController {
 		return "/mealkit/delete2";
 	}
 	
+	//상세 내용 수정
+	@RequestMapping("/mealkit/private/updateform")
+	public String updateForm() {
+		
+		return "mealkit/updateform";
+	}
+	
+	//상세 내용 수정 요청 처리
+	@RequestMapping("/mealkit/private/update")
+	public ModelAndView update(MealkitContentDto dto2) {
+		ModelAndView mView = new ModelAndView();
+		mView.setViewName("mealkit/update");
+		mView.addObject("productId2", dto2.getProductId2());
+		service.updateContent(dto2);
+		return mView;
+	}
+
 }
 

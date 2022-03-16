@@ -13,7 +13,6 @@
 <!-- 
 	<jsp:include page="../../../resources/include/cartresource.jsp"></jsp:include>
  -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
 <!-- 
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/carthome.css" />
  -->
@@ -34,6 +33,8 @@
           <th scope="col">상품명</th>
           <th scope="col">수량</th>
           <th scope="col">가격</th>
+          <th scope="col">수정</th>
+          <th scope="col">총 금액</th>          
           <th scope="col">삭제</th>
         </tr>
       </thead>
@@ -43,8 +44,11 @@
             <td>${status.count }</td>
             <td><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
             <td>${tmp.productId }</td>
-            <td>${tmp.amount }</td>
+            <td><input type="number" name="amount" value="${tmp.amount }" /></td>
             <td>${tmp.price }</td>
+
+            <td><a href="update.do?cart_id=${tmp.cart_id }">수정</a></td>
+            <td>${tmp.totalPrice }</td>
             <td>
             	<a href="delete.do?cart_id=${tmp.cart_id }">
 	            	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -57,6 +61,9 @@
       </c:forEach>
       </tbody>
    </table>
+	<form action="../staff/orderPage.do">    
+   		<button class="btn btn-primary">구매하기</button>
+   	</form>
  </div>
 <script>
 	
