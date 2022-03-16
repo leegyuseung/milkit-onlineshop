@@ -35,4 +35,10 @@ public class CartController {
 		service.insert(dto);
 		return "redirect:/cart/private/carthome.do";
 	}
+	
+	public ModelAndView delete(int cart_id, ModelAndView mView) {
+		service.delete(cart_id);
+		mView.setViewName("redirect:/cart/carthome.do");
+		return mView;
+	}
 }
