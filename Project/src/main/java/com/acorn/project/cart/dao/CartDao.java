@@ -15,4 +15,5 @@ public interface CartDao {
 	public int countCart(String id, String productId);
 	public void updateCart(CartDto dto);
 	public void modifyCart(CartDto dto);
+	public String getImage(String productId);
 }

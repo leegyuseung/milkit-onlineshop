@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.cart.dto.CartDto;
+import com.acorn.project.product.dto.ProductDto;
 
 public interface CartService {
 	public void insert(CartDto dto);

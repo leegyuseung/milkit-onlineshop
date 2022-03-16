@@ -40,8 +40,8 @@
       <tbody>
       <c:forEach var="tmp" items="${list }" varStatus="status">
          <tr>
-            <td>${tmp.cart_id }</td>
-            <td><img src="${pageContext.request.contextPath }" /></td>
+            <td>${status.count }</td>
+            <td><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
             <td>${tmp.productId }</td>
             <td>${tmp.amount }</td>
             <td>${tmp.price }</td>
