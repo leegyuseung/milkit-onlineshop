@@ -5,9 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>/staff/orderHistory.jsp</title>
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
 <body>
-
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="orderHistory" name="thisPage"/>
+</jsp:include>
 </body>
 </html>
