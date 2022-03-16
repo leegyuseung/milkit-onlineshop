@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.mealkit.dto.MealkitContentDto;
-import com.acorn.project.mealkit.dto.MealkitDto;
 
 public interface MealkitService {
 	
