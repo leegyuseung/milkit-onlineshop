@@ -13,13 +13,6 @@
 		FROM cart
 		where id=#{id}
 		ORDER BY cart_id ASC
-   	</select>
-   	
-    <!-- 이미지 불러오기 -->
-   	<select id="getImage" parameterType="string"  resultType="string">
-     	SELECT imagePath
-		FROM product
-		where productId=#{productId}
    	</select> 
    	
    	 <!-- 장바구니 개별 상품 삭제 -->
