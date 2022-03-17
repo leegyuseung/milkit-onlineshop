@@ -47,9 +47,11 @@
             <form action="update.do" method="post" id="updateForm">
             	<td><input type="number" name="newAmount" value="${tmp.amount }" id="newAmount"/>
            			<input type="hidden" name="cart_id" value="${tmp.cart_id }"/>
-           		</td>	            	
+           			<input type="hidden" name="price" value="${tmp.price}"/>
+           		</td>
+           		<td><button type="submit">수정</button><td>	            	
              </form>
-            <td><button type="submit">수정</button><td>
+            
             <td>${tmp.price }</td>
             <td>${tmp.totalPrice }</td>
             <td>

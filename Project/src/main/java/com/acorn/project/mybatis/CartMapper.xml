@@ -29,7 +29,7 @@
    
    <update id="updateCart" parameterType="cartDto">
    		update cart
-   		set amount=#{newAmount}
+   		set amount=#{newAmount}, totalPrice=#{totalPrice}
    		where cart_id=#{cart_id}
    </update>
    
