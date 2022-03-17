@@ -1,123 +1,103 @@
 package com.acorn.project.order.dto;
-
+/*
+ * orderId NUMBER(35),
+	userId varchar2(100),
+	userAddr varchar2(100),
+	userPostal varchar2(100),
+	userAddrDetail varchar2(100),
+	tel NUMBER(20),
+	amount NUMBER(20),
+	orderDate Date
+ */
 public class OrderDto {
-	private String productId;
-	private String productName;
-	private int price;
-	private int quantity;
-	private String imagePath;
+	
+	private int orderId;
 	private String userId;
-	private String userName;
-	private String email;
+	private String userAddr;
+	private String userPostal;
+	private String userArrdDetail;
 	private int tel;
-	private String userAddress;
+	private int amount;
 	private String orderDate;
-	private int orderNumber;
-	private int totalPrice;
-	private String billingDate;
-	public OrderDto(String productId, String productName, int price, int quantity, String imagePath, String userId,
-			String userName, String email, int tel, String userAddress, String orderDate, int orderNumber,
-			int totalPrice, String billingDate) {
+	
+	public OrderDto() {}
+
+	public OrderDto(int orderId, String userId, String userAddr, String userPostal, String userArrdDetail, int tel,
+			int amount, String orderDate) {
 		super();
-		this.productId = productId;
-		this.productName = productName;
-		this.price = price;
-		this.quantity = quantity;
-		this.imagePath = imagePath;
+		this.orderId = orderId;
 		this.userId = userId;
-		this.userName = userName;
-		this.email = email;
+		this.userAddr = userAddr;
+		this.userPostal = userPostal;
+		this.userArrdDetail = userArrdDetail;
 		this.tel = tel;
-		this.userAddress = userAddress;
+		this.amount = amount;
 		this.orderDate = orderDate;
-		this.orderNumber = orderNumber;
-		this.totalPrice = totalPrice;
-		this.billingDate = billingDate;
 	}
-	public String getProductId() {
-		return productId;
+
+	public int getOrderId() {
+		return orderId;
 	}
-	public void setProductId(String productId) {
-		this.productId = productId;
+
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
 	}
-	public String getProductName() {
-		return productName;
-	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-	public String getImagePath() {
-		return imagePath;
-	}
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
-	}
+
 	public String getUserId() {
 		return userId;
 	}
+
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getUserName() {
-		return userName;
+
+	public String getUserAddr() {
+		return userAddr;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+
+	public void setUserAddr(String userAddr) {
+		this.userAddr = userAddr;
 	}
-	public String getEmail() {
-		return email;
+
+	public String getUserPostal() {
+		return userPostal;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setUserPostal(String userPostal) {
+		this.userPostal = userPostal;
 	}
+
+	public String getUserArrdDetail() {
+		return userArrdDetail;
+	}
+
+	public void setUserArrdDetail(String userArrdDetail) {
+		this.userArrdDetail = userArrdDetail;
+	}
+
 	public int getTel() {
 		return tel;
 	}
+
 	public void setTel(int tel) {
 		this.tel = tel;
 	}
-	public String getUserAddress() {
-		return userAddress;
+
+	public int getAmount() {
+		return amount;
 	}
-	public void setUserAddress(String userAddress) {
-		this.userAddress = userAddress;
+
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
+
 	public String getOrderDate() {
 		return orderDate;
 	}
+
 	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
 	}
-	public int getOrderNumber() {
-		return orderNumber;
-	}
-	public void setOrderNumber(int orderNumber) {
-		this.orderNumber = orderNumber;
-	}
-	public int getTotalPrice() {
-		return totalPrice;
-	}
-	public void setTotalPrice(int totalPrice) {
-		this.totalPrice = totalPrice;
-	}
-	public String getBillingDate() {
-		return billingDate;
-	}
-	public void setBillingDate(String billingDate) {
-		this.billingDate = billingDate;
-	}
-	
 	
 }
+

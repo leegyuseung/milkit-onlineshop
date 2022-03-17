@@ -50,7 +50,7 @@
    	</table>
 	
    	<h2>주문 정보 확인</h2>
-   	<form action="orderComplete.do" method="post" enctype="multipart/form-data">
+   	<form action="orderHistory.do" method="post" enctype="multipart/form-data">
 		<div>
 			<label for="userId" class="form-label">회원 아이디</label>
 			<input class="form-controll" type="text" name="userId" id="userId" value="${user.id }" disabled/>
@@ -74,5 +74,48 @@
 		<button class="btn btn-primary" type="submit">주문 확정</button>
 	</form>
 </div>
+
+
+
+<div class="orderInfo">
+	 <form role="form" method="post" autocomplete="off">
+	    
+	  <input type="hidden" name="amount" value="${sum}" />
+	    
+	  <div class="inputArea">
+	   <label for="">수령인</label>
+	   <input type="text" name="orderRec" id="orderRec" required="required" />
+	  </div>
+	  
+	  <div class="inputArea">
+	   <label for="orderPhon">수령인 연락처</label>
+	   <input type="text" name="orderPhon" id="orderPhon" required="required" />
+	  </div>
+	  
+	  <div class="inputArea">
+	   <label for="userAddr1">우편번호</label>
+	   <input type="text" name="userAddr1" id="userAddr1" required="required" />
+	  </div>
+	  
+	  <div class="inputArea">
+	   <label for="userAddr2">1차 주소</label>
+	   <input type="text" name="userAddr2" id="userAddr2" required="required" />
+	  </div>
+	  
+	  <div class="inputArea">
+	   <label for="userAddr3">2차 주소</label>
+	   <input type="text" name="userAddr3" id="userAddr3" required="required" />
+	  </div>
+	  
+	  <div class="inputArea">
+	   <button type="submit" class="order_btn">주문</button>
+	   <button type="button" class="cancel_btn">취소</button> 
+	  </div>
+  
+	 </form> 
+</div>
+
+
+
 </body>
 </html>
