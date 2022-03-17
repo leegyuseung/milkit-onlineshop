@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@ page session="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,6 +22,9 @@
 	width: 200px;
 }		
 </style>
+<script src="jquery/jquery.js"></script>
+<script type="text/javascript" src='../resources/js/bootstrap.min.js'></script>
+<link rel="stylesheet" href="../resources/css/bootstrap.css" />
 <!-- Favicon-->
 <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <!-- Bootstrap icons-->
@@ -29,49 +33,9 @@
 <link href="${pageContext.request.contextPath }/resources/css/styles.css" rel="stylesheet" />
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    	<div class="container px-4 px-lg-5">
-        	<a class="navbar-brand" href="/project/">	Daily Mealkit</a>
-          	<button class="navbar-toggler" data-bs-toggle="collapse" type="button" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-		  		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		  		        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="/project/home.do">Home</a></li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mealkit</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/project/mealkit/mealkit_home.do">전체</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="/project/mealkit/mealkit_k.do">한식</a></li>
-                                <li><a class="dropdown-item" href="/project/mealkit/mealkit_c.do">중식</a></li>
-                                <li><a class="dropdown-item" href="/project/mealkit/mealkit_j.do">일식</a></li>
-                                <li><a class="dropdown-item" href="/project/mealkit/mealkit_w.do">양식</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-            	<ul class="navbar-nav justify-content-end">
-               	
-					
-				 		<a class="nav-link active" aria-current="page" href="/project/users/signup_form.do">Sign up</a>
-                  		<a class="nav-link active" aria-current="page" href="/project/users/loginform.do">Login</a>
-					
-				 	
-            	
-            	         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="/project/users/private/info.do" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mypage</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">주문내역</a></li>
-                                <li><a class="dropdown-item" href="#!">고객센터</a></li>
-                                <li><a class="dropdown-item" href="/project/inquiry/list.do">Q & A</a></li>
-                                
-                            </ul>
-                        </li>
-                      <a class="nav-link active" aria-current="page" href="/project/cart/carthome.do"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
-  						<path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-					</svg></a>			
-					</ul>
-            	</div>    	
-        </div>
-    </nav>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="staff" name="thisPage"/>
+</jsp:include>
         <!-- Product section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
@@ -106,7 +70,7 @@
                       
                         <div class="d-flex">
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                            <button class="btn btn-primary" type="submit" >
+                            <button type="submit" class="btn btn-primary">
                                 <i class="bi-cart-fill me-1"></i>
                                 Add to cart
                             </button>
