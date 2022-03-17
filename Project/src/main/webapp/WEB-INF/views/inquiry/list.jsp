@@ -121,6 +121,10 @@
 		</p>
 	</c:if>
 </div>
+<br />
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </body>
 </html>
 
