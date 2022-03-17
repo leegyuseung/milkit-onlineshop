@@ -11,6 +11,17 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>/mealkit/detail.jsp</title>
+        <style>
+        	
+			.card{
+				height: 250px;
+				width: 250px;
+			}
+			.card-img-top{
+				height: 300px;
+				width: 200px;
+			}		
+		</style>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
@@ -22,22 +33,21 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Daily Mealkit</a>
+                <a class="navbar-brand" href="../home.do">Daily Mealkit</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="../home.do">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mealkit</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#!">All Products</a></li>
+                                <li><a class="dropdown-item" href="../mealkit/mealkit_home.do">전체</a></li>
                                 <li><hr class="dropdown-divider" /></li>
                                 <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="../mealkit/mealkit_k.do">KOREAN</a></li>
-                                <li><a class="dropdown-item" href="../mealkit/mealkit_c.do">Chinese</a></li>
-                                <li><a class="dropdown-item" href="../mealkit/mealkit_j.do">Japanese</a></li>
-                                <li><a class="dropdown-item" href="../mealkit/mealkit_w.do">Yankie</a></li>
+                                <li><a class="dropdown-item" href="../mealkit/mealkit_k.do">한식</a></li>
+                                <li><a class="dropdown-item" href="../mealkit/mealkit_c.do">중식</a></li>
+                                <li><a class="dropdown-item" href="../mealkit/mealkit_j.do">일본</a></li>
+                                <li><a class="dropdown-item" href="../mealkit/mealkit_w.do">양식</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -55,12 +65,12 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0">
-                    	<a href="${pageContext.request.contextPath}/mealkit/detail.do?productId=${dto.productId}">
-	               		<div class="img-wrapper">
-	                  		<img class="card-img-top" src="${pageContext.request.contextPath }${dto.imagePath}" />
+                    <div class="col-md-6">
+	               		<div class="img-wrapper" style="text-align:center;">
+	               			<a href="${pageContext.request.contextPath}/mealkit/detail.do?productId=${dto.productId}">
+	                  			<img src="${pageContext.request.contextPath }${dto.imagePath}" />
+	                  		</a>
 	               		</div>
-            		</a>
                     </div>
                     <div class="col-md-6">
                         <div class="small mb-1">${dto.productCate}</div>
@@ -85,7 +95,7 @@
                       
                         <div class="d-flex">
                             <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                            <button class="btn btn-primary" type="submit">
+                            <button class="btn btn-primary" type="submit" >
                                 <i class="bi-cart-fill me-1"></i>
                                 Add to cart
                             </button>
@@ -144,7 +154,7 @@
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto">Add to cart</a></div>
                             </div>
                         </div>
                     </div>
@@ -201,92 +211,12 @@
             </div>
         </section>
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
-        </footer>
+        <jsp:include page="../../../resources/include/footer.jsp">
+			<jsp:param value="mealkit.home" name="thisPage"/>
+		</jsp:include>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="${pageContext.request.contextPath }/resources/js/scripts.js"></script>
     </body>
 </html>
-    
-=======
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>/mealkit/detail.jsp</title>
-<style>
-	.card{
-		height: 250px;
-		width: 250px;
-	}
-	.card-img-top{
-		height: 250px;
-		width: 250px;
-	}
-</style>
-<%-- bootstrap --%>
-<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
-</head>
-<body>
-<jsp:include page="../../../resources/include/navbar.jsp">
-	<jsp:param value="staff" name="thisPage"/>
-</jsp:include>
-<div class="container">
-   <nav>
-      <ul class="breadcrumb">
-         <li class="breadcrumb-item">
-            <a href="${pageContext.request.contextPath }/">Home</a>
-         </li>
-         <li class="breadcrumb-item">
-            <a href="${pageContext.request.contextPath }/mealkit/mealkit_home.do">목록</a>
-         </li>
-         <li class="breadcrumb-item active">상세보기</li>
-      </ul>
-   </nav>
-   
-   <div class="card mb-3">
-      <img class="card-img-top" src="${pageContext.request.contextPath}${dto.imagePath}"/>
-      <div class="card-body">
-         <p class="card-text">상품 카테고리 : ${dto.productCate}</p>
-         <p class="card-text">상품명 : <strong>${dto.productName}</strong></p>
-         <p>상품 가격 : <strong>${dto.price}</strong></p>
-         <form action="${pageContext.request.contextPath }/cart/insert.do" method="post" >
-         	<div>
-         		<label for="amount" >수량</label>
-         		<input type="number" min="1" max="100" name="amount" value="1"/>
-         	</div>
-         		<input type="hidden" name="productId" value="${dto.productId}">
-         		<input type="hidden" name="price" value="${dto.price}">
-         		<input type="hidden" name="imagePath" value="${dto.imagePath}">
-         		
-         	<button type="submit" class="btn btn-primary">장바구니 담기</button>
-         </form>
-      </div>
-      
-      <c:if test="${user.usertype eq 1 }">
-      	<c:choose>
-      	<c:when test="${empty dto2.content }">
-      	<a href="private/insertform.do?productId=${param.productId}">상세 내용 작성</a>
-      	</c:when>
-      	<c:otherwise>
-      	<a href="private/delete.do?productId=${param.productId}">상세 내용 삭제</a>
-      	<a href="private/updateform.do?productId=${param.productId}">상세 내용 수정</a>
-      	</c:otherwise>
-      	</c:choose>
-      	</c:if>
-      <p class="card-text">${dto2.content }</p>
-   </div>
-</div>
-<br />
-<br />
-
-<jsp:include page="../../../resources/include/footer.jsp">
-	<jsp:param value="home" name="thisPage"/>
-</jsp:include>
-
-</body>
-</html>
->>>>>>> refs/heads/main

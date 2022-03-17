@@ -7,14 +7,7 @@
 <meta charset="UTF-8">
 <title>/mealkit/detail.jsp</title>
 <style>
-	.card{
-		height: 250px;
-		width: 250px;
-	}
-	.card-img-top{
-		height: 250px;
-		width: 250px;
-	}
+
 </style>
 <%-- bootstrap --%>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
