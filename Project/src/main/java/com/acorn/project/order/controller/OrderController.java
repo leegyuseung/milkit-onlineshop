@@ -52,7 +52,7 @@ public class OrderController {
 		
 		service2.orderInfo(dto, session);
 		
-		
+		//여기dto에는 orderId가 추가되지 않았음
 		
 		
 		service2.orderInfo_Detail(dto, dtoDetail, session);

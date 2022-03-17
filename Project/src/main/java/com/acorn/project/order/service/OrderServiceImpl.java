@@ -28,12 +28,12 @@ public class OrderServiceImpl implements OrderService{
 		//세션 아이디 불러오기
 		String id=(String)session.getAttribute("id");
 		dtoDetail.setUserId(id);
-
-		//orderDto의 orderId랑 orderDetailDto의 orderId랑 연동하기
-		int orderId=dto.getOrderId();
-		dtoDetail.setOrderId(orderId);
-		System.out.println(dtoDetail.getOrderId());//0 나옴....
 		
+		orderInfo(dto,session);
+		
+		int orderId=dao.getOrderId();
+		System.out.println(dao.getOrderId());
+		dtoDetail.setOrderId(orderId);
 		
 		dao.orderInfo_Detail(dtoDetail);
 		

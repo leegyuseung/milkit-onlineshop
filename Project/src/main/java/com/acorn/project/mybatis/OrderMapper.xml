@@ -12,6 +12,9 @@
 		(orderId_detail, orderId, productId, amount_detail, userId)
 		(SELECT orderId_detail_seq.nextval, #{orderId}, productId, amount, #{userId} FROM cart WHERE id=#{userId})
 	</insert>
+	<select id="getOrderId" resultType="int">
+		select max(orderId) as orderId from ordertable
+	</select>
 </mapper>
 
 
