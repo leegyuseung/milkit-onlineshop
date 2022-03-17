@@ -44,10 +44,13 @@
             <td>${status.count }</td>
             <td><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
             <td>${tmp.productId }</td>
-            <td><input type="number" name="amount" value="${tmp.amount }" /></td>
-            <td>${tmp.price }</td>
-
-            <td><a href="update.do?cart_id=${tmp.cart_id }">수정</a></td>
+            <form action="update.do" method="post">
+            	<td><input type="number" name="amount" value="${tmp.amount }" /></td>
+           
+            	<td>${tmp.price }</td>
+			
+           		<td><a href="update.do?cart_id=${tmp.cart_id }" type="submit">수정</a></td>
+             </form>
             <td>${tmp.totalPrice }</td>
             <td>
             	<a href="delete.do?cart_id=${tmp.cart_id }">

@@ -68,7 +68,7 @@ public class CartServiceImpl implements CartService{
 	
 	@Override
 	public void updateCart(CartDto dto) {
-		
+		dao.updateCart(dto);
 	}
 	
 	@Override
