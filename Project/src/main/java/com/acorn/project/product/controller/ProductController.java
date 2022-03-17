@@ -64,9 +64,4 @@ public class ProductController {
 
 	}
 	 
-	@RequestMapping("/staff/orderHistory")
-	public String orderHistory() {	
-		return "staff/orderHistory";
-		
-	}
 }
