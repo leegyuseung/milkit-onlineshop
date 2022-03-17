@@ -53,9 +53,10 @@ public class OrderController {
 		service2.orderInfo(dto, session);
 		
 		int orderId=dto.getOrderId();
+		System.out.println(orderId);
+		
 		dtoDetail.setOrderId(orderId);
 		service2.orderInfo_Detail(dtoDetail);
-		
 		
 		
 		return "staff/orderHistory";

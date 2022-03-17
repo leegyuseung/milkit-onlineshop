@@ -3,16 +3,14 @@
 <mapper namespace="order">
 	<insert id="getInfo" parameterType="orderDto">
 		INSERT INTO ordertable
-		(orderId, userId, userAddr, userPostal, userAddrDetail, tel, amount, orderDate)
-	 	values(orderId_seq.nextval, #{userId}, #{userAddr}, #{userPostal}, #{userAddrDetail}, #{tel}, #{amount}, #{orderDate})
+		(orderId, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate)
+	 	values(orderId_seq.nextval, #{userId}, #{userAddr}, #{userPostal}, #{userAddrDetail}, #{tel}, #{totalPrice}, SYSDATE)
 	</insert>
 	
-	<insert id="getInfo_Detail" parameterType="com.acorn.project.order.dto.OrderDetailDto">
+	<insert id="getInfo_Detail" parameterType="cartDto" >
 		INSERT INTO ordertable_detail
 		(orderId_detail, orderId, productId, amount_detail)
-		SELECT orderId_detail_seq.nextval, #{orderId}, productId, amount
-	    FROM cart   
-	 	WHERE id=#{id}
+		(SELECT orderId_detail_seq.nextval, #{orderId}, productId, amount FROM cart WHERE id='rlagmlcks')
 	</insert>
 </mapper>
 

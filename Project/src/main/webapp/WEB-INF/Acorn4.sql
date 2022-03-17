@@ -101,7 +101,7 @@ CREATE TABLE ordertable(
 	userPostal varchar2(100),
 	userAddrDetail varchar2(100),
 	tel NUMBER(20),
-	amount NUMBER(20),
+	totalPrice NUMBER(20),
 	orderDate Date
 );
 

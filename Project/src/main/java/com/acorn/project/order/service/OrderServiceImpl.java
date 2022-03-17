@@ -19,13 +19,14 @@ public class OrderServiceImpl implements OrderService{
 	public void orderInfo(OrderDto dto, HttpSession session) {
 		String id=(String)session.getAttribute("id");
 		dto.setUserId(id);
-		
+		System.out.println(dto.getUserId());
 		dao.orderInfo(dto);
 		
 	}
 
 	@Override
 	public void orderInfo_Detail(OrderDetailDto dtoDetail) {
+		
 		dao.orderInfo_Detail(dtoDetail);
 		
 	}

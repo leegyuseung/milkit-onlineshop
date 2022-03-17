@@ -6,7 +6,7 @@ package com.acorn.project.order.dto;
 	userPostal varchar2(100),
 	userAddrDetail varchar2(100),
 	tel NUMBER(20),
-	amount NUMBER(20),
+	totalPrice NUMBER(20),
 	orderDate Date
  */
 public class OrderDto {
@@ -15,23 +15,23 @@ public class OrderDto {
 	private String userId;
 	private String userAddr;
 	private String userPostal;
-	private String userArrdDetail;
+	private String userAddrDetail;
 	private int tel;
-	private int amount;
+	private int totalPrice;
 	private String orderDate;
 	
 	public OrderDto() {}
 
-	public OrderDto(int orderId, String userId, String userAddr, String userPostal, String userArrdDetail, int tel,
-			int amount, String orderDate) {
+	public OrderDto(int orderId, String userId, String userAddr, String userPostal, String userAddrDetail, int tel,
+			int totalPrice, String orderDate) {
 		super();
 		this.orderId = orderId;
 		this.userId = userId;
 		this.userAddr = userAddr;
 		this.userPostal = userPostal;
-		this.userArrdDetail = userArrdDetail;
+		this.userAddrDetail = userAddrDetail;
 		this.tel = tel;
-		this.amount = amount;
+		this.totalPrice = totalPrice;
 		this.orderDate = orderDate;
 	}
 
@@ -67,12 +67,12 @@ public class OrderDto {
 		this.userPostal = userPostal;
 	}
 
-	public String getUserArrdDetail() {
-		return userArrdDetail;
+	public String getuserAddrDetail() {
+		return userAddrDetail;
 	}
 
-	public void setUserArrdDetail(String userArrdDetail) {
-		this.userArrdDetail = userArrdDetail;
+	public void setuserAddrDetail(String userAddrDetail) {
+		this.userAddrDetail = userAddrDetail;
 	}
 
 	public int getTel() {
@@ -83,12 +83,12 @@ public class OrderDto {
 		this.tel = tel;
 	}
 
-	public int getAmount() {
-		return amount;
+	public int gettotalPrice() {
+		return totalPrice;
 	}
 
-	public void setAmount(int amount) {
-		this.amount = amount;
+	public void settotalPrice(int totalPrice) {
+		this.totalPrice = totalPrice;
 	}
 
 	public String getOrderDate() {
