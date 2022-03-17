@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="order">
-	<insert id="insert" parameterType="orderDto">
-		INSERT INTO orderresult
-		(productId, productName, price, quantity, imagePath, userId, UserName, email, tel, userAddress, orderDate, orderNumber, totalPrice, billingDate)
-		VALUES(#{productId }, #{productName}, #{price}, #{quantity}, #{imagePath}, #{userId}, #{UserName}, #{email}, #{tel}, #{userAddress}, SYSDATE, ORDERNUMBER_SEQ.NEXTVAL, #{totalPrice}, SYSDATE)
+	<insert id="getInfo" parameterType="orderDto">
+		INSERT INTO ordertable
+		(orderId, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate)
+	 	values(orderId_seq.nextval, #{userId}, #{userAddr}, #{userPostal}, #{userAddrDetail}, #{tel}, #{totalPrice}, SYSDATE)
 	</insert>
 	
-	<select id="getList" resultType="orderDto">
-		SELECT productName, price, quantity, imagePath, userId, UserName, email, tel, userAddress, orderDate, orderNumber, totalPrice, billingDate
-		FROM orderresult
-	</select>
+	<insert id="getInfo_Detail" parameterType="cartDto" >
+		INSERT INTO ordertable_detail
+		(orderId_detail, orderId, productId, amount_detail)
+		(SELECT orderId_detail_seq.nextval, #{orderId}, productId, amount FROM cart WHERE id='rlagmlcks')
+	</insert>
 </mapper>
+
 
 
 

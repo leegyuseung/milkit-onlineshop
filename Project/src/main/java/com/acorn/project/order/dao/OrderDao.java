@@ -1,6 +1,11 @@
 package com.acorn.project.order.dao;
 
-public interface OrderDao {
-	public String order();
+import com.acorn.project.order.dto.OrderDetailDto;
+import com.acorn.project.order.dto.OrderDto;
 
+public interface OrderDao {
+	
+	public void orderInfo(OrderDto dto);
+	
+	public void orderInfo_Detail(OrderDetailDto dtoDetail);
 }
