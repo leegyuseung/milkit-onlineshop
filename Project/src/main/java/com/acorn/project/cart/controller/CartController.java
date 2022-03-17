@@ -28,14 +28,7 @@ public class CartController {
 		return mView;
 	}
 	
-	@RequestMapping("/staff/orderPage.do")
-	public ModelAndView Orderlist(CartDto dto, ModelAndView mView, HttpSession session) {
-		service.cartList(dto, mView, session);
-		//view page 의 정보를 ModelAndView 객체에 담는다.
-		mView.setViewName("staff/orderPage");
-		//ModelAndView 객체를 리턴해 준다.
-		return mView;
-	}
+
 	
 	
 	@RequestMapping("/cart/insert.do")
@@ -62,8 +55,7 @@ public class CartController {
 
 	
 	@RequestMapping("/cart/update")
-	public ModelAndView updateForm(ModelAndView mView, int cart_id, CartDto dto) {
-		dto.setCart_id(cart_id);
+	public ModelAndView updateForm(ModelAndView mView, CartDto dto) {
 		service.updateCart(dto);
 		mView.setViewName("redirect:/cart/carthome.do");
 		return mView;

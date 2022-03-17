@@ -16,62 +16,54 @@
        //로그인 된 아이디 읽어오기 
        String id=(String)session.getAttribute("id");
     %>
-	<nav class="navbar navbar-light bg-light navbar-expand-lg">
-    	<div class="container-fluid">
-        	<a class="navbar-brand" href="<%=request.getContextPath() %>/">
-            	<img src="https://getbootstrap.com/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="30" class="d-inline-block align-text-top">
-               	홈페이지
-        	</a>
-          	<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            	<span class="navbar-toggler-icon"></span>
-          	</button>
-		  		<div class="collapse navbar-collapse" id="navbarNav">
-				<div class="nav-item dropdown">
-					<a class="btn btn-secondary dropdown-toggle" href="${pageContext.request.contextPath }/mealkit/mealkit_home.do" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown">
-						밀키트 상품
-					</a>
-					<ul class="dropdown-menu">
-					
-						<li><a class="dropdown-item" href="${pageContext.request.contextPath }/mealkit/mealkit_home.do">전체</a></li>
-						<li><a class="dropdown-item" href="${pageContext.request.contextPath}/mealkit/mealkit_k.do">한식</a></li>
-						<li><a class="dropdown-item" href="${pageContext.request.contextPath}/mealkit/mealkit_c.do">중식</a></li>
-						<li><a class="dropdown-item" href="${pageContext.request.contextPath}/mealkit/mealkit_j.do">일식</a></li>
-						<li><a class="dropdown-item" href="${pageContext.request.contextPath}/mealkit/mealkit_w.do">양식</a></li>
-					</ul>
-				</div>
-				<ul class="navbar-nav me-auto">
-                	<li>
-                		<c:if test="${user.usertype == 1 }">
-                			<a class="nav-link <%=thisPage.equals("staff") ? "active" : "" %>" href="${pageContext.request.contextPath}/staff/home.do">관리자 페이지</a>
-                		</c:if>
-                	</li>
-               	</ul>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    	<div class="container px-4 px-lg-5">
+        	<a class="navbar-brand" href="<%=request.getContextPath() %>/">	Acorn Mealkit</a>
+          	<button class="navbar-toggler" data-bs-toggle="collapse" type="button" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+		  		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		  		        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/home.do">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mealkit</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath }/mealkit/mealkit_home.do">전체</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mealkit/mealkit_k.do">한식</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mealkit/mealkit_c.do">중식</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mealkit/mealkit_j.do">일식</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/mealkit/mealkit_w.do">양식</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+            	<ul class="navbar-nav justify-content-end">
                	<c:choose>
 					<c:when test="${ empty id}">
-				 		<a class="btn btn-outline-primary btn-sm me-2" href="${pageContext.request.contextPath}/users/signup_form.do">회원가입</a>
-                  		<a class="btn btn-outline-success btn-sm me-2" href="${pageContext.request.contextPath}/users/loginform.do">로그인</a>
+				 		<a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/users/signup_form.do">Sign up</a>
+                  		<a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/users/loginform.do">Login</a>
 					</c:when>
 				 	<c:otherwise>
 					  	<span class="navbar-text me-2">
-	                    	<a href="${pageContext.request.contextPath}/users/private/info.do">${id }</a> 로그인중...
+	                    	<a href="${pageContext.request.contextPath}/users/private/info.do">${id }</a>
 		                </span>
-		                <a class="btn btn-outline-danger btn-sm me-2" href="${pageContext.request.contextPath}/users/logout.do">로그아웃</a>
+		                <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/users/logout.do">Logout</a>
 				 	</c:otherwise>
-				</c:choose>
-				<form class="d-flex me-2">
-        			<input class="form-control me-2" type="search" placeholder="Search">
-        			<button class="btn btn-outline-success" type="submit">Search</button>
-      	  		</form>
-      	  		
-				<a class="navbar-brand" href="${pageContext.request.contextPath }/cart/carthome.do">
-					<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+            	</c:choose>
+            	         <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="${pageContext.request.contextPath}/users/private/info.do" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mypage</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">주문내역</a></li>
+                                <li><a class="dropdown-item" href="#!">고객센터</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath }/inquiry/list.do">Q & A</a></li>
+                                <c:if test="${user.usertype == 1 }">
+                				<li><a class="dropdown-item <%=thisPage.equals("staff") ? "active" : "" %>" href="${pageContext.request.contextPath}/staff/home.do">시스템관리</a></li>
+                				</c:if>
+                            </ul>
+                        </li>
+                      <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath }/cart/carthome.do"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
   						<path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
-					</svg>
-			    </a>
-          </div>
-      </div>
-   </nav>
-
-
-
+					</svg></a>			
+					</ul>
+            	</div>    	
+        </div>
+    </nav>
 
