@@ -7,6 +7,9 @@
 <title>/views/users/pwd_updateform.jsp</title>
 </head>
 <body>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 <div class="container">
 	<h1>비밀 번호 수정 폼</h1>
 	<form action="${pageContext.request.contextPath}/users/private/pwd_update.do" method="post" id="myForm">
@@ -38,6 +41,10 @@
 		}
 	});
 </script>
+<br />
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </body>
 </html>
 

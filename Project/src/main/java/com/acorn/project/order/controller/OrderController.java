@@ -47,7 +47,7 @@ public class OrderController {
  
  return "redirect:/shop/orderList";
 	 */
-	@RequestMapping("/staff/orderHistory.do")
+	@RequestMapping("/staff/orderComplete.do")
 	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail) {
 		
 		service2.orderInfo(dto, session);
@@ -57,8 +57,8 @@ public class OrderController {
 		
 		service2.orderInfo_Detail(dto, dtoDetail, session);
 		
-		
-		return "staff/orderHistory";
+		service.deleteAll((String)session.getAttribute("id"));
+		return "staff/orderComplete";
 	}
 	
 	

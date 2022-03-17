@@ -15,6 +15,11 @@
 	<select id="getOrderId" resultType="int">
 		select max(orderId) as orderId from ordertable
 	</select>
+	<!-- 카트 비우기 -->
+	<delete id="emptyCart" parameterType="string">
+ 		DELETE FROM cart
+     	WHERE id = #{userId}
+	</delete>
 </mapper>
 
 

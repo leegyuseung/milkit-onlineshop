@@ -8,6 +8,9 @@
 <title>/views/users/pwd_update.jsp</title>
 </head>
 <body>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 <div class="container">
 	<c:choose>
 		<c:when test="${isSuccess }">
@@ -24,6 +27,9 @@
 		</c:otherwise>
 	</c:choose>
 </div>
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </body>
 </html>
 

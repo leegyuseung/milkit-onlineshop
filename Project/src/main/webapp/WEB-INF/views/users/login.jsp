@@ -6,8 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>/users/login.jsp</title>
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+
 </head>
 <body>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 <div class="container">
 	<h1>알림</h1>
 	<c:choose>
@@ -25,6 +30,9 @@
 		</c:otherwise>
 	</c:choose>
 </div>	
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </body>
 </html>
 
