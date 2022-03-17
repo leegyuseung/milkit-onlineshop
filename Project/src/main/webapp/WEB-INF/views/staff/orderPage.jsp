@@ -51,7 +51,7 @@
 
 
 	<div class="container">
-		<form action="orderHistory.do" method="post" enctype="multipart/form-data">
+		<form action="orderComplete.do" method="post" enctype="multipart/form-data">
 		    
 			<input type="hidden" name="totalPrice" value="${sum}" />
 			<input type="hidden" name="userId" value="${user.id}" />

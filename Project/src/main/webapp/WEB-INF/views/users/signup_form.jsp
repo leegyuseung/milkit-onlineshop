@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
 </head>
 <body>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 <div class="container">
 	<h1>회원 가입 폼 입니다.</h1>
 	<form action="${pageContext.request.contextPath}/users/signup.do" method="post" id="myForm">
@@ -173,5 +176,9 @@
 		}	
 	});
 </script>
+<br />
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </body>
 </html>

@@ -12,6 +12,12 @@
 		(orderId_detail, orderId, productId, amount_detail, userId)
 		(SELECT orderId_detail_seq.nextval, #{orderId}, productId, amount, #{userId} FROM cart WHERE id=#{userId})
 	</insert>
+	
+	<!-- 카트 비우기 -->
+	<delete id="emptyCart" parameterType="string">
+ 		DELETE FROM cart
+     	WHERE id = #{userId}
+	</delete>
 </mapper>
 
 
