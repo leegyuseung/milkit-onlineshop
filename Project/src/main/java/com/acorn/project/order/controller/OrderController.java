@@ -50,13 +50,12 @@ public class OrderController {
 	@RequestMapping("/staff/orderHistory.do")
 	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail) {
 		
+		
 		service2.orderInfo(dto, session);
-		
-		
-		
 		
 		service2.orderInfo_Detail(dto, dtoDetail, session);
 		
+		service.deleteAll((String)session.getAttribute("id"));
 		
 		return "staff/orderHistory";
 	}
