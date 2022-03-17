@@ -50,13 +50,14 @@ public class OrderController {
 	@RequestMapping("/staff/orderComplete.do")
 	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail) {
 		
-		
 		service2.orderInfo(dto, session);
+		
+		//여기dto에는 orderId가 추가되지 않았음
+		
 		
 		service2.orderInfo_Detail(dto, dtoDetail, session);
 		
 		service.deleteAll((String)session.getAttribute("id"));
-		
 		return "staff/orderComplete";
 	}
 	
