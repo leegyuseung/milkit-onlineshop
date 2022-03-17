@@ -6,8 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>/users/loginform.jsp</title>
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+
 </head>
 <body>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 <div class="container">
 	<h1>로그인 폼 입니다.</h1>
 	<form action="${pageContext.request.contextPath}/users/login.do" method="post">
@@ -30,5 +35,8 @@
 		<button type="submit">로그인</button>
 	</form>
 </div>
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </body>
 </html>
