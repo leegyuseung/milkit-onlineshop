@@ -1,5 +1,7 @@
 package com.acorn.project.order.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +28,7 @@ public class OrderController {
 	
 	
 	@RequestMapping("/staff/orderPage.do")
-	public ModelAndView Orderlist(CartDto dto, ModelAndView mView, HttpSession session) {
+	public ModelAndView cartlist(CartDto dto, ModelAndView mView, HttpSession session) {
 		service.cartList(dto, mView, session);
 		//view page 의 정보를 ModelAndView 객체에 담는다.
 		mView.setViewName("staff/orderPage");
@@ -46,6 +48,21 @@ public class OrderController {
 		//service.deleteAll((String)session.getAttribute("id"));
 		
 		return "staff/orderComplete";
+	}
+	
+	@RequestMapping("/staff/orderHistory.do")
+	public ModelAndView orderList(ModelAndView mView, OrderDto dto, HttpSession session) {
+		
+		String id=(String)session.getAttribute("id");
+		dto.setUserId(id);
+		
+		List<OrderDto> list=service2.getListOrder(dto);
+		
+		mView.addObject("list", list);
+
+		mView.setViewName("staff/orderHistory");
+		return mView;
+		
 	}
 	
 	

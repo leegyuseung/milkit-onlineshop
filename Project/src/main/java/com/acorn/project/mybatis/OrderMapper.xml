@@ -23,6 +23,12 @@
  		DELETE FROM cart
      	WHERE id = #{userId}
 	</delete>
+	
+	<select id="orderList" resultType="orderDto">
+		SELECT orderId, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate
+		FROM ordertable
+		where userId=#{userId}
+	</select>
 </mapper>
 
 
