@@ -55,8 +55,7 @@ public class CartController {
 
 	
 	@RequestMapping("/cart/update")
-	public ModelAndView updateForm(ModelAndView mView, int cart_id, CartDto dto) {
-		dto.setCart_id(cart_id);
+	public ModelAndView updateForm(ModelAndView mView, CartDto dto) {
 		service.updateCart(dto);
 		mView.setViewName("redirect:/cart/carthome.do");
 		return mView;

@@ -68,6 +68,8 @@ public class CartServiceImpl implements CartService{
 	
 	@Override
 	public void updateCart(CartDto dto) {
+		int totalPrice=(dto.getNewAmount()*dto.getPrice());		
+		dto.setTotalPrice(totalPrice);
 		dao.updateCart(dto);
 	}
 	

@@ -33,8 +33,8 @@
           <th scope="col">상품 사진</th>
           <th scope="col">상품명</th>
           <th scope="col">수량</th>
-          <th scope="col">가격</th>
           <th scope="col">수정</th>
+          <th scope="col">가격</th>
           <th scope="col">총 금액</th>          
           <th scope="col">삭제</th>
         </tr>
@@ -46,13 +46,15 @@
             <td>${status.count }</td>
             <td><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
             <td>${tmp.productId }</td>
-            <form action="update.do" method="post">
-            	<td><input type="number" name="amount" value="${tmp.amount }" /></td>
-           
-            	<td>${tmp.price }</td>
-			
-           		<td><a href="update.do?cart_id=${tmp.cart_id }" type="submit">수정</a></td>
+            <form action="update.do" method="post" id="updateForm">
+            	<td><input type="number" name="newAmount" value="${tmp.amount }" id="newAmount"/>
+           			<input type="hidden" name="cart_id" value="${tmp.cart_id }"/>
+           			<input type="hidden" name="price" value="${tmp.price}"/>
+           		</td>
+           		<td><button type="submit">수정</button><td>	            	
              </form>
+            
+            <td>${tmp.price }</td>
             <td>${tmp.totalPrice }</td>
             <td>
             	<a href="delete.do?cart_id=${tmp.cart_id }">
