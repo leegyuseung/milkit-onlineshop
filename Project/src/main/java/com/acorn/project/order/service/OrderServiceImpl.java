@@ -38,7 +38,5 @@ public class OrderServiceImpl implements OrderService{
 		dao.orderInfo_Detail(dtoDetail);
 		
 	}
-
-
 	
 }
