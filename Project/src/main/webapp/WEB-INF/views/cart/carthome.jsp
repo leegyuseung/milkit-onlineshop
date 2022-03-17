@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
     
 
 <!DOCTYPE html>
@@ -39,6 +40,7 @@
         </tr>
       </thead>
       <tbody>
+      <c:set var="sum" value="0" />
       <c:forEach var="tmp" items="${list }" varStatus="status">
          <tr>
             <td>${status.count }</td>
@@ -63,9 +65,14 @@
 				</a>
             </td>
          </tr>
+         <c:set var="sum" value="${sum + (tmp.totalPrice)}" />			
+         
       </c:forEach>
       </tbody>
    </table>
+   	총 합계 : <fmt:formatNumber pattern="###,###,###" value="${sum}" />원
+
+
 	<form action="../staff/orderPage.do">    
    		<button class="btn btn-primary">구매하기</button>
    	</form>
