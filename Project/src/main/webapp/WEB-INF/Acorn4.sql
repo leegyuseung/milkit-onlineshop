@@ -62,7 +62,7 @@ CREATE TABLE board_inquiry_comment(
 );
 
 CREATE SEQUENCE board_inquiry_comment_seq;
-
+/*
 create table orderHistory 
 	(id varchar2(100),
 	quantity NUMBER(10), 
@@ -73,7 +73,7 @@ create table orderHistory
 	status varchar2(100)
 );
 
-CREATE TABLE OrderResult(	
+DropCREATE TABLE OrderResult(	
 	productId VARCHAR2(100),
 	productName VARCHAR2(300),
 	price NUMBER(30),
@@ -93,3 +93,25 @@ CREATE TABLE OrderResult(
 );
 
 CREATE sequence ordernumber_seq;
+*/
+CREATE TABLE ordertable(	
+	orderId NUMBER(35),
+	userId varchar2(100),
+	userAddr varchar2(100),
+	userPostal varchar2(100),
+	userAddrDetail varchar2(100),
+	tel NUMBER(20),
+	amount NUMBER(20),
+	orderDate Date
+);
+
+CREATE SEQUENCE orderId_seq;
+
+CREATE TABLE ordertable_detail(	
+	orderId NUMBER(35),
+	orderId_detail NUMBER (35),
+	productId varchar2(100),
+	amount_detail NUMBER(20)
+);
+
+CREATE SEQUENCE orderId_detail_seq;
