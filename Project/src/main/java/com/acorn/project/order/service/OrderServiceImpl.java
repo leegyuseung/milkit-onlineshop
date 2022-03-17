@@ -29,7 +29,6 @@ public class OrderServiceImpl implements OrderService{
 		String id=(String)session.getAttribute("id");
 		dtoDetail.setUserId(id);
 		
-		orderInfo(dto,session);
 		
 		int orderId=dao.getOrderId();
 		System.out.println(dao.getOrderId());

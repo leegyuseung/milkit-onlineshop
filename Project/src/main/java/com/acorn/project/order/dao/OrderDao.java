@@ -8,5 +8,6 @@ public interface OrderDao {
 	public void orderInfo(OrderDto dto);
 	
 	public void orderInfo_Detail(OrderDetailDto dtoDetail);
+	
 	public int getOrderId();
 }

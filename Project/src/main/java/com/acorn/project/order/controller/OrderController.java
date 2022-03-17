@@ -33,31 +33,18 @@ public class OrderController {
 		//ModelAndView 객체를 리턴해 준다.
 		return mView;
 	}
-	/*
-	 *  MemberVO member = (MemberVO)session.getAttribute("member");  
- String userId = member.getUserId();
-  
- order.setUserId(userId);
-  
- service.orderInfo(order);
- 
- orderDetail.setOrderId(orderId);   
- service.orderInfo_Details(orderDetail);
- 
- 
- return "redirect:/shop/orderList";
-	 */
+
 	@RequestMapping("/staff/orderComplete.do")
 	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail) {
 		
 		service2.orderInfo(dto, session);
 		
 		//여기dto에는 orderId가 추가되지 않았음
-		
-		
+
 		service2.orderInfo_Detail(dto, dtoDetail, session);
 		
-		service.deleteAll((String)session.getAttribute("id"));
+		//service.deleteAll((String)session.getAttribute("id"));
+		
 		return "staff/orderComplete";
 	}
 	
