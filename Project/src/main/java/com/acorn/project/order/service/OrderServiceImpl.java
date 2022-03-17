@@ -19,13 +19,21 @@ public class OrderServiceImpl implements OrderService{
 	public void orderInfo(OrderDto dto, HttpSession session) {
 		String id=(String)session.getAttribute("id");
 		dto.setUserId(id);
-		System.out.println(dto.getUserId());
 		dao.orderInfo(dto);
 		
 	}
 
 	@Override
-	public void orderInfo_Detail(OrderDetailDto dtoDetail) {
+	public void orderInfo_Detail(OrderDto dto, OrderDetailDto dtoDetail, HttpSession session) {
+		//세션 아이디 불러오기
+		String id=(String)session.getAttribute("id");
+		dtoDetail.setUserId(id);
+
+		//orderDto의 orderId랑 orderDetailDto의 orderId랑 연동하기
+		int orderId=dto.getOrderId();
+		dtoDetail.setOrderId(orderId);
+		System.out.println(dtoDetail.getOrderId());//0 나옴....
+		
 		
 		dao.orderInfo_Detail(dtoDetail);
 		

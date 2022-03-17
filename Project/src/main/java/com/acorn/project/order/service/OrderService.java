@@ -9,6 +9,6 @@ public interface OrderService {
 
 	public void orderInfo(OrderDto dto, HttpSession session);
 	
-	public void orderInfo_Detail(OrderDetailDto dtoDetail);
+	public void orderInfo_Detail(OrderDto dto, OrderDetailDto dtoDetail, HttpSession session);
 	
 }
