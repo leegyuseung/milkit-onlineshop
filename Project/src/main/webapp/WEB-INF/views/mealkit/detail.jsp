@@ -56,9 +56,9 @@
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                     <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0">
-                    	<a href="${pageContext.request.contextPath}/mealkit/detail.do?productId=${tmp.productId}">
+                    	<a href="${pageContext.request.contextPath}/mealkit/detail.do?productId=${dto.productId}">
 	               		<div class="img-wrapper">
-	                  		<img class="card-img-top" src="${pageContext.request.contextPath }${tmp.imagePath}" />
+	                  		<img class="card-img-top" src="${pageContext.request.contextPath }${dto.imagePath}" />
 	               		</div>
             		</a>
                     </div>
