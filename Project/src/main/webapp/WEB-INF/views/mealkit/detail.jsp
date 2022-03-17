@@ -40,6 +40,7 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
+                    
                     <div class="col-md-6">
 	               		<div class="img-wrapper" style="text-align:center;">
 	               			<a href="${pageContext.request.contextPath}/mealkit/detail.do?productId=${dto.productId}">
@@ -47,6 +48,7 @@
 	                  		</a>
 	               		</div>
                     </div>
+                    
                     <div class="col-md-6">
                         <div class="small mb-1">${dto.productCate}</div>
                         <h1 class="display-5 fw-bolder">${dto.productName}</h1>
@@ -54,6 +56,7 @@
                             <span class="text-decoration-line-through">${dto.price}</span>
                             <span>${dto.price}</span>
                         </div>
+                        
                         <p class="lead">${dto2.content }</p>
                        
                         <c:if test="${user.usertype eq 1 }">
@@ -79,6 +82,7 @@
                 </div>
             </div>
         </section>
+    
         <!-- Related items section-->
         <section class="py-5 bg-light">
             <div class="container px-4 px-lg-5 mt-5">
