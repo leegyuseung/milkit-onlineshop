@@ -36,6 +36,7 @@
 <jsp:include page="../../../resources/include/navbar.jsp">
 	<jsp:param value="staff" name="thisPage"/>
 </jsp:include>
+
         <!-- Product section-->
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
