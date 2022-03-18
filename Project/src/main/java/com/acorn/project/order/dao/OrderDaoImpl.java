@@ -1,5 +1,7 @@
 package com.acorn.project.order.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -27,8 +29,14 @@ public class OrderDaoImpl implements OrderDao{
 
 	@Override
 	public int getOrderId() {
-		int orederId=session.selectOne("order.getOrderId");
-		return orederId;
+		return session.selectOne("order.getOrderId");
+		
+	}
+
+	@Override
+	public List<OrderDto> getList(OrderDto dto) {
+
+		return session.selectList("order.orderList", dto);
 	}
 
 }
