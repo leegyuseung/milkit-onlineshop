@@ -48,8 +48,8 @@
 								    <p>
 									    <span>상품명</span>${tmp.productName}<br />
 									    <span>개당 가격</span><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /> 원<br />
-									    <span>구입 수량</span>${tmp.amount_deatil} 개<br />
-									    <span>최종 가격</span><fmt:formatNumber pattern="###,###,###" value="${tmp.price * tmp.amount_deatil}" /> 원                  
+									    <span>구입 수량</span>${tmp.amount_detail} 개<br />
+									    <span>최종 가격</span><fmt:formatNumber pattern="###,###,###" value="${tmp.price * tmp.amount_detail}" /> 원                  
 								    </p>
 							   	</div>
 						  	</li>     

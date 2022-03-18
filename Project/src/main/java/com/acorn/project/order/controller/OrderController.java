@@ -71,9 +71,9 @@ public class OrderController {
 		
 		String id=(String)session.getAttribute("id");
 		dto.setUserId(id);
+		
 		dto.setOrderId(orderId);
-		System.out.println(dto.getUserId());
-		System.out.println(dto.getOrderId());
+		
 		List<OrderListDto> list=service2.orderDetailList(dto);
 
 		mView.addObject("list", list);
