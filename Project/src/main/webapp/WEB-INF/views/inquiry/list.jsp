@@ -46,7 +46,7 @@
 	    <div class="container col-md-3">
 		    <jsp:include page="../../../resources/include/userSidebar.jsp"></jsp:include>
 	    </div>
-	    <!-- 9단길이의 첫번째 열 -->
+	    <!-- 9단길이의 첫번째 열 --> 
 	    <div class="col-md-9">
 		    <div class="container">
 				<h1 style="text-align: center">Q&A</h1>
