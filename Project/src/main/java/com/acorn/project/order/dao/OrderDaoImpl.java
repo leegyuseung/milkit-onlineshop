@@ -58,5 +58,18 @@ public class OrderDaoImpl implements OrderDao{
 		return session.selectList("order.AllOrderDetailList", dto);
 	}
 
+	@Override
+	public void stockReduce(OrderDetailDto dto) {
+		
+		session.update("order.stockReduce", dto);
+		
+	}
+
+	@Override
+	public void buyCount(OrderDetailDto dto) {
+		
+		session.update("order.buyCount", dto);
+	}
+
 
 }

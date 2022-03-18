@@ -3,6 +3,7 @@ package com.acorn.project.order.dto;
 public class OrderListDto {
 	
 	private int orderId;
+	private String receiver;
 	private String userId;
 	private String userAddr;
 	private String userPostal;
@@ -10,6 +11,7 @@ public class OrderListDto {
 	private int tel;
 	private int totalPrice;
 	private String orderDate;
+	private String delivery;
 	
 	private int orderId_Detail;
 	private String productId;
@@ -21,11 +23,12 @@ public class OrderListDto {
 	
 	public OrderListDto() {}
 
-	public OrderListDto(int orderId, String userId, String userAddr, String userPostal, String userAddrDetail, int tel,
-			int totalPrice, String orderDate, int orderId_Detail, String productId, int amount_detail,
-			String productName, String imagePath, int price) {
+	public OrderListDto(int orderId, String receiver, String userId, String userAddr, String userPostal,
+			String userAddrDetail, int tel, int totalPrice, String orderDate, String delivery, int orderId_Detail,
+			String productId, int amount_detail, String productName, String imagePath, int price) {
 		super();
 		this.orderId = orderId;
+		this.receiver = receiver;
 		this.userId = userId;
 		this.userAddr = userAddr;
 		this.userPostal = userPostal;
@@ -33,6 +36,7 @@ public class OrderListDto {
 		this.tel = tel;
 		this.totalPrice = totalPrice;
 		this.orderDate = orderDate;
+		this.delivery = delivery;
 		this.orderId_Detail = orderId_Detail;
 		this.productId = productId;
 		this.amount_detail = amount_detail;
@@ -47,6 +51,14 @@ public class OrderListDto {
 
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
+	}
+
+	public String getReceiver() {
+		return receiver;
+	}
+
+	public void setReceiver(String receiver) {
+		this.receiver = receiver;
 	}
 
 	public String getUserId() {
@@ -105,6 +117,14 @@ public class OrderListDto {
 		this.orderDate = orderDate;
 	}
 
+	public String getDelivery() {
+		return delivery;
+	}
+
+	public void setDelivery(String delivery) {
+		this.delivery = delivery;
+	}
+
 	public int getOrderId_Detail() {
 		return orderId_Detail;
 	}
@@ -152,6 +172,4 @@ public class OrderListDto {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
-	
 }

@@ -12,6 +12,7 @@ package com.acorn.project.order.dto;
 public class OrderDto {
 	
 	private int orderId;
+	private String receiver;
 	private String userId;
 	private String userAddr;
 	private String userPostal;
@@ -19,13 +20,15 @@ public class OrderDto {
 	private int tel;
 	private int totalPrice;
 	private String orderDate;
+	private String delivery;
 	
 	public OrderDto() {}
 
-	public OrderDto(int orderId, String userId, String userAddr, String userPostal, String userAddrDetail, int tel,
-			int totalPrice, String orderDate) {
+	public OrderDto(int orderId, String receiver, String userId, String userAddr, String userPostal,
+			String userAddrDetail, int tel, int totalPrice, String orderDate, String delivery) {
 		super();
 		this.orderId = orderId;
+		this.receiver = receiver;
 		this.userId = userId;
 		this.userAddr = userAddr;
 		this.userPostal = userPostal;
@@ -33,6 +36,7 @@ public class OrderDto {
 		this.tel = tel;
 		this.totalPrice = totalPrice;
 		this.orderDate = orderDate;
+		this.delivery = delivery;
 	}
 
 	public int getOrderId() {
@@ -41,6 +45,14 @@ public class OrderDto {
 
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;
+	}
+
+	public String getReceiver() {
+		return receiver;
+	}
+
+	public void setReceiver(String receiver) {
+		this.receiver = receiver;
 	}
 
 	public String getUserId() {
@@ -67,11 +79,11 @@ public class OrderDto {
 		this.userPostal = userPostal;
 	}
 
-	public String getuserAddrDetail() {
+	public String getUserAddrDetail() {
 		return userAddrDetail;
 	}
 
-	public void setuserAddrDetail(String userAddrDetail) {
+	public void setUserAddrDetail(String userAddrDetail) {
 		this.userAddrDetail = userAddrDetail;
 	}
 
@@ -83,11 +95,11 @@ public class OrderDto {
 		this.tel = tel;
 	}
 
-	public int gettotalPrice() {
+	public int getTotalPrice() {
 		return totalPrice;
 	}
 
-	public void settotalPrice(int totalPrice) {
+	public void setTotalPrice(int totalPrice) {
 		this.totalPrice = totalPrice;
 	}
 
@@ -98,6 +110,13 @@ public class OrderDto {
 	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
 	}
+
+	public String getDelivery() {
+		return delivery;
+	}
+
+	public void setDelivery(String delivery) {
+		this.delivery = delivery;
+	}
 	
 }
-

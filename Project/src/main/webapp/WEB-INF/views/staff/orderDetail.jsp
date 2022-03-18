@@ -25,41 +25,51 @@
 			<div class="container">
 				<h1>주문 내역 디테일</h1>
 				<table class="table ">
+					<input type="hidden" name="orderId" value="${param.orderId }"/>
 					<thead>
 				   		<tr>
 				   			<th>수령인</th>
 				   			<th>주소</th>
 				   			<th>종합 가격</th>
+				   			<th>배송 상태</th>
 				   		</tr>
 				  	</thead>
 				  	<tbody>
 				  		<c:forEach items="${list}" var="tmp" varStatus="status">
 							<tr>
 							   	<c:if test="${status.first}">
-								    <td>${tmp.userId}</td>
+								    <td>${tmp.receiver}</td>
 								    <td>(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
 								    <td><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
+								    <td>${tmp.delivery}</td>
 							   	</c:if>
 					   		</tr>
 					  	</c:forEach>
 				  	
 					    <tr>
 						    <td colspan="4">
-						    	<table class="table">
+						    	<table class="table table-sm">
+						    		<caption class="text-end">
+						    			<form action="../cart/carthome.do">
+						    				<button class="btn btn-outline-secondary">다시 주문하기</button>
+						    			</form>
+						    		</caption>
 						    		<thead>
 						    			<tr>
-						    				<th>이미지</th>
+						    				<th>번호</th>
 						    				<th>상품명</th>
+						    				<th></th>
 						    				<th>개당 가격</th>
 						    				<th>구입 수량</th>
 						    				<th>최종 가격</th>
 						    			</tr>
 						    		</thead>
 						    		<tbody>
-						    			<c:forEach items="${list}" var="tmp">     
+						    			<c:forEach items="${list}" var="tmp" varStatus="status">     
 											<tr>
-											   	<td><img src="${pageContext.request.contextPath }${tmp.imagePath}" /></td>
+												<td>${status.count }</td>
 											   	<td>${tmp.productName}</td>
+											   	<td><img src="${pageContext.request.contextPath }${tmp.imagePath}" /></td>											   	
 												<td><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /> 원</td>
 												<td>${tmp.amount_detail} </td>
 												<td>
@@ -67,6 +77,7 @@
 												</td>
 								            </tr>     
 									  	</c:forEach>
+									 	
 						    		</tbody>
 						        </table>
 						    </td>

@@ -22,5 +22,9 @@ public interface OrderDao {
 	public List<OrderDto> getAllList(OrderDto dto);
 
 	public List<OrderListDto> AllOrderDetailList(OrderDto dto);
+	
+	public void stockReduce(OrderDetailDto dto);
+	
+	public void buyCount(OrderDetailDto dto);
 
 }

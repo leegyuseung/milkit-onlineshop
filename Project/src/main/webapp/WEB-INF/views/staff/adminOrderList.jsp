@@ -28,13 +28,14 @@
 				<section id="content">
 					
 					<ul class="orderList">
-						<h1>주문 현황</h1>
+						<h1>전체 주문 현황</h1>
 						<table class="table">
 							<thead>
 								<tr>
 						          <th scope="col">주문번호</th>
 						          <th scope="col">주소</th>
 						          <th scope="col">총 금액</th>
+						          <th scope="col">배송 상태</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -43,6 +44,7 @@
 										<td><a href="adminOrderDetail.do?orderId=${tmp.orderId}">${tmp.orderId}</a></td>
 										<td>(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
 										<td><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
+										<td>${tmp.delivery}</td>
 									</tr>
 								  	
 							  	</c:forEach>

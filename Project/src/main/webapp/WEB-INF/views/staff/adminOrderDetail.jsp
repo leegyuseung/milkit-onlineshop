@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+  
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +30,7 @@
 				   			<th>수령인</th>
 				   			<th>주소</th>
 				   			<th>종합 가격</th>
+				   			<th>배송 상태</th>
 				   		</tr>
 				  	</thead>
 				  	<tbody>
@@ -37,6 +40,7 @@
 								    <td>${tmp.userId}</td>
 								    <td>(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
 								    <td><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
+								    <td>${tmp.delivery}</td>
 							   	</c:if>
 					   		</tr>
 					  	</c:forEach>
@@ -44,6 +48,11 @@
 					    <tr>
 						    <td colspan="4">
 						    	<table class="table">
+						    		<caption class="text-end">
+						    			<form action="">
+						    				<button class="btn btn-outline-secondary disabled">배송 완료</button>
+						    			</form>
+						    		</caption>
 						    		<thead>
 						    			<tr>
 						    				<th>이미지</th>

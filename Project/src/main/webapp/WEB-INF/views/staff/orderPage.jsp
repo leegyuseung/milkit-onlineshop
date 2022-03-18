@@ -44,6 +44,7 @@
 			            <td id="center">${tmp.amount }</td>
 			            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.price }" /></td>
 			            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice }" /></td>
+			            
 		         	</tr>
 		         	<c:set var="sum" value="${sum + (tmp.totalPrice)}" />			
 	      		</c:forEach>
@@ -63,7 +64,12 @@
 		    
 			<input type="hidden" name="totalPrice" value="${sum}" />
 			<input type="hidden" name="userId" value="${user.id}" />
-		    
+			
+			
+		    <div>
+			   	<label class="control-label" for="receiver" class="form-label">받는 사람</label>
+			   	<input class="form-control" type="text" name="receiver" id="receiver" required/>
+		  	</div>
 		  
 		  	<div>
 			   	<label class="control-label" for="tel" class="form-label">연락처</label>
@@ -91,7 +97,9 @@
 	  	</figure>
 		</form> 
 	</div>
+</div>
 </body>
+
 <jsp:include page="../../../resources/include/footer.jsp">
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
