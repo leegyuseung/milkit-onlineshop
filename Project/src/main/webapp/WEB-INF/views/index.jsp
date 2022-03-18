@@ -48,8 +48,6 @@
          </form>
       </div>
 
-      <a href="private/insertform.do?productId=${param.productId}">상세 내용 작성</a>
-
       
       <c:if test="${user.usertype eq 1 }">
       	<c:choose>
@@ -61,13 +59,11 @@
       	<a href="private/updateform.do?productId=${param.productId}">상세 내용 수정</a>
       	</c:otherwise>
       	</c:choose>
-      	</c:if>
+      </c:if>
 
       <p class="card-text">${dto2.content }</p>
 
-      
-      <a href="private/delete.do?productId=${param.productId}">상세 내용 삭제</a>
-      <a href="private/updateform.do?productId=${param.productId}">상세 내용 수정</a>
+     
 
    </div>
    
