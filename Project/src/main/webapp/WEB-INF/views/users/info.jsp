@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>/views/users/info.jsp</title>
-
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
 <body>
 <jsp:include page="../../../resources/include/navbar.jsp">

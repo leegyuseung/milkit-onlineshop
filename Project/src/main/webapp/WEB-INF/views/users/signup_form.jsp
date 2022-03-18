@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>/views/users/signup_form.jsp</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
 <body>
 <jsp:include page="../../../resources/include/navbar.jsp">

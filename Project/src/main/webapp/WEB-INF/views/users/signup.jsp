@@ -5,7 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>/users/signup.jsp</title>
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 <body>
 <div class="container">
 
@@ -15,6 +19,9 @@
 	</p>
 
 </div>	
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </body>
 </html>
 

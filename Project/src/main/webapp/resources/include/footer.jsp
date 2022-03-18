@@ -12,7 +12,7 @@
     <ul class="nav col-md-4 justify-content-end">
       <li class="nav-item"><a href="${pageContext.request.contextPath}/home.do" class="nav-link px-2 text-muted">Home</a></li>
       <li class="nav-item"><a href="${pageContext.request.contextPath }/mealkit/mealkit_home.do" class="nav-link px-2 text-muted">Mealkit</a></li>
-      <li class="nav-item"><a href="${pageContext.request.contextPath }/inquiry/list.do" class="nav-link px-2 text-muted">FAQs</a></li>
+      <li class="nav-item"><a href="${pageContext.request.contextPath }/inquiry/list.do" class="nav-link px-2 text-muted">Q & A</a></li>
     </ul>
   </footer>
 </div>
