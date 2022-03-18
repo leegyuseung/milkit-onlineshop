@@ -18,5 +18,9 @@ public interface OrderDao {
 	public List<OrderDto> getList(OrderDto dto);
 	
 	public List<OrderListDto> orderDetailList(OrderDto dto);
+	
+	public List<OrderDto> getAllList(OrderDto dto);
+
+	public List<OrderListDto> AllOrderDetailList(OrderDto dto);
 
 }

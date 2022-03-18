@@ -37,6 +37,18 @@
 		 INNER JOIN product p ON d.productId = p.productId
 		 WHERE o.userId=#{userId} AND o.orderId=#{orderId} 
 	</select>
+	<!-- 전체 주문 목록 -->
+	<select id="AllOrderList" resultType="orderDto">
+		SELECT orderId, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate
+		FROM ordertable
+	</select>
+	<select id="AllOrderDetailList" resultType="com.acorn.project.order.dto.OrderListDto">
+		 SELECT o.orderId, o.userId, o.userAddr, o.userPostal, o.userAddrDetail, o.tel, o.totalPrice, o.orderDate, d.orderId_detail, d.productId, d.amount_detail, p.productName, p.imagePath, p.price 
+		 FROM ordertable o
+		 INNER JOIN ordertable_detail d ON o.orderId = d.orderId
+		 INNER JOIN product p ON d.productId = p.productId
+		 WHERE o.orderId=#{orderId} 
+	</select>
 </mapper>
 
 

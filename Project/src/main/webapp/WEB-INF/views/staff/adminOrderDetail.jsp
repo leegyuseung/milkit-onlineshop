@@ -1,13 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
-<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-   
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>/staff/orderDetail.jsp</title>
+<title>/staff/adminOrderDetail.jsp</title>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
 <body>
@@ -18,7 +16,7 @@
 	<div class="row">
 	    <!-- 3단길이의 첫번째 열 -->
 	    <div class="container col-md-3">
-		    <jsp:include page="../../../resources/include/userSidebar.jsp"></jsp:include>
+		    <jsp:include page="../../../resources/include/sidebar.jsp"></jsp:include>
 	    </div>
 	    <!-- 9단길이의 첫번째 열 -->
 	    <div class="col-md-9">
@@ -81,6 +79,7 @@
 <jsp:include page="../../../resources/include/footer.jsp">
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
+
 
 </body>
 </html>

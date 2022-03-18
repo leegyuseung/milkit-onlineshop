@@ -66,7 +66,7 @@ public class OrderController {
 		
 	}
 	
-	@RequestMapping("/orderDetail.do")
+	@RequestMapping("/private/orderDetail.do")
 	public ModelAndView orderDetail(ModelAndView mView, OrderDto dto, HttpSession session, int orderId) {
 		
 		String id=(String)session.getAttribute("id");
