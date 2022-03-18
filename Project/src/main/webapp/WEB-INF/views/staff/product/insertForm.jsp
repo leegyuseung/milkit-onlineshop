@@ -20,22 +20,26 @@
 <div class="container">
 	<h1>상품 추가</h1>
 	<form action="insert.do" method="post" enctype="multipart/form-data">
-		<div id="produc">
-			<label for="productId" class="form-label">상품 아이디</label>
-			<input class="form-controll" type="text" name="productId" id="productId" placeholder="상품 아이디..."/>
-		</div>
 		<div>
-			<label for="productName" class="form-label">상품 이름</label>
-			<input class="form-controll" type="text" name="productName" id="productName" placeholder="상품 이름..."/>
+			<label class="control-label" for="productId" class="form-label">상품 아이디</label>
+			<input class="form-control" type="text" name="productId" id="productId" placeholder="상품 아이디..."/>
 		</div>
+		<br />
 		<div>
-			<label for="price" class="form-label">상품 가격</label>
-			<input class="form-controll" type="text" name="price" id="price" placeholder="가격..."/>
+			<label class="control-label" for="productName" class="form-label">상품 이름</label>
+			<input class="form-control" type="text" name="productName" id="productName" placeholder="상품 이름..."/>
 		</div>
+		<br />
 		<div>
-			<label for="stock" class="form-label">상품 재고</label>
-			<input class="form-controll" type="text" name="stock" id="stock" placeholder="재고..."/>
+			<label class="control-label" for="price" class="form-label">상품 가격</label>
+			<input class="form-control" type="text" name="price" id="price" placeholder="가격..."/>
 		</div>
+		<br />
+		<div>
+			<label class="control-label" for="stock" class="form-label">상품 재고</label>
+			<input class="form-control" type="text" name="stock" id="stock" placeholder="재고..."/>
+		</div>
+		<br />
 		<div>
 			<label for="productCate" class="form-label">카테고리</label>
 			<select class="form-select" name="productCate" id="productCate">
@@ -48,12 +52,25 @@
 			 	<option value="Italian">Italian</option>
 			</select>
 		</div>
+		<br />
+		<figure class="text-end">
 		<div>
 			<label for="myFile">이미지</label>
 			<input type="file" name="myFile" id="myFile" accept=".jpg, .jpeg, .png, .JPG, .JPEG"/>
 		</div>
-		<button class="btn btn-primary" type="submit">상품 추가</button>
+		</figure>
+		<br />
+		<figure class="text-end">
+		<button class="btn btn-outline-secondary" type="submit">상품 추가</button>
+		<button class="btn btn-outline-secondary" type="reset" id="reset">취소</button>
+	</figure>
+	
 	</form>
 </div>
+<script>
+	document.querySelector("#reset").addEventListener("click",function(){
+		location.href="list.do";	
+	});
+</script>
 </body>
 </html>
