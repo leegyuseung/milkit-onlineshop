@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.acorn.project.order.dao.OrderDao;
 import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
+import com.acorn.project.order.dto.OrderListDto;
 
 @Service
 public class OrderServiceImpl implements OrderService{
@@ -42,9 +43,14 @@ public class OrderServiceImpl implements OrderService{
 	@Override
 	public List<OrderDto> getListOrder(OrderDto dto) {
 
-		
 		return dao.getList(dto);
 		
+	}
+
+	@Override
+	public List<OrderListDto> orderDetailList(OrderDto dto) {
+
+		return dao.orderDetailList(dto);
 	}
 	
 }

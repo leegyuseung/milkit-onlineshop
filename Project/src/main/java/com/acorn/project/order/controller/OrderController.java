@@ -13,6 +13,7 @@ import com.acorn.project.cart.dto.CartDto;
 import com.acorn.project.cart.service.CartService;
 import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
+import com.acorn.project.order.dto.OrderListDto;
 import com.acorn.project.order.service.OrderService;
 import com.acorn.project.users.dto.UsersDto;
 
@@ -45,12 +46,12 @@ public class OrderController {
 
 		service2.orderInfo_Detail(dto, dtoDetail, session);
 		
-		//service.deleteAll((String)session.getAttribute("id"));
+		service.deleteAll((String)session.getAttribute("id"));
 		
 		return "staff/orderComplete";
 	}
 	
-	@RequestMapping("/staff/orderHistory.do")
+	@RequestMapping("/orderHistory.do")
 	public ModelAndView orderList(ModelAndView mView, OrderDto dto, HttpSession session) {
 		
 		String id=(String)session.getAttribute("id");
@@ -65,5 +66,20 @@ public class OrderController {
 		
 	}
 	
-	
+	@RequestMapping("/orderDetail.do")
+	public ModelAndView orderDetail(ModelAndView mView, OrderDto dto, HttpSession session) {
+		
+		String id=(String)session.getAttribute("id");
+		dto.setUserId(id);
+		
+		dto.setUserId(id);
+		
+		List<OrderListDto> list=service2.orderDetailList(dto);
+
+		mView.addObject("list", list);
+
+		mView.setViewName("staff/orderDetail");
+		return mView;
+		
+	}
 }

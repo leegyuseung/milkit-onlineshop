@@ -13,8 +13,6 @@
 	<jsp:param value="staff" name="thisPage"/>
 </jsp:include>
 <div class="container">
-	<a href="../home.do">관리자 페이지로 돌아가기</a><br />
-	<a href="insertForm.do">상품 추가</a>	
 	<h1>상품 리스트</h1>
 	<table class="table">
 		<thead>
@@ -48,6 +46,19 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	<br />
+	<figure class="text-end">
+	<button class="btn btn-outline-secondary" type="reset" id="home">관리자 페이지</button>	
+	<button class="btn btn-outline-secondary" type="reset" id="insert">상품 추가</button>
+	</figure>
 </div>
+<script>
+	document.querySelector("#home").addEventListener("click",function(){
+		location.href="../home.do";	
+	});
+	document.querySelector("#insert").addEventListener("click",function(){
+		location.href="insertForm.do";	
+	});
+</script>	
 </body>
 </html>

@@ -19,7 +19,7 @@
 	<div class="row">
 	    <!-- 3단길이의 첫번째 열 -->
 	    <div class="container col-md-3">
-		    <jsp:include page="../../../resources/include/sidebar.jsp"></jsp:include>
+		    <jsp:include page="../../../resources/include/userSidebar.jsp"></jsp:include>
 	    </div>
 	    <!-- 9단길이의 첫번째 열 -->
 	    <div class="col-md-9">
@@ -40,7 +40,7 @@
 							<tbody>
 								<c:forEach items="${list}" var="tmp">
 									<tr>
-										<td><a href="/staff/orderView?orderId=${tmp.orderId}">${tmp.orderId}</a></td>
+										<td><a href="orderDetail.do?orderId=${tmp.orderId}">${tmp.orderId}</a></td>
 										<td>(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
 										<td><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
 									</tr>

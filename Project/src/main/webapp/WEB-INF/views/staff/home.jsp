@@ -24,7 +24,7 @@
 		    <div class="container">
 				<h1>관리자 페이지</h1>
 				<ul>
-					<li><a href="orderHistory.do">주문 현황</a></li>
+					<li><a href="#">주문 현황</a></li>
 					<li><a href="usersList.do">회원 관리</a></li>
 					<li><a href="product/list.do">상품 리스트</a></li>
 				</ul>
