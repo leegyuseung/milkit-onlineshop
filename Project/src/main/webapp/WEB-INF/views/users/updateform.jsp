@@ -37,8 +37,10 @@
 			<input class="form-control" type="text" name="address" id="address" value="${dto.address }"/>
 		</div>
 		<br />
+		<figure class="text-end">
 		<button class="btn btn-outline-secondary" type="submit">수정</button>
 		<button class="btn btn-outline-secondary" type="reset" id="reset">취소</button>
+		</figure>
 	</form>
 	
 	<script>

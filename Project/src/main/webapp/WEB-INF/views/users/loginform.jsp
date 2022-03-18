@@ -33,8 +33,10 @@
 			<input class="form-control" type="password" name="pwd" id="pwd"/>
 		</div>
 		<br />
+		<figure class="text-end">
 		<button class="btn btn-outline-secondary" type="submit">로그인</button>
 		<button class="btn btn-outline-secondary" type="reset" id="reset">취소</button>
+		</figure>
 	</form>
 </div>
 <script>

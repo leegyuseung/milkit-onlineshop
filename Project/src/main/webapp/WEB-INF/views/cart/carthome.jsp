@@ -74,6 +74,7 @@
 	
 
 	<form action="../staff/orderPage.do">    
+		<br />
    		<button class="btn btn-outline-secondary">구매하기</button>
    	</form>
    	</figure>

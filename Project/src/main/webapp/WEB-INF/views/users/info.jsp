@@ -3,9 +3,6 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 <html>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
 <head>
 <meta charset="UTF-8">
 <title>/views/users/info.jsp</title>
@@ -66,9 +63,12 @@
       </tbody>
          
    </table>
-   
-   <a href="${pageContext.request.contextPath}/users/private/updateform.do">개인정보 수정</a>
-   <a href="javascript:deleteConfirm()">탈퇴</a>
+
+    <figure class="text-end">
+	<button  class="btn btn-outline-secondary"  type="submit" id="update">회원정보수정</button>
+	<button class="btn btn-outline-secondary" type="reset" id="delete">탈퇴</button>
+	</figure>
+	
 </div>
 <script>
    function deleteConfirm(){
@@ -77,6 +77,13 @@
          location.href="${pageContext.request.contextPath}/users/private/delete.do";
       }
    }
+   
+	document.querySelector("#update").addEventListener("click",function(){
+		location.href="${pageContext.request.contextPath}/users/private/updateform.do";	
+	});
+	document.querySelector("#delete").addEventListener("click",function(){
+		location.href="javascript:deleteConfirm()";	
+	});
 </script>
 <br />
 <jsp:include page="../../../resources/include/footer.jsp">

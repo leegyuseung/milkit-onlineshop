@@ -44,8 +44,10 @@
 			<label class="control-label" for="address">주소</label>
 			<input class="form-control" type="text" name="address" id="address"/>
 		</div>
+		<figure class="text-end">
 		<button  class="btn btn-outline-secondary"  type="submit">가입</button>
 		<button class="btn btn-outline-secondary" type="reset" id="reset">취소</button>
+		</figure>
 	</form>
 </div>
 <script src="${pageContext.request.contextPath}/resources/js/gura_util.js"></script>
