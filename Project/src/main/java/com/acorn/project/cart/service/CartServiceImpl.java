@@ -53,7 +53,7 @@ public class CartServiceImpl implements CartService{
 	
 	@Override
 	public void update(int cart_id) {
-		
+		dao.update(cart_id);
 	}
 	
 	@Override
