@@ -33,6 +33,12 @@
 		float: left;
 		padding: 5px;
 	}
+	
+	h1 {text-align: center; font-weight: bold; padding-top: 1em; padding-bottom: 1em;}
+	
+	#center{
+	text-align: center;
+	}
 </style>
 </head>
 <body>
@@ -53,23 +59,23 @@
 				<table class="table">
 					<thead>
 						<tr>
-							<th>글번호</th>
-							<th>작성자</th>
-							<th>제목</th>
-							<th>조회수</th>
-							<th>등록일</th>
+							<th id="center">글번호</th>
+							<th id="center">작성자</th>
+							<th id="center">제목</th>
+							<th id="center">조회수</th>
+							<th id="center">등록일</th>
 						</tr>
 					</thead>
 					<tbody>
 					<c:forEach var="tmp" items="${list }">
 						<tr>
-							<td>${tmp.num }</td>
-							<td>${tmp.writer }</td>
-							<td>
+							<td id="center">${tmp.num }</td>
+							<td id="center">${tmp.writer }</td>
+							<td id="center">
 								<a href="detail.do?num=${tmp.num }&keyword=${encodedK }&condition=${condition}">${tmp.title }</a>
 							</td>
-							<td>${tmp.viewCount }</td>
-							<td>${tmp.regdate }</td>
+							<td id="center">${tmp.viewCount }</td>
+							<td id="center">${tmp.regdate }</td>
 						</tr>
 					</c:forEach>
 					</tbody>
