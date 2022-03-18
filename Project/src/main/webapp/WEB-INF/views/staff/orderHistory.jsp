@@ -40,7 +40,7 @@
 							<tbody>
 								<c:forEach items="${list}" var="tmp">
 									<tr>
-										<td><a href="/staff/orderView?orderId=${tmp.orderId}">${tmp.orderId}</a></td>
+										<td><a href="orderDetail.do?orderId=${tmp.orderId}">${tmp.orderId}</a></td>
 										<td>(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
 										<td><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
 									</tr>
