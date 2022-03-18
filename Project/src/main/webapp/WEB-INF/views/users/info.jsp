@@ -8,7 +8,7 @@
 <title>/views/users/info.jsp</title>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 <style>
-	h1 { text-align: center; font-weight: bold; padding-top: 1em; padding-bottom: 1em;}
+	h1 {text-align: center; font-weight: bold; padding-top: 1em; padding-bottom: 1em;}
 	
 	#center{
 	text-align: center;

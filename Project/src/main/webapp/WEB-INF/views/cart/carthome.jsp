@@ -11,12 +11,14 @@
 <meta charset="UTF-8">
 <title>/cart/cartlist.jsp</title>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
-<!-- 
-	<jsp:include page="../../../resources/include/cartresource.jsp"></jsp:include>
- -->
-<!-- 
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/carthome.css" />
- -->
+<style>
+	h1 {text-align: center; font-weight: bold; padding-top: 1em; padding-bottom: 1em;}
+	
+	#center{
+	text-align: center;
+	}
+
+</style>
 </head>
 <body>
 <jsp:include page="../../../resources/include/navbar.jsp">
@@ -28,34 +30,33 @@
    <table class="table">
       <thead>
         <tr>
-          <th scope="col">번호</th>
-          <th scope="col">상품 사진</th>
-          <th scope="col">상품명</th>
-          <th scope="col">수량</th>
-          <th scope="col">수정</th>
-          <th scope="col">가격</th>
-          <th scope="col">총 금액</th>          
-          <th scope="col">삭제</th>
+          <th scope="col" id="center">번호</th>
+          <th scope="col" id="center">상품 사진</th>
+          <th scope="col" id="center">상품명</th>
+          <th scope="col" id="center">수량</th>
+          <th scope="col" id="center">수정</th>
+          <th scope="col" id="center">가격</th>
+          <th scope="col" id="center">총 금액</th>          
+          <th scope="col" id="center">삭제</th>
         </tr>
       </thead>
       <tbody>
       <c:set var="sum" value="0" />
       <c:forEach var="tmp" items="${list }" varStatus="status">
          <tr>
-            <td>${status.count }</td>
-            <td><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
-            <td>${tmp.productId }</td>
+            <td id="center">${status.count }</td>
+            <td id="center"><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
+            <td id="center">${tmp.productId }</td>
             <form action="update.do" method="post" id="updateForm">
-            	<td><input type="number" min="1" max="10"name="newAmount" value="${tmp.amount }" id="newAmount"/>
+            	<td id="center"><input type="number" min="1" max="10"name="newAmount" value="${tmp.amount }" id="newAmount"/>
            			<input type="hidden" name="cart_id" value="${tmp.cart_id }"/>
            			<input type="hidden" name="price" value="${tmp.price}"/>
            		</td>
-           		<td><button type="submit">수정</button></td>	            	
+           		<td id="center"><button class="btn btn-outline-secondary" type="submit">수정</button></td>	            	
              </form>
-            
-            <td><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /></td>
-            <td><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /></td>
-            <td>
+            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /></td>
+            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /></td>
+            <td id="center">
             	<a href="delete.do?cart_id=${tmp.cart_id }">
 	            	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
 						<path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
