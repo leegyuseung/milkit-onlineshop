@@ -18,7 +18,7 @@
 	<h1>주문 내역 디테일</h1>
 	<section id="content">
 	
-		<div class="orderInfo">
+		<div>
 		  	<c:forEach items="${list}" var="tmp" varStatus="status">
 		   
 			   	<c:if test="${status.first}">
@@ -30,7 +30,7 @@
 		  	</c:forEach>
 	 	</div>
 	 
-	 	<ul class="orderView">
+	 	<ul>
 		  	<c:forEach items="${list}" var="tmp">     
 				<li>
 				   	<div class="thumb">
