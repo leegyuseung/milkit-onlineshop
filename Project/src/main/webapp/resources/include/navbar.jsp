@@ -16,7 +16,7 @@
        //로그인 된 아이디 읽어오기 
        String id=(String)session.getAttribute("id");
     %>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFB94F;">
     	<div class="container px-4 px-lg-5">
         	<a class="navbar-brand" href="<%=request.getContextPath() %>/">	
         		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
