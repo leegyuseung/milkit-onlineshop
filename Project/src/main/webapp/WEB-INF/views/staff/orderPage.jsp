@@ -42,8 +42,8 @@
 			            <td id="center"><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
 			            <td id="center">${tmp.productId }</td>
 			            <td id="center">${tmp.amount }</td>
-			            <td id="center">${tmp.price }</td>
-			            <td id="center">${tmp.totalPrice }</td>
+			            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.price }" /></td>
+			            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice }" /></td>
 		         	</tr>
 		         	<c:set var="sum" value="${sum + (tmp.totalPrice)}" />			
 	      		</c:forEach>

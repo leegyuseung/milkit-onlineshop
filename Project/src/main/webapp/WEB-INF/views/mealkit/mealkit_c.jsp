@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -65,7 +66,7 @@
                     <!-- Product name-->
                     <h6 class="fw-bolder">${tmp.productCate}</h6>
                     <!-- Product price-->
-                    ${tmp.price} 원
+                    <fmt:formatNumber pattern="###,###,###" value="${tmp.price }" /> 원
                     </div>
                     </div>
                     <!-- Product actions-->
