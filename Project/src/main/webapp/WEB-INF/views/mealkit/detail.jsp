@@ -41,7 +41,7 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    
+                  
                     <div class="col-md-6">
 	               		<div class="img-wrapper" style="text-align:center;">
 	               			<a href="${pageContext.request.contextPath}/mealkit/detail.do?productId=${dto.productId}">
