@@ -442,10 +442,13 @@
 		}
 	}
 </script>
-<br />
+</br>
+</br>
+</br>
 <!-- Footer-->
         <jsp:include page="../../../resources/include/footer.jsp">
 			<jsp:param value="mealkit.home" name="thisPage"/>
 		</jsp:include>
 </body>
+
 </html>
