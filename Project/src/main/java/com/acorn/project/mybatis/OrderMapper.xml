@@ -35,9 +35,8 @@
 		 FROM ordertable o
 		 INNER JOIN ordertable_detail d ON o.orderId = d.orderId
 		 INNER JOIN product p ON d.productId = p.productId
-		 WHERE o.userId=#{userId} OR o.orderId=#{orderId}
-
-</select>
+		 WHERE o.userId=#{userId} AND o.orderId=#{orderId}
+	</select>
 </mapper>
 
 
