@@ -7,6 +7,14 @@
 <meta charset="UTF-8">
 <title>staff/usersList.jsp</title>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+<style>
+	h1 {text-align: center; font-weight: bold; padding-top: 1em; padding-bottom: 1em;}
+	
+	#center{
+	text-align: center;
+	}
+
+</style>
 </head>
 <body>
 <jsp:include page="../../../resources/include/navbar.jsp">
@@ -17,25 +25,25 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th>이름</th>
-				<th>아이디</th>
-				<th>이메일</th>
-				<th>주소</th>
-				<th>가입 날짜</th>
-				<th>유저 타입</th>
-				<th>강제 탈퇴</th>
+				<th id="center">이름</th>
+				<th id="center">아이디</th>
+				<th id="center">이메일</th>
+				<th id="center">주소</th>
+				<th id="center">가입 날짜</th>
+				<th id="center">유저 타입</th>
+				<th id="center">강제 탈퇴</th>
 			</tr>
 		</thead>
 		<tbody>
 			<c:forEach var="tmp" items="${list }">
 				<tr>
-					<td>${tmp.name }</td>
-					<td>${tmp.id }</td>
-					<td>${tmp.email }</td>
-					<td>${tmp.address }</td>
-					<td>${tmp.regdate }</td>
-					<td>${tmp.usertype }</td>
-					<td><a href="delete2.do?id=${tmp.id }">강제 탈퇴</a></td>
+					<td id="center">${tmp.name }</td>
+					<td id="center">${tmp.id }</td>
+					<td id="center">${tmp.email }</td>
+					<td id="center">${tmp.address }</td>
+					<td id="center">${tmp.regdate }</td>
+					<td id="center">${tmp.usertype }</td>
+					<td id="center"><a href="delete2.do?id=${tmp.id }">강제 탈퇴</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

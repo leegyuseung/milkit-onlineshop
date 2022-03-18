@@ -48,7 +48,7 @@
             <td id="center"><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
             <td id="center">${tmp.productId }</td>
             <form action="update.do" method="post" id="updateForm">
-            	<td id="center"><input type="number" min="1" max="10"name="newAmount" value="${tmp.amount }" id="newAmount"/>
+            	<td id="center"><input id="center" type="number" min="1" max="10"name="newAmount" value="${tmp.amount }" id="newAmount"/>
            			<input type="hidden" name="cart_id" value="${tmp.cart_id }"/>
            			<input type="hidden" name="price" value="${tmp.price}"/>
            		</td>
