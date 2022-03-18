@@ -23,6 +23,7 @@
 				<th>주소</th>
 				<th>가입 날짜</th>
 				<th>유저 타입</th>
+				<th>수정</th>
 				<th>강제 탈퇴</th>
 			</tr>
 		</thead>
@@ -34,7 +35,13 @@
 					<td>${tmp.email }</td>
 					<td>${tmp.address }</td>
 					<td>${tmp.regdate }</td>
-					<td>${tmp.usertype }</td>
+					<form action="updateUserType.do" method="post">
+		            	<td>
+		            		<input type="number" min="0" max="1"name="usertype" value="${tmp.usertype }" />
+		            		<input type="hidden" name="id" value="${tmp.id }" />
+		            	</td>
+		           		<td><button class="btn btn-outline-secondary" type="submit">수정</button></td>	            	
+		            </form>
 					<td><a href="delete2.do?id=${tmp.id }">강제 탈퇴</a></td>
 				</tr>
 			</c:forEach>

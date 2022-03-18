@@ -8,6 +8,14 @@
 <meta charset="UTF-8">
 <title>/staff/orderPage.jsp</title>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+<style>
+	h1 {text-align: center; font-weight: bold; padding-top: 1em; padding-bottom: 1em;}
+	
+	#center{
+	text-align: center;
+	}
+
+</style>
 </head>
 <body>
 <jsp:include page="../../../resources/include/navbar.jsp">
@@ -18,24 +26,24 @@
 	<table class="table">
       	<thead>
         	<tr>
-          		<th scope="col">번호</th>
-          		<th scope="col">상품 사진</th>
-          		<th scope="col">상품명</th>
-          		<th scope="col">수량</th>
-          		<th scope="col">가격</th>
-          		<th scope="col">총 가격</th>          		
+          		<th scope="col" id="center">번호</th>
+          		<th scope="col" id="center">상품 사진</th>
+          		<th scope="col" id="center">상품명</th>
+          		<th scope="col" id="center">수량</th>
+          		<th scope="col" id="center">가격</th>
+          		<th scope="col" id="center">총 가격</th>          		
         	</tr>
       	</thead>
       	<tbody>
       		<c:set var="sum" value="0" />
 	      		<c:forEach var="tmp" items="${list }" varStatus="status">
 		         	<tr>
-			            <td>${status.count }</td>
-			            <td><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
-			            <td>${tmp.productId }</td>
-			            <td>${tmp.amount }</td>
-			            <td>${tmp.price }</td>
-			            <td>${tmp.totalPrice }</td>
+			            <td id="center">${status.count }</td>
+			            <td id="center"><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
+			            <td id="center">${tmp.productId }</td>
+			            <td id="center">${tmp.amount }</td>
+			            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.price }" /></td>
+			            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice }" /></td>
 		         	</tr>
 		         	<c:set var="sum" value="${sum + (tmp.totalPrice)}" />			
 	      		</c:forEach>

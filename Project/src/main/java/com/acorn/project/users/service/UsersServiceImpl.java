@@ -129,4 +129,10 @@ public class UsersServiceImpl implements UsersService{
       mView.addObject("list", list);   
    }
 
+	@Override
+	public void updateUsertype(UsersDto dto) {
+		dao.updateUserType(dto);
+		
+	}
+
 }
