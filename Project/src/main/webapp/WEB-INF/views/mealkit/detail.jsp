@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,8 +41,7 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                  
-                  
+
                    <div class="col-md-6">
 
 	               		<div class="img-wrapper" style="text-align:center;">
@@ -59,20 +58,7 @@
                             
                             <span>${dto.price}</span>
                     	</div>
-                    
-                    <c:if test="${user.usertype eq 1 }">
-      					<c:choose>
-      					<c:when test="${empty dto2.content }">
-      					<a href="private/insertform.do?productId=${param.productId}">상세 내용 작성</a>
-      					</c:when>
-      					<c:otherwise>
-      					<p class="card-text">${dto2.content }</p>
-      					<a href="private/delete.do?productId=${param.productId}">상세 내용 삭제</a>
-      					<a href="private/updateform.do?productId=${param.productId}">상세 내용 수정</a>
-      					</c:otherwise>
-     					</c:choose>
-      				</c:if>
-                      	
+                          	
                    <div class="d-flex">
                       <form action="${pageContext.request.contextPath }/cart/insert.do" method="post" >
            
@@ -87,18 +73,30 @@
                       </form>
                    </div>
                    </div>
-                  </div>
                </div>
-            
+           </div>  
         </section>
+    	
     	<section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
                 	<p class="lead">${dto2.content }</p>
-                	
+                	<c:if test="${user.usertype eq 1}">
+      					<c:choose>
+      					<c:when test="${empty dto2.content }">
+      					<a href="private/insertform.do?productId=${param.productId}">상세 내용 작성</a>
+      					</c:when>
+      					<c:otherwise>
+      					<p class="card-text">${dto2.content }</p>
+      					<a href="private/delete.do?productId=${param.productId}">상세 내용 삭제</a>
+      					<a href="private/updateform.do?productId=${param.productId}">상세 내용 수정</a>
+      					</c:otherwise>
+     					</c:choose>
+      				</c:if>
                 </div>
             </div>
         </section>
+      	
         <!-- Footer-->
         <jsp:include page="../../../resources/include/footer.jsp">
 			<jsp:param value="mealkit.home" name="thisPage"/>
