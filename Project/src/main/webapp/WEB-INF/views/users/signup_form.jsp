@@ -5,14 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>/views/users/signup_form.jsp</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
 <body>
 <jsp:include page="../../../resources/include/navbar.jsp">
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
 <div class="container">
-	<h1>회원 가입 폼 입니다.</h1>
+	<h1>회원 가입</h1>
 	<form action="${pageContext.request.contextPath}/users/signup.do" method="post" id="myForm">
 		<div class="mb-3">
 			<label class="control-label" for="name">이름</label>
@@ -44,7 +44,11 @@
 			<label class="control-label" for="address">주소</label>
 			<input class="form-control" type="text" name="address" id="address"/>
 		</div>
-		<button class="btn btn-outline-secondary" type="submit">가입</button>
+
+		<figure class="text-end">
+			<button  class="btn btn-outline-secondary"  type="submit">가입</button>
+			<button class="btn btn-outline-secondary" type="reset" id="reset">취소</button>
+		</figure>
 	</form>
 </div>
 <script src="${pageContext.request.contextPath}/resources/js/gura_util.js"></script>
@@ -174,6 +178,10 @@
 			//폼 전송 막기 
 			e.preventDefault();
 		}	
+	});
+	
+	document.querySelector("#reset").addEventListener("click",function(){
+		location.href="${pageContext.request.contextPath}/home.do";	
 	});
 </script>
 <br />

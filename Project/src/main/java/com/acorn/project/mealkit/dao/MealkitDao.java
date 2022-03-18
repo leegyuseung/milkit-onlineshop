@@ -18,5 +18,4 @@ public interface MealkitDao {
 	public MealkitContentDto getData2(String productId);
 	public void delete(String productId);
 	public void update(MealkitContentDto dto);
-
 }

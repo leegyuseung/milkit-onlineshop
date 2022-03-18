@@ -38,7 +38,6 @@
 	<jsp:param value="inquiry.list" name="thisPage"/>
 </jsp:include>
 <div class="container">
-	<a href="private/insertform.do">새글 작성</a>
 	<h1 style="text-align: center">Q&A</h1>
 	<table class="table">
 		<thead>
@@ -90,12 +89,13 @@
 			</c:if>
 		</ul>
 	</div>
-
+	<figure class="text-end">
+	<button class="btn btn-outline-secondary" type="button" id="write">작성</button>
+	</figure>
 	<div style="clear:both;"></div>
-	
 	<form class="row g-3">
 		<div class="col-sm-1">
-	  		<label class="control-label" for="condition">검색조건</label>
+	  		<label class="control-label" for="condition"></label>
 	  	</div>
 	  	<div class="col-sm-2">
 	   		<select class="form-select" name="condition" id="condition">
@@ -109,7 +109,7 @@
 			<input class="form-control" type="text" id="keyword" name="keyword" placeholder="검색어..." value="${keyword }"/>
 	  	</div>
 	  	<div class="col-sm-3">
-			<button class="btn btn-primary" type="submit">검색</button>
+			<button class="btn btn-outline-secondary" type="submit">검색</button>
 	  	</div>
 	</form>
 	
@@ -120,7 +120,13 @@
 			<strong>${totalRow }</strong> 개의 글이 검색 되었습니다.
 		</p>
 	</c:if>
+
 </div>
+<script>
+	document.querySelector("#reset").addEventListener("click",function(){
+		location.href="${pageContext.request.contextPath}/private/insertform.do";	
+	});
+</script>
 <br />
 <jsp:include page="../../../resources/include/footer.jsp">
 	<jsp:param value="home" name="thisPage"/>

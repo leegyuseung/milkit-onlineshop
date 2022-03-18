@@ -24,8 +24,7 @@
 </jsp:include>
 
 <div class="container">
-<h1>장바구니 목록입니다.</h1>
-   <a href="${pageContext.request.contextPath }/home.do">홈페이지로 돌아가기</a>
+<h1>장바구니</h1>
    <table class="table">
       <thead>
         <tr>
@@ -70,12 +69,15 @@
       </c:forEach>
       </tbody>
    </table>
+   <figure class="text-end">
    	총 합계 : <fmt:formatNumber pattern="###,###,###" value="${sum}" />원
-
+	
 
 	<form action="../staff/orderPage.do">    
-   		<button class="btn btn-primary">구매하기</button>
+		<br />
+   		<button class="btn btn-outline-secondary">구매하기</button>
    	</form>
+   	</figure>
  </div>
 <script>
 	
