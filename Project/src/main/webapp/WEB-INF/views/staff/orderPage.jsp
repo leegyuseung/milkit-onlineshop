@@ -84,6 +84,9 @@
 		</form> 
 	</div>
 </body>
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 <script>
 	document.querySelector("#reset").addEventListener("click",function(){
 		location.href="${pageContext.request.contextPath }/cart/carthome.do";	
