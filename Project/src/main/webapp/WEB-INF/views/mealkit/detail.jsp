@@ -42,7 +42,7 @@
         <section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                  
+
                    <div class="col-md-6">
 
 	               		<div class="img-wrapper" style="text-align:center;">
@@ -79,17 +79,17 @@
                			<input type="hidden" name="productId" value="${dto.productId}">
                			<input type="hidden" name="price" value="${dto.price}">
                			<input type="hidden" name="imagePath" value="${dto.imagePath}">
-                        <input class="form-control text-center me-3" name="amount" id="inputQuantity" type="int" value="1" style="max-width: 3rem" />
+                        <input class="form-control text-center me-3" name="amount" id="inputQuantity" type="number" value="1" style="max-width: 3rem" />
                         <button type="submit" class="btn btn-primary">
                         <i class="bi-cart-fill me-1">장바구니 추가</i>
                                 		
                         </button>
                       </form>
                    </div>
-                   
+                   </div>
                   </div>
                </div>
-            </div>
+            
         </section>
     	<section class="py-5">
             <div class="container px-4 px-lg-5 my-5">
@@ -98,7 +98,7 @@
                 	
                 </div>
             </div>
-        
+        </section>
         <!-- Footer-->
         <jsp:include page="../../../resources/include/footer.jsp">
 			<jsp:param value="mealkit.home" name="thisPage"/>
