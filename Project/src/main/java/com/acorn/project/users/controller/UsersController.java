@@ -23,6 +23,7 @@ import com.acorn.project.users.service.UsersService;
 
 @Controller
 public class UsersController {
+	
 	@Autowired
 	private UsersService service;
 	
@@ -133,13 +134,6 @@ public class UsersController {
 		mView.addObject("encodedUrl", encodedUrl);
 
 		mView.setViewName("users/login");
-		return mView;
-	}
-	
-	@RequestMapping("/staff/usersList")
-	public ModelAndView list(ModelAndView mView) {
-		service.getList(mView);
-		mView.setViewName("staff/usersList");
 		return mView;
 	}
 }
