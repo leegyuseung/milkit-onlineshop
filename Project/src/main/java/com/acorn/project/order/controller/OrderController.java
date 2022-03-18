@@ -47,19 +47,18 @@ public class OrderController {
  
  return "redirect:/shop/orderList";
 	 */
-	@RequestMapping("/staff/orderHistory.do")
+	@RequestMapping("/staff/orderComplete.do")
 	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail) {
 		
 		service2.orderInfo(dto, session);
 		
-		int orderId=dto.getOrderId();
-		System.out.println(orderId);
-		
-		dtoDetail.setOrderId(orderId);
-		service2.orderInfo_Detail(dtoDetail);
+		//여기dto에는 orderId가 추가되지 않았음
 		
 		
-		return "staff/orderHistory";
+		service2.orderInfo_Detail(dto, dtoDetail, session);
+		
+		service.deleteAll((String)session.getAttribute("id"));
+		return "staff/orderComplete";
 	}
 	
 	

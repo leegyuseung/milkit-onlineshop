@@ -40,26 +40,45 @@
 	<jsp:param value="mealkit.home" name="thisPage"/>
 </jsp:include>
 <!-- list 목록 -->
-<div class="container">
-	<h1>Home</h1>
-	<div class="row">
-		<c:forEach var="tmp" items="${list }">
-			<div class="col-6 col-md-4 col-lg-3">
-         		<div class="card mb-3">
-            		<a href="${pageContext.request.contextPath}/mealkit/detail.do?productId=${tmp.productId}">
-	               		<div class="img-wrapper">
-	                  		<img class="card-img-top" src="${pageContext.request.contextPath }${tmp.imagePath}" />
-	               		</div>
-            		</a>
-            		<div class="card-body">
-               			<p class="card-text">상품 카테고리 : ${tmp.productCate}</p>
-               			<p class="card-text">상품명 : <strong>${tmp.productName}</strong></p>
-               			<p>상품 가격 : <strong>${tmp.price}</strong></p>
-            		</div>
-         		</div>
-      		</div>
-		</c:forEach>
-   	</div>
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Japan Food</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">good price, good quality</p>
+                </div>
+            </div>
+        </header>
+<!-- Section-->
+<section class="py-5">
+	<div class="container px-4 px-lg-5 mt-5">
+    	<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    	<c:forEach var="tmp" items="${list }">
+        	<div class="col mb-5">
+            	<div class="card h-100">
+                	<!-- Product image-->
+                    <img class="card-img-top" src="${pageContext.request.contextPath }${tmp.imagePath}" alt="..." />
+                    <!-- Product details-->
+                    <div class="card-body p-4">
+                    <div class="text-center">
+                    <!-- Product name-->
+                    <h3 class="fw-bolder">${tmp.productName}</h3>
+                    <!-- Product name-->
+                    <h6 class="fw-bolder">${tmp.productCate}</h6>
+                    <!-- Product price-->
+                    ${tmp.price} 원
+                    </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="${pageContext.request.contextPath}/mealkit/detail.do?productId=${tmp.productId}">상세 정보</a></div>
+                    </div>
+       			 </div>
+             </div>
+        </c:forEach>
+		</div>
+	</div>
+</section>
    	<!-- page -->
    	<nav>
 	<ul class="pagination justify-content-center">
@@ -104,5 +123,8 @@
       </ul>
    </nav>   
 </div>
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="mealkit.home" name="thisPage"/>
+</jsp:include>
 </body>
 </html>

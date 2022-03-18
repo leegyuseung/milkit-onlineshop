@@ -25,4 +25,10 @@ public class OrderDaoImpl implements OrderDao{
 		
 	}
 
+	@Override
+	public int getOrderId() {
+		int orederId=session.selectOne("order.getOrderId");
+		return orederId;
+	}
+
 }

@@ -12,6 +12,9 @@
 
 </head>
 <body>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 <div class="container">
 	<h1>My Page</h1>
 	<table claa="table">
@@ -51,6 +54,10 @@
 		}
 	}
 </script>
+<br />
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </body>
 </html>
 

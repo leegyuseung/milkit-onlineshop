@@ -6,7 +6,9 @@ public class OrderDetailDto {
 	orderId_detail NUMBER (35),
 	productId varchar2(100),
 	amount_detail NUMBER(20)
- */
+ */	
+	
+	private String userId;
 	private int orderId;
 	private int orderId_detail;
 	private String productId;
@@ -14,12 +16,21 @@ public class OrderDetailDto {
 	
 	public OrderDetailDto() {}
 
-	public OrderDetailDto(int orderId, int orderId_detail, String productId, int amount_detail) {
+	public OrderDetailDto(String userId, int orderId, int orderId_detail, String productId, int amount_detail) {
 		super();
+		this.userId = userId;
 		this.orderId = orderId;
 		this.orderId_detail = orderId_detail;
 		this.productId = productId;
 		this.amount_detail = amount_detail;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
 	public int getOrderId() {
@@ -56,3 +67,4 @@ public class OrderDetailDto {
 	
 	
 }
+

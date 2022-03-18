@@ -9,6 +9,9 @@
 
 </head>
 <body>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 <div class="container">
 	<h1>가입 정보 수정 폼 입니다.</h1>
 	
@@ -34,7 +37,9 @@
 	</form>
 	
 </div>
-
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </body>
 </html>
 
