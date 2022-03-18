@@ -16,5 +16,9 @@
 		<h1>구매해주셔서 감사합니다.</h1>
 		<a href="../home.do">돌아가기</a>
 	</div>
+
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </body>
 </html>

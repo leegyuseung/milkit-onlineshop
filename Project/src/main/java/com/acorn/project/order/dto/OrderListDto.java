@@ -13,7 +13,7 @@ public class OrderListDto {
 	
 	private int orderId_Detail;
 	private String productId;
-	private int amount_deatil;
+	private int amount_detail;
 	
 	private String productName;
 	private String imagePath;
@@ -22,7 +22,7 @@ public class OrderListDto {
 	public OrderListDto() {}
 
 	public OrderListDto(int orderId, String userId, String userAddr, String userPostal, String userAddrDetail, int tel,
-			int totalPrice, String orderDate, int orderId_Detail, String productId, int amount_deatil,
+			int totalPrice, String orderDate, int orderId_Detail, String productId, int amount_detail,
 			String productName, String imagePath, int price) {
 		super();
 		this.orderId = orderId;
@@ -35,7 +35,7 @@ public class OrderListDto {
 		this.orderDate = orderDate;
 		this.orderId_Detail = orderId_Detail;
 		this.productId = productId;
-		this.amount_deatil = amount_deatil;
+		this.amount_detail = amount_detail;
 		this.productName = productName;
 		this.imagePath = imagePath;
 		this.price = price;
@@ -121,12 +121,12 @@ public class OrderListDto {
 		this.productId = productId;
 	}
 
-	public int getAmount_deatil() {
-		return amount_deatil;
+	public int getAmount_detail() {
+		return amount_detail;
 	}
 
-	public void setAmount_deatil(int amount_deatil) {
-		this.amount_deatil = amount_deatil;
+	public void setAmount_detail(int amount_detail) {
+		this.amount_detail = amount_detail;
 	}
 
 	public String getProductName() {

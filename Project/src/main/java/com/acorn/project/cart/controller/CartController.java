@@ -38,7 +38,11 @@ public class CartController {
 			String guestId=session.getId();
 			System.out.println(guestId);
 			dto.setId(guestId);
-			
+			session.setMaxInactiveInterval(60);
+			System.out.println(session.getMaxInactiveInterval());
+			if(session.getMaxInactiveInterval()==0) {
+				service.deleteAll(guestId);
+			}
 		}else {
 			dto.setId(id);
 		}

@@ -31,17 +31,12 @@
 	</select>
 	<!-- 특정 주문 목록 -->
 	<select id="orderDetailList" resultType="com.acorn.project.order.dto.OrderListDto">
-		 SELECT
-		     o.orderId, o.userId, o.userAddr, o.userPostal, o.userAddrDetail, o.tel, o.totalPrice, o.orderDate,
-		     d.orderId_Detail, d.productId, d.amount_deatil,
-		     p.productName, p.imagePath, p.price
+		 SELECT o.orderId, o.userId, o.userAddr, o.userPostal, o.userAddrDetail, o.tel, o.totalPrice, o.orderDate, d.orderId_detail, d.productId, d.amount_detail, p.productName, p.imagePath, p.price 
 		 FROM ordertable o
-		 	INNER JOIN ordertabledetail d
-		    	ON o.orderId = d.orderId
-		    INNER JOIN product p
-		        ON d.productId = p.productId
-		 WHERE o.userId = #{userId} and o.orderId = #{orderId}
-</select>
+		 INNER JOIN ordertable_detail d ON o.orderId = d.orderId
+		 INNER JOIN product p ON d.productId = p.productId
+		 WHERE o.userId=#{userId} AND o.orderId=#{orderId} 
+	</select>
 </mapper>
 
 
