@@ -53,6 +53,7 @@
            			<input type="hidden" name="price" value="${tmp.price}"/>
            		</td>
            		<td id="center"><button class="btn btn-outline-secondary" type="submit">수정</button></td>	            	
+
              </form>
             <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /></td>
             <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /></td>

@@ -13,5 +13,6 @@ public interface UsersDao {
 	public void delete(String id);
 	public void delete2(String id);
 	public List<UsersDto> getList();
+	public void updateUserType(UsersDto dto);
 
 }

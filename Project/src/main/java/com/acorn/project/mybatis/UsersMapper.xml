@@ -43,4 +43,10 @@
 		FROM users
 		ORDER BY regdate ASC
 	</select>
+	
+	<update id="updateUsertype" parameterType="usersDto">
+		UPDATE users
+		SET usertype=#{usertype}
+		WHERE id=#{id}
+	</update>
 </mapper>
