@@ -64,4 +64,10 @@ public class UsersDaoImpl implements UsersDao{
 		List<UsersDto> list=session.selectList("users.getList");
 		return list;
 	}
+
+	@Override
+	public void updateUserType(UsersDto dto) {
+		session.update("users.updateUsertype", dto);
+		
+	}
 }

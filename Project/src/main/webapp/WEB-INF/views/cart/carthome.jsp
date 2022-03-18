@@ -50,7 +50,7 @@
            			<input type="hidden" name="cart_id" value="${tmp.cart_id }"/>
            			<input type="hidden" name="price" value="${tmp.price}"/>
            		</td>
-           		<td><button type="submit">수정</button></td>	            	
+           		<td><button class="btn btn-outline-secondary" type="submit">수정</button></td>	            	
              </form>
             
             <td><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /></td>

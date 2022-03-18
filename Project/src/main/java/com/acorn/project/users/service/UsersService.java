@@ -22,4 +22,5 @@ public interface UsersService {
 	public void deleteUser(HttpSession session, ModelAndView mView);
 	public void deleteUser2(String id);
 	public void getList(ModelAndView mView);
+	public void updateUsertype(UsersDto dto);
 }

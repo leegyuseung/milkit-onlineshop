@@ -142,4 +142,12 @@ public class UsersController {
 		mView.setViewName("staff/usersList");
 		return mView;
 	}
+	
+	//userList 에서 user type 수정요청 처리
+	@RequestMapping("/staff/updateUserType")
+	public ModelAndView updateUserType(ModelAndView mView,UsersDto dto) {
+		service.updateUsertype(dto);
+		mView.setViewName("redirect:/staff/usersList.do");
+		return mView;
+	}
 }
