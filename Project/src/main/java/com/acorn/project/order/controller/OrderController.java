@@ -45,13 +45,28 @@ public class OrderController {
 
 		service2.orderInfo_Detail(dto, dtoDetail, session);
 		
-		//service.deleteAll((String)session.getAttribute("id"));
+		service.deleteAll((String)session.getAttribute("id"));
 		
 		return "staff/orderComplete";
 	}
 	
-	@RequestMapping("/staff/orderHistory.do")
+	@RequestMapping("")
 	public ModelAndView orderList(ModelAndView mView, OrderDto dto, HttpSession session) {
+		
+		String id=(String)session.getAttribute("id");
+		dto.setUserId(id);
+		
+		List<OrderDto> list=service2.getListOrder(dto);
+		
+		mView.addObject("list", list);
+
+		mView.setViewName("");
+		return mView;
+		
+	}
+	
+	@RequestMapping("/staff/orderHistory.do")
+	public ModelAndView orderDetail(ModelAndView mView, OrderDto dto, HttpSession session) {
 		
 		String id=(String)session.getAttribute("id");
 		dto.setUserId(id);
@@ -64,6 +79,4 @@ public class OrderController {
 		return mView;
 		
 	}
-	
-	
 }

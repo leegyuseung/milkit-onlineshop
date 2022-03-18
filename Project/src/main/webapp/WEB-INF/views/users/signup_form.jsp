@@ -44,7 +44,7 @@
 			<label class="control-label" for="address">주소</label>
 			<input class="form-control" type="text" name="address" id="address"/>
 		</div>
-		<button class="btn btn-primary" type="submit">가입</button>
+		<button class="btn btn-outline-secondary" type="submit">가입</button>
 	</form>
 </div>
 <script src="${pageContext.request.contextPath}/resources/js/gura_util.js"></script>

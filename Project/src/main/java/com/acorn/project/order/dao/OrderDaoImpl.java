@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
+import com.acorn.project.order.dto.OrderListDto;
 
 @Repository
 public class OrderDaoImpl implements OrderDao{
@@ -37,6 +38,12 @@ public class OrderDaoImpl implements OrderDao{
 	public List<OrderDto> getList(OrderDto dto) {
 
 		return session.selectList("order.orderList", dto);
+	}
+
+	@Override
+	public List<OrderListDto> orderDetailList(OrderDto dto) {
+	
+		return session.selectList("order.orderDetailList", dto);
 	}
 
 }
