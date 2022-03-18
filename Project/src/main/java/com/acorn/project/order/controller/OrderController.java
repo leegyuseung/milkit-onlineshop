@@ -65,7 +65,7 @@ public class OrderController {
 		
 	}
 	
-	@RequestMapping("/staff/orderHistory.do")
+	@RequestMapping("/orderHistory.do")
 	public ModelAndView orderDetail(ModelAndView mView, OrderDto dto, HttpSession session) {
 		
 		String id=(String)session.getAttribute("id");

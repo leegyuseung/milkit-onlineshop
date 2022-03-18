@@ -15,6 +15,14 @@
 	<jsp:param value="orderHistory" name="thisPage"/>
 </jsp:include>
 
+<div class="container-fluid mt-3">
+	<div class="row">
+	    <!-- 3단길이의 첫번째 열 -->
+	    <div class="container col-md-3">
+		    <jsp:include page="../../../resources/include/userSidebar.jsp"></jsp:include>
+	    </div>
+	    <!-- 9단길이의 첫번째 열 -->
+	    <div class="col-md-9">
 		    <div class="container">
 		    	
 				<section id="content">
@@ -43,7 +51,9 @@
 					</ul>
 				</section>
 			</div>
-	   
+	    </div>
+	</div>
+</div>
 
 
 
