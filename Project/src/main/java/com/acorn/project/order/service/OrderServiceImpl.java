@@ -1,9 +1,12 @@
 package com.acorn.project.order.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.order.dao.OrderDao;
 import com.acorn.project.order.dto.OrderDetailDto;
@@ -29,13 +32,18 @@ public class OrderServiceImpl implements OrderService{
 		String id=(String)session.getAttribute("id");
 		dtoDetail.setUserId(id);
 		
-		orderInfo(dto,session);
-		
 		int orderId=dao.getOrderId();
-		System.out.println(dao.getOrderId());
 		dtoDetail.setOrderId(orderId);
 		
 		dao.orderInfo_Detail(dtoDetail);
+		
+	}
+
+	@Override
+	public List<OrderDto> getListOrder(OrderDto dto) {
+
+		
+		return dao.getList(dto);
 		
 	}
 	
