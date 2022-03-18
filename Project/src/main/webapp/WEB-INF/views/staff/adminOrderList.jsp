@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-  
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>/staff/orderHistory.jsp</title>
+<title>/staff/adminOrderList.jsp</title>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
 <body>
@@ -28,7 +28,7 @@
 				<section id="content">
 					
 					<ul class="orderList">
-						<h1>주문내역</h1>
+						<h1>주문 현황</h1>
 						<table class="table">
 							<thead>
 								<tr>
@@ -40,7 +40,7 @@
 							<tbody>
 								<c:forEach items="${list}" var="tmp">
 									<tr>
-										<td><a href="/staff/orderView?orderId=${tmp.orderId}">${tmp.orderId}</a></td>
+										<td><a href="adminOrderDetail.do?orderId=${tmp.orderId}">${tmp.orderId}</a></td>
 										<td>(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
 										<td><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
 									</tr>
@@ -57,5 +57,10 @@
 
 
 
+
+
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </body>
 </html>

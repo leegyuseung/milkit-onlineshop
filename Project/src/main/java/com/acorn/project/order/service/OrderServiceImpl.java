@@ -46,11 +46,25 @@ public class OrderServiceImpl implements OrderService{
 		return dao.getList(dto);
 		
 	}
+	
+	@Override
+	public List<OrderDto> getAllListOrder(OrderDto dto) {
+		// TODO Auto-generated method stub
+		return dao.getAllList(dto);
+	}
 
 	@Override
 	public List<OrderListDto> orderDetailList(OrderDto dto) {
 
 		return dao.orderDetailList(dto);
 	}
+
+	@Override
+	public List<OrderListDto> AllOrderDetailList(OrderDto dto) {
+
+		return dao.AllOrderDetailList(dto);
+	}
+
+	
 	
 }

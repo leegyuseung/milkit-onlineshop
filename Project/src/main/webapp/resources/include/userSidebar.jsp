@@ -11,7 +11,7 @@
 <div class="container">
 	<ul class="list-group">
 		<li class="list-group-item"><strong>마이 페이지</strong></li>
-		<li class="list-group-item"><a href="${pageContext.request.contextPath }/orderHistory.do">주문 내역</a></li>
+		<li class="list-group-item"><a href="${pageContext.request.contextPath }/private/orderHistory.do">주문 내역</a></li>
 	  	<li class="list-group-item"><a href="#">고객 센터</a></li>
 	  	<li class="list-group-item"><a href="${pageContext.request.contextPath }/inquiry/list.do">Q & A</a></li>
 	</ul>
