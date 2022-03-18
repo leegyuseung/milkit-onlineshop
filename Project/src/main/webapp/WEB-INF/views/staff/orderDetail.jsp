@@ -22,40 +22,57 @@
 	    </div>
 	    <!-- 9단길이의 첫번째 열 -->
 	    <div class="col-md-9">
-					    <div class="container">
+			<div class="container">
 				<h1>주문 내역 디테일</h1>
-				<section id="content">
-				
-					<div>
-					  	<c:forEach items="${list}" var="tmp" varStatus="status">
-					   
-						   	<c:if test="${status.first}">
-							    <p><span>수령인</span>${tmp.userId}</p>
-							    <p><span>주소</span>(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</p>
-							    <p><span>가격</span><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</p>
-						   	</c:if>
-					   
+				<table class="table ">
+					<thead>
+				   		<tr>
+				   			<th>수령인</th>
+				   			<th>주소</th>
+				   			<th>종합 가격</th>
+				   		</tr>
+				  	</thead>
+				  	<tbody>
+				  		<c:forEach items="${list}" var="tmp" varStatus="status">
+							<tr>
+							   	<c:if test="${status.first}">
+								    <td>${tmp.userId}</td>
+								    <td>(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
+								    <td><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
+							   	</c:if>
+					   		</tr>
 					  	</c:forEach>
-				 	</div>
-				 
-				 	<ul>
-					  	<c:forEach items="${list}" var="tmp">     
-							<li>
-							   	<div class="thumb">
-							    	<img src="${tmp.imagePath}" />
-							   	</div>
-							   	<div class="gdsInfo">
-								    <p>
-									    <span>상품명</span>${tmp.productName}<br />
-									    <span>개당 가격</span><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /> 원<br />
-									    <span>구입 수량</span>${tmp.amount_detail} 개<br />
-									    <span>최종 가격</span><fmt:formatNumber pattern="###,###,###" value="${tmp.price * tmp.amount_detail}" /> 원                  
-								    </p>
-							   	</div>
-						  	</li>     
-					  	</c:forEach>
-				 	</ul>
-				</section>
+				  	
+					    <tr>
+						    <td colspan="4">
+						    	<table class="table">
+						    		<thead>
+						    			<tr>
+						    				<th>이미지</th>
+						    				<th>상품명</th>
+						    				<th>개당 가격</th>
+						    				<th>구입 수량</th>
+						    				<th>최종 가격</th>
+						    			</tr>
+						    		</thead>
+						    		<tbody>
+						    			<c:forEach items="${list}" var="tmp">     
+											<tr>
+											   	<td><img src="${pageContext.request.contextPath }${tmp.imagePath}" /></td>
+											   	<td>${tmp.productName}</td>
+												<td><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /></td>
+												<td>${tmp.amount_detail} </td>
+												<td>
+													<fmt:formatNumber pattern="###,###,###" value="${tmp.price * tmp.amount_detail}" />
+												</td>
+								            </tr>     
+									  	</c:forEach>
+						    		</tbody>
+						        </table>
+						    </td>
+					    </tr>
+					</tbody>
+				</table>
 			</div>
 	    </div>
 	</div>
