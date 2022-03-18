@@ -48,15 +48,14 @@
             <td id="center"><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
             <td id="center">${tmp.productId }</td>
             <form action="update.do" method="post" id="updateForm">
-            	<td id="center"><input type="number" name="newAmount" value="${tmp.amount }" id="newAmount"/>
+            	<td id="center"><input type="number" min="1" max="10"name="newAmount" value="${tmp.amount }" id="newAmount"/>
            			<input type="hidden" name="cart_id" value="${tmp.cart_id }"/>
            			<input type="hidden" name="price" value="${tmp.price}"/>
            		</td>
            		<td id="center"><button class="btn btn-outline-secondary" type="submit">수정</button></td>	            	
              </form>
-            
-            <td id="center">${tmp.price }</td>
-            <td id="center">${tmp.totalPrice }</td>
+            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /></td>
+            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /></td>
             <td id="center">
             	<a href="delete.do?cart_id=${tmp.cart_id }">
 	            	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">

@@ -38,9 +38,12 @@ public class CartController {
 			String guestId=session.getId();
 			System.out.println(guestId);
 			dto.setId(guestId);
-			session.setMaxInactiveInterval(60);
-			System.out.println(session.getMaxInactiveInterval());
-			if(session.getMaxInactiveInterval()==0) {
+			session.setMaxInactiveInterval(20);
+			//session의 남은 시간
+			long sessionLastTime= session.getMaxInactiveInterval()-session.getCreationTime();
+			
+			if(sessionLastTime==5) {
+				System.out.println(sessionLastTime);
 				service.deleteAll(guestId);
 			}
 		}else {

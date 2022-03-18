@@ -59,7 +59,7 @@
 
 
 	<div class="container">
-		<form action="orderComplete.do" method="post" enctype="multipart/form-data">
+		<form action="${pageContext.request.contextPath }/private/orderComplete.do" method="post" enctype="multipart/form-data">
 		    
 			<input type="hidden" name="totalPrice" value="${sum}" />
 			<input type="hidden" name="userId" value="${user.id}" />
@@ -92,6 +92,9 @@
 		</form> 
 	</div>
 </body>
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 <script>
 	document.querySelector("#reset").addEventListener("click",function(){
 		location.href="${pageContext.request.contextPath }/cart/carthome.do";	
