@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
-@WebFilter(urlPatterns = {"/users/private/*","/mealkit/private/*","/inquiry/private/*","/cart/private/*"})
+@WebFilter(urlPatterns = {"/users/private/*","/mealkit/private/*","/inquiry/private/*","/cart/private/*","/private/*","/private/orderHistory/*"})
 
 public class LoginFilter implements Filter{
 

@@ -37,7 +37,7 @@ public class OrderController {
 		return mView;
 	}
 
-	@RequestMapping("/staff/orderComplete.do")
+	@RequestMapping("/private/orderComplete.do")
 	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail) {
 		
 		service2.orderInfo(dto, session);
@@ -51,7 +51,7 @@ public class OrderController {
 		return "staff/orderComplete";
 	}
 	
-	@RequestMapping("/orderHistory.do")
+	@RequestMapping("/private/orderHistory.do")
 	public ModelAndView orderList(ModelAndView mView, OrderDto dto, HttpSession session) {
 		
 		String id=(String)session.getAttribute("id");
