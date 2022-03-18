@@ -1,9 +1,12 @@
 package com.acorn.project.order.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.order.dao.OrderDao;
 import com.acorn.project.order.dto.OrderDetailDto;
@@ -28,14 +31,19 @@ public class OrderServiceImpl implements OrderService{
 		//세션 아이디 불러오기
 		String id=(String)session.getAttribute("id");
 		dtoDetail.setUserId(id);
-
-		//orderDto의 orderId랑 orderDetailDto의 orderId랑 연동하기
-		int orderId=dto.getOrderId();
-		dtoDetail.setOrderId(orderId);
-		System.out.println(dtoDetail.getOrderId());//0 나옴....
 		
+		int orderId=dao.getOrderId();
+		dtoDetail.setOrderId(orderId);
 		
 		dao.orderInfo_Detail(dtoDetail);
+		
+	}
+
+	@Override
+	public List<OrderDto> getListOrder(OrderDto dto) {
+
+		
+		return dao.getList(dto);
 		
 	}
 	

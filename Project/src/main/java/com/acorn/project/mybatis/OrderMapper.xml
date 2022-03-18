@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="order">
+
 	<insert id="getInfo" parameterType="orderDto">
 		INSERT INTO ordertable
 		(orderId, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate)
@@ -12,6 +13,22 @@
 		(orderId_detail, orderId, productId, amount_detail, userId)
 		(SELECT orderId_detail_seq.nextval, #{orderId}, productId, amount, #{userId} FROM cart WHERE id=#{userId})
 	</insert>
+	
+	<select id="getOrderId" resultType="int">
+		select max(orderId) as orderId from ordertable
+	</select>
+	
+	<!-- 카트 비우기 -->
+	<delete id="emptyCart" parameterType="string">
+ 		DELETE FROM cart
+     	WHERE id = #{userId}
+	</delete>
+	
+	<select id="orderList" resultType="orderDto">
+		SELECT orderId, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate
+		FROM ordertable
+		where userId=#{userId}
+	</select>
 </mapper>
 
 

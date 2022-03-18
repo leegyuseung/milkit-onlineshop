@@ -1,5 +1,7 @@
 package com.acorn.project.order.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,39 +28,41 @@ public class OrderController {
 	
 	
 	@RequestMapping("/staff/orderPage.do")
-	public ModelAndView Orderlist(CartDto dto, ModelAndView mView, HttpSession session) {
+	public ModelAndView cartlist(CartDto dto, ModelAndView mView, HttpSession session) {
 		service.cartList(dto, mView, session);
 		//view page 의 정보를 ModelAndView 객체에 담는다.
 		mView.setViewName("staff/orderPage");
 		//ModelAndView 객체를 리턴해 준다.
 		return mView;
 	}
-	/*
-	 *  MemberVO member = (MemberVO)session.getAttribute("member");  
- String userId = member.getUserId();
-  
- order.setUserId(userId);
-  
- service.orderInfo(order);
- 
- orderDetail.setOrderId(orderId);   
- service.orderInfo_Details(orderDetail);
- 
- 
- return "redirect:/shop/orderList";
-	 */
-	@RequestMapping("/staff/orderHistory.do")
+
+	@RequestMapping("/staff/orderComplete.do")
 	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail) {
 		
 		service2.orderInfo(dto, session);
 		
-		
-		
-		
+		//여기dto에는 orderId가 추가되지 않았음
+
 		service2.orderInfo_Detail(dto, dtoDetail, session);
 		
+		//service.deleteAll((String)session.getAttribute("id"));
 		
-		return "staff/orderHistory";
+		return "staff/orderComplete";
+	}
+	
+	@RequestMapping("/staff/orderHistory.do")
+	public ModelAndView orderList(ModelAndView mView, OrderDto dto, HttpSession session) {
+		
+		String id=(String)session.getAttribute("id");
+		dto.setUserId(id);
+		
+		List<OrderDto> list=service2.getListOrder(dto);
+		
+		mView.addObject("list", list);
+
+		mView.setViewName("staff/orderHistory");
+		return mView;
+		
 	}
 	
 	
