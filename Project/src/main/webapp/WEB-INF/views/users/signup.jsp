@@ -11,14 +11,10 @@
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
 <body>
-<div class="container">
-
-	<p> 
-		<strong>${param.id }</strong> 회원님 가입 되었습니다.
-		<a href="${pageContext.request.contextPath}/users/loginform.do">로그인 하러가기</a>
-	</p>
-
-</div>	
+<script>
+	alert("회원님 가입 되었습니다.");
+	location.href="${pageContext.request.contextPath}/users/loginform.do";
+</script>
 <jsp:include page="../../../resources/include/footer.jsp">
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>

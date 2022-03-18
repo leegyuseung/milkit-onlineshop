@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
+import com.acorn.project.order.dto.OrderListDto;
 
 public interface OrderService {
 
@@ -15,4 +16,5 @@ public interface OrderService {
 	
 	public List<OrderDto> getListOrder(OrderDto dto);
 
+	public List<OrderListDto> orderDetailList(OrderDto dto);
 }
