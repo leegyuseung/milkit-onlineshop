@@ -13,22 +13,25 @@
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
 <div class="container">
-	<h1>비밀 번호 수정 폼</h1>
+	<h1>비밀번호 수정 </h1>
 	<form action="${pageContext.request.contextPath}/users/private/pwd_update.do" method="post" id="myForm">
 		<div>
-			<label for="pwd">기존 비밀 번호</label>
-			<input type="password" name="pwd" id="pwd"/>
+			<label class="control-label" for="pwd">기존 비밀 번호</label>
+			<input class="form-control" type="password" name="pwd" id="pwd"/>
 		</div>
+		<br />
 		<div>
-			<label for="newPwd">새 비밀번호</label>
-			<input type="password" name="newPwd" id="newPwd"/>
+			<label class="control-label" for="newPwd">새 비밀번호</label>
+			<input class="form-control" type="password" name="newPwd" id="newPwd"/>
 		</div>
+		<br />
 		<div>
-			<label for="newPwd2">새 비밀번호 확인</label>
-			<input type="password" id="newPwd2"/>
+			<label class="control-label" for="newPwd2">새 비밀번호 확인</label>
+			<input class="form-control" type="password" id="newPwd2"/>
 		</div>
-		<button type="submit">수정하기</button>
-		<button type="reset">리셋</button>
+		<br />
+		<button class="btn btn-outline-secondary" type="submit">수정</button>
+		<button class="btn btn-outline-secondary" type="reset" id="reset">취소</button>
 	</form>
 </div>
 <script>
@@ -41,6 +44,10 @@
 			alert("비밀번호를 확인 하세요!");
 			e.preventDefault();//폼 전송 막기 
 		}
+	});
+	
+	document.querySelector("#reset").addEventListener("click",function(){
+		location.href="${pageContext.request.contextPath}/users/private/info.do";	
 	});
 </script>
 <br />
