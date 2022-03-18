@@ -71,7 +71,7 @@
 						<tr>
 							<td id="center">${tmp.num }</td>
 							<td id="center">${tmp.writer }</td>
-							<td id="center">
+							<td id="">
 								<a href="detail.do?num=${tmp.num }&keyword=${encodedK }&condition=${condition}">${tmp.title }</a>
 							</td>
 							<td id="center">${tmp.viewCount }</td>
