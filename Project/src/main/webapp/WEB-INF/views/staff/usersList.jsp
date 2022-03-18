@@ -13,8 +13,7 @@
 	<jsp:param value="userlist" name="thisPage"/>
 </jsp:include>
 <div class="container">
-	<a href="home.do">관리자 페이지로 돌아가기</a><br />
-	<h1>회원 목록 입니다.</h1>
+	<h1>회원 목록</h1>
 	<table class="table">
 		<thead>
 			<tr>
@@ -41,6 +40,15 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	<br />
+	<figure class="text-end">
+	<button class="btn btn-outline-secondary" type="reset" id="home">관리자 페이지</button>
+	</figure>
+<script>
+	document.querySelector("#home").addEventListener("click",function(){
+		location.href="home.do";	
+	});
+</script>	
 </div>
 </body>
 </html>

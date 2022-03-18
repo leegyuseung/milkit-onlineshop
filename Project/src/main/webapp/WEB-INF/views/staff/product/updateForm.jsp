@@ -14,31 +14,38 @@
 	<form action="update.do" method="post">
 		<input type="hidden" name="productId" value="${param.productId }"/>
 		<div class="mb-3">
-			<label for="productId" class="form-label">상품 아이디</label>
-			<input class="form-controll" type="text" name="productId" id="productId" value="${param.productId }" disabled/>
+			<label class="control-label" for="productId" class="form-label">상품 아이디</label>
+			<input class="form-control" type="text" name="productId" id="productId" value="${param.productId }" disabled/>
 		</div>
 		<div class="mb-3">
-			<label for="productName" class="form-label">상품 이름</label>
-			<input class="form-controll" type="text" name="productName" id="productName" value="${dto.productName }"/>
+			<label class="control-label" for="productName" class="form-label">상품 이름</label>
+			<input class="form-control" type="text" name="productName" id="productName" value="${dto.productName }"/>
 		</div>
 		<div class="mb-3">
-			<label for="price" class="form-label">상품 가격</label>
-			<input class="form-controll" type="text" name="price" id="price" value="${dto.price }"/>
+			<label class="control-label" for="price" class="form-label">상품 가격</label>
+			<input class="form-control" type="text" name="price" id="price" value="${dto.price }"/>
 		</div>
 		<div class="mb-3">
-			<label for="stock" class="form-label">상품 재고</label>
-			<input class="form-controll" type="text" name="stock" id="stock" value="${dto.stock }"/>
+			<label class="control-label" for="stock" class="form-label">상품 재고</label>
+			<input class="form-control" type="text" name="stock" id="stock" value="${dto.stock }"/>
 		</div>
 		<div class="mb-3">
-			<label for="productCate" class="form-label">카테고리</label>
+			<label class="control-label" for="productCate" class="form-label">카테고리</label>
 			<select class="form-select" name="productCate" id="productCate" disabled>
 				<option value="${dto.productCate }" selected>${dto.productCate }</option>			
 			</select>
 		</div>
-		<button class="btn btn-primary" type="submit">상품 수정</button>
-		<button class="btn btn-primary" type="reset">리셋</button>
-		
+		<br />
+		<figure class="text-end">
+		<button class="btn btn-outline-secondary" type="submit">상품 수정</button>
+		<button class="btn btn-outline-secondary" type="reset" id="reset">취소</button>
+		</figure>
 	</form>
 </div>
+<script>
+	document.querySelector("#reset").addEventListener("click",function(){
+		location.href="list.do";	
+	});
+</script>
 </body>
 </html>
