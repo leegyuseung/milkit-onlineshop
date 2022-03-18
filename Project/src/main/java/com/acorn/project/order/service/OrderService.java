@@ -15,6 +15,12 @@ public interface OrderService {
 	public void orderInfo_Detail(OrderDto dto, OrderDetailDto dtoDetail, HttpSession session);
 	
 	public List<OrderDto> getListOrder(OrderDto dto);
+	
+	public List<OrderDto> getAllListOrder(OrderDto dto);
+
 
 	public List<OrderListDto> orderDetailList(OrderDto dto);
+	
+	public List<OrderListDto> AllOrderDetailList(OrderDto dto);
+
 }

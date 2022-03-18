@@ -39,11 +39,24 @@ public class OrderDaoImpl implements OrderDao{
 
 		return session.selectList("order.orderList", dto);
 	}
+	
+	@Override
+	public List<OrderDto> getAllList(OrderDto dto) {
+		// TODO Auto-generated method stub
+		return session.selectList("order.AllOrderList", dto);
+	}
 
 	@Override
 	public List<OrderListDto> orderDetailList(OrderDto dto) {
 	
 		return session.selectList("order.orderDetailList", dto);
 	}
+
+	@Override
+	public List<OrderListDto> AllOrderDetailList(OrderDto dto) {
+
+		return session.selectList("order.AllOrderDetailList", dto);
+	}
+
 
 }

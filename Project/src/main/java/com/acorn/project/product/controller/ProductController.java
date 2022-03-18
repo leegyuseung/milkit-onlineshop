@@ -33,15 +33,6 @@ public class ProductController {
 		return "staff/product/insertForm";
 	}
 	
-	@RequestMapping("/staff/product/list")
-	public ModelAndView list(ModelAndView mView) {
-		service.getListProduct(mView);
-		//view page 의 정보를 ModelAndView 객체에 담는다.
-		mView.setViewName("staff/product/list");
-		//ModelAndView 객체를 리턴해 준다.
-		return mView;
-	}
-	
 	@RequestMapping("/staff/product/delete")
 	public ModelAndView delete(String productId, ModelAndView mView) {
 		service.deleteProduct(productId);
