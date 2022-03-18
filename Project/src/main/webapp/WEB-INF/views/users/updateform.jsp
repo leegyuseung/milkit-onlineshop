@@ -6,36 +6,48 @@
 <head>
 <meta charset="UTF-8">
 <title>/views/users/updateform.jsp</title>
-
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
 <body>
 <jsp:include page="../../../resources/include/navbar.jsp">
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
 <div class="container">
-	<h1>가입 정보 수정 폼 입니다.</h1>
+	<h1>회원 정보 수정</h1>
 	
 	<form action="${pageContext.request.contextPath}/users/private/update.do" method="post">
 		
 		<div>
-			<label for="id">아이디</label>
-			<input type="text" id="id" value="${id }" disabled/>
+			<label class="control-label" for="id">아이디</label>
+			<input class="form-control" type="text" id="id" value="${id }" disabled/>
 		</div>
+		<br />
 		<div>
-			<label for="name">이름</label>
-			<input type="text" id="name" value="${dto.name }"/>
+			<label class="control-label" for="name">이름</label>
+			<input class="form-control" type="text" id="name" value="${dto.name }"/>
 		</div>
+		<br />
 		<div>
-			<label for="email">이메일</label>
-			<input type="text" name="email" id="email" value="${dto.email }"/>
+			<label class="control-label" for="email">이메일</label>
+			<input class="form-control" type="text" name="email" id="email" value="${dto.email }"/>
 		</div>
+		<br />
 		<div>
-			<label for="address">주소</label>
-			<input type="text" name="address" id="address" value="${dto.address }"/>
+			<label class="control-label" for="address">주소</label>
+			<input class="form-control" type="text" name="address" id="address" value="${dto.address }"/>
 		</div>
-		<button type="submit">수정반영</button>
+		<br />
+		<figure class="text-end">
+		<button class="btn btn-outline-secondary" type="submit">수정</button>
+		<button class="btn btn-outline-secondary" type="reset" id="reset">취소</button>
+		</figure>
 	</form>
 	
+	<script>
+	document.querySelector("#reset").addEventListener("click",function(){
+		location.href="${pageContext.request.contextPath}/users/private/info.do";	
+	});
+	</script>
 </div>
 <jsp:include page="../../../resources/include/footer.jsp">
 	<jsp:param value="home" name="thisPage"/>
