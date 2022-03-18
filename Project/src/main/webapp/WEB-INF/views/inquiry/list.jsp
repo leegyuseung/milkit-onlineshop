@@ -141,8 +141,8 @@
 
 
 <script>
-	document.querySelector("#reset").addEventListener("click",function(){
-		location.href="${pageContext.request.contextPath}/private/insertform.do";	
+	document.querySelector("#write").addEventListener("click",function(){
+		location.href="${pageContext.request.contextPath}/inquiry/private/insertform.do";	
 	});
 </script>
 <br />

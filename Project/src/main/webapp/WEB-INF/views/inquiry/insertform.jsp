@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="container">
-	<h1>새글 작성 폼</h1>
+	<h1>새글 작성</h1>
 	<form action="insert.do" method="post" id="insertForm">
 		<div class="mb-3">
 			<label class="form-label" for="title">제목</label>

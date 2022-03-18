@@ -58,31 +58,35 @@
 		    
 		  
 		  	<div>
-			   	<label for="tel" class="form-label">연락처</label>
-			   	<input class="form-controll" type="text" name="tel" id="tel" required/>
+			   	<label class="control-label" for="tel" class="form-label">연락처</label>
+			   	<input class="form-control" type="text" name="tel" id="tel" required/>
 		  	</div>
 		  
 		  	<div>
-			   	<label for="userPostal" class="form-label">우편번호</label>
-			   	<input class="form-controll" type="text" name="userPostal" id="userPostal" required/>
+			   	<label class="control-label" for="userPostal" class="form-label">우편번호</label>
+			   	<input class="form-control" type="text" name="userPostal" id="userPostal" required/>
 		  	</div>
 		  
 		  	<div>
-			   	<label for="userAddr" class="form-label">주소</label>
-			   	<input class="form-controll" type="text" name="userAddr" id="userAddr" required/>
+			   	<label class="control-label" for="userAddr" class="form-label">주소</label>
+			   	<input class="form-control" type="text" name="userAddr" id="userAddr" required/>
 		  	</div>
 		  
 		  	<div>
-			   	<label for="userAddrDetail" class="form-label">상세 주소</label>
-			   	<input class="form-controll" type="text" name="userAddrDetail" id="userAddrDetail" required/>
+			   	<label class="control-label" for="userAddrDetail" class="form-label">상세 주소</label>
+			   	<input class="form-control" type="text" name="userAddrDetail" id="userAddrDetail" required/>
 		  	</div>
-		  
-		  	<div>
-			   	<button class="btn btn-outline-primary" type="submit">주문</button>
-			   	<button class="btn btn-outline-primary" type="reset">취소</button> 
-		  	</div>
-	  
+		  		<br />
+		<figure class="text-end">
+			   	<button class="btn btn-outline-secondary" type="submit">주문</button>
+			   	<button class="btn btn-outline-secondary" type="reset" id="reset">취소</button> 
+	  	</figure>
 		</form> 
 	</div>
 </body>
+<script>
+	document.querySelector("#reset").addEventListener("click",function(){
+		location.href="${pageContext.request.contextPath }/cart/carthome.do";	
+	});
+</script>
 </html>
