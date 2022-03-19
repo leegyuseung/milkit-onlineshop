@@ -44,10 +44,6 @@ public class OrderController {
 		
 		service.deleteAll((String)session.getAttribute("id"));
 		
-		//Oservice.stockReduce(dtoDetail);
-		
-		//Oservice.buyCount(dtoDetail);
-		
 		return "staff/orderComplete";
 	}
 	
@@ -81,5 +77,19 @@ public class OrderController {
 		mView.setViewName("staff/orderDetail");
 		return mView;
 		
+	}
+	
+	@RequestMapping("/staff/delivered.do")
+	public ModelAndView delivered(ModelAndView mView, OrderDto dto) {
+		
+		Oservice.delivered(dto);
+		
+		//Oservice.stockReduce(dtoDetail);
+		
+		//Oservice.buyCount(dtoDetail);
+		
+		mView.setViewName("redirect:/staff/adminOrderList.do");
+		
+		return mView;
 	}
 }

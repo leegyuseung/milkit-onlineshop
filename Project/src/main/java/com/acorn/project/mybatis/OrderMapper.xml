@@ -64,6 +64,13 @@
 		SET buyCount = buyCount + #{amount_detail}
 		WHERE productId=#{productId}
 	</update>
+	
+	<!-- 배송 완료 -->
+	<update id="delivered" parameterType="orderDto">
+		UPDATE ordertable
+		SET delivery = #{delivery}
+		WHERE orderId=#{orderId}
+	</update>
 </mapper>
 
 

@@ -26,5 +26,6 @@ public interface OrderService {
 	
 	public void buyCount(OrderDetailDto dto);
 
+	public void delivered(OrderDto dto);
 
 }

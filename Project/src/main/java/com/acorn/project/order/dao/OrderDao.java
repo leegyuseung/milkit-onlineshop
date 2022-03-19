@@ -26,5 +26,7 @@ public interface OrderDao {
 	public void stockReduce(OrderDetailDto dto);
 	
 	public void buyCount(OrderDetailDto dto);
+	
+	public void delivered(OrderDto dto);
 
 }

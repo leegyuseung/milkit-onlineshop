@@ -77,6 +77,13 @@ public class OrderServiceImpl implements OrderService{
 		dao.buyCount(dto);
 	}
 
+	@Override
+	public void delivered(OrderDto dto) {
+
+		dao.delivered(dto);
+		
+	}
+
 	
 	
 }

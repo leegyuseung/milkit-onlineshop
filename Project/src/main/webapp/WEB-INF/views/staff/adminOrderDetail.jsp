@@ -49,8 +49,10 @@
 						    <td colspan="4">
 						    	<table class="table">
 						    		<caption class="text-end">
-						    			<form action="">
-						    				<button class="btn btn-outline-secondary disabled">배송 완료</button>
+						    			<form action="delivered.do" method="post">
+						    				<input type="hidden" name="orderId" value="${param.orderId }"/>
+						    				<input type="hidden" name="delivery" value="배송 완료"/>
+						    				<button class="btn btn-outline-secondary" id="delivery">배송 완료</button>
 						    			</form>
 						    		</caption>
 						    		<thead>
@@ -89,6 +91,11 @@
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
 
+<script>
+	document.querySelector("#delivery").addEventListener("click",function(){
+		alert("주문의 배송이 완료되었습니다.");
+	});
+</script>
 
 </body>
 </html>
