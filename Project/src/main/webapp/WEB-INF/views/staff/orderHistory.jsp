@@ -9,6 +9,14 @@
 <meta charset="UTF-8">
 <title>/staff/orderHistory.jsp</title>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+<style>
+	h1 {text-align: center; font-weight: bold; padding-top: 1em; padding-bottom: 1em;}
+	
+	#center{
+	text-align: center;
+	}
+
+</style>
 </head>
 <body>
 <jsp:include page="../../../resources/include/navbar.jsp">
@@ -32,17 +40,17 @@
 						<table class="table">
 							<thead>
 								<tr>
-						          <th scope="col">주문번호</th>
-						          <th scope="col">주소</th>
-						          <th scope="col">총 금액</th>
+						          <th scope="col" id="center">주문번호</th>
+						          <th scope="col" id="center">주소</th>
+						          <th scope="col" id="center">총 금액</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach items="${list}" var="tmp">
 									<tr>
-										<td><a href="orderDetail.do?orderId=${tmp.orderId}">${tmp.orderId}</a></td>
-										<td>(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
-										<td><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
+										<td id="center"><a href="orderDetail.do?orderId=${tmp.orderId}">${tmp.orderId}</a></td>
+										<td id="center">(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
+										<td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
 									</tr>
 								  	
 							  	</c:forEach>
