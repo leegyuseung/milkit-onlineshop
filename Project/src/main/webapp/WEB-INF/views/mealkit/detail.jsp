@@ -35,8 +35,8 @@ img { display: block; margin: 0px auto; }
             <div class="container px-4 px-lg-5 my-5">
 
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                   <div class="col-md-6">
-	                 <img src="${pageContext.request.contextPath }${dto.imagePath}" style="width:300px;" />	
+                   <div class="col-md-6" style="text-align:center";>
+	                 <img src="${pageContext.request.contextPath }${dto.imagePath}" style="height:300px;" />	
 
                    </div>
                    <div class="col-md-6">
