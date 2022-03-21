@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -43,7 +44,7 @@ img { display: block; margin: 0px auto; }
                         <div class="small mb-1">${dto.productCate}</div>
                         <h1 class="display-5 fw-bolder">${dto.productName}</h1>
                         <div class="fs-5 mb-5">
-                            <span>${dto.price} 원</span>
+                            <fmt:formatNumber pattern="###,###,###" value="${dto.price }" /> 원
                    </div>
 
                     	<p class="lead">원하는 수량을 적어 카트에 담아주세요.</p>
