@@ -51,6 +51,7 @@ img { display: block; margin: 0px auto; }
                    <div class="d-flex">
                       <form action="${pageContext.request.contextPath }/cart/insert.do" method="post" >
                         <input type="hidden" name="productId" value="${dto.productId}">
+                        <input type="hidden" name="productName" value="${dto.productName}">
                			<input type="hidden" name="price" value="${dto.price}">
                			<input type="hidden" name="imagePath" value="${dto.imagePath}">
                			<input class="form-control text-center me-3" name="amount" id="inputQuantity" type="number" value="1" style="max-width: 3rem" />
