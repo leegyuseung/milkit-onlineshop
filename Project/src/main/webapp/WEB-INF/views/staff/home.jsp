@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>staff/home.jsp</title>
+<title>/staff/home.jsp</title>
 
 </head>
 

@@ -8,12 +8,11 @@
 <meta charset="UTF-8">
 <title>/staff/userList.jsp</title>
 <style>
-	h1 {text-align: center; font-weight: bold; padding-top: 1em; padding-bottom: 1em;}
+	h1 {text-align: center; padding-top: 1em; padding-bottom: 1em;}
 	
 	#center{
 	text-align: center;
 	}
-
 </style>
 </head>
 <body>

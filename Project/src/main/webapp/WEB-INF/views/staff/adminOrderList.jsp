@@ -7,6 +7,13 @@
 <head>
 <meta charset="UTF-8">
 <title>/staff/adminOrderList.jsp</title>
+<style>
+	h1 {text-align: center; padding-top: 1em; padding-bottom: 1em;}
+	
+	#center{
+	text-align: center;
+	}
+</style>
 </head>
 <body>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
