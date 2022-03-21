@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
-  <div class="container">
+
   <footer class="py-5">
       <ul class="nav justify-content-center border-top pb-3 mb-3">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><small>상호 : 에이콘푸드</small></a></li>
@@ -31,4 +31,3 @@
       </ul>
     </div>
       </footer>
-</div>

@@ -7,6 +7,14 @@
 <meta charset="UTF-8">
 <title>staff/usersList.jsp</title>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+<style>
+	h1 {text-align: center; font-weight: bold; padding-top: 1em; padding-bottom: 1em;}
+	
+	#center{
+	text-align: center;
+	}
+
+</style>
 </head>
 <body>
 <jsp:include page="../../../resources/include/navbar.jsp">
@@ -14,39 +22,41 @@
 </jsp:include>
 <div class="container">
 	<h1>회원 목록</h1>
-	<table class="table">
-		<thead>
-			<tr>
-				<th>이름</th>
-				<th>아이디</th>
-				<th>이메일</th>
-				<th>주소</th>
-				<th>가입 날짜</th>
-				<th>유저 타입</th>
-				<th>수정</th>
-				<th>강제 탈퇴</th>
-			</tr>
-		</thead>
-		<tbody>
-			<c:forEach var="tmp" items="${list }">
+	<div class="table-responsive">
+		<table class="table table-striped table-sm">
+			<thead>
 				<tr>
-					<td>${tmp.name }</td>
-					<td>${tmp.id }</td>
-					<td>${tmp.email }</td>
-					<td>${tmp.address }</td>
-					<td>${tmp.regdate }</td>
-					<form action="updateUserType.do" method="post">
-		            	<td>
-		            		<input type="number" min="0" max="1"name="usertype" value="${tmp.usertype }" />
-		            		<input type="hidden" name="id" value="${tmp.id }" />
-		            	</td>
-		           		<td><button class="btn btn-outline-secondary" type="submit">수정</button></td>	            	
-		            </form>
-					<td><a href="delete2.do?id=${tmp.id }">강제 탈퇴</a></td>
+					<th id="center">이름</th>
+					<th id="center">아이디</th>
+					<th>이메일</th>
+					<th >주소</th>
+					<th id="center">가입 날짜</th>
+					<th id="center">유저 타입</th>
+					<th id="center">강제 탈퇴</th>
+	
 				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
+			</thead>
+			<tbody>
+				<c:forEach var="tmp" items="${list }">
+					<tr>
+						<td>${tmp.name }</td>
+						<td >${tmp.id }</td>
+						<td >${tmp.email }</td>
+						<td>${tmp.address }</td>
+						<td id="center">${tmp.regdate }</td>
+						<form action="updateUserType.do" method="post">
+			            	<td id="center">
+			            		<input type="number" min="0" max="1"name="usertype" value="${tmp.usertype }" />
+			            		<input type="hidden" name="id" value="${tmp.id }" />
+			            	</td>
+			           		<td id="center"><button class="btn btn-outline-secondary" type="submit">수정</button></td>	            	
+			            </form>
+						<td id="center"><a href="delete2.do?id=${tmp.id }">강제 탈퇴</a></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>
+	</div>
 	<br />
 	<figure class="text-end">
 	<button class="btn btn-outline-secondary" type="reset" id="home">관리자 페이지</button>
