@@ -9,9 +9,10 @@
 		(seq_cart.nextval, #{id}, #{productId}, #{amount}, #{price}, #{imagePath}, #{totalPrice})
 	</insert>
 	<select id="cartList" resultType="cartDto">
-     	SELECT cart_id, id, productId, amount, price, imagePath, totalPrice
-		FROM cart
-		where id=#{id}
+     	SELECT cart_id, id, C.productId, P.productName, amount, P.price, C.imagePath, totalPrice
+		FROM cart C, product P
+		where C.productId=P.productId
+		and id=#{id}
 		ORDER BY cart_id ASC
    	</select> 
    	

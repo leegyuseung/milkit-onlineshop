@@ -9,11 +9,12 @@ public class CartDto {
 	private int newAmount;
 	private String imagePath;
 	private int totalPrice;
+	private String productName;
 	
 	public CartDto() {}
 
 	public CartDto(int cart_id, String id, String productId, int price, int amount, int newAmount, String imagePath,
-			int totalPrice) {
+			int totalPrice, String productName) {
 		super();
 		this.cart_id = cart_id;
 		this.id = id;
@@ -23,6 +24,7 @@ public class CartDto {
 		this.newAmount = newAmount;
 		this.imagePath = imagePath;
 		this.totalPrice = totalPrice;
+		this.productName = productName;
 	}
 
 	public int getCart_id() {
@@ -87,6 +89,14 @@ public class CartDto {
 
 	public void setTotalPrice(int totalPrice) {
 		this.totalPrice = totalPrice;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
 
