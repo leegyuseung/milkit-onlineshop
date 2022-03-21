@@ -10,4 +10,5 @@ public interface ProductDao {
 		public void delete(String productId);
 		public ProductDto getData(String productId);
 		public void update(ProductDto dto);
+		public boolean isExist(String inputProductId);
 }

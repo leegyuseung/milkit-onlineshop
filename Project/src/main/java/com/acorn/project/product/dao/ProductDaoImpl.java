@@ -39,6 +39,16 @@ public class ProductDaoImpl implements ProductDao{
 	public void update(ProductDto dto) {
 		session.update("product.update", dto);
 	}
+
+	@Override
+	public boolean isExist(String inputProductId) {
+		String id=session.selectOne("product.isExist", inputProductId);
+		if (id==null) {
+			return false;	
+		}else {
+			return true;
+		}
+	}
 	
 	
 

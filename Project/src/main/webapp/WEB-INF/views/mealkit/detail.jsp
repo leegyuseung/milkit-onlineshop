@@ -36,16 +36,15 @@ img { display: block; margin: 0px auto; }
             <div class="container px-4 px-lg-5 my-5">
 
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                   <div class="col-md-6" style="text-align:center";>
-	                 <img src="${pageContext.request.contextPath }${dto.imagePath}" style="height:300px;" />	
+                   <div class="col-md-6">
+	                 <img src="${pageContext.request.contextPath }${dto.imagePath}" />	
 
                    </div>
                    <div class="col-md-6">
                         <div class="small mb-1">${dto.productCate}</div>
                         <h1 class="display-5 fw-bolder">${dto.productName}</h1>
                         <div class="fs-5 mb-5">
-                            <span><fmt:formatNumber pattern="###,###,###" value="${dto.price}" /> 원</span>
-                    	</div>
+                            <fmt:formatNumber pattern="###,###,###" value="${dto.price }" /> 원
                    </div>
 
                     	<p class="lead">원하는 수량을 적어 카트에 담아주세요.</p>
@@ -53,6 +52,7 @@ img { display: block; margin: 0px auto; }
                    <div class="d-flex">
                       <form action="${pageContext.request.contextPath }/cart/insert.do" method="post" >
                         <input type="hidden" name="productId" value="${dto.productId}">
+                        <input type="hidden" name="productName" value="${dto.productName}">
                			<input type="hidden" name="price" value="${dto.price}">
                			<input type="hidden" name="imagePath" value="${dto.imagePath}">
                			<input class="form-control text-center me-3" name="amount" id="inputQuantity" type="number" value="1" style="max-width: 3rem" />
@@ -93,4 +93,3 @@ img { display: block; margin: 0px auto; }
 		</jsp:include>
     </body>
 </html>
-
