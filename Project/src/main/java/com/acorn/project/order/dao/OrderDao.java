@@ -28,5 +28,7 @@ public interface OrderDao {
 	public void buyCount(OrderDetailDto dto);
 	
 	public void delivered(OrderDto dto);
+	
+	public List<OrderDto> weeklyOrder(OrderDto dto);
 
 }

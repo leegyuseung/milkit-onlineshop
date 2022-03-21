@@ -27,5 +27,8 @@ public interface OrderService {
 	public void buyCount(OrderDetailDto dto);
 
 	public void delivered(OrderDto dto);
+	
+	public List<OrderDto> weeklyOrder(OrderDto dto);
+
 
 }

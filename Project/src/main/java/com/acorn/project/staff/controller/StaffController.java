@@ -28,9 +28,11 @@ public class StaffController {
 	private OrderService Oservice;
 
 	@RequestMapping("/staff/home.do")
-	public String staff() {
+	public ModelAndView staff(ModelAndView mView, OrderDto dto, HttpSession session) {
 		
-		return "staff/home";
+
+		mView.setViewName("staff/home");
+		return mView;
 	}
 	
 	@RequestMapping("/staff/product/list")
@@ -52,8 +54,6 @@ public class StaffController {
 	@RequestMapping("/staff/adminOrderList.do")
 	public ModelAndView adminOrderList(ModelAndView mView, OrderDto dto, HttpSession session) {
 		
-		String id=(String)session.getAttribute("id");
-		dto.setUserId(id);
 		
 		List<OrderDto> list=Oservice.getAllListOrder(dto);
 		
@@ -66,8 +66,6 @@ public class StaffController {
 	@RequestMapping("/staff/adminOrderDetail.do")
 	public ModelAndView orderDetail(ModelAndView mView, OrderDto dto, HttpSession session, int orderId) {
 		
-		String id=(String)session.getAttribute("id");
-		dto.setUserId(id);
 		
 		dto.setOrderId(orderId);
 		
@@ -79,5 +77,7 @@ public class StaffController {
 		return mView;
 		
 	}
+	
+	
 	
 }

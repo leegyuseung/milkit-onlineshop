@@ -75,6 +75,13 @@
 		SET delivery = #{delivery}
 		WHERE orderId=#{orderId}
 	</update>
+	
+	<!-- 7일간 주문 내역 -->
+	<select id="weeklyOrder" resultType="orderDto">
+		SELECT orderId, receiver, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate, delivery
+		FROM ordertable WHERE orderdate >= TO_CHAR(SYSDATE-7,'YYYYMMDD');
+		
+	</select>
 </mapper>
 
 
