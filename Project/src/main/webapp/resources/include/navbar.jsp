@@ -57,7 +57,7 @@
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="${pageContext.request.contextPath}/users/private/info.do" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mypage</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="${pageContext.request.contextPath }/private/orderHistory.do">주문내역</a></li>
-                                <li><a class="dropdown-item" href="#!">고객센터</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath }/help/help.do">고객센터</a></li>
                                 <li><a class="dropdown-item" href="${pageContext.request.contextPath }/inquiry/list.do">Q & A</a></li>
                                 <c:if test="${user.usertype == 1 }">
                 				<li><a class="dropdown-item <%=thisPage.equals("staff") ? "active" : "" %>" href="${pageContext.request.contextPath}/staff/home.do">시스템관리</a></li>

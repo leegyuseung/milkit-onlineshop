@@ -11,13 +11,15 @@
 <style>
         	
 .card{
-	height: 250px;
-	width: 250px;
+	height: 100px;
+	width: 100px;
 }
 .card-img-top{
-	height: 300px;
-	width: 200px;
+	height: 600px;
+	width: 400px;
 }		
+
+img { display: block; margin: 0px auto; }
 </style>
 <!-- Bootstrap icons-->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
@@ -33,15 +35,21 @@
             <div class="container px-4 px-lg-5 my-5">
 
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                   <div class="col-md-6">
-	                 <img src="${pageContext.request.contextPath }${dto.imagePath}" />	
+                   <div class="col-md-6" style="text-align:center";>
+	                 <img src="${pageContext.request.contextPath }${dto.imagePath}" style="height:300px;" />	
+
                    </div>
-                    <div class="col-md-6">
+                   <div class="col-md-6">
                         <div class="small mb-1">${dto.productCate}</div>
                         <h1 class="display-5 fw-bolder">${dto.productName}</h1>
                         <div class="fs-5 mb-5">
                             <span>${dto.price} 원</span>
+<<<<<<< HEAD
                     	</div>
+=======
+                   </div>
+
+>>>>>>> branch 'main' of https://github.com/xerathul/Acorn_4_Project.git
                     	<p class="lead">원하는 수량을 적어 카트에 담아주세요.</p>
 
                    <div class="d-flex">
