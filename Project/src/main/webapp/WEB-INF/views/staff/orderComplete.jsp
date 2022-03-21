@@ -21,11 +21,7 @@
   	  Thank you
   </figcaption>
 </figure>
-		
-		
-		
-		
-		
+
 		<figure class="text-end">
 		<button class="btn btn-outline-secondary" type="button" id="home">홈으로 돌아가기</button>
 		</figure>
@@ -35,6 +31,11 @@
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
 
+<script>
+	document.querySelector("#home").addEventListener("click",function(){
+		location.href="../home.do";	
+	});
+</script>
 </body>
 
 </html>

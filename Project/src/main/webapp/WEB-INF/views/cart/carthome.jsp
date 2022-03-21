@@ -12,11 +12,18 @@
 <title>/cart/cartlist.jsp</title>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 <style>
-	h1 {text-align: center; font-weight: bold; padding-top: 1em; padding-bottom: 1em;}
-	
-	#center{
+h1 {
 	text-align: center;
-	}
+	font-weight: bold;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+#center {
+	text-align: center;
+}
+
+
 
 </style>
 </head>
@@ -45,7 +52,7 @@
       <c:forEach var="tmp" items="${list }" varStatus="status">
          <tr>
             <td id="center">${status.count }</td>
-            <td id="center"><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
+            <td id="center"><img src="${pageContext.request.contextPath }${tmp.imagePath}" style="width:50px" /></td>
             <td id="center">${tmp.productId }</td>
             <form action="update.do" method="post" id="updateForm">
             	<td><input type="number" min="1" max="10"name="newAmount" value="${tmp.amount }" id="newAmount" style="max-width: 3rem"/>
