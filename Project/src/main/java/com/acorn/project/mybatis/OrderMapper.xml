@@ -28,6 +28,7 @@
 		SELECT orderId, receiver, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate, delivery
 		FROM ordertable
 		where userId=#{userId}
+		ORDER BY orderId ASC
 	</select>
 	<!-- 고객용 특정 주문 목록 -->
 	<select id="orderDetailList" resultType="com.acorn.project.order.dto.OrderListDto">
@@ -36,11 +37,13 @@
 		 INNER JOIN ordertable_detail d ON o.orderId = d.orderId
 		 INNER JOIN product p ON d.productId = p.productId
 		 WHERE o.userId=#{userId} AND o.orderId=#{orderId} 
+		 ORDER BY orderId ASC
 	</select>
 	<!-- 관리자용 전체 주문 목록 -->
 	<select id="AllOrderList" resultType="orderDto">
 		SELECT orderId, receiver, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate, delivery
 		FROM ordertable
+		ORDER BY orderId ASC
 	</select>
 	<!-- 관리자용 특정 주문 목록 -->
 	<select id="AllOrderDetailList" resultType="com.acorn.project.order.dto.OrderListDto">
@@ -49,6 +52,7 @@
 		 INNER JOIN ordertable_detail d ON o.orderId = d.orderId
 		 INNER JOIN product p ON d.productId = p.productId
 		 WHERE o.orderId=#{orderId} 
+		 ORDER BY orderId ASC
 	</select>
 	
 	<!-- 주문시 재고 감소 -->

@@ -1,30 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>/staff/adminOrderDetail.jsp</title>
-<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+<style>
+	h1 {text-align: center; padding-top: 1em; padding-bottom: 1em;}
+	
+	#center{
+	text-align: center;
+	}
+</style>
 </head>
 <body>
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+    
+<header class="sticky-top ">
 <jsp:include page="../../../resources/include/navbar.jsp">
-	<jsp:param value="orderDetail" name="thisPage"/>
+	<jsp:param value="userlist" name="thisPage"/>
 </jsp:include>
-<div class="container-fluid mt-3">
-	<div class="row">
-	    <!-- 3단길이의 첫번째 열 -->
-	    <div class="container col-md-3">
-		    <jsp:include page="../../../resources/include/sidebar.jsp"></jsp:include>
-	    </div>
-	    <!-- 9단길이의 첫번째 열 -->
-	    <div class="col-md-9">
-			<div class="container">
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    
+	<jsp:include page="../../../resources/include/sidebar.jsp"></jsp:include>
+	
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 				<h1>주문 내역 디테일</h1>
-				<table class="table ">
+				<table class="table table-striped table-sm ">
 					<thead>
 				   		<tr>
 				   			<th>수령인</th>
@@ -37,7 +44,7 @@
 				  		<c:forEach items="${list}" var="tmp" varStatus="status">
 							<tr>
 							   	<c:if test="${status.first}">
-								    <td>${tmp.userId}</td>
+								    <td>${tmp.receiver}</td>
 								    <td>(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
 								    <td><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
 								    <td>${tmp.delivery}</td>
@@ -82,20 +89,17 @@
 					    </tr>
 					</tbody>
 				</table>
-			</div>
-	    </div>
-	</div>
+    </main>
+  </div>
 </div>
 
 <jsp:include page="../../../resources/include/footer.jsp">
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
-
 <script>
 	document.querySelector("#delivery").addEventListener("click",function(){
 		alert("주문의 배송이 완료되었습니다.");
 	});
 </script>
-
 </body>
 </html>

@@ -34,7 +34,7 @@
 					
 					<ul class="orderList">
 						<h1>주문내역</h1>
-						<table class="table">
+						<table class="table table-striped table-sm">
 							<thead>
 								<tr>
 						          <th scope="col" id="center">주문번호</th>

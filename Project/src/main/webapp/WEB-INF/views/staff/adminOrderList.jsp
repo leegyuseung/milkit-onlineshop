@@ -33,8 +33,9 @@
 				<section id="content">
 					
 					<ul class="orderList">
+					
 						<h1>전체 주문 현황</h1>
-						<table class="table">
+						<table class="table table-striped table-sm">
 							<thead>
 								<tr>
 						          <th scope="col">주문번호</th>
