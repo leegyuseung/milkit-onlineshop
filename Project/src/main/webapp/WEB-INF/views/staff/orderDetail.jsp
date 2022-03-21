@@ -76,7 +76,7 @@
 											<tr>
 												<td>${status.count }</td>
 											   	<td>${tmp.productName}</td>
-											   	<td><img src="${pageContext.request.contextPath }${tmp.imagePath}" /></td>											   	
+											   	<td><img src="${pageContext.request.contextPath }${tmp.imagePath}" style="width:50px; height: 50px;"/></td>											   	
 												<td><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /> 원</td>
 												<td>${tmp.amount_detail} </td>
 												<td>

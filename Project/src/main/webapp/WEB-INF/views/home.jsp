@@ -6,17 +6,23 @@
 <head>
 <meta charset="UTF-8">
 <title>/views/home.jsp</title>
-<style>
-	carousel-item
-</style>
 <jsp:include page="../../resources/include/resource.jsp"></jsp:include>
+<style>
+	#mainpage{background-image: url(resources/images/spaghetti.jpg);
+			  background-repeat: no-repeat;
+			  background-position: center;
+	}
+	
+</style>
 </head>
 <body>
 <jsp:include page="../../resources/include/navbar.jsp">
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
+
 <div class="container">
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+<div id="carouselExampleCaptions" class="carousel slide p-3 p-md-3 m-md-5" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -24,21 +30,21 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="${pageContext.request.contextPath }/resources/images/juck1.png" class="d-block w-100" width="800" height="400" alt="...">
+      <img src="${pageContext.request.contextPath }/resources/images/foods3.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="${pageContext.request.contextPath }/resources/images/juck1.png" class="d-block w-100" width="800" height="400" alt="...">
+      <img src="${pageContext.request.contextPath }/resources/images/pizza3.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="${pageContext.request.contextPath }/resources/images/juck1.png" class="d-block w-100" width="800" height="400" alt="...">
+      <img src="${pageContext.request.contextPath }/resources/images/spaghetti3.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Some representative placeholder content for the third slide.</p>
@@ -54,7 +60,19 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light" id="mainpage">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-4 fw-normal text-light"><strong>Daily Mealkit</strong></h1>
+      <p class="lead fw-normal text-light"><strong>West Food</strong></p>
+      <a class="btn btn-warning" href="${pageContext.request.contextPath }/mealkit/mealkit_w.do">Go</a>
+    </div>
+  </div>
 </div>
+ 
+ 
+ 
+ 
+ 
 <br />
 
 <jsp:include page="../../resources/include/footer.jsp">
