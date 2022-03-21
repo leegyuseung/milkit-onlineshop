@@ -44,6 +44,7 @@ img { display: block; margin: 0px auto; }
                         <h1 class="display-5 fw-bolder">${dto.productName}</h1>
                         <div class="fs-5 mb-5">
                             <span>${dto.price} 원</span>
+                    	</div>
                    </div>
 
                     	<p class="lead">원하는 수량을 적어 카트에 담아주세요.</p>

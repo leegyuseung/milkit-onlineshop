@@ -39,7 +39,7 @@
 	      		<c:forEach var="tmp" items="${list }" varStatus="status">
 		         	<tr>
 			            <td id="center">${status.count }</td>
-			            <td id="center"><img src="${pageContext.request.contextPath }${tmp.imagePath}"/></td>
+			            <td id="center"><img src="${pageContext.request.contextPath }${tmp.imagePath}" style="width:50px; height: 50px;"/></td>
 			            <td id="center">${tmp.productId }</td>
 			            <td id="center">${tmp.amount }</td>
 			            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.price }" /></td>
