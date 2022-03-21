@@ -1,7 +1,9 @@
 package com.acorn.project.product.service;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -72,6 +74,13 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public void updateProduct(ProductDto dto) {
 		dao.update(dto);
+	}
+
+	@Override
+	public Map<String, Object> isExistProductId(String inputProductId) {
+		 Map<String, Object> map= new HashMap<String, Object>();
+	     map.put("isExist", dao.isExist(inputProductId));
+	     return map;
 	}
 
 	

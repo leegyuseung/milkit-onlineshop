@@ -30,6 +30,11 @@
 		WHERE productId=#{productId }
 	</update>
 	
+	<select id="isExist" parameterType="java.lang.String" resultType="string">
+		select productId
+		from product
+		where productId=#{productId}
+	</select>
 </mapper>
 
 

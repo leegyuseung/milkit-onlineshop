@@ -1,12 +1,15 @@
 package com.acorn.project.staff.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.order.dto.OrderDto;
@@ -31,6 +34,14 @@ public class StaffController {
 	public String staff() {
 		
 		return "staff/home";
+	}
+	
+	//productId 중복 확인을 해서 json 문자열을 리턴해주는 메소드 
+	@RequestMapping("/staff/checkProductId")
+	@ResponseBody
+	public Map<String, Object> checkid(@RequestParam String inputProductId){
+		//UsersService 가 리턴해주는 Map 을 리턴해서 json 문자열을 응답한다. 
+		return Pservice.isExistProductId(inputProductId);
 	}
 	
 	@RequestMapping("/staff/product/list")
