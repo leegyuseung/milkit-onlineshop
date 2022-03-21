@@ -235,6 +235,9 @@
 		</form>
 	</c:if>
 </div>
+<br />
+<br />
+<br /><br /><br /><br /><br /><br /><br /><br />
 <script src="${pageContext.request.contextPath}/resources/js/gura_util.js"></script>
 <script>
 	
@@ -442,9 +445,6 @@
 		}
 	}
 </script>
-</br>
-</br>
-</br>
 <!-- Footer-->
         <jsp:include page="../../../resources/include/footer.jsp">
 			<jsp:param value="mealkit.home" name="thisPage"/>
