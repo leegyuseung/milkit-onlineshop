@@ -32,7 +32,6 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 				<section id="content">
 					
-					<ul class="orderList">
 					
 						<h1>전체 주문 현황</h1>
 						<table class="table table-striped table-sm">
@@ -56,7 +55,6 @@
 							  	</c:forEach>
 					  		</tbody>
 					  	</table>
-					</ul>
 				</section>   
     </main>
   </div>
