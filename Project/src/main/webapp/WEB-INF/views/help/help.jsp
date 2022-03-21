@@ -16,24 +16,24 @@
 </jsp:include>
 
 <div style="text-align:center";>
-<img src="<%=request.getContextPath()%>/resources/images/acorn1.jpg" alt="지도" width= 800px; height= 400px; />
+<img src="<%=request.getContextPath()%>/resources/images/acorn1.jpg" alt="지도" width= 600px; height= 400px; />
 </div>
 
 	<div class="container px-4 px-lg-5 my-5">
 		<div class="text-center text-black">
-			<h1 class="display-6 fw-bolder">상호 : 에이콘푸드</h1>
+			<p><strong>상호 : 에이콘푸드</strong></p>
 		</div>
 		<div class="text-center text-black">
-			<h1 class="display-6 fw-bolder">사업장소재지 : 서울특별시 강남구</h1>
+			<p><strong>대표이사 : 이정호</strong></p>
 		</div>
 		<div class="text-center text-black">
-			<h1 class="display-6 fw-bolder">안내전화 : 0000-0000</h1>
+			<p><strong>안내전화 : 0000-0000</strong></p>
 		</div>
 		<div class="text-center text-black">
-			<h1 class="display-6 fw-bolder">대표이사 : 이정호</h1>
+			<p><strong>서울특별시 강남구</strong></p>	
 		</div>
 		<div class="text-center text-black">
-			<h1 class="display-6 fw-bolder">사업자 등록번호 : 000-00-00000</h1>
+			<p><strong>사업자 등록번호 : 000-00-00000</strong></p>	
 		</div>
 	</div>
 

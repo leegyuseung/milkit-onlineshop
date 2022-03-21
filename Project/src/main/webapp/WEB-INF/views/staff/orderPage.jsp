@@ -30,7 +30,6 @@
 		</a>
 		<h2 style="color:#FFB94F">Checkout form</h2>
     </div>
-
     <div class="row g-5">
 	  <div class="col-md-5 col-lg-4 order-md-last">
       
