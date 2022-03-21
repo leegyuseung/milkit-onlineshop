@@ -42,7 +42,6 @@
                         <div class="fs-5 mb-5">
                             <span>${dto.price} 원</span>
                     	</div>
-
                     	<p class="lead">원하는 수량을 적어 카트에 담아주세요.</p>
 
                    <div class="d-flex">
