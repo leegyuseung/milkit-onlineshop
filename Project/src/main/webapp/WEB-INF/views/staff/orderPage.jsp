@@ -106,7 +106,7 @@
 
 			<div class="col-12">
 			   	<label class="control-label" for="tel" class="form-label">연락처</label>
-			   	<input class="form-control" type="text" name="tel" id="tel" required/>
+			   	<input class="form-control" type="text" name="tel" id="tel" placeholder="010-0000-0000" required/>
 		  	</div>
 
 
@@ -133,7 +133,7 @@
             
             <div class="col-md-3">
               <label for="userPostal" class="form-label">우편 번호</label>
-              <input type="text" class="form-control" name="userPostal" id="userPostal" placeholder="" required>
+              <input type="text" class="form-control" name="userPostal" id="userPostal" placeholder="00000" required>
               <div class="invalid-feedback">
                 Zip code required.
               </div>

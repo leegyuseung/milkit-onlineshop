@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>staff/usersList.jsp</title>
-<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+<title>/staff/userList.jsp</title>
 <style>
 	h1 {text-align: center; font-weight: bold; padding-top: 1em; padding-bottom: 1em;}
 	
@@ -17,10 +17,20 @@
 </style>
 </head>
 <body>
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+    
+<header class="sticky-top ">
 <jsp:include page="../../../resources/include/navbar.jsp">
 	<jsp:param value="userlist" name="thisPage"/>
 </jsp:include>
-<div class="container">
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    
+	<jsp:include page="../../../resources/include/sidebar.jsp"></jsp:include>
+	
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 	<h1>회원 목록</h1>
 	<div class="table-responsive">
 		<table class="table table-striped table-sm">
@@ -61,11 +71,19 @@
 	<figure class="text-end">
 	<button class="btn btn-outline-secondary" type="reset" id="home">관리자 페이지</button>
 	</figure>
+	
+    </main>
+  </div>
+</div>
+
+<jsp:include page="../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
+
 <script>
 	document.querySelector("#home").addEventListener("click",function(){
 		location.href="home.do";	
 	});
-</script>	
-</div>
+</script>
 </body>
 </html>

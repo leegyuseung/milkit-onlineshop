@@ -2,29 +2,27 @@
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <%@taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>/staff/adminOrderList.jsp</title>
-<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+    
+<header class="sticky-top ">
 <jsp:include page="../../../resources/include/navbar.jsp">
-	<jsp:param value="orderHistory" name="thisPage"/>
+	<jsp:param value="userlist" name="thisPage"/>
 </jsp:include>
+</header>
 
-<div class="container-fluid mt-3">
-	<div class="row">
-	    <!-- 3단길이의 첫번째 열 -->
-	    <div class="container col-md-3">
-		    <jsp:include page="../../../resources/include/sidebar.jsp"></jsp:include>
-	    </div>
-	    <!-- 9단길이의 첫번째 열 -->
-	    <div class="col-md-9">
-		    <div class="container">
-		    	
+<div class="container-fluid">
+  <div class="row">
+    
+	<jsp:include page="../../../resources/include/sidebar.jsp"></jsp:include>
+	
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 				<section id="content">
 					
 					<ul class="orderList">
@@ -51,18 +49,14 @@
 					  		</tbody>
 					  	</table>
 					</ul>
-				</section>
-			</div>
-	    </div>
-	</div>
+				</section>   
+    </main>
+  </div>
 </div>
-
-
-
-
 
 <jsp:include page="../../../resources/include/footer.jsp">
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
+
 </body>
 </html>

@@ -16,9 +16,20 @@
 </style>
 </head>
 <body>
+    
+<header class="sticky-top ">
 <jsp:include page="../../../../resources/include/navbar.jsp">
-	<jsp:param value="staff" name="thisPage"/>
+	<jsp:param value="userlist" name="thisPage"/>
 </jsp:include>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    
+	<jsp:include page="../../../../resources/include/sidebar.jsp"></jsp:include>
+	
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+		
 <div class="container">
 	<h1>상품 리스트</h1>
 	<div class="table-responsive">
@@ -61,6 +72,14 @@
 	<button class="btn btn-outline-secondary" type="reset" id="insert">상품 추가</button>
 	</figure>
 </div>
+    </main>
+  </div>
+</div>
+
+<jsp:include page="../../../../resources/include/footer.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
+
 <script>
 	document.querySelector("#home").addEventListener("click",function(){
 		location.href="../home.do";	
@@ -68,6 +87,6 @@
 	document.querySelector("#insert").addEventListener("click",function(){
 		location.href="insertForm.do";	
 	});
-</script>	
+</script>
 </body>
 </html>

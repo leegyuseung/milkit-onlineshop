@@ -62,8 +62,8 @@ h1 {
            		<td id="center"><button class="btn btn-outline-secondary" type="submit">수정</button></td>	            	
 
              </form>
-            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /></td>
-            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /></td>
+            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" />원</td>
+            <td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" />원</td>
             <td id="center">
             	<a href="delete.do?cart_id=${tmp.cart_id }">
 	            	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
