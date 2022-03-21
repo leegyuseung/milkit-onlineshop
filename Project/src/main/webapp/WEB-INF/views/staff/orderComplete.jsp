@@ -12,7 +12,7 @@
 <jsp:include page="../../../resources/include/navbar.jsp">
 	<jsp:param value="staff" name="thisPage"/>
 </jsp:include>
-	<div class="container">
+	<div class="container  my-5">
 		<figure class="text-center">
   	<blockquote class="blockquote">
    	 <p>구매해주셔서 감사합니다.</p>
@@ -21,11 +21,7 @@
   	  Thank you
   </figcaption>
 </figure>
-		
-		
-		
-		
-		
+
 		<figure class="text-end">
 		<button class="btn btn-outline-secondary" type="button" id="home">홈으로 돌아가기</button>
 		</figure>
@@ -34,6 +30,7 @@
 <jsp:include page="../../../resources/include/footer.jsp">
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
+
 <script>
 	document.querySelector("#home").addEventListener("click",function(){
 		location.href="../home.do";	

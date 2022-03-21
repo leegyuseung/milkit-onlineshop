@@ -15,17 +15,15 @@ import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
 import com.acorn.project.order.dto.OrderListDto;
 import com.acorn.project.order.service.OrderService;
-import com.acorn.project.users.dto.UsersDto;
 
 @Controller
 public class OrderController {
 
 	@Autowired
-	private OrderService service2;
+	private OrderService Oservice;
 	
 	@Autowired
 	private CartService service;
-	
 	
 	
 	@RequestMapping("/staff/orderPage.do")
@@ -36,15 +34,21 @@ public class OrderController {
 		//ModelAndView 객체를 리턴해 준다.
 		return mView;
 	}
+	
+	@RequestMapping("/staff/orderPage2.do")
+	public ModelAndView cartlist2(CartDto dto, ModelAndView mView, HttpSession session) {
+		//view page 의 정보를 ModelAndView 객체에 담는다.
+		mView.setViewName("staff/orderPage2");
+		//ModelAndView 객체를 리턴해 준다.
+		return mView;
+	}
 
 	@RequestMapping("/private/orderComplete.do")
 	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail) {
 		
-		service2.orderInfo(dto, session);
-		
-		//여기dto에는 orderId가 추가되지 않았음
+		Oservice.orderInfo(dto, session);
 
-		service2.orderInfo_Detail(dto, dtoDetail, session);
+		Oservice.orderInfo_Detail(dto, dtoDetail, session);
 		
 		service.deleteAll((String)session.getAttribute("id"));
 		
@@ -57,7 +61,7 @@ public class OrderController {
 		String id=(String)session.getAttribute("id");
 		dto.setUserId(id);
 		
-		List<OrderDto> list=service2.getListOrder(dto);
+		List<OrderDto> list=Oservice.getListOrder(dto);
 		
 		mView.addObject("list", list);
 
@@ -74,12 +78,26 @@ public class OrderController {
 		
 		dto.setOrderId(orderId);
 		
-		List<OrderListDto> list=service2.orderDetailList(dto);
+		List<OrderListDto> list=Oservice.orderDetailList(dto);
 
 		mView.addObject("list", list);
 
 		mView.setViewName("staff/orderDetail");
 		return mView;
 		
+	}
+	
+	@RequestMapping("/staff/delivered.do")
+	public ModelAndView delivered(ModelAndView mView, OrderDto dto) {
+		
+		Oservice.delivered(dto);
+		
+		//Oservice.stockReduce(dtoDetail);
+		
+		//Oservice.buyCount(dtoDetail);
+		
+		mView.setViewName("redirect:/staff/adminOrderList.do");
+		
+		return mView;
 	}
 }

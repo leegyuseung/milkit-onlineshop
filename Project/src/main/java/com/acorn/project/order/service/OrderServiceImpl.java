@@ -49,7 +49,7 @@ public class OrderServiceImpl implements OrderService{
 	
 	@Override
 	public List<OrderDto> getAllListOrder(OrderDto dto) {
-		// TODO Auto-generated method stub
+		
 		return dao.getAllList(dto);
 	}
 
@@ -63,6 +63,25 @@ public class OrderServiceImpl implements OrderService{
 	public List<OrderListDto> AllOrderDetailList(OrderDto dto) {
 
 		return dao.AllOrderDetailList(dto);
+	}
+
+	@Override
+	public void stockReduce(OrderDetailDto dto) {
+		
+		dao.stockReduce(dto);
+	}
+
+	@Override
+	public void buyCount(OrderDetailDto dto) {
+		
+		dao.buyCount(dto);
+	}
+
+	@Override
+	public void delivered(OrderDto dto) {
+
+		dao.delivered(dto);
+		
 	}
 
 	

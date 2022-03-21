@@ -37,9 +37,13 @@
 </style>
 </head>
 <body>
+<header class="sticky-top">
 <jsp:include page="../../../resources/include/navbar.jsp">
 	<jsp:param value="mealkit.home" name="thisPage"/>
 </jsp:include>
+</header>
+
+
         <!-- Header-->
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">

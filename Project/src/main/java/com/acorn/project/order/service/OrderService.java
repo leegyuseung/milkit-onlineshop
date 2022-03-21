@@ -18,9 +18,14 @@ public interface OrderService {
 	
 	public List<OrderDto> getAllListOrder(OrderDto dto);
 
-
 	public List<OrderListDto> orderDetailList(OrderDto dto);
 	
 	public List<OrderListDto> AllOrderDetailList(OrderDto dto);
+	
+	public void stockReduce(OrderDetailDto dto);
+	
+	public void buyCount(OrderDetailDto dto);
+
+	public void delivered(OrderDto dto);
 
 }

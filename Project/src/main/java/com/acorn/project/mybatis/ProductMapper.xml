@@ -29,6 +29,7 @@
 		SET productName=#{productName }, price=#{price }, stock=#{stock }, updateDate=SYSDATE
 		WHERE productId=#{productId }
 	</update>
+	
 </mapper>
 
 

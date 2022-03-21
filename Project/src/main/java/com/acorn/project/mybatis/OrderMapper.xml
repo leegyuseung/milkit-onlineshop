@@ -4,8 +4,8 @@
 
 	<insert id="getInfo" parameterType="orderDto">
 		INSERT INTO ordertable
-		(orderId, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate)
-	 	values(orderId_seq.nextval, #{userId}, #{userAddr}, #{userPostal}, #{userAddrDetail}, #{tel}, #{totalPrice}, SYSDATE)
+		(orderId, receiver, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate)
+	 	values(orderId_seq.nextval, #{receiver}, #{userId}, #{userAddr}, #{userPostal}, #{userAddrDetail}, #{tel}, #{totalPrice}, SYSDATE)
 	</insert>
 	
 	<insert id="getInfo_Detail" parameterType="cartDto" >
@@ -23,32 +23,58 @@
  		DELETE FROM cart
      	WHERE id = #{userId}
 	</delete>
-	
+	<!-- 고객용 전체 주문 목록 -->
 	<select id="orderList" resultType="orderDto">
-		SELECT orderId, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate
+		SELECT orderId, receiver, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate, delivery
 		FROM ordertable
 		where userId=#{userId}
+		ORDER BY orderId ASC
 	</select>
-	<!-- 특정 주문 목록 -->
+	<!-- 고객용 특정 주문 목록 -->
 	<select id="orderDetailList" resultType="com.acorn.project.order.dto.OrderListDto">
-		 SELECT o.orderId, o.userId, o.userAddr, o.userPostal, o.userAddrDetail, o.tel, o.totalPrice, o.orderDate, d.orderId_detail, d.productId, d.amount_detail, p.productName, p.imagePath, p.price 
+		 SELECT o.orderId, o.receiver, o.userId, o.userAddr, o.userPostal, o.userAddrDetail, o.tel, o.totalPrice, o.orderDate, o.delivery, d.orderId_detail, d.productId, d.amount_detail, p.productName, p.imagePath, p.price 
 		 FROM ordertable o
 		 INNER JOIN ordertable_detail d ON o.orderId = d.orderId
 		 INNER JOIN product p ON d.productId = p.productId
 		 WHERE o.userId=#{userId} AND o.orderId=#{orderId} 
+		 ORDER BY orderId ASC
 	</select>
-	<!-- 전체 주문 목록 -->
+	<!-- 관리자용 전체 주문 목록 -->
 	<select id="AllOrderList" resultType="orderDto">
-		SELECT orderId, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate
+		SELECT orderId, receiver, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate, delivery
 		FROM ordertable
+		ORDER BY orderId ASC
 	</select>
+	<!-- 관리자용 특정 주문 목록 -->
 	<select id="AllOrderDetailList" resultType="com.acorn.project.order.dto.OrderListDto">
-		 SELECT o.orderId, o.userId, o.userAddr, o.userPostal, o.userAddrDetail, o.tel, o.totalPrice, o.orderDate, d.orderId_detail, d.productId, d.amount_detail, p.productName, p.imagePath, p.price 
+		 SELECT o.orderId, o.receiver, o.userId, o.userAddr, o.userPostal, o.userAddrDetail, o.tel, o.totalPrice, o.orderDate, o.delivery, d.orderId_detail, d.productId, d.amount_detail, p.productName, p.imagePath, p.price 
 		 FROM ordertable o
 		 INNER JOIN ordertable_detail d ON o.orderId = d.orderId
 		 INNER JOIN product p ON d.productId = p.productId
 		 WHERE o.orderId=#{orderId} 
+		 ORDER BY orderId ASC
 	</select>
+	
+	<!-- 주문시 재고 감소 -->
+	<update id="stockReduce" parameterType="com.acorn.project.order.dto.OrderDetailDto">
+		UPDATE product
+		SET stock = stock - #{amount_detail}
+		WHERE productId=#{productId}
+	</update>
+	
+	<!-- 구매시 buycount 증가 -->
+	<update id="buyCount" parameterType="com.acorn.project.order.dto.OrderDetailDto">
+		UPDATE product
+		SET buyCount = buyCount + #{amount_detail}
+		WHERE productId=#{productId}
+	</update>
+	
+	<!-- 배송 완료 -->
+	<update id="delivered" parameterType="orderDto">
+		UPDATE ordertable
+		SET delivery = #{delivery}
+		WHERE orderId=#{orderId}
+	</update>
 </mapper>
 
 
