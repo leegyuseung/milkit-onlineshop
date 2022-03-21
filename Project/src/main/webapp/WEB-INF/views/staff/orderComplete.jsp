@@ -35,7 +35,7 @@
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
 <script>
-	document.querySelector("#reset").addEventListener("click",function(){
+	document.querySelector("#home").addEventListener("click",function(){
 		location.href="../home.do";	
 	});
 </script>
