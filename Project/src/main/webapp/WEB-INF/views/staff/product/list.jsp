@@ -30,9 +30,7 @@
 	
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 		
-<div class="container">
 	<h1>상품 리스트</h1>
-	<div class="table-responsive">
 		<table class="table table-striped table-sm">
 			<thead>
 				<tr>
@@ -65,13 +63,11 @@
 				</c:forEach>
 			</tbody>
 		</table>
-	</div>
 	<br />
 	<figure class="text-end">
 	<button class="btn btn-outline-secondary" type="reset" id="home">관리자 페이지</button>	
 	<button class="btn btn-outline-secondary" type="reset" id="insert">상품 추가</button>
 	</figure>
-</div>
     </main>
   </div>
 </div>
