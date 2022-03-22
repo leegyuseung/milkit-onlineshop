@@ -12,10 +12,12 @@
 		height: 500px;
 	}
 </style>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </head>
 <body>
 <div class="container">
-	<h1>새글 작성</h1>
 	<form action="insert.do" method="post" id="insertForm">
 		<div class="mb-3">
 			<label class="form-label" for="title">제목</label>
@@ -25,7 +27,10 @@
 			<label class="form-label" for="content">내용</label>
 			<textarea class="form-control"  name="content" id="content"></textarea>
 		</div>
-		<button class="btn btn-primary" type="submit">저장</button>
+		<figure class="text-end">
+		<button class="btn btn-outline-secondary" type="submit">저장</button>
+		<button class="btn btn-outline-secondary" type="reset" id="reset">취소</button>
+		</figure>
 	</form>
 </div>
 <%--
@@ -103,6 +108,9 @@
 			}
 			
 		});
+	document.querySelector("#reset").addEventListener("click",function(){
+		location.href="${pageContext.request.contextPath}/inquiry/list.do";	
+	});
 </script>
 <br />
 <jsp:include page="../../../resources/include/footer.jsp">
