@@ -8,7 +8,22 @@
 <title>/views/home.jsp</title>
 <jsp:include page="../../resources/include/resource.jsp"></jsp:include>
 <style>
-	#mainpage{background-image: url(resources/images/spaghetti.jpg);
+	#mainpage{background-image: url(resources/images/korean1.jpg);
+			  background-repeat: no-repeat;
+			  background-position: center;
+	}
+	
+	#mainpage2{background-image: url(resources/images/spaghetti.jpg);
+			  background-repeat: no-repeat;
+			  background-position: center;
+	}
+	
+	#mainpage3{background-image: url(resources/images/japanese1.png);
+			  background-repeat: no-repeat;
+			  background-position: center;
+	}
+	
+	#mainpage4{background-image: url(resources/images/chinese1.jpg);
 			  background-repeat: no-repeat;
 			  background-position: center;
 	}
@@ -41,9 +56,7 @@
 						src="${pageContext.request.contextPath }/resources/images/mealkit11.jpg"
 						class="d-block w-100" alt="...">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>First slide label</h5>
-						<p>Some representative placeholder content for the first
-							slide.</p>
+						<h1 style="color:white; font-family:굴림체; text-shadow:-2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; "><strong>프리미엄 세계 밀키트 전문점</strong></h1>
 					</div>
 				</div>
 				<div class="carousel-item">
@@ -51,9 +64,7 @@
 						src="${pageContext.request.contextPath }/resources/images/mealkit12.jpg"
 						class="d-block w-100" alt="...">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>Second slide label</h5>
-						<p>Some representative placeholder content for the second
-							slide.</p>
+						<h1 style="color:white; font-family:굴림체; text-shadow:-2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; "><strong>Daily Mealkit</strong></h1>
 					</div>
 				</div>
 				<div class="carousel-item">
@@ -61,9 +72,7 @@
 						src="${pageContext.request.contextPath }/resources/images/mealkit13.jpg"
 						class="d-block w-100" alt="...">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>Third slide label</h5>
-						<p>Some representative placeholder content for the third
-							slide.</p>
+						<h1 style="color:white; font-family:굴림체; text-shadow:-2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; "><strong>차별화된 맛과 품질</strong></h1>
 					</div>
 				</div>
 				<div class="carousel-item">
@@ -71,9 +80,7 @@
 						src="${pageContext.request.contextPath }/resources/images/mealkit14.jpg"
 						class="d-block w-100" alt="...">
 					<div class="carousel-caption d-none d-md-block">
-						<h5>Fourth slide label</h5>
-						<p>Some representative placeholder content for the third
-							slide.</p>
+						<h1 style="color:white; font-family:굴림체; text-shadow:-2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; "><strong>지금 바로 전화 주세요</strong></h1>
 					</div>
 				</div>
 			</div>
@@ -89,20 +96,65 @@
 			</button>
 		</div>
 
-
+		
 
 		<div
 			class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
 			id="mainpage">
 			<div class="col-md-5 p-lg-5 mx-auto my-5">
 				<h1 class="display-4 fw-normal text-light">
-					<strong>Daily Mealkit</strong>
+					<strong>Korean Food</strong>
 				</h1>
 				<p class="lead fw-normal text-light">
+					<strong>Daily Mealkit</strong>
+				</p>
+				<a class="btn btn-warning"
+					href="${pageContext.request.contextPath }/mealkit/mealkit_k.do">Go</a>
+			</div>
+		</div>
+		
+		<div
+			class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
+			id="mainpage2">
+			<div class="col-md-5 p-lg-5 mx-auto my-5">
+				<h1 class="display-4 fw-normal text-light">
 					<strong>West Food</strong>
+				</h1>
+				<p class="lead fw-normal text-light">
+					<strong>Daily Mealkit</strong>
 				</p>
 				<a class="btn btn-warning"
 					href="${pageContext.request.contextPath }/mealkit/mealkit_w.do">Go</a>
+			</div>
+		</div>
+		
+		<div
+			class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
+			id="mainpage3">
+			<div class="col-md-5 p-lg-5 mx-auto my-5">
+				<h1 class="display-4 fw-normal text-light">
+					<strong>Japanese Food</strong>
+				</h1>
+				<p class="lead fw-normal text-light">
+					<strong>Daily Mealkit</strong>
+				</p>
+				<a class="btn btn-warning"
+					href="${pageContext.request.contextPath }/mealkit/mealkit_j.do">Go</a>
+			</div>
+		</div>
+		
+		<div
+			class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light"
+			id="mainpage4">
+			<div class="col-md-5 p-lg-5 mx-auto my-5">
+				<h1 class="display-4 fw-normal text-light">
+					<strong>Chinese Food</strong>
+				</h1>
+				<p class="lead fw-normal text-light">
+					<strong>Daily Mealkit</strong>
+				</p>
+				<a class="btn btn-warning"
+					href="${pageContext.request.contextPath }/mealkit/mealkit_c.do">Go</a>
 			</div>
 		</div>
 
