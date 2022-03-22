@@ -2,7 +2,16 @@
     pageEncoding="UTF-8"%>
     
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
-
+<style>
+	body{
+		display : flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+	footer{
+		margin-top:auto;
+	}
+</style>
   <footer class="py-5">
       <ul class="nav justify-content-center border-top pb-3 mb-3">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><small>상호 : 에이콘푸드</small></a></li>
