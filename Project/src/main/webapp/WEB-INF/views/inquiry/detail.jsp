@@ -12,13 +12,7 @@
 		border: 1px dotted gray;
 	}
 	
-	/* 댓글 프로필 이미지를 작은 원형으로 만든다. */
-	.profile-image{
-		width: 50px;
-		height: 50px;
-		border: 1px solid #cecece;
-		border-radius: 50%;
-	}
+	
 	/* ul 요소의 기본 스타일 제거 */
 	.comments ul{
 		padding: 0;
@@ -114,7 +108,7 @@
 			<strong>${keyword }</strong> 검색어로 검색된 내용 자세히 보기 
 		</p>
 	</c:if>
-	<table>
+	<table class="table table-bordered">
 		<tr>
 			<th>글번호</th>
 			<td>${dto.num }</td>

@@ -24,75 +24,29 @@
 	<jsp:include page="../../../resources/include/sidebar.jsp"></jsp:include>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <h2>Section title</h2>
+      <h2 class="my-3">7일동안 판매 현황</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
+              <th scope="col">주문 번호</th>
+              <th scope="col">수령인</th>
+              <th scope="col">주소</th>
+              <th scope="col">총 금액</th>
+              <th scope="col">배송 상태</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>placeholder</td>
-              <td>irrelevant</td>
-              <td>visual</td>
-              <td>layout</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>data</td>
-              <td>rich</td>
-              <td>dashboard</td>
-              <td>tabular</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>information</td>
-              <td>placeholder</td>
-              <td>illustrative</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,004</td>
-              <td>text</td>
-              <td>random</td>
-              <td>layout</td>
-              <td>dashboard</td>
-            </tr>
-            <tr>
-              <td>1,005</td>
-              <td>dashboard</td>
-              <td>irrelevant</td>
-              <td>text</td>
-              <td>placeholder</td>
-            </tr>
-            <tr>
-              <td>1,006</td>
-              <td>dashboard</td>
-              <td>illustrative</td>
-              <td>rich</td>
-              <td>data</td>
-            </tr>
-            <tr>
-              <td>1,007</td>
-              <td>placeholder</td>
-              <td>tabular</td>
-              <td>information</td>
-              <td>irrelevant</td>
-            </tr>
+            <c:forEach items="${list}" var="tmp">
+									<tr>
+										<td id="center"><a href="orderDetail.do?orderId=${tmp.orderId}">${tmp.orderId}</a></td>
+										<td id="center">${tmp.receiver}</td>
+										<td id="center">(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
+										<td id="center"><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
+										<td id="center">${tmp.delivery}</td>
+									</tr>
+								  	
+							  	</c:forEach>
           </tbody>
         </table>
       </div>

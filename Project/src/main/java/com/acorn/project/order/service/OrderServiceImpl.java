@@ -8,10 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.acorn.project.cart.dto.CartDto;
 import com.acorn.project.order.dao.OrderDao;
 import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
 import com.acorn.project.order.dto.OrderListDto;
+import com.acorn.project.product.dto.StockBuyDto;
 
 @Service
 public class OrderServiceImpl implements OrderService{
@@ -66,15 +68,15 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public void stockReduce(OrderDetailDto dto) {
+	public void stockReduce(StockBuyDto sbdto) {
 		
-		dao.stockReduce(dto);
+		dao.stockReduce(sbdto);
 	}
 
 	@Override
-	public void buyCount(OrderDetailDto dto) {
+	public void buyCount(StockBuyDto sbdto) {
 		
-		dao.buyCount(dto);
+		dao.buyCount(sbdto);
 	}
 
 	@Override
@@ -82,6 +84,12 @@ public class OrderServiceImpl implements OrderService{
 
 		dao.delivered(dto);
 		
+	}
+
+	@Override
+	public List<OrderDto> weeklyOrder(OrderDto dto) {
+		// TODO Auto-generated method stub
+		return dao.weeklyOrder(dto);
 	}
 
 	

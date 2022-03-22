@@ -52,10 +52,16 @@
                     <p class="lead fw-normal text-black-50 mb-0">good price, good quality</p>
                 </div>
             </div>
-        </header>
+        </header>       
+
 <!-- Section-->
 <section class="py-5">
+
 	<div class="container px-4 px-lg-5 mt-5">
+	<p style="text-align: right">
+        <a href="bestProduct.do">인기순</a>
+        <a href="newProduct.do">최신순</a>
+     </p>
     	<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
     	<c:forEach var="tmp" items="${list }">
         	<div class="col mb-5">
