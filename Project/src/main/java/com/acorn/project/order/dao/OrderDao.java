@@ -29,6 +29,14 @@ public interface OrderDao {
 	
 	public void buyCount(StockBuyDto sbdto);
 	
+	public void stockIncrease(StockBuyDto sbdto);
+	
+	public void buyCountDown(StockBuyDto sbdto);
+	
+	public void orderCancel(OrderDto dto);
+	
+	public void orderReturn(OrderDto dto);
+	
 	public void delivered(OrderDto dto);
 	
 	public List<OrderDto> thisWeek(OrderDto dto);

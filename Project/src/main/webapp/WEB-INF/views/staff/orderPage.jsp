@@ -51,8 +51,8 @@
           <c:forEach var="tmp" items="${list }" varStatus="status">
 	          <li class="list-group-item d-flex justify-content-between lh-sm">
 	            <div>
-	              <h6 class="my-0">${tmp.productId } x ${tmp.amount }개</h6>
-	              <small class="text-muted">맛있는 ${tmp.productId } 입니다!</small>
+	              <h6 class="my-0">${tmp.productName } x ${tmp.amount }개</h6>
+	              <small class="text-muted">맛있는 ${tmp.productName } 입니다!</small>
 	              <input type="hidden" name="amount" id="amount" value="${tmp.amount }"/>
 	              <input type="hidden" name="productId" id="productId" value="${tmp.productId }"/>
 	            </div>
