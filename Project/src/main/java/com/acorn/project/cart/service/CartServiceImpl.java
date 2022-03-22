@@ -51,32 +51,16 @@ public class CartServiceImpl implements CartService{
 		dao.deleteAll(id);
 	}
 	
-	@Override
-	public void update(int cart_id) {
-		dao.update(cart_id);
-	}
-	
-	@Override
-	public int sumPrice(String id) {
-		return dao.sumPrice(id);
-	}
-	
-	@Override
-	public int countCart(String id, String productid) {
-		return 0;
-	}
-	
+
 	@Override
 	public void updateCart(CartDto dto) {
 		int totalPrice=(dto.getNewAmount()*dto.getPrice());		
 		dto.setTotalPrice(totalPrice);
 		dao.updateCart(dto);
 	}
+
+
 	
-	@Override
-	public void modifyCart(CartDto dto) {
-		dao.modifyCart(dto);
-	}
 	
 }
 

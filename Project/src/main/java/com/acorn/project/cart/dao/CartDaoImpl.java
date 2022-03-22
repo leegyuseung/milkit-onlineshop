@@ -35,31 +35,14 @@ public class CartDaoImpl implements CartDao{
 		session.delete("cart.deleteAll", id);
 	}
 	
-	@Override
-	public void update(int cart_id) {
-		
-	}
 	
-	@Override
-	public int sumPrice(String id) {
-		return session.selectOne("cart.sumPrice", id);
-	}
-	
-	@Override
-	public int countCart(String id, String productId) {
-		return 0;
-	}
-	
+
 	@Override
 	public void updateCart(CartDto dto) {
 		session.update("cart.updateCart", dto);
 	}
 	
-	@Override
-	public void modifyCart(CartDto dto) {
-		session.update("cart.modify", dto);
-	}
-	
+
 }
 
 
