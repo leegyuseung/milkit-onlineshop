@@ -81,6 +81,7 @@
 		SELECT *
 		FROM ordertable
 		WHERE orderdate BETWEEN TRUNC(SYSDATE -7, 'iw') AND TRUNC(SYSDATE, 'd')
+		ORDER BY orderdate DESC;
 	</select>
 	
 	<!-- 이번주 주문 내역 -->
@@ -88,6 +89,7 @@
 		SELECT *
 		FROM ordertable
 		WHERE orderdate BETWEEN TRUNC(SYSDATE, 'iw') AND TRUNC(SYSDATE + 7, 'd')
+		ORDER BY orderdate DESC;
 	</select>
 </mapper>
 

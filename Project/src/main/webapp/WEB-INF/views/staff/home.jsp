@@ -39,7 +39,7 @@
 	              			<th scope="col">수령인</th>
 	             		 	<th scope="col">주소</th>
 	              			<th scope="col">총 금액</th>
-	              			<th scope="col">배송 상태</th>
+	              			<th scope="col">주문 날짜</th>
 	            		</tr>
 	          		</thead>
 	          		<tbody>
@@ -49,7 +49,7 @@
 								<td>${tmp.receiver}</td>
 								<td>(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
 								<td><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
-								<td>${tmp.delivery}</td>
+								<td>${tmp.orderDate }</td>
 							</tr>
 									  	
 						</c:forEach>

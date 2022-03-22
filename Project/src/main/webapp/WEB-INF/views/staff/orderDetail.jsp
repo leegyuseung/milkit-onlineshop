@@ -57,8 +57,6 @@
 						    <td colspan="4">
 						    	<table class="table table-sm">
 						    		<caption class="text-end">
-						    			<form action="../cart/carthome.do">
-						    				<button class="btn btn-outline-secondary">다시 주문하기</button>
 						    				<c:forEach items="${list}" var="tmp" varStatus="status">
 								    				<c:choose>
 													    <c:when test="${tmp.delivery eq '배송 준비중'}">
@@ -69,7 +67,6 @@
 													    </c:otherwise>
 													</c:choose>
 						    				</c:forEach>
-						    			</form>
 						    		</caption>
 						    		<thead>
 						    			<tr>
