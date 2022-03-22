@@ -86,5 +86,11 @@ public class OrderDaoImpl implements OrderDao{
 		return session.selectList("order.thisWeek", dto);
 	}
 
+	@Override
+	public List<OrderDto> lastWeek(OrderDto dto) {
+
+		return session.selectList("order.lastWeek", dto);
+	}
+
 
 }

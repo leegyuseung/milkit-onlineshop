@@ -86,7 +86,6 @@ public class StaffController {
 	@RequestMapping("/staff/home.do")
 	public ModelAndView thisWeek(ModelAndView mView, OrderDto dto) {
 		
-		
 		List<OrderDto> list=Oservice.thisWeek(dto);
 		
 		mView.addObject("list", list);
@@ -95,5 +94,15 @@ public class StaffController {
 		return mView;
 	}
 	
+	@RequestMapping("/staff/lastWeek.do")
+	public ModelAndView lastWeek(ModelAndView mView, OrderDto dto) {
+		
+		List<OrderDto> list=Oservice.lastWeek(dto);
+		
+		mView.addObject("list", list);
+
+		mView.setViewName("staff/lastWeek");
+		return mView;
+	}
 	
 }

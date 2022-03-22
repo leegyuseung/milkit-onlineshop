@@ -78,15 +78,16 @@
 	
 	<!-- 지난주 주문 내역 -->
 	<select id="lastWeek" resultType="orderDto">
-		SELECT orderId, receiver, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate, delivery
+		SELECT *
 		FROM ordertable
-		WHERE orderdate between TRUNC(SYSDATE -7, 'iw') and TRUNC(SYSDATE, 'dy')
-		ORDER BY orderId ASC;
+		WHERE orderdate BETWEEN TRUNC(SYSDATE -7, 'iw') AND TRUNC(SYSDATE, 'd')
 	</select>
 	
 	<!-- 이번주 주문 내역 -->
 	<select id="thisWeek" resultType="orderDto">
-		SELECT orderId, receiver, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate, delivery FROM ordertable WHERE orderdate BETWEEN TRUNC(SYSDATE, 'iw') AND TRUNC(SYSDATE + 7, 'dy');
+		SELECT *
+		FROM ordertable
+		WHERE orderdate BETWEEN TRUNC(SYSDATE, 'iw') AND TRUNC(SYSDATE + 7, 'd')
 	</select>
 </mapper>
 

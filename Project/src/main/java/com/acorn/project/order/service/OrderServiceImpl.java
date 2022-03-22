@@ -88,8 +88,14 @@ public class OrderServiceImpl implements OrderService{
 
 	@Override
 	public List<OrderDto> thisWeek(OrderDto dto) {
-		// TODO Auto-generated method stub
+		
 		return dao.thisWeek(dto);
+	}
+
+	@Override
+	public List<OrderDto> lastWeek(OrderDto dto) {
+		// TODO Auto-generated method stub
+		return dao.lastWeek(dto);
 	}
 
 	

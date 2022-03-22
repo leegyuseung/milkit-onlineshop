@@ -32,5 +32,5 @@ public interface OrderService {
 	
 	public List<OrderDto> thisWeek(OrderDto dto);
 
-
+	public List<OrderDto> lastWeek(OrderDto dto);
 }
