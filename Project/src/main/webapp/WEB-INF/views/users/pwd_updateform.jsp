@@ -17,18 +17,18 @@
 	</svg> Daily Mealkit</strong></h1>
 	<br />
 		<div class="form-floating">
-			<label class="control-label" for="pwd">기존 비밀 번호</label>
-			<input class="form-control" type="password" name="pwd" id="pwd"/>
+			<input class="form-control" type="password" name="pwd" id="pwd" placeholder="기존 비밀번호 확인"/>
+			<label class="control-label" for="pwd">기존 비밀번호</label>
 		</div>
 		<br />
 		<div class="form-floating">
+			<input class="form-control" type="password" name="newPwd" id="newPwd" placeholder="새 비밀번호"/>
 			<label class="control-label" for="newPwd">새 비밀번호</label>
-			<input class="form-control" type="password" name="newPwd" id="newPwd"/>
 		</div>
 		<br />
 		<div class="form-floating"v>
+			<input class="form-control" type="password" id="newPwd2" placeholder="새 비밀번호 확인"/>
 			<label class="control-label" for="newPwd2">새 비밀번호 확인</label>
-			<input class="form-control" type="password" id="newPwd2"/>
 		</div>
 		<br />
 		<figure class="text-end">
