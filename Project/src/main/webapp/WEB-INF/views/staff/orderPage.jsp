@@ -53,7 +53,7 @@
 	            <div>
 	              <h6 class="my-0">${tmp.productName } x ${tmp.amount }개</h6>
 	              <small class="text-muted">맛있는 ${tmp.productName } 입니다!</small>
-	              <input type="hidden" name="amount" id="amount" value="${tmp.amount }"/>
+	              <input type="hidden" name="amount_detail" id="amount_detail" value="${tmp.amount }"/>
 	              <input type="hidden" name="productId" id="productId" value="${tmp.productId }"/>
 	            </div>
 	            <span class="text-muted"><fmt:formatNumber pattern="###,###,###" value="${tmp.price }" /> 원</span>
