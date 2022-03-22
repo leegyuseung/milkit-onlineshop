@@ -56,30 +56,30 @@
 	</select>
 	
 	<!-- 주문시 재고 감소 -->
-	<update id="stockReduce" parameterType="com.acorn.project.product.dto.StockBuyDto">
+	<update id="stockReduce" parameterType="com.acorn.project.order.dto.OrderDetailDto">
 		UPDATE product
-		SET stock = stock - #{amount}
+		SET stock = stock - #{amount_detail}
 		WHERE productId=#{productId}
 	</update>
 	
 	<!-- 구매시 buycount 증가 -->
-	<update id="buyCount" parameterType="com.acorn.project.product.dto.StockBuyDto">
+	<update id="buyCount" parameterType="com.acorn.project.order.dto.OrderDetailDto">
 		UPDATE product
-		SET buyCount = buyCount + #{amount}
+		SET buyCount = buyCount + #{amount_detail}
 		WHERE productId=#{productId}
 	</update>
 	
 	<!-- 주문 취소,반품시 재고 다시 증가 -->
-	<update id="stockIncrease" parameterType="com.acorn.project.product.dto.StockBuyDto">
+	<update id="stockIncrease" parameterType="com.acorn.project.order.dto.OrderDetailDto">
 		UPDATE product
-		SET stock = stock + #{amount}
+		SET stock = stock + #{amount_detail}
 		WHERE productId=#{productId}
 	</update>
 	
 	<!-- 주문 취소,반품시 buyCount 다시 증가-->
-	<update id="buyCountDown" parameterType="com.acorn.project.product.dto.StockBuyDto">
+	<update id="buyCountDown" parameterType="com.acorn.project.order.dto.OrderDetailDto">
 		UPDATE product
-		SET buyCount = buyCount - #{amount}
+		SET buyCount = buyCount - #{amount_detail}
 		WHERE productId=#{productId}
 	</update>
 	
@@ -93,14 +93,14 @@
 	<!-- 배송 완료 -->
 	<update id="orderCancel" parameterType="orderDto">
 		UPDATE ordertable
-		SET delivery = #{orderCancel}
+		SET delivery = #{delivery}
 		WHERE orderId=#{orderId}
 	</update>
 	
 	<!-- 배송 완료 -->
 	<update id="orderReturn" parameterType="orderDto">
 		UPDATE ordertable
-		SET delivery = #{orderReturn}
+		SET delivery = #{delivery}
 		WHERE orderId=#{orderId}
 	</update>
 	

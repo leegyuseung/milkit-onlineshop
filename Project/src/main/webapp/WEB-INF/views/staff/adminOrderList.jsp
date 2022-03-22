@@ -38,6 +38,7 @@
 							<thead>
 								<tr>
 						          <th scope="col">주문번호</th>
+						          <th scope="col">수령인</th>
 						          <th scope="col">주소</th>
 						          <th scope="col">총 금액</th>
 						          <th scope="col">배송 상태</th>
@@ -47,6 +48,7 @@
 								<c:forEach items="${list}" var="tmp">
 									<tr>
 										<td><a href="adminOrderDetail.do?orderId=${tmp.orderId}">${tmp.orderId}</a></td>
+										<td>${tmp.receiver}</td>
 										<td>(${tmp.userPostal}) ${tmp.userAddr} ${tmp.userAddrDetail}</td>
 										<td><fmt:formatNumber pattern="###,###,###" value="${tmp.totalPrice}" /> 원</td>
 										<td>${tmp.delivery}</td>

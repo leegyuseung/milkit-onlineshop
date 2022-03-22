@@ -62,7 +62,11 @@
 								    				<c:choose>
 													    <c:when test="${tmp.delivery eq '배송 준비중'}">
 													    	<form action="orderCancel.do" method="post">
-													    		<input type="hidden" id="orderCancel" name="orderCancel" value="주문 취소"/>
+													    		<input type="hidden" id="delivery" name="delivery" value="주문 취소"/>
+													    		<input type="hidden" id="orderId" name="orderId" value="${tmp.orderId }"/>
+													    		<input type="hidden" id="productId" name="productId" value="${tmp.productId }"/>
+													    		<input type="hidden" id="amount_detail" name="amount_detail" value="${tmp.amount_detail }"/>
+													    		
 																<button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 																  주문 취소
 																</button>
@@ -91,7 +95,11 @@
 													    	<button class="btn btn-outline-secondary" disabled>반품 완료</button>
 													    </c:when>
 													    <c:otherwise>
-													    	<form action="orderReturn.do" method="post">
+													    	<form action="returnPage.do" method="post">
+													    		<input type="hidden" id="delivery" name="delivery" value="주문 반품"/>
+													    		<input type="hidden" id="orderId" name="orderId" value="${tmp.orderId }"/>
+													    		<input type="hidden" id="productId" name="productId" value="${tmp.productId }"/>
+													    		<input type="hidden" id="amount_detail" name="amount_detail" value="${tmp.amount_detail }"/>
 													    		<input type="hidden" id="orderReturn" name="orderReturn" value="반품 하기"/>
 																<button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 																  반품 하기

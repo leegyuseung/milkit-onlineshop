@@ -37,15 +37,15 @@ public class OrderController {
 	}
 
 	@RequestMapping("/private/orderComplete.do")
-	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail, StockBuyDto sbdto) {
+	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail) {
 		
 		Oservice.orderInfo(dto, session);
 
 		Oservice.orderInfo_Detail(dto, dtoDetail, session);
 		
-		Oservice.stockReduce(sbdto);
+		Oservice.stockReduce(dtoDetail);
 		
-		Oservice.buyCount(sbdto);
+		Oservice.buyCount(dtoDetail);
 		
 		service.deleteAll((String)session.getAttribute("id"));
 		
@@ -99,7 +99,7 @@ public class OrderController {
 	}
 	
 	@RequestMapping("/private/returnPage.do")
-	public ModelAndView returnPage(ModelAndView mView, StockBuyDto sbdto, OrderDto dto) {
+	public ModelAndView returnPage(ModelAndView mView, OrderDetailDto sbdto, OrderDto dto) {
 		
 		Oservice.buyCountDown(sbdto);
 		
@@ -107,13 +107,13 @@ public class OrderController {
 		
 		Oservice.orderReturn(dto);
 		
-		mView.setViewName("staff/returnPage");
+		mView.setViewName("redirect:/private/orderHistory.do");
 		
 		return mView;
 	}
 	
 	@RequestMapping("/private/orderCancel.do")
-	public ModelAndView cancelPage(ModelAndView mView, StockBuyDto sbdto, OrderDto dto) {
+	public ModelAndView cancelPage(ModelAndView mView, OrderDetailDto sbdto, OrderDto dto) {
 		
 		Oservice.buyCountDown(sbdto);
 		
@@ -121,7 +121,7 @@ public class OrderController {
 		
 		Oservice.orderCancel(dto);
 		
-		mView.setViewName("staff/orderCancel");
+		mView.setViewName("redirect:/private/orderHistory.do");
 		
 		return mView;
 	}
