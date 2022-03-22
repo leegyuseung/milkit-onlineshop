@@ -4,9 +4,11 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.acorn.project.cart.dto.CartDto;
 import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
 import com.acorn.project.order.dto.OrderListDto;
+import com.acorn.project.product.dto.StockBuyDto;
 
 public interface OrderService {
 
@@ -22,10 +24,13 @@ public interface OrderService {
 	
 	public List<OrderListDto> AllOrderDetailList(OrderDto dto);
 	
-	public void stockReduce(OrderDetailDto dto);
+	public void stockReduce(StockBuyDto sbdto);
 	
-	public void buyCount(OrderDetailDto dto);
+	public void buyCount(StockBuyDto sbdto);
 
 	public void delivered(OrderDto dto);
+	
+	public List<OrderDto> weeklyOrder(OrderDto dto);
+
 
 }

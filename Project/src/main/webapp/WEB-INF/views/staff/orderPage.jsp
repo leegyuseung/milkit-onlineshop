@@ -20,6 +20,7 @@
 
 <body class="bg-light">
 <div class="container">
+<form class="needs-validation" action="${pageContext.request.contextPath }/private/orderComplete.do" method="post" enctype="multipart/form-data">
   <main>
     <div class="py-5 text-center">
 		<a class="navbar-brand" style="color:black;" href="<%=request.getContextPath() %>/">	
@@ -52,6 +53,8 @@
 	            <div>
 	              <h6 class="my-0">${tmp.productId } x ${tmp.amount }개</h6>
 	              <small class="text-muted">맛있는 ${tmp.productId } 입니다!</small>
+	              <input type="hidden" name="amount" id="amount" value="${tmp.amount }"/>
+	              <input type="hidden" name="productId" id="productId" value="${tmp.productId }"/>
 	            </div>
 	            <span class="text-muted"><fmt:formatNumber pattern="###,###,###" value="${tmp.price }" /> 원</span>
 	          </li>
@@ -87,7 +90,6 @@
       <div class="col-md-7 col-lg-8">
         <h4 class="mb-3" style="color:#FFB94F">Billing address</h4>
         
-        <form class="needs-validation" action="${pageContext.request.contextPath }/private/orderComplete.do" method="post" enctype="multipart/form-data">
           <input type="hidden" id="totalPrice" name="totalPrice" value="${sum}"/>
           <div class="row g-3">
             <div class="col-12">
@@ -145,10 +147,10 @@
 
 		  <button class="w-40 btn btn-outline-secondary btn-lg" type="submit">주문</button>
 	      <button class="w-40 btn btn-outline-secondary btn-lg" type="reset" id="reset">취소</button> 
-        </form>
       </div>
     </div>
   </main>
+</form>
 
 	<footer class="my-5 pt-5 text-muted text-center text-small">
 		<jsp:include page="../../../resources/include/footer.jsp">
