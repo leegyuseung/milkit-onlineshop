@@ -6,10 +6,11 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.mealkit.dto.MealkitContentDto;
+import com.acorn.project.mealkit.dto.MealkitDto;
 
 public interface MealkitService {
 	
-	public void allList(HttpServletRequest request);
+	public void allList(HttpServletRequest request, MealkitDto dto);
 	public void cList(HttpServletRequest request);
 	public void jList(HttpServletRequest request);
 	public void kList(HttpServletRequest request);

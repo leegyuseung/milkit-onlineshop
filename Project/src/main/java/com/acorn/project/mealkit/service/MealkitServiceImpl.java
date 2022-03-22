@@ -18,7 +18,7 @@ public class MealkitServiceImpl implements MealkitService {
 	@Autowired MealkitDao dao;
 	
 	@Override
-	public void allList(HttpServletRequest request) {
+	public void allList(HttpServletRequest request,MealkitDto dto) {
 		//한 페이지에 몇개씩 표시할 것인지
 		final int PAGE_ROW_COUNT=8;
 		//하단 페이지를 몇개씩 표시할 것인지
@@ -40,7 +40,7 @@ public class MealkitServiceImpl implements MealkitService {
 		int endRowNum = pageNum * PAGE_ROW_COUNT;
 
 		//startRowNum 과 endRowNum  을 mealkitDto 객체에 담고
-		MealkitDto dto = new MealkitDto();
+		
 		dto.setStartRowNum(startRowNum);
 		dto.setEndRowNum(endRowNum);
 

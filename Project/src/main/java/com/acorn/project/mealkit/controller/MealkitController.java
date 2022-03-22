@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.acorn.project.mealkit.dto.MealkitContentDto;
+import com.acorn.project.mealkit.dto.MealkitDto;
 import com.acorn.project.mealkit.service.MealkitService;
 
 @Controller
@@ -18,9 +19,9 @@ public class MealkitController {
 	
 	//밀키트홈
 	@RequestMapping(value = "/mealkit/mealkit_home")
-	public String allList(HttpServletRequest request) {
+	public String allList(HttpServletRequest request,MealkitDto dto) {
 		
-		service.allList(request);
+		service.allList(request,dto);
 		
 		return "mealkit/mealkit_home";
 	}
@@ -115,13 +116,24 @@ public class MealkitController {
 	}
 	
 	//밀키트 인기순
-	@RequestMapping(value = "/bestProduct")
-	public String best(HttpServletRequest request) {
+	@RequestMapping(value = "/mealkit/bestProduct")
+	public String bestOrder(HttpServletRequest request, MealkitDto dto) {
 		
-		service.allList(request);
+		dto.setOrder("best");
+		service.allList(request,dto);
 		
 		return "mealkit/mealkit_home";
 	}
+	//밀키트 최신순
+	@RequestMapping(value = "/mealkit/newProduct")
+	public String newOrder(HttpServletRequest request, MealkitDto dto) {
+		
+		dto.setOrder("new");
+		service.allList(request,dto);
+		
+		return "mealkit/mealkit_home";
+	}
+	
 
 }
 
