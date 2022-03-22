@@ -5,26 +5,31 @@
 <head>
 <meta charset="UTF-8">
 <title>/views/inquiry/updateform.jsp</title>
+<jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
+<jsp:include page="../../../resources/include/navbar.jsp">
+	<jsp:param value="home" name="thisPage"/>
+</jsp:include>
 </head>
 <body>
 <div class="container">
-	<h1>글 수정 폼 입니다.</h1>
 	<form action="update.do" method="post">
 		<input type="hidden" name="num" value="${dto.num }" />
 		<div>
-			<label for="writer">작성자</label>
-			<input type="text" id="writer" value="${dto.writer }" disabled/>
+			<label class="form-label" for="writer">작성자</label>
+			<input class="form-control" type="text" id="writer" value="${dto.writer }" disabled/>
 		</div>
 		<div>
-			<label for="title">제목</label>
-			<input type="text" name="title" id="title" value="${dto.title }"/>
+			<label class="form-label" for="title">제목</label>
+			<input class="form-control" type="text" name="title" id="title" value="${dto.title }"/>
 		</div>
 		<div>
-			<label for="content">내용</label>
-			<textarea name="content" id="content">${dto.content }</textarea>
+			<label class="form-label" for="content">내용</label>
+			<textarea class="form-control" name="content" id="content">${dto.content }</textarea>
 		</div>
-		<button type="submit" onclick="submitContents(this);">수정확인</button>
-		<button type="reset">취소</button>
+		<figure class="text-end">
+		<button class="btn btn-outline-secondary" type="submit" onclick="submitContents(this);">수정</button>
+		<button class="btn btn-outline-secondary" type="reset" id="reset">취소</button>
+		</figure>
 	</form>
 </div>
 <!-- SmartEditor 에서 필요한 javascript 로딩  -->
@@ -80,6 +85,9 @@
 		var nFontSize = 24;
 		oEditors.getById["content"].setDefaultFont(sDefaultFont, nFontSize);
 	}
+	document.querySelector("#reset").addEventListener("click",function(){
+		location.href="${pageContext.request.contextPath}/inquiry/list.do";	
+	});
 </script>
 <br />
 <jsp:include page="../../../resources/include/footer.jsp">
