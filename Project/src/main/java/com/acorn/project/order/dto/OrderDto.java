@@ -1,6 +1,5 @@
 package com.acorn.project.order.dto;
 
-import oracle.sql.DATE;
 
 /*
  * orderId NUMBER(35),
@@ -10,7 +9,7 @@ import oracle.sql.DATE;
 	userAddrDetail varchar2(100),
 	tel NUMBER(20),
 	totalPrice NUMBER(20),
-	orderDate Date
+	orderDate String
  */
 public class OrderDto {
 	
@@ -22,13 +21,13 @@ public class OrderDto {
 	private String userAddrDetail;
 	private int tel;
 	private int totalPrice;
-	private DATE orderDate;
+	private String orderDate;
 	private String delivery;
 	
 	public OrderDto() {}
 
 	public OrderDto(int orderId, String receiver, String userId, String userAddr, String userPostal,
-			String userAddrDetail, int tel, int totalPrice, DATE orderDate, String delivery) {
+			String userAddrDetail, int tel, int totalPrice, String orderDate, String delivery) {
 		super();
 		this.orderId = orderId;
 		this.receiver = receiver;
@@ -106,11 +105,11 @@ public class OrderDto {
 		this.totalPrice = totalPrice;
 	}
 
-	public DATE getOrderDate() {
+	public String getorderDate() {
 		return orderDate;
 	}
 
-	public void setOrderDate(DATE orderDate) {
+	public void setorderDate(String orderDate) {
 		this.orderDate = orderDate;
 	}
 

@@ -55,7 +55,7 @@ h1 {
             <td id="center"><img src="${pageContext.request.contextPath }${tmp.imagePath}" style="width:50px; height: 50px;" /></td>
             <td id="center">${tmp.productName }</td>
             <form action="update.do" method="post" id="updateForm">
-            	<td><input type="number" min="1" max="10"name="newAmount" value="${tmp.amount }" id="newAmount" style="max-width: 3rem"/>
+            	<td id="center"><input type="number" min="1" max="10"name="newAmount" value="${tmp.amount }" id="newAmount" style="max-width: 3rem"/>
            			<input type="hidden" name="cart_id" value="${tmp.cart_id }"/>
            			<input type="hidden" name="price" value="${tmp.price}"/>
            		</td>

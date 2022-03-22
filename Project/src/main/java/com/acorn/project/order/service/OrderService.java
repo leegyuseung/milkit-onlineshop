@@ -30,7 +30,7 @@ public interface OrderService {
 
 	public void delivered(OrderDto dto);
 	
-	public List<OrderDto> weeklyOrder(OrderDto dto);
+	public List<OrderDto> thisWeek(OrderDto dto);
 
-
+	public List<OrderDto> lastWeek(OrderDto dto);
 }

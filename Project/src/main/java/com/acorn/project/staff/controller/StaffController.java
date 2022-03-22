@@ -30,13 +30,7 @@ public class StaffController {
 	@Autowired
 	private OrderService Oservice;
 
-	@RequestMapping("/staff/home.do")
-	public ModelAndView staff(ModelAndView mView, OrderDto dto, HttpSession session) {
-		
 
-		mView.setViewName("staff/home");
-		return mView;
-	}
 	
 	//productId 중복 확인을 해서 json 문자열을 리턴해주는 메소드 
 	@RequestMapping("/staff/checkProductId")
@@ -63,7 +57,7 @@ public class StaffController {
 	}
 	
 	@RequestMapping("/staff/adminOrderList.do")
-	public ModelAndView adminOrderList(ModelAndView mView, OrderDto dto, HttpSession session) {
+	public ModelAndView adminOrderList(ModelAndView mView, OrderDto dto) {
 		
 		
 		List<OrderDto> list=Oservice.getAllListOrder(dto);
@@ -75,7 +69,7 @@ public class StaffController {
 	}
 	
 	@RequestMapping("/staff/adminOrderDetail.do")
-	public ModelAndView orderDetail(ModelAndView mView, OrderDto dto, HttpSession session, int orderId) {
+	public ModelAndView orderDetail(ModelAndView mView, OrderDto dto, int orderId) {
 		
 		
 		dto.setOrderId(orderId);
@@ -89,6 +83,26 @@ public class StaffController {
 		
 	}
 	
+	@RequestMapping("/staff/home.do")
+	public ModelAndView thisWeek(ModelAndView mView, OrderDto dto) {
+		
+		List<OrderDto> list=Oservice.thisWeek(dto);
+		
+		mView.addObject("list", list);
+
+		mView.setViewName("staff/home");
+		return mView;
+	}
 	
+	@RequestMapping("/staff/lastWeek.do")
+	public ModelAndView lastWeek(ModelAndView mView, OrderDto dto) {
+		
+		List<OrderDto> list=Oservice.lastWeek(dto);
+		
+		mView.addObject("list", list);
+
+		mView.setViewName("staff/lastWeek");
+		return mView;
+	}
 	
 }

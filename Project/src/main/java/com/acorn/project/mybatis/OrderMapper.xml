@@ -76,10 +76,19 @@
 		WHERE orderId=#{orderId}
 	</update>
 	
-	<!-- 7일간 주문 내역 -->
-	<select id="weeklyOrder" resultType="orderDto">
-		SELECT orderId, receiver, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate, delivery
-		FROM ordertable WHERE orderdate >= TO_CHAR(SYSDATE-7,'YYYYMMDD');
+	<!-- 지난주 주문 내역 -->
+	<select id="lastWeek" resultType="orderDto">
+		SELECT *
+		FROM ordertable
+		WHERE orderdate BETWEEN TRUNC(SYSDATE -7, 'iw') AND TRUNC(SYSDATE, 'd')
+		ORDER BY orderId ASC
+	</select>
+	
+	<!-- 이번주 주문 내역 -->
+	<select id="thisWeek" resultType="orderDto">
+		SELECT *
+		FROM ordertable
+		WHERE orderdate BETWEEN TRUNC(SYSDATE, 'iw') AND TRUNC(SYSDATE + 7, 'day')
 		ORDER BY orderId ASC
 	</select>
 </mapper>
