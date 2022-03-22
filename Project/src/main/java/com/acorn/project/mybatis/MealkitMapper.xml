@@ -8,7 +8,17 @@
 			FROM
 				(SELECT productId, productName, price, imagePath, productCate
 				FROM PRODUCT
-				ORDER BY productId DESC) result1)
+				<choose>
+					<when test="order == 'best'">
+						ORDER BY buycount desc) result1)
+					</when>
+					<when test="order == 'new'">
+						ORDER BY regdate desc) result1)
+					</when>
+					<when test="order == null">
+						ORDER BY productId DESC) result1)
+					</when>
+				</choose>		
 		WHERE rnum BETWEEN #{startRowNum} AND #{endRowNum}
 	</select>
 	
@@ -66,7 +76,7 @@
 	</select>
 	
 	<select id="getData" parameterType="string" resultType="mealkitDto">
-		SELECT productId, productName, price, imagePath, productCate
+		SELECT productId, productName, price, imagePath, productCate, stock
 		FROM product
 		WHERE productId = #{productId}			
 		ORDER BY productId DESC	

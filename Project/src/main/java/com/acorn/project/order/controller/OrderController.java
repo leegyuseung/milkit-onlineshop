@@ -15,6 +15,7 @@ import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
 import com.acorn.project.order.dto.OrderListDto;
 import com.acorn.project.order.service.OrderService;
+import com.acorn.project.product.dto.StockBuyDto;
 
 @Controller
 public class OrderController {
@@ -26,7 +27,7 @@ public class OrderController {
 	private CartService service;
 	
 	
-	@RequestMapping("/staff/orderPage.do")
+	@RequestMapping("/orderPage.do")
 	public ModelAndView cartlist(CartDto dto, ModelAndView mView, HttpSession session) {
 		service.cartList(dto, mView, session);
 		//view page 의 정보를 ModelAndView 객체에 담는다.
@@ -35,6 +36,7 @@ public class OrderController {
 		return mView;
 	}
 	
+	//테스트용
 	@RequestMapping("/staff/orderPage2.do")
 	public ModelAndView cartlist2(CartDto dto, ModelAndView mView, HttpSession session) {
 		//view page 의 정보를 ModelAndView 객체에 담는다.
@@ -44,11 +46,15 @@ public class OrderController {
 	}
 
 	@RequestMapping("/private/orderComplete.do")
-	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail) {
+	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail, StockBuyDto sbdto) {
 		
 		Oservice.orderInfo(dto, session);
 
 		Oservice.orderInfo_Detail(dto, dtoDetail, session);
+		
+		Oservice.stockReduce(sbdto);
+		
+		Oservice.buyCount(sbdto);
 		
 		service.deleteAll((String)session.getAttribute("id"));
 		
