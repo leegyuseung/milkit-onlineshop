@@ -52,7 +52,8 @@
                     <p class="lead fw-normal text-black-50 mb-0">good price, good quality</p>
                 </div>
             </div>
-        </header>
+        </header>       
+        <p style="text-align: right"><a href="bestProduct.do">인기순</a></p>
 <!-- Section-->
 <section class="py-5">
 	<div class="container px-4 px-lg-5 mt-5">

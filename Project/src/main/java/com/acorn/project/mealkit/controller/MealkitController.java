@@ -113,6 +113,15 @@ public class MealkitController {
 		service.updateContent(dto2);
 		return mView;
 	}
+	
+	//밀키트 인기순
+	@RequestMapping(value = "/bestProduct")
+	public String best(HttpServletRequest request) {
+		
+		service.allList(request);
+		
+		return "mealkit/mealkit_home";
+	}
 
 }
 
