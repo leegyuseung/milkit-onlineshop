@@ -23,25 +23,25 @@
 		<div>
 			<label class="control-label" for="productId" class="form-label">상품 아이디</label>
 			<input class="form-control" type="text" name="productId" id="productId" placeholder="상품 아이디..."/>
-			<div class="invalid-feedback">이름을 입력해주세요.</div>
+			<div class="invalid-feedback">다른 id를 입력해주세요</div>
 		</div>
 		<br />
 		<div>
 			<label class="control-label" for="productName" class="form-label">상품 이름</label>
 			<input class="form-control" type="text" name="productName" id="productName" placeholder="상품 이름..."/>
-			<div class="invalid-feedback">이름을 입력해주세요.</div>
+			<div class="invalid-feedback">상품이름을 입력해주세요.</div>
 		</div>
 		<br />
 		<div>
 			<label class="control-label" for="price" class="form-label">상품 가격</label>
 			<input class="form-control" type="text" name="price" id="price" placeholder="가격..."/>
-			<div class="invalid-feedback">이름을 입력해주세요.</div>
+			<div class="invalid-feedback">가격을 입력해주세요.</div>
 		</div>
 		<br />
 		<div>
 			<label class="control-label" for="stock" class="form-label">상품 재고</label>
 			<input class="form-control" type="text" name="stock" id="stock" placeholder="재고..."/>
-			<div class="invalid-feedback">이름을 입력해주세요.</div>
+			<div class="invalid-feedback">재고를 입력해주세요.</div>
 		</div>
 		<br />
 		<div>

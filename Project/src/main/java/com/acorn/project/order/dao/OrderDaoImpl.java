@@ -6,9 +6,11 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.acorn.project.cart.dto.CartDto;
 import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
 import com.acorn.project.order.dto.OrderListDto;
+import com.acorn.project.product.dto.StockBuyDto;
 
 @Repository
 public class OrderDaoImpl implements OrderDao{
@@ -59,16 +61,16 @@ public class OrderDaoImpl implements OrderDao{
 	}
 
 	@Override
-	public void stockReduce(OrderDetailDto dto) {
+	public void stockReduce(StockBuyDto sbdto) {
 		
-		session.update("order.stockReduce", dto);
+		session.update("order.stockReduce", sbdto);
 		
 	}
 
 	@Override
-	public void buyCount(OrderDetailDto dto) {
+	public void buyCount(StockBuyDto sbdto) {
 		
-		session.update("order.buyCount", dto);
+		session.update("order.buyCount", sbdto);
 	}
 
 	@Override
@@ -76,6 +78,12 @@ public class OrderDaoImpl implements OrderDao{
 
 		session.update("order.delivered", dto);
 		
+	}
+
+	@Override
+	public List<OrderDto> weeklyOrder(OrderDto dto) {
+
+		return session.selectList("order.weeklyOrder", dto);
 	}
 
 
