@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>/staff/adminOrderDetail.jsp</title>
 <style>
-	h1 {text-align: center; padding-top: 1em; padding-bottom: 1em;}
+	h2 {text-align: center; padding-top: 1em; padding-bottom: 1em;}
 	
 	#center{
 	text-align: center;
@@ -30,7 +30,7 @@
 	<jsp:include page="../../../resources/include/sidebar.jsp"></jsp:include>
 	
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-				<h1>주문 내역 디테일</h1>
+				<h2>주문 내역 디테일</h2>
 				<table class="table table-striped table-sm ">
 					<thead>
 				   		<tr>

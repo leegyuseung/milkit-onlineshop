@@ -122,6 +122,11 @@ public class UsersController {
 
 		return "users/loginform";
 	}
+	@RequestMapping("/users/loginform2")
+	public String loginform2() {
+
+		return "users/loginform2";
+	}
 	//로그인 요청 처리
 	@RequestMapping("/users/login")
 	public ModelAndView login(ModelAndView mView, UsersDto dto,

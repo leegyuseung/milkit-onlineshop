@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>/staff/lastWeek.jsp</title>
 <style>
-	h1 {text-align: center; padding-top: 1em; padding-bottom: 1em;}
+	h2 {text-align: center; padding-top: 1em; padding-bottom: 1em;}
 	
 	#center{
 	text-align: center;
@@ -30,7 +30,7 @@
 	
 	
 	    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-	    	<h2 class="my-3">지난주 판매 내역</h2>
+	    	<h2>지난주 판매 내역</h2>
 	    		<div class="table-responsive">
 	        	<table class="table table-striped table-sm">
 	        		<thead>

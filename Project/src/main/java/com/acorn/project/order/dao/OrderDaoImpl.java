@@ -74,6 +74,19 @@ public class OrderDaoImpl implements OrderDao{
 	}
 
 	@Override
+	public void stockIncrease(StockBuyDto sbdto) {
+
+		session.update("order.stockIncrease", sbdto);
+		
+	}
+
+	@Override
+	public void buyCountDown(StockBuyDto sbdto) {
+
+		session.update("order.buyCountDown", sbdto);
+	}
+	
+	@Override
 	public void delivered(OrderDto dto) {
 
 		session.update("order.delivered", dto);
@@ -90,6 +103,18 @@ public class OrderDaoImpl implements OrderDao{
 	public List<OrderDto> lastWeek(OrderDto dto) {
 
 		return session.selectList("order.lastWeek", dto);
+	}
+
+	@Override
+	public void orderCancel(OrderDto dto) {
+		
+		session.update("order.orderCancel", dto);
+	}
+
+	@Override
+	public void orderReturn(OrderDto dto) {
+		
+		session.update("order.orderReturn", dto);
 	}
 
 

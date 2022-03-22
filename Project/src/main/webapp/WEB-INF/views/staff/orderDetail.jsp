@@ -60,10 +60,58 @@
 						    				<c:forEach items="${list}" var="tmp" varStatus="status">
 								    				<c:choose>
 													    <c:when test="${tmp.delivery eq '배송 준비중'}">
-													    	<button class="btn btn-outline-secondary">주문 취소</button>
+													    	<form action="orderCancel.do" method="post">
+													    		<input type="hidden" id="orderCancel" name="orderCancel" value="주문 취소"/>
+																<button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+																  주문 취소
+																</button>
+																<div class="modal fade" id="staticBackdrop"  >
+																  <div class="modal-dialog">
+																    <div class="modal-content">
+																      <div class="modal-header">
+																        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+																      </div>
+																      <div class="modal-body text-center">
+																        		주문을 취소하시겠습니까?
+																      </div>
+																      <div class="modal-footer">
+																        <button type="submit" class="btn btn-secondary">예</button>
+																        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">아니요</button>
+																      </div>
+																    </div>
+																  </div>
+																</div>
+													    	</form>
+													    </c:when>
+													    <c:when test="${tmp.delivery eq '주문 취소'}">
+													    	<button class="btn btn-outline-secondary" disabled>취소 완료</button>
+													    </c:when>
+													    <c:when test="${tmp.delivery eq '주문 반품'}">
+													    	<button class="btn btn-outline-secondary" disabled>반품 완료</button>
 													    </c:when>
 													    <c:otherwise>
-													    	<button class="btn btn-outline-secondary">반품 하기</button>
+													    	<form action="orderReturn.do" method="post">
+													    		<input type="hidden" id="orderReturn" name="orderReturn" value="반품 하기"/>
+																<button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+																  반품 하기
+																</button>
+																<div class="modal fade" id="staticBackdrop"  >
+																  <div class="modal-dialog">
+																    <div class="modal-content">
+																      <div class="modal-header">
+																        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+																      </div>
+																      <div class="modal-body text-center">
+																        		주문을 반품하시겠습니까?
+																      </div>
+																      <div class="modal-footer">
+																        <button type="submit" class="btn btn-secondary">예</button>
+																        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">아니요</button>
+																      </div>
+																    </div>
+																  </div>
+																</div>
+													    	</form>
 													    </c:otherwise>
 													</c:choose>
 						    				</c:forEach>

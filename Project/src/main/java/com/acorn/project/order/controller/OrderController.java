@@ -35,15 +35,6 @@ public class OrderController {
 		//ModelAndView 객체를 리턴해 준다.
 		return mView;
 	}
-	
-	//테스트용
-	@RequestMapping("/staff/orderPage2.do")
-	public ModelAndView cartlist2(CartDto dto, ModelAndView mView, HttpSession session) {
-		//view page 의 정보를 ModelAndView 객체에 담는다.
-		mView.setViewName("staff/orderPage2");
-		//ModelAndView 객체를 리턴해 준다.
-		return mView;
-	}
 
 	@RequestMapping("/private/orderComplete.do")
 	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail, StockBuyDto sbdto) {
@@ -103,6 +94,34 @@ public class OrderController {
 		//Oservice.buyCount(dtoDetail);
 		
 		mView.setViewName("redirect:/staff/adminOrderList.do");
+		
+		return mView;
+	}
+	
+	@RequestMapping("/private/returnPage.do")
+	public ModelAndView returnPage(ModelAndView mView, StockBuyDto sbdto, OrderDto dto) {
+		
+		Oservice.buyCountDown(sbdto);
+		
+		Oservice.stockIncrease(sbdto);
+		
+		Oservice.orderReturn(dto);
+		
+		mView.setViewName("staff/returnPage");
+		
+		return mView;
+	}
+	
+	@RequestMapping("/private/orderCancel.do")
+	public ModelAndView cancelPage(ModelAndView mView, StockBuyDto sbdto, OrderDto dto) {
+		
+		Oservice.buyCountDown(sbdto);
+		
+		Oservice.stockIncrease(sbdto);
+		
+		Oservice.orderCancel(dto);
+		
+		mView.setViewName("staff/orderCancel");
 		
 		return mView;
 	}

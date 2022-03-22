@@ -45,7 +45,7 @@
         <header class="bg-light py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-black">
-                    <h1 class="display-4 fw-bolder">West Food</h1>
+                    <h1 class="display-4 fw-bolder">European Food</h1>
                     <p class="lead fw-normal text-black-50 mb-0">good price, good quality</p>
                 </div>
             </div>

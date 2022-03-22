@@ -8,7 +8,7 @@
 <title>/staff/product/list.jsp</title>
 <jsp:include page="../../../../resources/include/resource.jsp"></jsp:include>
 <style>
-	h1 {text-align: center; padding-top: 1em; padding-bottom: 1em;}
+	h2 {text-align: center; padding-top: 1em; padding-bottom: 1em;}
 	
 	#center{
 	text-align: center;
@@ -30,7 +30,7 @@
 	
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 		
-	<h1>상품 리스트</h1>
+	<h2>상품 리스트</h2>
 		<table class="table table-striped table-sm">
 			<thead>
 				<tr>
