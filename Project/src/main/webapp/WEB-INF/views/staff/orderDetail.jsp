@@ -63,10 +63,10 @@
 													    	<button class="btn btn-outline-secondary">주문 취소</button>
 													    </c:when>
 													    <c:when test="${tmp.delivery eq '주문 취소'}">
-													    	<button class="btn btn-outline-secondary">취소 완료</button>
+													    	<button class="btn btn-outline-secondary" disabled>취소 완료</button>
 													    </c:when>
 													    <c:when test="${tmp.delivery eq '주문 반품'}">
-													    	<button class="btn btn-outline-secondary">반품 완료</button>
+													    	<button class="btn btn-outline-secondary" disabled>반품 완료</button>
 													    </c:when>
 													    <c:otherwise>
 													    	<button class="btn btn-outline-secondary">반품 하기</button>

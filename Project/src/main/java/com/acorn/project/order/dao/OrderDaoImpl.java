@@ -74,6 +74,19 @@ public class OrderDaoImpl implements OrderDao{
 	}
 
 	@Override
+	public void stockIncrease(StockBuyDto sbdto) {
+
+		session.update("order.stockIncrease", sbdto);
+		
+	}
+
+	@Override
+	public void buyCountDown(StockBuyDto sbdto) {
+
+		session.update("order.buyCountDown", sbdto);
+	}
+	
+	@Override
 	public void delivered(OrderDto dto) {
 
 		session.update("order.delivered", dto);

@@ -80,6 +80,18 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
+	public void stockIncrease(StockBuyDto sbdto) {
+
+		dao.stockIncrease(sbdto);
+	}
+
+	@Override
+	public void buyCountDown(StockBuyDto sbdto) {
+
+		dao.buyCountDown(sbdto);
+	}
+	
+	@Override
 	public void delivered(OrderDto dto) {
 
 		dao.delivered(dto);
@@ -94,10 +106,8 @@ public class OrderServiceImpl implements OrderService{
 
 	@Override
 	public List<OrderDto> lastWeek(OrderDto dto) {
-		// TODO Auto-generated method stub
+
 		return dao.lastWeek(dto);
 	}
-
-	
 	
 }

@@ -118,7 +118,7 @@
 			id="mainpage2">
 			<div class="col-md-5 p-lg-5 mx-auto my-5">
 				<h1 class="display-4 fw-normal text-light">
-					<strong>West Food</strong>
+					<strong>European Food</strong>
 				</h1>
 				<p class="lead fw-normal text-light">
 					<strong>Daily Mealkit</strong>
