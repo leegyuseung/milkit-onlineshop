@@ -6,6 +6,21 @@
 <head>
 <meta charset="UTF-8">
 <title>/views/users/updateform.jsp</title>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
 <jsp:include page="../../../resources/include/resource.jsp"></jsp:include>
 <!-- Custom styles for this template -->
 <link href="${pageContext.request.contextPath }/resources/css/signin.css" rel="stylesheet">
@@ -18,23 +33,23 @@
 	</svg> Daily Mealkit</strong></h1>
 	<br />
 		<div>
-			<label class="control-label" for="id">아이디</label>
 			<input class="form-control" type="text" id="id" value="${id }" disabled/>
+			<label class="control-label" for="id">아이디</label>
 		</div>
 		<br />
 		<div >
+			<input class="form-control" type="text" id="name" value="${dto.name }" placeholder="이름"/>
 			<label class="control-label" for="name">이름</label>
-			<input class="form-control" type="text" id="name" value="${dto.name }"/>
 		</div>
 		<br />
 		<div >
+			<input class="form-control" type="text" name="email" id="email" value="${dto.email }" placeholder="이메일"/>
 			<label class="control-label" for="email">이메일</label>
-			<input class="form-control" type="text" name="email" id="email" value="${dto.email }"/>
 		</div>
 		<br />
 		<div >
+			<input class="form-control" type="text" name="address" id="address" value="${dto.address }" placeholder="주소"/>
 			<label class="control-label" for="address">주소</label>
-			<input class="form-control" type="text" name="address" id="address" value="${dto.address }"/>
 		</div>
 		<br />
 		<figure class="text-end">
