@@ -107,7 +107,7 @@ public class OrderController {
 		
 		Oservice.orderReturn(dto);
 		
-		mView.setViewName("staff/returnPage");
+		mView.setViewName("redirect:/private/orderHistory.do");
 		
 		return mView;
 	}
@@ -121,7 +121,7 @@ public class OrderController {
 		
 		Oservice.orderCancel(dto);
 		
-		mView.setViewName("staff/orderCancel");
+		mView.setViewName("redirect:/private/orderHistory.do");
 		
 		return mView;
 	}

@@ -93,14 +93,14 @@
 	<!-- 배송 완료 -->
 	<update id="orderCancel" parameterType="orderDto">
 		UPDATE ordertable
-		SET delivery = #{orderCancel}
+		SET delivery = #{delivery}
 		WHERE orderId=#{orderId}
 	</update>
 	
 	<!-- 배송 완료 -->
 	<update id="orderReturn" parameterType="orderDto">
 		UPDATE ordertable
-		SET delivery = #{orderReturn}
+		SET delivery = #{delivery}
 		WHERE orderId=#{orderId}
 	</update>
 	
