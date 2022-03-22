@@ -56,7 +56,7 @@
 						src="${pageContext.request.contextPath }/resources/images/mealkit11.jpg"
 						class="d-block w-100" alt="...">
 					<div class="carousel-caption d-none d-md-block">
-						<h1 style="color:white; font-family:굴림체; text-shadow:-2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; "><strong>프리미엄 세계 밀키트 전문점</strong></h1>
+						<h1 style="color:white; font-family:굴림체; text-shadow:-2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; "></h1>
 					</div>
 				</div>
 				<div class="carousel-item">
@@ -64,7 +64,7 @@
 						src="${pageContext.request.contextPath }/resources/images/mealkit12.jpg"
 						class="d-block w-100" alt="...">
 					<div class="carousel-caption d-none d-md-block">
-						<h1 style="color:white; font-family:굴림체; text-shadow:-2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; "><strong>Daily Mealkit</strong></h1>
+						<h1 style="color:white; font-family:굴림체; text-shadow:-2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; "></h1>
 					</div>
 				</div>
 				<div class="carousel-item">
@@ -72,7 +72,7 @@
 						src="${pageContext.request.contextPath }/resources/images/mealkit13.jpg"
 						class="d-block w-100" alt="...">
 					<div class="carousel-caption d-none d-md-block">
-						<h1 style="color:white; font-family:굴림체; text-shadow:-2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; "><strong>차별화된 맛과 품질</strong></h1>
+						<h1 style="color:white; font-family:굴림체; text-shadow:-2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; "></h1>
 					</div>
 				</div>
 				<div class="carousel-item">
@@ -80,7 +80,7 @@
 						src="${pageContext.request.contextPath }/resources/images/mealkit14.jpg"
 						class="d-block w-100" alt="...">
 					<div class="carousel-caption d-none d-md-block">
-						<h1 style="color:white; font-family:굴림체; text-shadow:-2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; "><strong>지금 바로 전화 주세요</strong></h1>
+						<h1 style="color:white; font-family:굴림체; text-shadow:-2px 0 #000, 0 2px #000, 2px 0 #000, 0 -2px #000; "></h1>
 					</div>
 				</div>
 			</div>
@@ -106,10 +106,9 @@
 					<strong>Korean Food</strong>
 				</h1>
 				<p class="lead fw-normal text-light">
-					<strong>Daily Mealkit</strong>
 				</p>
 				<a class="btn btn-warning"
-					href="${pageContext.request.contextPath }/mealkit/mealkit_k.do">Go</a>
+					href="${pageContext.request.contextPath }/mealkit/mealkit_k.do"><strong>MORE</strong></a>
 			</div>
 		</div>
 		
@@ -118,13 +117,12 @@
 			id="mainpage2">
 			<div class="col-md-5 p-lg-5 mx-auto my-5">
 				<h1 class="display-4 fw-normal text-light">
-					<strong>European Food</strong>
+					<strong>West Food</strong>
 				</h1>
 				<p class="lead fw-normal text-light">
-					<strong>Daily Mealkit</strong>
 				</p>
 				<a class="btn btn-warning"
-					href="${pageContext.request.contextPath }/mealkit/mealkit_w.do">Go</a>
+					href="${pageContext.request.contextPath }/mealkit/mealkit_w.do"><strong>MORE</strong></a>
 			</div>
 		</div>
 		
@@ -136,10 +134,9 @@
 					<strong>Japanese Food</strong>
 				</h1>
 				<p class="lead fw-normal text-light">
-					<strong>Daily Mealkit</strong>
 				</p>
 				<a class="btn btn-warning"
-					href="${pageContext.request.contextPath }/mealkit/mealkit_j.do">Go</a>
+					href="${pageContext.request.contextPath }/mealkit/mealkit_j.do"><strong>MORE</strong></a>
 			</div>
 		</div>
 		
@@ -151,10 +148,9 @@
 					<strong>Chinese Food</strong>
 				</h1>
 				<p class="lead fw-normal text-light">
-					<strong>Daily Mealkit</strong>
 				</p>
 				<a class="btn btn-warning"
-					href="${pageContext.request.contextPath }/mealkit/mealkit_c.do">Go</a>
+					href="${pageContext.request.contextPath }/mealkit/mealkit_c.do"><strong>MORE</strong></a>
 			</div>
 		</div>
 

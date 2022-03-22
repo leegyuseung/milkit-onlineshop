@@ -13,9 +13,19 @@
 </head>
 <!-- 로그인폼 -->
 <style>
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
 </style>
 <body class="text-center">
 	<main class="form-signin">
@@ -33,13 +43,13 @@
 		</c:choose>
 		<br />
 		<div class="form-floating">
+			<input class="form-control" type="text" name="id" id="id" style="color: black;" placeholder="ID"/>
 			<label for="id" style="color: black;">ID</label>
-			<input class="form-control" type="text" name="id" id="id" style="color: black;"/>
 		</div>
 		<br />
 		<div class="form-floating">
+			<input class="form-control" type="password" name="pwd" id="pwd" style="color: black;" placeholder="PW"/>
 			<label for="pwd" style="color: black;">PW</label>
-			<input class="form-control" type="password" name="pwd" id="pwd" style="color: black;"/>
 		</div>
 		<br />
 		<button class="w-100 btn btn-lg btn-outline-light" type="submit" >Login</button>

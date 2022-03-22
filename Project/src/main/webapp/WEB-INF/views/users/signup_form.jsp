@@ -18,39 +18,39 @@
 	</svg> Daily Mealkit</strong></h1>
 	<form action="${pageContext.request.contextPath}/users/signup.do" method="post" id="myForm">
 		<div  class="form-floating">
+			<input class="form-control" type="text" name="name" id="name" placeholder="이름"/>
 			<label class="control-label" for="name">이름</label>
-			<input class="form-control" type="text" name="name" id="name"/>
 			<div class="invalid-feedback">이름을 입력해주세요.</div>
 		</div>
 		<br />
 		<div  class="form-floating">
+			<input class="form-control" type="text" name="id" id="id" placeholder="아이디">
 			<label class="control-label" for="id">아이디</label>
-			<input class="form-control" type="text" name="id" id="id"/>
 			<small class="form-text text-muted">영문자 소문자로 시작하고 5글자~10글자 이내로 입력하세요.</small>
 			<div class="invalid-feedback">사용할수 없는 아이디 입니다.</div>
 		</div>
 		<br />
 		<div  class="form-floating">
+			<input class="form-control" type="password" name="pwd" id="pwd" placeholder="비밀번호"/>
 			<label class="control-label" for="pwd">비밀번호</label>
-			<input class="form-control" type="password" name="pwd" id="pwd"/>
 			<small class="form-text text-muted">5글자~10글자 이내로 입력하세요.</small>
 			<div class="invalid-feedback">비밀번호를 확인 하세요.</div>
 		</div>
 		<br />
 		<div  class="form-floating">
+			<input class="form-control" type="password" name="pwd2" id="pwd2" placeholder="비밀번호 확인"/>
 			<label class="control-label" for="pwd2">비밀번호 확인</label>
-			<input class="form-control" type="password" name="pwd2" id="pwd2"/>
 		</div>
 		<br />
 		<div  class="form-floating">
+			<input class="form-control" type="text" name="email" id="email" placeholder="이메일"/>
 			<label class="control-label" for="email">이메일</label>
-			<input class="form-control" type="text" name="email" id="email"/>
 			<div class="invalid-feedback">이메일 형식을 확인 하세요.</div>
 		</div>
 		<br />
 		<div  class="form-floating">
+			<input class="form-control" type="text" name="address" id="address" placeholder="주소"/>
 			<label class="control-label" for="address">주소</label>
-			<input class="form-control" type="text" name="address" id="address"/>
 		</div>
 		<br />
 
