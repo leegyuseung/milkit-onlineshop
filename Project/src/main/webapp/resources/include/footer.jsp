@@ -17,17 +17,18 @@
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><small>상호 : 에이콘푸드</small></a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><small>사업장소재지 : 서울특별시 강남구</small></a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><small>안내전화 : 0000-0000</small></a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><small>대표이사 : acorn 4</small></a></li>
+      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><small>대표이사 : 이정호 </small></a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><small>사업자 등록번호 : 000-00-00000</small></a></li>
     </ul>
-    <div class="d-flex justify-content-between me-5 ms-5">
-      <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+    <div class="container">
+    <div class="d-flex justify-content-between">
+      <p><strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
   					<path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-				</svg> Daily Mealkit</p>
+				</svg> Daily Mealkit</strong></p>
       <ul class="list-unstyled d-flex">
-            <li class="nav-item"><a href="${pageContext.request.contextPath}/home.do" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="${pageContext.request.contextPath }/mealkit/mealkit_home.do" class="nav-link px-2 text-muted">Mealkit</a></li>
-      <li class="nav-item"><a href="${pageContext.request.contextPath }/inquiry/list.do" class="nav-link px-2 text-muted">Q&A</a></li>
+            <li class="nav-item"><a href="${pageContext.request.contextPath}/home.do" class="nav-link px-2 text-muted"><strong>Home</strong></a></li>
+      <li class="nav-item"><a href="${pageContext.request.contextPath }/mealkit/mealkit_home.do" class="nav-link px-2 text-muted"><strong>Mealkit</strong></a></li>
+      <li class="nav-item"><a href="${pageContext.request.contextPath }/inquiry/list.do" class="nav-link px-2 text-muted"><strong>Q&A</strong></a></li>
         <li class="ms-3"><a class="link-dark" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
   <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
 </svg></a></li>
@@ -38,5 +39,6 @@
   <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
 </svg></a></li>
       </ul>
+    </div>
     </div>
       </footer>
