@@ -63,7 +63,7 @@
 	</table>
 
 	<figure class="text-end">
-		<button  class="btn btn-outline-secondary"  type="submit" id="update">회원정보수정</button>
+		<button class="btn btn-outline-secondary"  type="submit" id="update">회원정보수정</button>
 		<button class="btn btn-outline-secondary" type="reset" id="delete">탈퇴</button>
 	</figure>
 	
