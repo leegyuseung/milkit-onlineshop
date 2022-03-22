@@ -31,6 +31,10 @@ public interface OrderService {
 	public void stockIncrease(StockBuyDto sbdto);
 	
 	public void buyCountDown(StockBuyDto sbdto);
+	
+	public void orderCancel(OrderDto dto);
+	
+	public void orderReturn(OrderDto dto);
 
 	public void delivered(OrderDto dto);
 	

@@ -98,16 +98,30 @@ public class OrderController {
 		return mView;
 	}
 	
-	@RequestMapping("/staff/returnPage.do")
-	public ModelAndView returnPage(ModelAndView mView, OrderDto dto) {
+	@RequestMapping("/private/returnPage.do")
+	public ModelAndView returnPage(ModelAndView mView, StockBuyDto sbdto, OrderDto dto) {
 		
-		Oservice.delivered(dto);
+		Oservice.buyCountDown(sbdto);
 		
-		//Oservice.stockReduce(dtoDetail);
+		Oservice.stockIncrease(sbdto);
 		
-		//Oservice.buyCount(dtoDetail);
+		Oservice.orderReturn(dto);
 		
-		mView.setViewName("redirect:/staff/adminOrderList.do");
+		mView.setViewName("staff/returnPage");
+		
+		return mView;
+	}
+	
+	@RequestMapping("/private/orderCancel.do")
+	public ModelAndView cancelPage(ModelAndView mView, StockBuyDto sbdto, OrderDto dto) {
+		
+		Oservice.buyCountDown(sbdto);
+		
+		Oservice.stockIncrease(sbdto);
+		
+		Oservice.orderCancel(dto);
+		
+		mView.setViewName("staff/orderCancel");
 		
 		return mView;
 	}

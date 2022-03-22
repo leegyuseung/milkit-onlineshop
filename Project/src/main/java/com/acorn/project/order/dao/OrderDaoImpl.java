@@ -105,5 +105,17 @@ public class OrderDaoImpl implements OrderDao{
 		return session.selectList("order.lastWeek", dto);
 	}
 
+	@Override
+	public void orderCancel(OrderDto dto) {
+		
+		session.update("order.orderCancel", dto);
+	}
+
+	@Override
+	public void orderReturn(OrderDto dto) {
+		
+		session.update("order.orderReturn", dto);
+	}
+
 
 }

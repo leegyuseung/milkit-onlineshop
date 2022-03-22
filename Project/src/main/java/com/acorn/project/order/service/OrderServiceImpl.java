@@ -109,5 +109,16 @@ public class OrderServiceImpl implements OrderService{
 
 		return dao.lastWeek(dto);
 	}
+
+	@Override
+	public void orderCancel(OrderDto dto) {
+
+		dao.orderCancel(dto);
+	}
+
+	@Override
+	public void orderReturn(OrderDto dto) {
+		dao.orderReturn(dto);
+	}
 	
 }

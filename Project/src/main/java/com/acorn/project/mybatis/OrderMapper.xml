@@ -90,6 +90,20 @@
 		WHERE orderId=#{orderId}
 	</update>
 	
+	<!-- 배송 완료 -->
+	<update id="orderCancel" parameterType="orderDto">
+		UPDATE ordertable
+		SET delivery = #{orderCancel}
+		WHERE orderId=#{orderId}
+	</update>
+	
+	<!-- 배송 완료 -->
+	<update id="orderReturn" parameterType="orderDto">
+		UPDATE ordertable
+		SET delivery = #{orderReturn}
+		WHERE orderId=#{orderId}
+	</update>
+	
 	<!-- 지난주 주문 내역 -->
 	<select id="lastWeek" resultType="orderDto">
 		SELECT *
