@@ -68,25 +68,25 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public void stockReduce(StockBuyDto sbdto) {
+	public void stockReduce(OrderDetailDto sbdto) {
 		
 		dao.stockReduce(sbdto);
 	}
 
 	@Override
-	public void buyCount(StockBuyDto sbdto) {
+	public void buyCount(OrderDetailDto sbdto) {
 		
 		dao.buyCount(sbdto);
 	}
 
 	@Override
-	public void stockIncrease(StockBuyDto sbdto) {
+	public void stockIncrease(OrderDetailDto sbdto) {
 
 		dao.stockIncrease(sbdto);
 	}
 
 	@Override
-	public void buyCountDown(StockBuyDto sbdto) {
+	public void buyCountDown(OrderDetailDto sbdto) {
 
 		dao.buyCountDown(sbdto);
 	}

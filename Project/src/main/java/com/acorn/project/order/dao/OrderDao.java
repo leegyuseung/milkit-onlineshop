@@ -25,13 +25,13 @@ public interface OrderDao {
 
 	public List<OrderListDto> AllOrderDetailList(OrderDto dto);
 	
-	public void stockReduce(StockBuyDto sbdto);
+	public void stockReduce(OrderDetailDto sbdto);
 	
-	public void buyCount(StockBuyDto sbdto);
+	public void buyCount(OrderDetailDto sbdto);
 	
-	public void stockIncrease(StockBuyDto sbdto);
+	public void stockIncrease(OrderDetailDto sbdto);
 	
-	public void buyCountDown(StockBuyDto sbdto);
+	public void buyCountDown(OrderDetailDto sbdto);
 	
 	public void orderCancel(OrderDto dto);
 	
