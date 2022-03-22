@@ -81,15 +81,15 @@
 		SELECT *
 		FROM ordertable
 		WHERE orderdate BETWEEN TRUNC(SYSDATE -7, 'iw') AND TRUNC(SYSDATE, 'd')
-		ORDER BY orderdate DESC;
+		ORDER BY orderId ASC
 	</select>
 	
 	<!-- 이번주 주문 내역 -->
 	<select id="thisWeek" resultType="orderDto">
 		SELECT *
 		FROM ordertable
-		WHERE orderdate BETWEEN TRUNC(SYSDATE, 'iw') AND TRUNC(SYSDATE + 7, 'd')
-		ORDER BY orderdate DESC;
+		WHERE orderdate BETWEEN TRUNC(SYSDATE, 'iw') AND TRUNC(SYSDATE + 7, 'day')
+		ORDER BY orderId ASC
 	</select>
 </mapper>
 
