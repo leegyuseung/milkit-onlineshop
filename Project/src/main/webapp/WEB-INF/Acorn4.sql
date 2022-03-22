@@ -115,3 +115,9 @@ CREATE TABLE ordertable_detail(
 );
 
 CREATE SEQUENCE orderId_detail_seq;
+
+
+/*지난주 주문내역*/
+SELECT *
+FROM ordertable
+where orderdate between TRUNC(SYSDATE -7, 'iw') and TRUNC(SYSDATE, 'dy');
