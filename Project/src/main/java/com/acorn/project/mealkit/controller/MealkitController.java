@@ -27,32 +27,32 @@ public class MealkitController {
 	}
 	//밀키트한국
 	@RequestMapping("/mealkit/mealkit_k")
-	public String kList(HttpServletRequest request) {
-		
-		service.kList(request);
+	public String kList(HttpServletRequest request,MealkitDto dto) {
+		dto.setProductCate("Korean");
+		service.allList(request,dto);
 		return "mealkit/mealkit_k";
 	}
 	//밀키트중국
 	@RequestMapping(value = "/mealkit/mealkit_c")
-	public String cList(HttpServletRequest request) {
-		
-		service.cList(request);
+	public String cList(HttpServletRequest request,MealkitDto dto) {
+		dto.setProductCate("Chinese");
+		service.allList(request,dto);
 		
 		return "mealkit/mealkit_c";
 	}
 	//밀키트일본
 	@RequestMapping("/mealkit/mealkit_j")
-	public String jList(HttpServletRequest request) {
-		
-		service.jList(request);
+	public String jList(HttpServletRequest request,MealkitDto dto) {
+		dto.setProductCate("Japanese");
+		service.allList(request,dto);
 
 		return "mealkit/mealkit_j";
 	}
 	//밀키트서양
 	@RequestMapping("/mealkit/mealkit_w")
-	public String wList(HttpServletRequest request) {
-		
-		service.wList(request);
+	public String wList(HttpServletRequest request,MealkitDto dto) {
+		dto.setProductCate("Western");
+		service.allList(request,dto);
 
 		return "mealkit/mealkit_w";
 	}

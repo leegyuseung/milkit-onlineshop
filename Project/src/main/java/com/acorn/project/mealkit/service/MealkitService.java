@@ -11,10 +11,6 @@ import com.acorn.project.mealkit.dto.MealkitDto;
 public interface MealkitService {
 	
 	public void allList(HttpServletRequest request, MealkitDto dto);
-	public void cList(HttpServletRequest request);
-	public void jList(HttpServletRequest request);
-	public void kList(HttpServletRequest request);
-	public void wList(HttpServletRequest request);
 	public void getDetail(ModelAndView mView, String productId);
 	public void saveContent(MealkitContentDto dto);
 	public void deleteContent(String productId, HttpServletRequest request);
