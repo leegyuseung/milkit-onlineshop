@@ -59,6 +59,16 @@
 						    		<caption class="text-end">
 						    			<form action="../cart/carthome.do">
 						    				<button class="btn btn-outline-secondary">다시 주문하기</button>
+						    				<c:forEach items="${list}" var="tmp" varStatus="status">
+								    				<c:choose>
+													    <c:when test="${tmp.delivery eq '배송 준비중'}">
+													    	<button class="btn btn-outline-secondary">주문 취소</button>
+													    </c:when>
+													    <c:otherwise>
+													    	<button class="btn btn-outline-secondary">반품 하기</button>
+													    </c:otherwise>
+													</c:choose>
+						    				</c:forEach>
 						    			</form>
 						    		</caption>
 						    		<thead>
@@ -79,9 +89,7 @@
 											   	<td><img src="${pageContext.request.contextPath }${tmp.imagePath}" style="width:50px; height: 50px;"/></td>											   	
 												<td><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /> 원</td>
 												<td>${tmp.amount_detail} </td>
-												<td>
-													<fmt:formatNumber pattern="###,###,###" value="${tmp.price * tmp.amount_detail}" /> 원
-												</td>
+												<td><fmt:formatNumber pattern="###,###,###" value="${tmp.price * tmp.amount_detail}" /> 원</td>
 								            </tr>     
 									  	</c:forEach>
 									 	

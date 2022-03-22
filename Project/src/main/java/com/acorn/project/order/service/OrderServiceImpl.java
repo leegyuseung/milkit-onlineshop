@@ -87,9 +87,9 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public List<OrderDto> weeklyOrder(OrderDto dto) {
+	public List<OrderDto> thisWeek(OrderDto dto) {
 		// TODO Auto-generated method stub
-		return dao.weeklyOrder(dto);
+		return dao.thisWeek(dto);
 	}
 
 	

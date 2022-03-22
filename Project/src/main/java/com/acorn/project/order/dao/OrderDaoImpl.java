@@ -81,9 +81,9 @@ public class OrderDaoImpl implements OrderDao{
 	}
 
 	@Override
-	public List<OrderDto> weeklyOrder(OrderDto dto) {
+	public List<OrderDto> thisWeek(OrderDto dto) {
 
-		return session.selectList("order.weeklyOrder", dto);
+		return session.selectList("order.thisWeek", dto);
 	}
 
 

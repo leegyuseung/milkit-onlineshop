@@ -31,6 +31,6 @@ public interface OrderDao {
 	
 	public void delivered(OrderDto dto);
 	
-	public List<OrderDto> weeklyOrder(OrderDto dto);
+	public List<OrderDto> thisWeek(OrderDto dto);
 
 }
