@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>/staff/adminOrderList.jsp</title>
 <style>
-	h1 {text-align: center; padding-top: 1em; padding-bottom: 1em;}
+	h2 {text-align: center; padding-top: 1em; padding-bottom: 1em;}
 	
 	#center{
 	text-align: center;
@@ -33,7 +33,7 @@
 				<section id="content">
 					
 					
-						<h1>전체 주문 현황</h1>
+						<h2>전체 주문 현황</h2>
 						<table class="table table-striped table-sm">
 							<thead>
 								<tr>
