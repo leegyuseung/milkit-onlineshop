@@ -57,7 +57,8 @@
 						    <td colspan="4">
 						    	<table class="table table-sm">
 						    		<caption class="text-end">
-						    				<c:forEach items="${list}" var="tmp" varStatus="status">
+						    				<c:forEach items="${list}" var="tmp" varStatus="status" >
+						    					<c:if test="${status.first}">
 								    				<c:choose>
 													    <c:when test="${tmp.delivery eq '배송 준비중'}">
 													    	<form action="orderCancel.do" method="post">
@@ -114,6 +115,7 @@
 													    	</form>
 													    </c:otherwise>
 													</c:choose>
+												</c:if>
 						    				</c:forEach>
 						    		</caption>
 						    		<thead>
