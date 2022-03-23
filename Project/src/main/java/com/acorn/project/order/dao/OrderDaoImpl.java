@@ -10,6 +10,7 @@ import com.acorn.project.cart.dto.CartDto;
 import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
 import com.acorn.project.order.dto.OrderListDto;
+import com.acorn.project.product.dto.ProductDto;
 import com.acorn.project.product.dto.StockBuyDto;
 
 @Repository
@@ -61,27 +62,27 @@ public class OrderDaoImpl implements OrderDao{
 	}
 
 	@Override
-	public void stockReduce(OrderDetailDto sbdto) {
+	public void stockReduce(ProductDto sbdto) {
 		
 		session.update("order.stockReduce", sbdto);
 		
 	}
 
 	@Override
-	public void buyCount(OrderDetailDto sbdto) {
+	public void buyCount(ProductDto sbdto) {
 		
 		session.update("order.buyCount", sbdto);
 	}
 
 	@Override
-	public void stockIncrease(OrderDetailDto sbdto) {
+	public void stockIncrease(ProductDto sbdto) {
 
 		session.update("order.stockIncrease", sbdto);
 		
 	}
 
 	@Override
-	public void buyCountDown(OrderDetailDto sbdto) {
+	public void buyCountDown(ProductDto sbdto) {
 
 		session.update("order.buyCountDown", sbdto);
 	}
