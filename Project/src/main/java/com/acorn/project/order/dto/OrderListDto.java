@@ -8,7 +8,7 @@ public class OrderListDto {
 	private String userAddr;
 	private String userPostal;
 	private String userAddrDetail;
-	private int tel;
+	private String tel;
 	private int totalPrice;
 	private String orderDate;
 	private String delivery;
@@ -24,7 +24,7 @@ public class OrderListDto {
 	public OrderListDto() {}
 
 	public OrderListDto(int orderId, String receiver, String userId, String userAddr, String userPostal,
-			String userAddrDetail, int tel, int totalPrice, String orderDate, String delivery, int orderId_Detail,
+			String userAddrDetail, String tel, int totalPrice, String orderDate, String delivery, int orderId_Detail,
 			String productId, int amount_detail, String productName, String imagePath, int price) {
 		super();
 		this.orderId = orderId;
@@ -44,6 +44,7 @@ public class OrderListDto {
 		this.imagePath = imagePath;
 		this.price = price;
 	}
+
 
 	public int getOrderId() {
 		return orderId;
@@ -93,11 +94,11 @@ public class OrderListDto {
 		this.userAddrDetail = userAddrDetail;
 	}
 
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
 
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 
@@ -172,4 +173,6 @@ public class OrderListDto {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+
+	
 }

@@ -19,7 +19,7 @@ public class OrderDto {
 	private String userAddr;
 	private String userPostal;
 	private String userAddrDetail;
-	private int tel;
+	private String tel;
 	private int totalPrice;
 	private String orderDate;
 	private String delivery;
@@ -27,7 +27,7 @@ public class OrderDto {
 	public OrderDto() {}
 
 	public OrderDto(int orderId, String receiver, String userId, String userAddr, String userPostal,
-			String userAddrDetail, int tel, int totalPrice, String orderDate, String delivery) {
+			String userAddrDetail, String tel, int totalPrice, String orderDate, String delivery) {
 		super();
 		this.orderId = orderId;
 		this.receiver = receiver;
@@ -89,11 +89,11 @@ public class OrderDto {
 		this.userAddrDetail = userAddrDetail;
 	}
 
-	public int getTel() {
+	public String getTel() {
 		return tel;
 	}
 
-	public void setTel(int tel) {
+	public void setTel(String tel) {
 		this.tel = tel;
 	}
 

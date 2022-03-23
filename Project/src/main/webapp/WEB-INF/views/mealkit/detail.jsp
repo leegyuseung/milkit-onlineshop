@@ -55,7 +55,7 @@ img { display: block; margin: 0px auto; }
                         <input type="hidden" name="productName" value="${dto.productName}">
                			<input type="hidden" name="price" value="${dto.price}">
                			<input type="hidden" name="imagePath" value="${dto.imagePath}">
-               			<input class="form-control text-center me-3" name="amount" id="inputQuantity" type="number" value="1" style="max-width: 3rem" />
+               			<input class="form-control text-left me-3" name="amount" id="inputQuantity" type="number" value="1" style="max-width: 5rem" />
                			<br />
                			
                			<c:choose>
