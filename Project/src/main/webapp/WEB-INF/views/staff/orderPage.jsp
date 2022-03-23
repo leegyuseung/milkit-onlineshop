@@ -151,14 +151,6 @@
     </div>
   </main>
 </form>
-
-	<footer class="my-5 pt-5 text-muted text-center text-small">
-		<jsp:include page="../../../resources/include/footer.jsp">
-			<jsp:param value="home" name="thisPage"/>
-		</jsp:include>
-  	</footer>
-  	
-
 </div>
 </body>
 
