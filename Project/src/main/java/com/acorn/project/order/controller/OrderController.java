@@ -88,7 +88,7 @@ public class OrderController {
 		ProductDto sbdto = new ProductDto();
 		
 		for(OrderListDto i : orderList) {
-			sbdto.setProductId(i.getProductId());
+			sbdto.setProductId(i.getProductId()); 
 			sbdto.setStock(i.getAmount_detail());
 			Oservice.stockReduce(sbdto);
 			Oservice.buyCount(sbdto);
