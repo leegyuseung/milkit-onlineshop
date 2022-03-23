@@ -38,11 +38,24 @@ public class OrderController {
 	}
 
 	@RequestMapping("/private/orderComplete.do")
-	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail, CartDto sbdto) {
+	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail, CartDto sbdto) throws Exception{
+		
 		
 		Oservice.orderInfo(dto, session);
 
 		Oservice.orderInfo_Detail(dto, dtoDetail, session);
+		
+		Thread.sleep(5000);
+		
+		List<OrderListDto> orderList = Oservice.AllOrderDetailList(dto);
+		ProductDto bdto = new ProductDto();
+		
+		for(OrderListDto i : orderList) {
+			bdto.setProductId(i.getProductId());
+			bdto.setStock(i.getAmount_detail());
+			Oservice.stockIncrease(bdto);
+			Oservice.buyCountDown(bdto);
+		}
 		
 		service.deleteAll((String)session.getAttribute("id"));
 		
@@ -101,8 +114,6 @@ public class OrderController {
 		return mView;
 	}
 	
-	
-	
 	@RequestMapping("/private/returnPage.do")
 	public ModelAndView returnPage(ModelAndView mView, OrderDetailDto sbdto, OrderDto dto) {
 		
@@ -115,9 +126,7 @@ public class OrderController {
 			Oservice.stockIncrease(bdto);
 			Oservice.buyCountDown(bdto);
 		}
-		
-		
-		
+	
 		Oservice.orderReturn(dto);
 		
 		mView.setViewName("redirect:/private/orderHistory.do");
@@ -127,7 +136,6 @@ public class OrderController {
 	
 	@RequestMapping("/private/orderCancel.do")
 	public ModelAndView cancelPage(ModelAndView mView, OrderDetailDto sbdto, OrderDto dto) {
-	
 		
 		Oservice.orderCancel(dto);
 		
