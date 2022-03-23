@@ -78,24 +78,29 @@ h1 {
       </c:forEach>
       </tbody>
    </table>
+
    <figure class="text-end">
    	총 합계 : <fmt:formatNumber pattern="###,###,###" value="${sum}" />원
-	
-
+   	<button class="btn btn-outline-secondary" id="goshop">쇼핑가기</button>
+   	</figure>
+   	
+   	
+   	
+   	<figure class="text-end">
 	<form action="../orderPage.do">    
 		<br />
    		<button class="btn btn-outline-secondary">구매하기</button>
    	</form>
    	</figure>
- </div>
-<script>
-	
-</script>
+</div>
 
-<br />
+<script>
+document.querySelector("#goshop").addEventListener("click",function(){
+	location.href="${pageContext.request.contextPath}/mealkit/mealkit_home.do";	
+});
+</script>
 <jsp:include page="../../../resources/include/footer.jsp">
 	<jsp:param value="home" name="thisPage"/>
 </jsp:include>
 </body>
-
 </html>
