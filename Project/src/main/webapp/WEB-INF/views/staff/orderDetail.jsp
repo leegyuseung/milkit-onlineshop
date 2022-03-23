@@ -64,8 +64,6 @@
 													    	<form action="orderCancel.do" method="post">
 													    		<input type="hidden" id="delivery" name="delivery" value="주문 취소"/>
 													    		<input type="hidden" id="orderId" name="orderId" value="${tmp.orderId }"/>
-													    		<input type="hidden" id="productId" name="productId" value="${tmp.productId }"/>
-													    		<input type="hidden" id="amount_detail" name="amount_detail" value="${tmp.amount_detail }"/>
 													    		
 																<button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 																  주문 취소
@@ -100,7 +98,7 @@
 													    		<input type="hidden" id="orderId" name="orderId" value="${tmp.orderId }"/>
 													    		<input type="hidden" id="productId" name="productId" value="${tmp.productId }"/>
 													    		<input type="hidden" id="amount_detail" name="amount_detail" value="${tmp.amount_detail }"/>
-													    		<input type="hidden" id="orderReturn" name="orderReturn" value="반품 하기"/>
+													    		
 																<button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 																  반품 하기
 																</button>
@@ -144,6 +142,8 @@
 											   	<td><img src="${pageContext.request.contextPath }${tmp.imagePath}" style="width:50px; height: 50px;"/></td>											   	
 												<td><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /> 원</td>
 												<td>${tmp.amount_detail} </td>
+												<input type="hidden" name="amount_detail" id="amount_detail" value="${tmp.amount_detail }"/>
+												<input type="hidden" name="productId" id="productId" value="${tmp.productId }"/>
 												<td><fmt:formatNumber pattern="###,###,###" value="${tmp.price * tmp.amount_detail}" /> 원</td>
 								            </tr>     
 									  	</c:forEach>
