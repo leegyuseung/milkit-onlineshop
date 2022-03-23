@@ -58,10 +58,13 @@
 <section class="py-5">
 
 	<div class="container px-4 px-lg-5 mt-5">
-	<p style="text-align: right">
-        <a href="bestProduct.do">인기순</a>
-        <a href="newProduct.do">최신순</a>
-     </p>
+		<figure class="text-end">
+		<div class="btn-group me-2" role="group" aria-label="First group">
+		<button type="button" class="btn btn-outline-secondary" id="home">Home</button>
+    	<button type="button" class="btn btn-outline-secondary" id="new">New</button>
+    	<button type="button" class="btn btn-outline-secondary" id="best">Best</button>
+    	</div>
+    	</figure>
     	<div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
     	<c:forEach var="tmp" items="${list }">
         	<div class="col mb-5">
@@ -132,9 +135,19 @@
 		</c:choose>
       </ul>
    </nav>   
-</div>
 <jsp:include page="../../../resources/include/footer.jsp">
 	<jsp:param value="mealkit.home" name="thisPage"/>
 </jsp:include>
+<script>
+	document.querySelector("#new").addEventListener("click",function(){
+		location.href="${pageContext.request.contextPath}/mealkit/newProduct.do";	
+	});
+	document.querySelector("#best").addEventListener("click",function(){
+		location.href="${pageContext.request.contextPath}/mealkit/bestProduct.do";	
+	});
+	document.querySelector("#home").addEventListener("click",function(){
+		location.href="${pageContext.request.contextPath}/mealkit/mealkit_home.do";	
+	});
+</script>
 </body>
 </html>
