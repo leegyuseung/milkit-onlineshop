@@ -15,6 +15,7 @@ import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
 import com.acorn.project.order.dto.OrderListDto;
 import com.acorn.project.order.service.OrderService;
+import com.acorn.project.product.dto.ProductDto;
 import com.acorn.project.product.dto.StockBuyDto;
 
 @Controller
@@ -37,15 +38,11 @@ public class OrderController {
 	}
 
 	@RequestMapping("/private/orderComplete.do")
-	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail) {
+	public String Order(HttpSession session, OrderDto dto,  OrderDetailDto dtoDetail, CartDto sbdto) {
 		
 		Oservice.orderInfo(dto, session);
 
 		Oservice.orderInfo_Detail(dto, dtoDetail, session);
-		
-		Oservice.stockReduce(dtoDetail);
-		
-		Oservice.buyCount(dtoDetail);
 		
 		service.deleteAll((String)session.getAttribute("id"));
 		
@@ -87,23 +84,39 @@ public class OrderController {
 	@RequestMapping("/staff/delivered.do")
 	public ModelAndView delivered(ModelAndView mView, OrderDto dto) {
 		
+		List<OrderListDto> orderList = Oservice.AllOrderDetailList(dto);
+		ProductDto sbdto = new ProductDto();
+		
+		for(OrderListDto i : orderList) {
+			sbdto.setProductId(i.getProductId()); 
+			sbdto.setStock(i.getAmount_detail());
+			Oservice.stockReduce(sbdto);
+			Oservice.buyCount(sbdto);
+		}
+		
 		Oservice.delivered(dto);
-		
-		//Oservice.stockReduce(dtoDetail);
-		
-		//Oservice.buyCount(dtoDetail);
 		
 		mView.setViewName("redirect:/staff/adminOrderList.do");
 		
 		return mView;
 	}
 	
+	
+	
 	@RequestMapping("/private/returnPage.do")
 	public ModelAndView returnPage(ModelAndView mView, OrderDetailDto sbdto, OrderDto dto) {
 		
-		Oservice.buyCountDown(sbdto);
+		List<OrderListDto> orderList = Oservice.AllOrderDetailList(dto);
+		ProductDto bdto = new ProductDto();
 		
-		Oservice.stockIncrease(sbdto);
+		for(OrderListDto i : orderList) {
+			bdto.setProductId(i.getProductId());
+			bdto.setStock(i.getAmount_detail());
+			Oservice.stockIncrease(bdto);
+			Oservice.buyCountDown(bdto);
+		}
+		
+		
 		
 		Oservice.orderReturn(dto);
 		
@@ -114,10 +127,7 @@ public class OrderController {
 	
 	@RequestMapping("/private/orderCancel.do")
 	public ModelAndView cancelPage(ModelAndView mView, OrderDetailDto sbdto, OrderDto dto) {
-		
-		Oservice.buyCountDown(sbdto);
-		
-		Oservice.stockIncrease(sbdto);
+	
 		
 		Oservice.orderCancel(dto);
 		
@@ -125,4 +135,5 @@ public class OrderController {
 		
 		return mView;
 	}
+	
 }

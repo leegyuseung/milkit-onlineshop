@@ -78,9 +78,9 @@
 											   	<td>${tmp.productName}</td>
 												<td><fmt:formatNumber pattern="###,###,###" value="${tmp.price}" /> 원</td>
 												<td>${tmp.amount_detail} </td>
-												<td>
-													<fmt:formatNumber pattern="###,###,###" value="${tmp.price * tmp.amount_detail}" /> 원
-												</td>
+												<input type="hidden" name="amount_detail" id="amount_detail" value="${tmp.amount_detail }"/>
+												<input type="hidden" name="productId" id="productId" value="${tmp.productId }"/>
+												<td><fmt:formatNumber pattern="###,###,###" value="${tmp.price * tmp.amount_detail}" /> 원</td>
 								            </tr>     
 									  	</c:forEach>
 						    		</tbody>

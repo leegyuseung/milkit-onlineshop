@@ -8,6 +8,7 @@ import com.acorn.project.cart.dto.CartDto;
 import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
 import com.acorn.project.order.dto.OrderListDto;
+import com.acorn.project.product.dto.ProductDto;
 import com.acorn.project.product.dto.StockBuyDto;
 
 public interface OrderService {
@@ -24,13 +25,13 @@ public interface OrderService {
 	
 	public List<OrderListDto> AllOrderDetailList(OrderDto dto);
 	
-	public void stockReduce(OrderDetailDto sbdto);
+	public void stockReduce(ProductDto sbdto);
 	
-	public void buyCount(OrderDetailDto sbdto);
+	public void buyCount(ProductDto sbdto);
 	
-	public void stockIncrease(OrderDetailDto sbdto);
+	public void stockIncrease(ProductDto sbdto);
 	
-	public void buyCountDown(OrderDetailDto sbdto);
+	public void buyCountDown(ProductDto sbdto);
 	
 	public void orderCancel(OrderDto dto);
 	

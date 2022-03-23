@@ -13,6 +13,7 @@ import com.acorn.project.order.dao.OrderDao;
 import com.acorn.project.order.dto.OrderDetailDto;
 import com.acorn.project.order.dto.OrderDto;
 import com.acorn.project.order.dto.OrderListDto;
+import com.acorn.project.product.dto.ProductDto;
 import com.acorn.project.product.dto.StockBuyDto;
 
 @Service
@@ -68,25 +69,25 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public void stockReduce(OrderDetailDto sbdto) {
+	public void stockReduce(ProductDto sbdto) {
 		
 		dao.stockReduce(sbdto);
 	}
 
 	@Override
-	public void buyCount(OrderDetailDto sbdto) {
+	public void buyCount(ProductDto sbdto) {
 		
 		dao.buyCount(sbdto);
 	}
 
 	@Override
-	public void stockIncrease(OrderDetailDto sbdto) {
+	public void stockIncrease(ProductDto sbdto) {
 
 		dao.stockIncrease(sbdto);
 	}
 
 	@Override
-	public void buyCountDown(OrderDetailDto sbdto) {
+	public void buyCountDown(ProductDto sbdto) {
 
 		dao.buyCountDown(sbdto);
 	}
