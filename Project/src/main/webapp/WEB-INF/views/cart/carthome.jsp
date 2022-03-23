@@ -81,13 +81,14 @@ h1 {
 
    <figure class="text-end">
    	총 합계 : <fmt:formatNumber pattern="###,###,###" value="${sum}" />원
-   	<button class="btn btn-outline-secondary" id="goshop">쇼핑가기</button>
+   	
    	</figure>
    	
    	
    	
    	<figure class="text-end">
-	<form action="../orderPage.do">    
+   	<button class="btn btn-outline-secondary" id="goshop">쇼핑가기</button>
+	<form type="hidden" action="../orderPage.do">    
 		<br />
    		<button class="btn btn-outline-secondary">구매하기</button>
    	</form>
