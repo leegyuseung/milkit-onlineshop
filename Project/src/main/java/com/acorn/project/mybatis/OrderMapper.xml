@@ -13,7 +13,7 @@
 		(orderId_detail, orderId, productId, amount_detail, userId)
 		(SELECT orderId_detail_seq.nextval, #{orderId}, productId, amount, #{userId} FROM cart WHERE id=#{userId})
 	</insert>
-	
+	 
 	<select id="getOrderId" resultType="int">
 		select max(orderId) as orderId from ordertable
 	</select>
@@ -28,7 +28,7 @@
 		SELECT orderId, receiver, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate, delivery
 		FROM ordertable
 		where userId=#{userId}
-		ORDER BY orderId ASC
+		ORDER BY orderdate ASC
 	</select>
 	<!-- 고객용 특정 주문 목록 -->
 	<select id="orderDetailList" resultType="com.acorn.project.order.dto.OrderListDto">
@@ -43,7 +43,7 @@
 	<select id="AllOrderList" resultType="orderDto">
 		SELECT orderId, receiver, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate, delivery
 		FROM ordertable
-		ORDER BY orderId ASC
+		ORDER BY orderdate ASC
 	</select>
 	<!-- 관리자용 특정 주문 목록 -->
 	<select id="AllOrderDetailList" resultType="com.acorn.project.order.dto.OrderListDto">
@@ -108,8 +108,8 @@
 	<select id="lastWeek" resultType="orderDto">
 		SELECT *
 		FROM ordertable
-		WHERE orderdate BETWEEN TRUNC(SYSDATE -7, 'iw') AND TRUNC(SYSDATE, 'd')
-		ORDER BY orderId ASC
+		WHERE orderdate BETWEEN TRUNC(SYSDATE -7, 'iw') AND TRUNC(SYSDATE+1, 'd')
+		ORDER BY orderdate ASC
 	</select>
 	
 	<!-- 이번주 주문 내역 -->
@@ -117,7 +117,7 @@
 		SELECT *
 		FROM ordertable
 		WHERE orderdate BETWEEN TRUNC(SYSDATE, 'iw') AND TRUNC(SYSDATE + 7, 'day')
-		ORDER BY orderId ASC
+		ORDER BY orderdate ASC
 	</select>
 </mapper>
 
