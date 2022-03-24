@@ -45,18 +45,6 @@ public class OrderController {
 
 		Oservice.orderInfo_Detail(dto, dtoDetail, session);
 		
-		Thread.sleep(5000);
-		
-		List<OrderListDto> orderList = Oservice.AllOrderDetailList(dto);
-		ProductDto bdto = new ProductDto();
-		
-		for(OrderListDto i : orderList) {
-			bdto.setProductId(i.getProductId());
-			bdto.setStock(i.getAmount_detail());
-			Oservice.stockIncrease(bdto);
-			Oservice.buyCountDown(bdto);
-		}
-		
 		service.deleteAll((String)session.getAttribute("id"));
 		
 		return "staff/orderComplete";
