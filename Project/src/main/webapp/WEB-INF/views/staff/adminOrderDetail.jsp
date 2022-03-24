@@ -56,11 +56,27 @@
 						    <td colspan="4">
 						    	<table class="table">
 						    		<caption class="text-end">
+						    			<c:forEach items="${list}" var="tmp" varStatus="status">
 						    			<form action="delivered.do" method="post">
 						    				<input type="hidden" name="orderId" value="${param.orderId }"/>
 						    				<input type="hidden" name="delivery" value="배송 완료"/>
-						    				<button class="btn btn-outline-secondary" id="delivery">배송 완료</button>
+						    				
+						    				<c:choose>
+						    					<c:when test="${tmp.delivery eq '주문 반품'}">
+						    					
+						    					</c:when>
+						    					<c:when test="${tmp.delivery eq '주문 취소'}">
+						    						
+						    					</c:when>
+						    					<c:when test="${tmp.delivery eq '배송 완료'}">
+						    						
+						    					</c:when>
+						    					<c:otherwise>
+						    						<button class="btn btn-outline-secondary" id="delivery">배송 완료</button>
+						    					</c:otherwise>
+						    				</c:choose>
 						    			</form>
+						    			</c:forEach>
 						    		</caption>
 						    		<thead>
 						    			<tr>
