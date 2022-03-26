@@ -5,7 +5,7 @@
 	<insert id="getInfo" parameterType="orderDto">
 		INSERT INTO ordertable
 		(orderId, receiver, userId, userAddr, userPostal, userAddrDetail, tel, totalPrice, orderDate)
-	 	values(orderId_seq.nextval, #{receiver}, #{userId}, #{userAddr}, #{userPostal}, #{userAddrDetail}, #{tel}, #{totalPrice}, SYSDATE)
+	 	values(orderId_seq.nextval, #{receiver}, #{userId}, #{userAddr}, #{userPostal}, #{userAddrDetail}, #{tel}, #{totalPrice}, SYSDATE + 1)
 	</insert>
 	
 	<insert id="getInfo_Detail" parameterType="cartDto" >
@@ -108,7 +108,7 @@
 	<select id="lastWeek" resultType="orderDto">
 		SELECT *
 		FROM ordertable
-		WHERE orderdate BETWEEN TRUNC(SYSDATE -7, 'iw') AND TRUNC(SYSDATE+1, 'd')
+		WHERE orderdate BETWEEN TRUNC(SYSDATE -7, 'iw') AND TRUNC(SYSDATE, 'd') + 1
 		ORDER BY orderdate ASC
 	</select>
 	
@@ -116,7 +116,7 @@
 	<select id="thisWeek" resultType="orderDto">
 		SELECT *
 		FROM ordertable
-		WHERE orderdate BETWEEN TRUNC(SYSDATE, 'iw') AND TRUNC(SYSDATE + 7, 'day')
+		WHERE orderdate BETWEEN TRUNC(SYSDATE, 'iw') AND TRUNC(SYSDATE + 7, 'day') + 1
 		ORDER BY orderdate ASC
 	</select>
 </mapper>

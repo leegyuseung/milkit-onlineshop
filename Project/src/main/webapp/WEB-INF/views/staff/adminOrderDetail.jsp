@@ -72,7 +72,9 @@
 						    						
 						    					</c:when>
 						    					<c:otherwise>
-						    						<button class="btn btn-outline-secondary" id="delivery">배송 완료</button>
+						    						<c:if test="${status.first}">
+						    							<button class="btn btn-outline-secondary" id="delivery">배송 완료</button>
+						    						</c:if>
 						    					</c:otherwise>
 						    				</c:choose>
 						    			</form>
