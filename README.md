@@ -11,14 +11,7 @@
 이재인
 
 ## use
-Java
-JS
-HTML
-CSS
-Spring
-Mybatis
+Java, JS, HTML, CSS, Spring, Mybatis
 
-## use2
-Bootstrap
-Github
-Discord
+## help
+Bootstrap, Github, Discord
