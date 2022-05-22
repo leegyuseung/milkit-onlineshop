@@ -3,13 +3,22 @@
 ## subject
 - mealkit shop web page
 
-## member
-1. 이슬(조장)
-2. 김경아
-3. 김희찬
-4. 이규승
-5. 이재인
+## member & role
+이슬(조장)
+김경아
+김희찬
+이규승
+이재인
 
-## role
+## use
+Java
+JS
+HTML
+CSS
+Spring
+Mybatis
 
-## 
+## use2
+Bootstrap
+Github
+Discord
