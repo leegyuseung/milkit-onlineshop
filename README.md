@@ -1,11 +1,15 @@
-# 에이콘 4조 중간 프로젝트
+# Acorn 4team project
 
-## 프로젝트 주제
-- 밀키트 쇼핑몰
+## subject
+- mealkit shop web page
 
-## 조원
+## member
 1. 이슬(조장)
 2. 김경아
 3. 김희찬
 4. 이규승
 5. 이재인
+
+## role
+
+## 
