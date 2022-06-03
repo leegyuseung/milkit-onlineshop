@@ -36,10 +36,24 @@
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>  
 
 ## ⭐ 구조
+  
   <img src="https://github.com/leegyuseung/milkit_web_page.project/blob/main/Project/src/main/webapp/resources/images2/%EB%B0%80%ED%82%A4%ED%8A%B8.png">
+  
 ## ⭐ ERD
+  
   <img src="https://github.com/leegyuseung/milkit_web_page.project/blob/main/Project/src/main/webapp/resources/images2/%EB%B0%80%ED%82%A4%ED%8A%B8.png">
+  
 ## ⭐ 디테일
-Users, Cart, Product + Detail, Thisweekorder, Boardinquiry + Comment, Ordertable + detail, Administrator Page
+- Users
+- Cart 
+- Product 
+  Detail
+- Boardinquiry 
+  Comment
+- Ordertable 
+  detail
+- Administrator Page
+  Thisweekorder
+ 
 
 </div>
