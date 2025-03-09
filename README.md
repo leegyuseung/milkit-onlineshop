@@ -22,7 +22,7 @@
 <br/><br/>
 <a href="https://github.com/leegyuseung">이규승👦</a> <strong><code>Product</code></strong> <strong><code>Detail</code></strong> <strong><code>DB</code></strong> <strong><code>CSS</code></strong> <strong><code>Error Search</code></strong>
 <br/><br/>
-<a href="">이재인👦</a> <strong><code>Product</code></strong> <strong><code>Detail</code></strong> <strong><code>Error Search</code></strong>
+<a href="https://github.com/Loyce0805">이재인👦</a> <strong><code>Product</code></strong> <strong><code>Detail</code></strong> <strong><code>Error Search</code></strong>
   
 ## 🔨개발도구🔨
 <img src="https://img.shields.io/badge/Java-007396?style=flat-square&logo=Java&logoColor=white"/>
